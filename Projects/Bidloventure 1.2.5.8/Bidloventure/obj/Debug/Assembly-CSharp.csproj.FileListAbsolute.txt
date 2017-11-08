@@ -1,0 +1,46 @@
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\LitJson.dll
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\UnityEditor.dll
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\UnityEngine.dll
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\UnityEngine.Networking.dll
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\UnityEngine.UI.dll
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\Unity.SerializationLogic.dll
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\Unity.UNetWeaver.dll
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\Unity.CecilTools.dll
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\UnityEngine.xml
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\UnityEditor.xml
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\UnityEngine.UI.xml
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\obj\Debug\Assembly-CSharp.dll
+C:\Users\Maxim Romanchuk\Desktop\Bidloventure 1.2.5.6\Bidloventure\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\LitJson.dll
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\UnityEditor.dll
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\UnityEngine.dll
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\UnityEngine.Networking.dll
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\UnityEngine.UI.dll
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\Unity.SerializationLogic.dll
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\Unity.UNetWeaver.dll
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\Unity.CecilTools.dll
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\UnityEngine.xml
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\UnityEditor.xml
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\UnityEngine.UI.xml
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\obj\Debug\Assembly-CSharp.dll
+C:\Users\Max\Desktop\Bidloventure 1.2.5.6\Bidloventure\obj\Debug\Assembly-CSharp.pdb

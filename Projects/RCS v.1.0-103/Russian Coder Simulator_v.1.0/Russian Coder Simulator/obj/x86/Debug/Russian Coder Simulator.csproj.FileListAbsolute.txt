@@ -1,0 +1,406 @@
+C:\Users\TheZaychik\AppData\Local\Temporary Projects\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+C:\Users\TheZaychik\AppData\Local\Temporary Projects\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+C:\Users\TheZaychik\AppData\Local\Temporary Projects\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Form1.resources
+C:\Users\TheZaychik\AppData\Local\Temporary Projects\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+C:\Users\TheZaychik\AppData\Local\Temporary Projects\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+C:\Users\TheZaychik\AppData\Local\Temporary Projects\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+C:\Users\TheZaychik\AppData\Local\Temporary Projects\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+F:\C#\2 часть\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+F:\C#\2 часть\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+F:\C#\2 часть\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+F:\C#\2 часть\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+F:\C#\2 часть\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+F:\C#\2 часть\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+F:\C#\2 часть\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+F:\C#\2 часть\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+F:\C#\2 часть\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+F:\C#\2 часть\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+F:\C#\2 часть\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+F:\C#\2 часть\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_navik.resources
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_navik.resources
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.ProjectS.resources
+F:\C#\2 часть\rsc\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+F:\C#\2 часть\rsc\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+F:\C#\2 часть\rsc\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+F:\C#\2 часть\rsc\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+F:\C#\2 часть\rsc\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+F:\C#\2 часть\rsc\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+F:\C#\2 часть\rsc\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+F:\C#\2 часть\rsc\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_navik.resources
+F:\C#\2 часть\rsc\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.ProjectS.resources
+F:\C#\2 часть\rsc\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+F:\C#\2 часть\rsc\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+F:\C#\2 часть\rsc\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+F:\C#\2 часть\rsc\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+F:\C#\2 часть\rsc\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.pov_navikov.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.oper_form.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.pov_navikov.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_navik.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.ProjectS.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+C:\Users\mromanchuk\Downloads\RCS_operform\RCS_operform\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+C:\Users\mromanchuk\Downloads\RCS_operform\RCS_operform\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+C:\Users\mromanchuk\Downloads\RCS_operform\RCS_operform\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+C:\Users\mromanchuk\Downloads\RCS_operform\RCS_operform\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+C:\Users\mromanchuk\Downloads\RCS_operform\RCS_operform\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+C:\Users\mromanchuk\Downloads\RCS_operform\RCS_operform\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.oper_form.resources
+C:\Users\mromanchuk\Downloads\RCS_operform\RCS_operform\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.pov_navikov.resources
+C:\Users\mromanchuk\Downloads\RCS_operform\RCS_operform\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+C:\Users\mromanchuk\Downloads\RCS_operform\RCS_operform\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+C:\Users\mromanchuk\Downloads\RCS_operform\RCS_operform\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_navik.resources
+C:\Users\mromanchuk\Downloads\RCS_operform\RCS_operform\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.ProjectS.resources
+C:\Users\mromanchuk\Downloads\RCS_operform\RCS_operform\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+C:\Users\mromanchuk\Downloads\RCS_operform\RCS_operform\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+C:\Users\mromanchuk\Downloads\RCS_operform\RCS_operform\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+C:\Users\mromanchuk\Downloads\RCS_operform\RCS_operform\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+C:\Users\Max\Downloads\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+C:\Users\Max\Downloads\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+C:\Users\Max\Downloads\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+C:\Users\Max\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+C:\Users\Max\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+C:\Users\Max\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.oper_form.resources
+C:\Users\Max\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.pov_navikov.resources
+C:\Users\Max\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+C:\Users\Max\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+C:\Users\Max\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_navik.resources
+C:\Users\Max\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.ProjectS.resources
+C:\Users\Max\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+C:\Users\Max\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+C:\Users\Max\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+C:\Users\Max\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.oper_form.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.pov_navikov.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_navik.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.ProjectS.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.2Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.2Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.2Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.oper_form.resources
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.pov_navikov.resources
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_navik.resources
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.ProjectS.resources
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.oper_form.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.pov_navikov.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_navik.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.ProjectS.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.oper_form.resources
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.pov_navikov.resources
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_navik.resources
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.ProjectS.resources
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+C:\Users\mromanchuk\Desktop\Russian Coder Simulator_v.0.7.3Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.4Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.4Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.4Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.4Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.4Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.4Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.4Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.achivki.resources
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.4Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.4Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.oper_form.resources
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.4Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.pov_navikov.resources
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.4Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.4Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.4Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_navik.resources
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.4Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.ProjectS.resources
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.4Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.4Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+F:\C#\2 часть\RSC\Russian Coder Simulator_v.0.7.4Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event1.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.5.2Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.5.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.5.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.5.2Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.5.2Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.5.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.5.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.achivki.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.5.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event1.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.5.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.5.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.oper_form.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.5.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.pov_navikov.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.5.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.5.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.5.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_navik.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.5.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.ProjectS.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.5.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+C:\Users\Maxim Romanchuk\Downloads\Russian Coder Simulator_v.0.7.5.2Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.achivki.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event1.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.oper_form.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.pov_navikov.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_navik.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.ProjectS.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event2.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.manifest
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.application
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event3.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.TrustInfo.xml
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe.manifest
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.7.6 Beta\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.application
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.manifest
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.application
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.achivki.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event1.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event2.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event3.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.oper_form.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.pov_navikov.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_navik.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.ProjectS.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.TrustInfo.xml
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe.manifest
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.application
+C:\Users\TheZaychik\Desktop\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+C:\Users\TheZaychik\Desktop\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+C:\Users\TheZaychik\Desktop\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+C:\Users\TheZaychik\Desktop\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.manifest
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.application
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.achivki.resources
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event1.resources
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event2.resources
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event3.resources
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.oper_form.resources
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.pov_navikov.resources
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_navik.resources
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.ProjectS.resources
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.TrustInfo.xml
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe.manifest
+F:\C#\2 часть\RSC\RCS v.0.9 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.application
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.manifest
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.application
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.achivki.resources
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event1.resources
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event2.resources
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event3.resources
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.oper_form.resources
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.pov_navikov.resources
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_navik.resources
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.ProjectS.resources
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.TrustInfo.xml
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe.manifest
+C:\Users\mromanchuk\Downloads\RCS v.0.9.1 Pre-Release\Russian Coder Simulator_v.0.9.1PR\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.application
+C:\Users\mromanchuk\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+C:\Users\mromanchuk\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+C:\Users\mromanchuk\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.manifest
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.application
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.achivki.resources
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event1.resources
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event2.resources
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event3.resources
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.oper_form.resources
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.pov_navikov.resources
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_navik.resources
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.ProjectS.resources
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.TrustInfo.xml
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe.manifest
+C:\Users\TheZaychik\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.application
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.manifest
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.application
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.achivki.resources
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event1.resources
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event2.resources
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event3.resources
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.oper_form.resources
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.pov_navikov.resources
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_navik.resources
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.ProjectS.resources
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.TrustInfo.xml
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe.manifest
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.application
+\\Mac\Home\Desktop\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.changelog.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.achivki.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.changelog.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event1.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event2.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event3.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.oper_form.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.pov_navikov.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_navik.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.ProjectS.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.manifest
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.application
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.TrustInfo.xml
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe.manifest
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.application
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.config
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe.manifest
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.application
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.exe
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\bin\Debug\Russian Coder Simulator.pdb
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.achivki.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.changelog.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event1.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event2.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event3.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.oper_form.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.pov_navikov.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.ProjectS.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.TrustInfo.xml
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe.manifest
+\\Mac\Home\Desktop\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.application
+\\Mac\Home\Desktop\OneDrive\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\OneDrive\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.achivki.resources
+\\Mac\Home\Desktop\OneDrive\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.changelog.resources
+\\Mac\Home\Desktop\OneDrive\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event1.resources
+\\Mac\Home\Desktop\OneDrive\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event2.resources
+\\Mac\Home\Desktop\OneDrive\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Event3.resources
+\\Mac\Home\Desktop\OneDrive\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.central_form.resources
+\\Mac\Home\Desktop\OneDrive\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.oper_form.resources
+\\Mac\Home\Desktop\OneDrive\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.pov_navikov.resources
+\\Mac\Home\Desktop\OneDrive\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.game_prew.resources
+\\Mac\Home\Desktop\OneDrive\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Vibor_avatarki.resources
+\\Mac\Home\Desktop\OneDrive\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.ProjectS.resources
+\\Mac\Home\Desktop\OneDrive\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian_Coder_Simulator.Properties.Resources.resources
+\\Mac\Home\Desktop\OneDrive\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.GenerateResource.Cache
+\\Mac\Home\Desktop\OneDrive\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.csproj.CoreCompileInputs.cache
+\\Mac\Home\Desktop\OneDrive\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.TrustInfo.xml
+\\Mac\Home\Desktop\OneDrive\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.exe
+\\Mac\Home\Desktop\OneDrive\projects\Bidlokod Games 16-17\RCS v.1.0\Russian Coder Simulator_v.1.0\Russian Coder Simulator\obj\x86\Debug\Russian Coder Simulator.pdb

@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{7CD17E53-874A-156D-ED93-053F8C0F56FE}|Модульные тесты" StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Bidloventure\scripts\player_interaction.cs">
+    <Files>
+      <File FileName="Assets\Inventory System\Trading system\Inventory2.cs" Line="1" Column="1" />
+      <File FileName="Assets\Inventory System\Scripts\Inventory.cs" Line="1" Column="1" />
+      <File FileName="Assets\Inventory System\Scripts\ItemDatabase.cs" Line="1" Column="1" />
+      <File FileName="Assets\Inventory System\StreamingAssets\Items.json" Line="1" Column="1" />
+      <File FileName="Assets\Bidloventure\AI\AI_Battle.cs" Line="1" Column="1" />
+      <File FileName="Assets\Bidloventure\QuestSystem\ClassQuest.cs" Line="15" Column="1" />
+      <File FileName="Assets\Bidloventure\scripts\player_interaction.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-Editor PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
