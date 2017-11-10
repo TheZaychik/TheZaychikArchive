@@ -1,2 +1,5 @@
 #Trash-files by MacOS
 *.DS_Store
+#Another
+*.xml
+*.iml
