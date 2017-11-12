@@ -1,0 +1,76 @@
+object Form1: TForm1
+  Left = 253
+  Height = 318
+  Top = 131
+  Width = 505
+  Caption = 'Mas'
+  ClientHeight = 318
+  ClientWidth = 505
+  LCLVersion = '1.6.4.0'
+  object Button1: TButton
+    Left = 208
+    Height = 25
+    Top = 8
+    Width = 75
+    Caption = 'Старт'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Label3: TLabel
+    Left = 8
+    Height = 15
+    Top = 72
+    Width = 56
+    Caption = 'Исходный'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 168
+    Height = 15
+    Top = 72
+    Width = 103
+    Caption = 'Результируюущий'
+    ParentColor = False
+  end
+  object StringGrid1: TStringGrid
+    Left = 8
+    Height = 224
+    Top = 88
+    Width = 152
+    ColCount = 2
+    FixedRows = 0
+    RowCount = 1
+    ScrollBars = ssVertical
+    TabOrder = 1
+  end
+  object StringGrid2: TStringGrid
+    Left = 165
+    Height = 224
+    Top = 88
+    Width = 152
+    ColCount = 2
+    FixedRows = 0
+    RowCount = 1
+    ScrollBars = ssVertical
+    TabOrder = 2
+  end
+  object StringGrid3: TStringGrid
+    Left = 328
+    Height = 224
+    Top = 88
+    Width = 152
+    ColCount = 2
+    FixedRows = 0
+    RowCount = 1
+    ScrollBars = ssVertical
+    TabOrder = 3
+  end
+  object Label5: TLabel
+    Left = 328
+    Height = 15
+    Top = 72
+    Width = 102
+    Caption = 'Отсортированный'
+    ParentColor = False
+  end
+end

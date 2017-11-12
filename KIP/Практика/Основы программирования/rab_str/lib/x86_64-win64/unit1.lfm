@@ -1,0 +1,80 @@
+object Form1: TForm1
+  Left = 269
+  Height = 240
+  Top = 128
+  Width = 320
+  Caption = 'Form1'
+  ClientHeight = 240
+  ClientWidth = 320
+  LCLVersion = '1.6.4.0'
+  object ComboBox1: TComboBox
+    Left = 15
+    Height = 23
+    Top = 16
+    Width = 140
+    ItemHeight = 15
+    ItemIndex = 0
+    Items.Strings = (
+      'Кол-во символов'
+      'Замена символов'
+      'Вставка симовлов'
+      'Удаление символов'
+    )
+    TabOrder = 0
+    Text = 'Кол-во символов'
+  end
+  object Button1: TButton
+    Left = 224
+    Height = 25
+    Top = 200
+    Width = 75
+    Caption = 'Старт'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object Edit1: TEdit
+    Left = 16
+    Height = 23
+    Top = 72
+    Width = 80
+    TabOrder = 2
+  end
+  object Edit2: TEdit
+    Left = 144
+    Height = 23
+    Top = 72
+    Width = 80
+    TabOrder = 3
+  end
+  object Edit3: TEdit
+    Left = 16
+    Height = 23
+    Top = 120
+    Width = 80
+    TabOrder = 4
+  end
+  object Label1: TLabel
+    Left = 16
+    Height = 15
+    Top = 56
+    Width = 83
+    Caption = 'Введите строку'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 144
+    Height = 15
+    Top = 56
+    Width = 133
+    Caption = 'Введите первый символ'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 15
+    Height = 15
+    Top = 104
+    Width = 130
+    Caption = 'Введите второй символ'
+    ParentColor = False
+  end
+end

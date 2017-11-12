@@ -1,0 +1,120 @@
+object Form1: TForm1
+  Left = 565
+  Height = 799
+  Top = 293
+  Width = 761
+  Caption = 'Form1'
+  ClientHeight = 799
+  ClientWidth = 761
+  DesignTimePPI = 192
+  LCLVersion = '1.8.0.5'
+  object Button1: TButton
+    Left = 528
+    Height = 49
+    Top = 32
+    Width = 147
+    Caption = 'Бинарная '
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Edit1: TEdit
+    Left = 40
+    Height = 40
+    Top = 16
+    Width = 80
+    OnChange = Edit1Change
+    TabOrder = 1
+    Text = '10'
+  end
+  object Edit2: TEdit
+    Left = 40
+    Height = 40
+    Top = 80
+    Width = 80
+    TabOrder = 2
+    Text = '10'
+  end
+  object StringGrid1: TStringGrid
+    Left = 8
+    Height = 280
+    Top = 160
+    Width = 736
+    TabOrder = 3
+  end
+  object StringGrid2: TStringGrid
+    Left = 8
+    Height = 344
+    Top = 448
+    Width = 280
+    ColCount = 2
+    FixedRows = 0
+    RowCount = 1
+    ScrollBars = ssVertical
+    TabOrder = 4
+  end
+  object Label1: TLabel
+    Left = 13
+    Height = 32
+    Top = 16
+    Width = 14
+    Caption = 'X'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 13
+    Height = 32
+    Top = 80
+    Width = 13
+    Caption = 'Y'
+    ParentColor = False
+  end
+  object Edit3: TEdit
+    Left = 296
+    Height = 40
+    Top = 48
+    Width = 144
+    TabOrder = 5
+    Text = 'file1.dat'
+  end
+  object Label3: TLabel
+    Left = 296
+    Height = 32
+    Top = 8
+    Width = 113
+    Caption = 'Бинарный'
+    ParentColor = False
+  end
+  object Button2: TButton
+    Left = 528
+    Height = 48
+    Top = 96
+    Width = 147
+    Caption = 'Текстовая'
+    OnClick = Button2Click
+    TabOrder = 6
+  end
+  object Edit4: TEdit
+    Left = 136
+    Height = 40
+    Top = 48
+    Width = 144
+    TabOrder = 7
+    Text = 'file1.txt'
+  end
+  object Label4: TLabel
+    Left = 136
+    Height = 32
+    Top = 16
+    Width = 117
+    Caption = 'Текстовый'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 528
+    Height = 32
+    Top = 0
+    Width = 129
+    Caption = 'Вид записи:'
+    ParentColor = False
+  end
+end

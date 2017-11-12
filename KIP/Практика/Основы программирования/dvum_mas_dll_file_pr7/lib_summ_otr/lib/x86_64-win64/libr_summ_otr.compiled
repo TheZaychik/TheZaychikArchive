@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus\fpc\3.0.2\bin\x86_64-win64\fpc.exe" Date="1247518955"/>
+  <Params Value=" -MObjFPC -Scghi -WR -O1 -g -gl -l -vewnhibq &quot;-Fi\\Mac\Home\Desktop\OneDrive - ФГОБУ ВО Финансовый университет при Правительстве РФ\Колледж\Основы программирования\dvum_mas_dll_file_pr7\lib_summ_otr\lib\x86_64-win64&quot; -FuC:\lazarus\lcl\units\x86_64-win64\win32 -FuC:\lazarus\lcl\units\x86_64-win64 -FuC:\lazarus\components\lazutils\lib\x86_64-win64 -FuC:\lazarus\packager\units\x86_64-win64 &quot;-Fu\\Mac\Home\Desktop\OneDrive - ФГОБУ ВО Финансовый университет при Правительстве РФ\Колледж\Основы программирования\dvum_mas_dll_file_pr7\lib_summ_otr\&quot; &quot;-FU\\Mac\Home\Desktop\OneDrive - ФГОБУ ВО Финансовый университет при Правительстве РФ\Колледж\Основы программирования\dvum_mas_dll_file_pr7\lib_summ_otr\lib\x86_64-win64\&quot; -dLCL -dLCLwin32 libr_summ_otr.lpr"/>
+</CONFIG>
