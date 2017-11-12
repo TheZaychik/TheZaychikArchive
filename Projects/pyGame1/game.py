@@ -15,10 +15,10 @@ size = width, height = 640, 480
 bg_color = randint(0, 255), randint(0, 255), randint(0, 255)
 isPaused = False
 AddedBall = False
-Balls=[] # список шаров
-records = [] #словарь
+Balls = []  # список шаров
+records = []  # словарь
 nickname = ""
-curr_time=0
+curr_time = 0
 
 with open("recs.txt",'r') as f:
     records = f.readlines()
@@ -99,7 +99,7 @@ def main():
     screen = pygame.display.set_mode(size)
     font = pygame.font.SysFont("timesnewroman",26)
     button1 = Button((0, 0, 200, 50), RED, pause,text="Pause", **BUTTON_STYLE)
-    button1.rect.center=(100,80)
+    button1.rect.center = (100, 80)
     button2 = Button((0, 0, 200, 50), RED, add, text="Add", **BUTTON_STYLE)
     button3 = Button((0, 0, 200, 50), RED, showrec, text="Records", **BUTTON_STYLE)
     button3.rect.center = (100, 135)
@@ -122,17 +122,17 @@ def main():
                 curr_ball.set_position(pos)
             if event.type == pygame.KEYDOWN:
                 curr_ball.move_key(event.key)
+
             button1.check_event(event)
             button2.check_event(event)
             button3.check_event(event)
+
 
         # --- игровая логика ---
 
         if not isPaused:
             for b in Balls:
                 b.shift()
-
-
 
         # --- отрисовка объектов ---
         text = font.render("Timer: " + str(round(pygame.time.get_ticks() / 1000, 1)), True, (0, 0, 0))
