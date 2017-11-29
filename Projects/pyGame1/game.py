@@ -1,4 +1,4 @@
-import pygame,easygui
+ import pygame,easygui
 from random import randint
 from button import Button
 
@@ -85,7 +85,6 @@ def showrec():
     easygui.msgbox(records,"Рекорды")
 
 def main():
-
     os.environ["SDL_VIDEO_CENTERED"] = '1'
     vvod()
     pygame.init()
@@ -113,7 +112,6 @@ def main():
         for event in pygame.event.get():
             if AddedBall: curr_ball = Balls[1]
             else: curr_ball = Balls[0]
-
             if event.type == pygame.QUIT:
                 w_close = True
                 curr_time = round(pygame.time.get_ticks() / 1000, 1)

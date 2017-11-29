@@ -1,0 +1,53 @@
+object Form2: TForm2
+  Left = 208
+  Height = 528
+  Top = 169
+  Width = 1142
+  Caption = 'Graph'
+  ClientHeight = 528
+  ClientWidth = 1142
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnPaint = FormPaint
+  Position = poDesktopCenter
+  LCLVersion = '1.8.0.5'
+  object Button1: TButton
+    Left = 1048
+    Height = 25
+    Top = 480
+    Width = 75
+    Caption = 'Далее'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Shape1: TShape
+    Left = 768
+    Height = 65
+    Top = 40
+    Width = 65
+    Shape = stCircle
+  end
+  object Shape2: TShape
+    Left = 768
+    Height = 65
+    Top = 107
+    Width = 65
+    Shape = stCircle
+  end
+  object Shape3: TShape
+    Left = 768
+    Height = 65
+    Top = 176
+    Width = 65
+    Shape = stCircle
+  end
+  object Button2: TButton
+    Left = 984
+    Height = 25
+    Top = 442
+    Width = 139
+    Caption = 'Переключить светофор'
+    OnClick = Button2Click
+    TabOrder = 1
+  end
+end
