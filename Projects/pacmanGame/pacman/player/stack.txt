@@ -1,0 +1,43 @@
+# временно вынесенные функции
+
+def collision(self, status):  # работа с коллизией
+    if status == 1:  # столкновение со стеной
+        self.speed = [0, 0]
+    elif status == 2:  # поедание зерна
+        pass
+    elif status == 3:  # поедание большого зерна
+        self.bigMode = True
+    elif status == 4 and self.bigMode:  # столкновение с призраком в случае большого пакмана
+        pass
+    else:  # столкновение с призраком в обычном режиме
+        pass
+
+    def move_key(self,inpKey):
+        key = chr(inpKey)
+        if (key == "w") or (key == "ц"):
+            self.speed[1] = -2
+            self.speed[0] = 0
+            if self.rot_mode[0]:
+                self.ball = pygame.transform.rotate(self.init_ball, 90)
+                self.rot_mode = [False, True, True, True]
+
+        elif (key == "s") or (key == "ы"):
+            self.speed[1] = 2
+            self.speed[0] = 0
+            if self.rot_mode[1]:
+                self.ball = pygame.transform.rotate(self.init_ball, 270)
+                self.rot_mode = [True, False, True, True]
+
+        elif (key == "a") or (key == "ф"):
+            self.speed[1] = 0
+            self.speed[0] = -2
+            if self.rot_mode[2]:
+                self.ball = pygame.transform.rotate(self.init_ball, 180)
+                self.rot_mode = [True, True, False, True]
+
+        elif (key == "d") or (key == "в"):
+            self.speed[1] = 0
+            self.speed[0] = 2
+            if self.rot_mode[3]:
+                self.ball = self.init_ball  # зОчем ротейт когда инит картинка и так влево повернута
+                self.rot_mode = [True, True, True, False]

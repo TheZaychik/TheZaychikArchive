@@ -1,0 +1,56 @@
+from copy import deepcopy
+Константы: WALL_LENGTH
+Создается класс Game, который отвечает за игру.
+
+Game.__init__():
+    Создаётся MapTiles(), GameFile(), Sound(), служащие для прелоада.
+    Начало фоновой музыки.
+	Создаётся WidgetObj() - интерфейс. WidgetObj.start() - начало работы интерфейса. Возврат False, если окно закрыто(крестик, кнопка выхода, etc..)
+	self.StartPos()
+	Создается MapTile(MapTile.showMap()) #передается карта-массив.
+	Создается MapTiles2 = deepcopy(MapTiles) #для того, чтобы карту модно было потом восстановить
+	score = 0
+	leves = 3
+
+Game.StartPos():
+	Создаётся Pacman(x, y). !!!Передается положение в двумерном массиве!!!
+	Создаётся 4 призрака(MapTile.showMap(), x, y). !!!Передается положение в двумерном массиве!!!
+	
+
+Game.MainLoop():
+	Создание группы обектов-стен
+	Запускается начальный цикл:
+		Проверка на события:
+			Нажато на крестик - закрыть игру
+			Нажата клавиша - Pacman.move_key(chr(event.key))
+		4 призрака.update(Pacman.x, Pacman.y, Pacman.dir) #положение передается на карте
+		!!!dir = 1 - вверх, 2 - вправо, 3 - вниз, 4 - влево!!!
+		Pacman.update(Группа стен)
+		MapTile.update(...)
+		if self.CheckCollision() == False:
+			закрыть игру
+
+
+Game.isEmpty(Map):
+	Проверка на наличие Зёрен, Таблеток, Вишенок, если их ВСЕХ нет, то возврат True
+
+
+Game.CheckCollision():
+	Проверка коллизий:
+	!!!Коллизие, не вошедшие сюда, должны быть обработаны у других!!!
+	Пакман с Зерном. Звук при поедании
+	Пакман с Таблеткой. Звук при поедании
+	Пакман с Вишенкой. Звук при поедании
+	Призрак с Пакманом. Звук при поедании
+	if lives == 0:
+		self.GameOver()
+		return False
+	if self.isEmtpy(MapTiles):
+		self.RestartGame()
+
+Game.RestartGame():
+	MapTiles = deepcopy(MapTiles2)
+	self.StartPos()
+
+Game.GameOver():
+	GameFile.add(score)

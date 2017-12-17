@@ -1,0 +1,10 @@
+import Ghost
+class Blinky(Ghost.Ghost):
+    def __init__(self, x, y, walls,images):
+
+        super().__init__(x, y,walls)
+        self.picture = pygame.image.load('Blinky.png')
+        self.rectangle = self.picture.get_rect()
+
+    def SetTarget(self, x, y, pacman_dir):
+        return (x,y)
