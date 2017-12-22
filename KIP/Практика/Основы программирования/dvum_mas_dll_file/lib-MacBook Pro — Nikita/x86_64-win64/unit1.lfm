@@ -1,0 +1,85 @@
+object Form1: TForm1
+  Left = 249
+  Height = 483
+  Top = 150
+  Width = 419
+  Caption = 'Form1'
+  ClientHeight = 483
+  ClientWidth = 419
+  LCLVersion = '1.6.4.0'
+  object Button1: TButton
+    Left = 320
+    Height = 25
+    Top = 48
+    Width = 75
+    Caption = 'Расчет'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Edit1: TEdit
+    Left = 24
+    Height = 23
+    Top = 16
+    Width = 80
+    TabOrder = 1
+    Text = '10'
+  end
+  object Edit2: TEdit
+    Left = 24
+    Height = 23
+    Top = 40
+    Width = 80
+    TabOrder = 2
+    Text = '10'
+  end
+  object StringGrid1: TStringGrid
+    Left = 8
+    Height = 144
+    Top = 88
+    Width = 400
+    TabOrder = 3
+  end
+  object StringGrid2: TStringGrid
+    Left = 8
+    Height = 232
+    Top = 240
+    Width = 144
+    ColCount = 2
+    FixedRows = 0
+    RowCount = 1
+    ScrollBars = ssVertical
+    TabOrder = 4
+  end
+  object Label1: TLabel
+    Left = 13
+    Height = 15
+    Top = 16
+    Width = 7
+    Caption = 'X'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 13
+    Height = 15
+    Top = 40
+    Width = 7
+    Caption = 'Y'
+    ParentColor = False
+  end
+  object Edit3: TEdit
+    Left = 184
+    Height = 23
+    Top = 48
+    Width = 80
+    TabOrder = 5
+    Text = 'file1.txt'
+  end
+  object Label3: TLabel
+    Left = 160
+    Height = 15
+    Top = 24
+    Width = 134
+    Caption = 'Введите название файла'
+    ParentColor = False
+  end
+end
