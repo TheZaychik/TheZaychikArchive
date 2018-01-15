@@ -51,7 +51,7 @@ procedure vvod(var a:dvmas; n,m:integer);
     begin
      for j:=1 to m do
        begin
-        a[i,j]:= -10 + random(55);
+        a[i,j]:= -50 + random(150);
         form1.stringgrid1.cells[i,j]:= inttostr(a[i,j]);
          end;
        end;
@@ -66,7 +66,46 @@ procedure rezmas(var a:dvmas;var rez:mas; var n,m:integer);
     begin
    for j:=1 to m do
        begin
-        if(a[i,j] mod 2 <> 0) then
+        if(a[i,j] mod 2 > 0) then
+         begin
+          rez[k]:= a[i,j];
+          k:= k+1;
+          setlength(rez,k+1);
+         end;
+       end;
+    end;
+    for i:=low(rez) to high(rez) do
+     begin
+       form1.stringgrid2.cells[0,i]:= inttostr(i);
+       form1.stringgrid2.cells[1,i]:= inttostr(rez[i]);
+       form1.stringgrid2.rowcount:= form1.stringgrid2.rowcount + 1;
+      end;
+     form1.stringgrid2.rowcount:= form1.stringgrid2.rowcount - 1;
+end;
+function kol_pol(a:dvmas; n,m:integer):integer;
+var i,j:integer;
+ begin
+  kol_pol:=0;
+    for i:=1 to n do
+    begin
+     for j:=1 to m do
+       begin
+        if(a[i,j] > 0) then
+           kol_pol:= kol_pol + 1;
+       end;
+    end;
+ end;
+procedure rezmas2(var a:dvmas;var rez:mas; var n,m:integer);
+ var i,j,k, pol:integer;
+ begin
+  k:=0;
+  setlength(rez,1);
+  pol:=kol_pol(a,n,m);
+  for i:=1 to n do
+    begin
+   for j:=1 to m do
+       begin
+        if(a[i,j] > pol) then
          begin
           rez[k]:= a[i,j];
           k:= k+1;
@@ -108,9 +147,10 @@ begin
  n:=strtoint(edit1.text);
  m:=strtoint(edit2.text);
  vvod(a,n,m);
- summ:= summ_otr(a,n,m);
- showmessage('Сумма отрицательных чисел ' + inttostr(summ));
- rezmas(a,rez,n,m);
+ //summ:= summ_otr(a,n,m);
+ //showmessage('Сумма отрицательных чисел ' + inttostr(summ));
+ showmessage('Кол-во положительных чисел ' + inttostr(kol_pol(a,n,m)));
+ rezmas2(a,rez,n,m);
 end;
 
 end.
