@@ -82,7 +82,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/main.cpp">
+		<Unit filename="/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/t1z1-2.cpp">
 			<Option target="C"/>
 		</Unit>
 		<Unit filename="/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/CMakeLists.txt">

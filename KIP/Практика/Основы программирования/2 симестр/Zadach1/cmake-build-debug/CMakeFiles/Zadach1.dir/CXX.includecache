@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/Основы программирования/2 симестр/Zadach1/main.cpp
+iostream
+-
+cmath
+/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/Основы программирования/2 симестр/Zadach1/cmath
+

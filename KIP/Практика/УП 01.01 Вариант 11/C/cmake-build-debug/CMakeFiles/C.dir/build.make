@@ -57,38 +57,38 @@ include CMakeFiles/C.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/C.dir/flags.make
 
-CMakeFiles/C.dir/main.cpp.o: CMakeFiles/C.dir/flags.make
-CMakeFiles/C.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/C.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/C.dir/main.cpp.o -c "/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/main.cpp"
+CMakeFiles/C.dir/t1z1-2.cpp.o: CMakeFiles/C.dir/flags.make
+CMakeFiles/C.dir/t1z1-2.cpp.o: ../t1z1-2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/C.dir/t1z1-2.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/C.dir/t1z1-2.cpp.o -c "/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/t1z1-2.cpp"
 
-CMakeFiles/C.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/C.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/main.cpp" > CMakeFiles/C.dir/main.cpp.i
+CMakeFiles/C.dir/t1z1-2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/C.dir/t1z1-2.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/t1z1-2.cpp" > CMakeFiles/C.dir/t1z1-2.cpp.i
 
-CMakeFiles/C.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/C.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/main.cpp" -o CMakeFiles/C.dir/main.cpp.s
+CMakeFiles/C.dir/t1z1-2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/C.dir/t1z1-2.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/t1z1-2.cpp" -o CMakeFiles/C.dir/t1z1-2.cpp.s
 
-CMakeFiles/C.dir/main.cpp.o.requires:
+CMakeFiles/C.dir/t1z1-2.cpp.o.requires:
 
-.PHONY : CMakeFiles/C.dir/main.cpp.o.requires
+.PHONY : CMakeFiles/C.dir/t1z1-2.cpp.o.requires
 
-CMakeFiles/C.dir/main.cpp.o.provides: CMakeFiles/C.dir/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/main.cpp.o.provides.build
-.PHONY : CMakeFiles/C.dir/main.cpp.o.provides
+CMakeFiles/C.dir/t1z1-2.cpp.o.provides: CMakeFiles/C.dir/t1z1-2.cpp.o.requires
+	$(MAKE) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/t1z1-2.cpp.o.provides.build
+.PHONY : CMakeFiles/C.dir/t1z1-2.cpp.o.provides
 
-CMakeFiles/C.dir/main.cpp.o.provides.build: CMakeFiles/C.dir/main.cpp.o
+CMakeFiles/C.dir/t1z1-2.cpp.o.provides.build: CMakeFiles/C.dir/t1z1-2.cpp.o
 
 
 # Object files for target C
 C_OBJECTS = \
-"CMakeFiles/C.dir/main.cpp.o"
+"CMakeFiles/C.dir/t1z1-2.cpp.o"
 
 # External object files for target C
 C_EXTERNAL_OBJECTS =
 
-C : CMakeFiles/C.dir/main.cpp.o
+C : CMakeFiles/C.dir/t1z1-2.cpp.o
 C : CMakeFiles/C.dir/build.make
 C : CMakeFiles/C.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable C"
@@ -99,7 +99,7 @@ CMakeFiles/C.dir/build: C
 
 .PHONY : CMakeFiles/C.dir/build
 
-CMakeFiles/C.dir/requires: CMakeFiles/C.dir/main.cpp.o.requires
+CMakeFiles/C.dir/requires: CMakeFiles/C.dir/t1z1-2.cpp.o.requires
 
 .PHONY : CMakeFiles/C.dir/requires
 
