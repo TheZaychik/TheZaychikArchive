@@ -3,7 +3,7 @@
 using namespace std;
 
 void zad1(){
-    int kg_KP, kg_AP, kg_CH, gr_KP, gr_AP, gr_CH;
+    double kg_KP, kg_AP, kg_CH, gr_KP, gr_AP, gr_CH;
     cin >> kg_KP;
     cin >> kg_AP;
     cin >> kg_CH;
@@ -25,7 +25,7 @@ void zad2(){
 
 
 int main() {
+    //zad1();
     zad2();
-    //zad2();
     return 0;
 }
