@@ -50,6 +50,6 @@ void Zad2(int n){
 }
 
 int main(){
-    Zad2(5);
+    func1();
     return 0;
 }
