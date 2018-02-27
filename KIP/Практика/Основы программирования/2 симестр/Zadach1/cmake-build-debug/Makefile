@@ -123,32 +123,32 @@ Zadach1/fast:
 	$(MAKE) -f CMakeFiles/Zadach1.dir/build.make CMakeFiles/Zadach1.dir/build
 .PHONY : Zadach1/fast
 
-pr-1.o: pr-1.cpp.o
+pr-2.o: pr-2.cpp.o
 
-.PHONY : pr-1.o
+.PHONY : pr-2.o
 
 # target to build an object file
-pr-1.cpp.o:
-	$(MAKE) -f CMakeFiles/Zadach1.dir/build.make CMakeFiles/Zadach1.dir/pr-1.cpp.o
-.PHONY : pr-1.cpp.o
+pr-2.cpp.o:
+	$(MAKE) -f CMakeFiles/Zadach1.dir/build.make CMakeFiles/Zadach1.dir/pr-2.cpp.o
+.PHONY : pr-2.cpp.o
 
-pr-1.i: pr-1.cpp.i
+pr-2.i: pr-2.cpp.i
 
-.PHONY : pr-1.i
+.PHONY : pr-2.i
 
 # target to preprocess a source file
-pr-1.cpp.i:
-	$(MAKE) -f CMakeFiles/Zadach1.dir/build.make CMakeFiles/Zadach1.dir/pr-1.cpp.i
-.PHONY : pr-1.cpp.i
+pr-2.cpp.i:
+	$(MAKE) -f CMakeFiles/Zadach1.dir/build.make CMakeFiles/Zadach1.dir/pr-2.cpp.i
+.PHONY : pr-2.cpp.i
 
-pr-1.s: pr-1.cpp.s
+pr-2.s: pr-2.cpp.s
 
-.PHONY : pr-1.s
+.PHONY : pr-2.s
 
 # target to generate assembly for a file
-pr-1.cpp.s:
-	$(MAKE) -f CMakeFiles/Zadach1.dir/build.make CMakeFiles/Zadach1.dir/pr-1.cpp.s
-.PHONY : pr-1.cpp.s
+pr-2.cpp.s:
+	$(MAKE) -f CMakeFiles/Zadach1.dir/build.make CMakeFiles/Zadach1.dir/pr-2.cpp.s
+.PHONY : pr-2.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Zadach1"
-	@echo "... pr-1.o"
-	@echo "... pr-1.i"
-	@echo "... pr-1.s"
+	@echo "... pr-2.o"
+	@echo "... pr-2.i"
+	@echo "... pr-2.s"
 .PHONY : help
 
 

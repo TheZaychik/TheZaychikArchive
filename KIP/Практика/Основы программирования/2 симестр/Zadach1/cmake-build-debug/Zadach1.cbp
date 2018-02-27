@@ -82,7 +82,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/Основы программирования/2 симестр/Zadach1/pr-1.cpp">
+		<Unit filename="/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/Основы программирования/2 симестр/Zadach1/pr-2.cpp">
 			<Option target="Zadach1"/>
 		</Unit>
 		<Unit filename="/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/Основы программирования/2 симестр/Zadach1/CMakeLists.txt">

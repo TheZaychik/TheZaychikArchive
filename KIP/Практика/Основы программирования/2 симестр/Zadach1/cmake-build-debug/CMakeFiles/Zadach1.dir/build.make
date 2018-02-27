@@ -57,38 +57,38 @@ include CMakeFiles/Zadach1.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Zadach1.dir/flags.make
 
-CMakeFiles/Zadach1.dir/pr-1.cpp.o: CMakeFiles/Zadach1.dir/flags.make
-CMakeFiles/Zadach1.dir/pr-1.cpp.o: ../pr-1.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/Основы программирования/2 симестр/Zadach1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Zadach1.dir/pr-1.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Zadach1.dir/pr-1.cpp.o -c "/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/Основы программирования/2 симестр/Zadach1/pr-1.cpp"
+CMakeFiles/Zadach1.dir/pr-2.cpp.o: CMakeFiles/Zadach1.dir/flags.make
+CMakeFiles/Zadach1.dir/pr-2.cpp.o: ../pr-2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/Основы программирования/2 симестр/Zadach1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Zadach1.dir/pr-2.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Zadach1.dir/pr-2.cpp.o -c "/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/Основы программирования/2 симестр/Zadach1/pr-2.cpp"
 
-CMakeFiles/Zadach1.dir/pr-1.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Zadach1.dir/pr-1.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/Основы программирования/2 симестр/Zadach1/pr-1.cpp" > CMakeFiles/Zadach1.dir/pr-1.cpp.i
+CMakeFiles/Zadach1.dir/pr-2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Zadach1.dir/pr-2.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/Основы программирования/2 симестр/Zadach1/pr-2.cpp" > CMakeFiles/Zadach1.dir/pr-2.cpp.i
 
-CMakeFiles/Zadach1.dir/pr-1.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Zadach1.dir/pr-1.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/Основы программирования/2 симестр/Zadach1/pr-1.cpp" -o CMakeFiles/Zadach1.dir/pr-1.cpp.s
+CMakeFiles/Zadach1.dir/pr-2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Zadach1.dir/pr-2.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/Основы программирования/2 симестр/Zadach1/pr-2.cpp" -o CMakeFiles/Zadach1.dir/pr-2.cpp.s
 
-CMakeFiles/Zadach1.dir/pr-1.cpp.o.requires:
+CMakeFiles/Zadach1.dir/pr-2.cpp.o.requires:
 
-.PHONY : CMakeFiles/Zadach1.dir/pr-1.cpp.o.requires
+.PHONY : CMakeFiles/Zadach1.dir/pr-2.cpp.o.requires
 
-CMakeFiles/Zadach1.dir/pr-1.cpp.o.provides: CMakeFiles/Zadach1.dir/pr-1.cpp.o.requires
-	$(MAKE) -f CMakeFiles/Zadach1.dir/build.make CMakeFiles/Zadach1.dir/pr-1.cpp.o.provides.build
-.PHONY : CMakeFiles/Zadach1.dir/pr-1.cpp.o.provides
+CMakeFiles/Zadach1.dir/pr-2.cpp.o.provides: CMakeFiles/Zadach1.dir/pr-2.cpp.o.requires
+	$(MAKE) -f CMakeFiles/Zadach1.dir/build.make CMakeFiles/Zadach1.dir/pr-2.cpp.o.provides.build
+.PHONY : CMakeFiles/Zadach1.dir/pr-2.cpp.o.provides
 
-CMakeFiles/Zadach1.dir/pr-1.cpp.o.provides.build: CMakeFiles/Zadach1.dir/pr-1.cpp.o
+CMakeFiles/Zadach1.dir/pr-2.cpp.o.provides.build: CMakeFiles/Zadach1.dir/pr-2.cpp.o
 
 
 # Object files for target Zadach1
 Zadach1_OBJECTS = \
-"CMakeFiles/Zadach1.dir/pr-1.cpp.o"
+"CMakeFiles/Zadach1.dir/pr-2.cpp.o"
 
 # External object files for target Zadach1
 Zadach1_EXTERNAL_OBJECTS =
 
-Zadach1: CMakeFiles/Zadach1.dir/pr-1.cpp.o
+Zadach1: CMakeFiles/Zadach1.dir/pr-2.cpp.o
 Zadach1: CMakeFiles/Zadach1.dir/build.make
 Zadach1: CMakeFiles/Zadach1.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/Основы программирования/2 симестр/Zadach1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Zadach1"
@@ -99,7 +99,7 @@ CMakeFiles/Zadach1.dir/build: Zadach1
 
 .PHONY : CMakeFiles/Zadach1.dir/build
 
-CMakeFiles/Zadach1.dir/requires: CMakeFiles/Zadach1.dir/pr-1.cpp.o.requires
+CMakeFiles/Zadach1.dir/requires: CMakeFiles/Zadach1.dir/pr-2.cpp.o.requires
 
 .PHONY : CMakeFiles/Zadach1.dir/requires
 

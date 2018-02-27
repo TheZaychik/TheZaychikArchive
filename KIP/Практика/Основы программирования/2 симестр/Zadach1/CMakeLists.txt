@@ -3,4 +3,4 @@ project(Zadach1)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Zadach1 pr-1.cpp)
+add_executable(Zadach1 pr-2.cpp)

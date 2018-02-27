@@ -1,3 +1,6 @@
 ﻿  MyForm.cpp
-y:\git\thezaychikarchive\kip\практика\основы программирования\2 симестр\project1\project1\MyForm.h(2): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+y:\git\thezaychikarchive\kip\практика\основы программирования\2 симестр\project1\project1\MyForm1.h(2): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+  MyForm1.cpp
+y:\git\thezaychikarchive\kip\практика\основы программирования\2 симестр\project1\project1\MyForm1.h(2): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+  Создание кода...
   Project1.vcxproj -> Y:\Git\TheZaychikArchive\KIP\Практика\Основы программирования\2 симестр\Project1\Debug\Project1.exe
