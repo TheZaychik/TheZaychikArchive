@@ -3,6 +3,10 @@
 using namespace std;
 
 int main() {
-    cout << "Hello, World!" << endl;
+    int n, m;
+    cin >> n >> m;
+    if(m > n){
+
+    }
     return 0;
 }

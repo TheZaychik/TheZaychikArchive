@@ -1,5 +1,6 @@
   Project1.MyForm.resources - Embedded, ContainedInManifestFile, 
   Project1.MyForm1.resources - Embedded, ContainedInManifestFile, 
+  Project1.MyForm2.resources - Embedded, ContainedInManifestFile, 
 ImageRuntimeVersion: v4.0.30319
 Assembly Project1, Version=0.0.*, Culture=Инвариантный язык (Инвариантная страна): 
 	hash=SHA1, flags=PublicKey
@@ -15,6 +16,9 @@ Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=
 	hash=None, flags=None
 Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
 	hash=None, flags=None
+Class Project1.MyForm2: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class Project1.MyForm1: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
