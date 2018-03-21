@@ -1,5 +1,5 @@
-#include <iostream>  // не рабачая срань, плюсы в рот ебал
-#include <random>    //  UPD: срань работает
+#include <iostream>
+#include <random>
 #include "cmath"
 using namespace std;
 
