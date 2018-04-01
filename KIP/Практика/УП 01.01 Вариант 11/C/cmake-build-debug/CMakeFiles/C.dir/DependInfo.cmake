@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/t12.cpp" "/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/cmake-build-debug/CMakeFiles/C.dir/t12.cpp.o"
+  "/Users/nikitazaytsev/git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/tk.cpp" "/Users/nikitazaytsev/git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/cmake-build-debug/CMakeFiles/C.dir/tk.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

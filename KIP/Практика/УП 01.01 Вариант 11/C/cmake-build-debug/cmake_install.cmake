@@ -1,4 +1,4 @@
-# Install script for directory: /Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C
+# Install script for directory: /Users/nikitazaytsev/git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -27,6 +27,11 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
+# Is this installation the result of a crosscompile?
+if(NOT DEFINED CMAKE_CROSSCOMPILING)
+  set(CMAKE_CROSSCOMPILING "FALSE")
+endif()
+
 if(CMAKE_INSTALL_COMPONENT)
   set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
 else()
@@ -35,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/nikitazaytsev/Git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/nikitazaytsev/git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
