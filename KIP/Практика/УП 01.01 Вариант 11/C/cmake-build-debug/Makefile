@@ -123,32 +123,32 @@ C/fast:
 	$(MAKE) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/build
 .PHONY : C/fast
 
-tk.o: tk.cpp.o
+test.o: test.cpp.o
 
-.PHONY : tk.o
+.PHONY : test.o
 
 # target to build an object file
-tk.cpp.o:
-	$(MAKE) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/tk.cpp.o
-.PHONY : tk.cpp.o
+test.cpp.o:
+	$(MAKE) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/test.cpp.o
+.PHONY : test.cpp.o
 
-tk.i: tk.cpp.i
+test.i: test.cpp.i
 
-.PHONY : tk.i
+.PHONY : test.i
 
 # target to preprocess a source file
-tk.cpp.i:
-	$(MAKE) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/tk.cpp.i
-.PHONY : tk.cpp.i
+test.cpp.i:
+	$(MAKE) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/test.cpp.i
+.PHONY : test.cpp.i
 
-tk.s: tk.cpp.s
+test.s: test.cpp.s
 
-.PHONY : tk.s
+.PHONY : test.s
 
 # target to generate assembly for a file
-tk.cpp.s:
-	$(MAKE) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/tk.cpp.s
-.PHONY : tk.cpp.s
+test.cpp.s:
+	$(MAKE) -f CMakeFiles/C.dir/build.make CMakeFiles/C.dir/test.cpp.s
+.PHONY : test.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... C"
-	@echo "... tk.o"
-	@echo "... tk.i"
-	@echo "... tk.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 
