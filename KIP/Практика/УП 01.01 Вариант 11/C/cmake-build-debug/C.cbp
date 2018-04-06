@@ -82,9 +82,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/nikitazaytsev/git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/test.cpp">
-			<Option target="C"/>
-		</Unit>
 		<Unit filename="/Users/nikitazaytsev/git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
