@@ -88,7 +88,6 @@ procedure zad2();
 var i, kol :integer;
 begin
 kol:= 0;
-n:= 10;
 for i:=0 to n-1 do
   begin
     if (a[i,0] = a[i,1]) then
