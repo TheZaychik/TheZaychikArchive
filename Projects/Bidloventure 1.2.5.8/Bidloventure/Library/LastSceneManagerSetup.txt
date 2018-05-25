@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Forge.unity
+- path: Assets/HomeWorld.unity
   isLoaded: 1
   isActive: 1
