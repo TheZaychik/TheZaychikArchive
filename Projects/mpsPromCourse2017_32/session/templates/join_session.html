@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-2"></div>
+
+    <div class="col-7">
+        <div class="container">
+            <div class="form">
+
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="container-fluid">
+                    <div class="form-group">
+                        <h4 class="text_head">To join plaese enter id and token of session</h4>
+                            <div class="form-group">
+                                <label>Session_id:</label>
+                                 <input name="Session_id" class="form-control" id="Session_id" placeholder="Enter your session_id"/>
+                                <lable>Token:</lable>
+                                <input name="Token" class="form-control" id="Token" placeholder="enter your token" />
+                            </div >
+                            <div class="form-group" style="margin-top: 5px">
+                                <button type="submit" class="btn">Join</button>
+                            </div>
+                    </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

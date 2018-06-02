@@ -32,10 +32,10 @@ public class Inventory2 : MonoBehaviour {
 		database = GameObject.Find ("Inventory").GetComponent<ItemDatabase> ();
 		SlotAmount = 20;
 		InventoryPanel = GameObject.Find ("Trade Panel");
-		PlayerPanel = InventoryPanel.transform.FindChild ("Slot Panel Player").gameObject;
-		TraderPanel = InventoryPanel.transform.FindChild ("Slot Panel Trader").gameObject;
-		ExchangeTraderPanel = InventoryPanel.transform.FindChild ("Slot Panel ExchangeTrader").gameObject;
-		ExchangePlayerPanel = InventoryPanel.transform.FindChild ("Slot Panel ExchangePlayer").gameObject;
+		PlayerPanel = InventoryPanel.transform.Find ("Slot Panel Player").gameObject;
+		TraderPanel = InventoryPanel.transform.Find ("Slot Panel Trader").gameObject;
+		ExchangeTraderPanel = InventoryPanel.transform.Find ("Slot Panel ExchangeTrader").gameObject;
+		ExchangePlayerPanel = InventoryPanel.transform.Find ("Slot Panel ExchangePlayer").gameObject;
 		//Finds the block panels
 		PlayerBlock = GameObject.Find ("Player Block").GetComponent<Image> ();
 		TraderBlock = GameObject.Find ("Trader Block").GetComponent<Image> ();

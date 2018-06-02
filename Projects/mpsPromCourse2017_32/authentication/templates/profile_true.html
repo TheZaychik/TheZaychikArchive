@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+    <!--here goes profile-->
+    <div class="cont_form">
+        <div class="form">
+        <form method="POST">
+            <h1 class="text_head">Profile page</h1>
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <input class="form-control" name="username" placeholder="Login" value="{{ request.user.username }}">
+                <input class="form-control" name ="email" placeholder="E-mail" value="{{ request.user.email }}">
+                {% if form.errors and request.method == 'POST'%}
+                    <div class="alert alert-danger" role="alert">{{ form.errors }}</div>
+                {% elif request.method == 'POST' %}
+                    <div class="alert alert-success" role="alert">All changes saved!</div>
+                {% endif %}
+                <button type="submit" class="btn btn-secondary" >Save</button>
+                <a class="btn btn-secondary" href="{% url 'main:index' %}">Cancel</a>
+            </fieldset>
+            <a class="btn btn-secondary" href="{% url 'authentication:change_password' %}">Change password</a>
+        </form>
+        </div>
+    </div>
+   {% for request.AdminSessions in request %}
+    {{ request.AdminSessions }}
+   {% endfor %}
+    <!--here profile ends-->
+{% endblock %}

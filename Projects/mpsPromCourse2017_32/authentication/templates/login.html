@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm">
+            <div class="container" style="margin-top: 100px">
+                <div class="form">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="container-fluid">
+                            <div class="form-group">
+                                <h2 class="text_head">Login page</h2>
+                            </div>
+                            <div class="form-group" style="margin-top: 5px">
+                                <label for="login_text">Login:</label>
+                                <input name="username" type="text" autocomplete="on" class="form-control" id="login_text" placeholder="Enter your login"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass_text">Password:</label>
+                                <input name="password" type="password" class="form-control" id="pass_text" placeholder="Enter your password">
+                            </div>
+                            {% if not request.user.is_authenticated and request.method == "POST" %}
+                                <div class="alert alert-danger" role="alert">Invalid login or password!</div>
+                            {% endif %}
+                            <div class="form-group">
+                                <button type="submit"  class="btn">Log In</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm"></div>
+    </div>
+{% endblock %}

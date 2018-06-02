@@ -1,0 +1,122 @@
+.form-control {
+	background-color: rgb(53, 58, 64); 
+	color: white;
+	margin-bottom: 12px;
+}
+
+.form-control:focus {
+	background-color: rgb(53, 58, 64); 
+	color: white;
+}
+
+.card-title {
+	 color: #444444;
+	 font-weight: 600;
+}
+
+.selector {
+    margin-bottom: 10%;
+    width: 50%;
+}
+
+.text_head {
+    color: #ECDB04;
+}
+
+.col_with_b {
+    background-color:#444444;
+    margin-top:10%
+}
+
+#createBtn {
+    background-color: #ECDB04;
+    border-color: #131313;
+    color:#141414;
+    width: 100%;
+    margin-top:100%
+}
+
+.form {
+    background: #202326;
+    padding: 4% 10%;
+    color: #ccc;
+    border-radius:10px
+}
+
+.cont_form {
+    margin: 7% 30%;
+}
+
+.btn {
+    background: #ECDB04;
+    color: black;
+    transition: 0.3s
+}
+
+.btn:hover {
+    background: #404040;
+    color: #ECDB04;
+    transition: 0.3s
+}
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+    background-color: #202020; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 0.5% 0.5% 0.5% 7%;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-right .5s;
+    padding: 20px;
+}
+
+#mainy {
+overflow-y:scroll;
+height:75vh;
+}
+
+.navitem {
+font-size: 18px}
+
+#fading {
+    opacity: 0;
+    transition: 1s;
+}
+
+.easter_egg:hover{
+    cursor: pointer;
+}
+
+.e404 {
+color: #ecdb04;
+text-align: center;
+font-size:150px;
+}
+
+.e404_log {
+margin-top:10px;
+font-size:24px;
+}
+

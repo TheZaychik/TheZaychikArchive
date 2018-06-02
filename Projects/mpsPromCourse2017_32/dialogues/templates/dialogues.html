@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% include "message.html" %}
+{% load static from staticfiles %}
+{% block content %}
+{%  block css %}
+<link href="{% static 'css/index.css' %}" rel="stylesheet">
+{% endblock %}
+
+<div class="form" style="min-height:70vh;">
+    <hr>
+    <div class="card border-secondary bg-dark text-white" style="min-height:inherit; max-height:85vh;">
+        <div class="container" style="min-height:inherit; max-height:85vh;">
+            <div class="row" style="min-height:inherit; max-height:85vh;">
+                <div class="col-md-4" style="border-right:solid 1px white; width:inherit; padding:5px">
+                    <div class="container" style="padding:20px">
+                        <form method="post">
+                            {% csrf_token %}
+                            <input name="name" class="form-control" id="friend's_login" autocomplete="on"
+                                   placeholder="Friend's login">
+                            <input type="submit" name="create_dialogue" class="btn" style="float:right" value="Start">
+                        </form>
+                    </div>
+                    <div class="container">
+                        <h5>Dialogues list</h5>
+                        {% for dialogue in user_dialogues%}
+                        <form method="post">
+                            {% csrf_token %}
+                            <button class="btn btn-block" style="margin:5px; height:63px" name="dialogue_id"
+                                    value="{{dialogue.id}}">{{ dialogue.name }}
+                            </button>
+                        </form>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% if not dialogue_id %}
+                <div class="col-md-8">
+                    <p style="color: #ECDB04; margin:6px; text-align:center">Choose a dialogue</p>
+                </div>
+                {% else %}
+                <div id=mainy class="col-md-8">
+                    <div class="block">
+                        {% if not dialogue_messages%}
+                        <div class="bg-dark text-white" style="margin:5px">
+                            <div class="form-inline">
+                                <p style="color: #ECDB04; position:relative; margin:0 auto;">Enter your first message</p>
+                            </div>
+                        </div>
+                        {% else%}
+                        {% for message in dialogue_messages%}
+                        <div class="card bg-dark text-white" style="margin:5px">
+                            <div class="form-inline">
+                                <p style="color: #ECDB04; margin:2px">{{message.creatorid.user}}
+                                    <small style="color: #818181 ">{{message.creation_time}}</small>
+                            </div>
+                            <p style="padding-left:10px; padding-top:-15px">{{message.text}}</p>
+                        </div>
+                        {%endfor%}
+                        {%endif%}
+                    </div>
+                </div>
+                <div class="block" style="position:abolute; bottom:0; width:100%; margin-left:33%; padding-top:1%">
+                    <form class="form-inline" method="post">
+                        {% csrf_token %}
+                        <input name="text" class="form-control" style="width:72%" id="friend'slogin" autocomplete="on"
+                               placeholder="Enter your message...">
+                        <button class="btn" style="margin:5px; position:relative; bottom:7px;" name="create_message"
+                                value="{{dialogue_id}}">Send
+                        </button>
+                    </form>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<script src="{% static 'js/scroller.js' %}"></script>
+{% endblock %}

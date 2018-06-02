@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+
+{%  block css %}
+<link href="{% static 'css/index.css' %}" rel="stylesheet">
+{% endblock %}
+
+{%  block content %}
+<div id="jb">
+    <div id="jb1">
+        <div>
+            <h1 class="title"> CoNetwork</h1>
+            <p class="text">Made by programmers, for programmers.<br>Joke :(<br>Click here for some info</p>
+        </div>
+    </div>
+
+    <div id="jb2">
+        <div>
+            <p style="color: white">CoNetwork - is a platform for everybody, whose job is at least slightly connected
+                with coding
+                in cooperation. Here you can find new contributors in your team and test their skills, using our
+                technology of synchronized code.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg menu">
+            <a style=" text-decoration: none;color: black" href="{% url 'authentication:register' %}">
+                <h3>Create an account</h3>
+                <hr>
+                <p>Register, by answering a pair of simple questions. </p>
+            </a>
+        </div>
+        <div class="col-lg menu2">
+            <h3>Start coding right now!</h3>
+            <hr>
+            <h5>&larr; Sign up to gain all rights in a CoNetwork</h5>
+            <ul></ul>
+            <h5>If you have already registered, you may create your own session &rarr;</h5>
+        </div>
+        <div class="col-sm menu">
+            <div style=" text-decoration: none;color: black">
+                <a style=" text-decoration: none;color: black" href="{% url 'session:create_session' %}">
+                    <h3>Create session</h3>
+                    <hr>
+                    <p>Choose your programming language and set everything up in a seconds </p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if news %}
+<div class="news">
+    <h1 class="subtitle">NEWS</h1>
+    <hr class="subtitle">
+    {% for news in news %}
+    <div class="form" class="news">
+        <a href="{% url 'news:news' pk=news.pk %}">
+            <h2 class="text_head">
+                {{ news.title }}
+            </h2>
+            <h3 class="news-subtitle">
+                {{ news.subtitle }}
+            </h3>
+        </a>
+        <p class="">Posted by CoNetworkTeam
+            on {{ news.date }}</p>
+    </div>
+    <hr>
+    {% endfor %}
+
+    <div class="pagination">
+
+        {% if news.has_previous %}
+        <a class="right" href="?page={{ news.previous_page_number }}">
+            <button type="button" class="btn">More up to date &larr;</button>
+        </a>
+        {% endif %}
+    </div>
+    <div class="pagination">
+        {% if news.has_next %}
+        <a class="left" href="?page={{ news.next_page_number }}">
+            <button type="button" class="btn">&rarr; Older posts</button>
+        </a>
+        {% endif %}
+
+    </div>
+</div>
+{% else %}
+<div class="news">
+    <h2 class="subtitle">There're no news for you today(</h2>
+</div>
+{% endif %}
+{% endblock %}
+
+{%  block js %}
+<script src="{% static 'js/index.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+
+{%  block content %}
+<div class="form">
+    <h2>
+        Developers
+    </h2>
+    <div class="col-9">
+        <h6>
+            Front-end:
+                Anton Ivanov,
+                Vasia Aleksandorv,
+                Pechenka
+        </h6>
+    </div>
+    <div class="col-9">
+        <h6>
+            Back-end:
+                Nikita Zaytsev,
+                Arsenii Smirnov,
+                Savelii Karpukhin,
+                Mitia Shabat,
+                Mikhail Dremin,
+                Iaroslav Riabtsev,
+                Alisa Chen
+        </h6>
+    </div>
+    <div class="col-9">
+        <h6>
+            Junior developers (they have paws):
+                Ania Eremeeva,
+                Arina Kosovskaia,
+                Roman Kazarian
+
+        </h6>
+    </div>
+    <ul>
+    </ul>
+    <p>
+        Some funny and skillful fellas
+    </p>
+    <a class="easter_egg"style="color: #ECDB04" onclick="openF()">
+        More
+    </a>
+    <div id="fading">
+        <p>
+        Pamagiti (help), we are being holded in a basement of an old drunkard. He kidnapped us while we were on trip to
+            Albuquerque, New Mexico. He is cooking blue meth and makes us creating an adverts for his business.
+            We haven't ate since 2017. Only entertainment is a solitaire on Windows 98. Please save us and bring cookies
+            with coffee.
+    </p>
+    <a class="easter_egg" style="color: #ECDB04" onclick="closeF()">
+        Close after reading (& call the police)
+    </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col"></div>
+    <div class="col-6" style="min-width:350px;">
+        <div class="form">
+            {% for friend in friends %}
+            <div class="form-control">
+                <a href="{% url 'authentication:profile' friend.friend.id %}"><img src="https://i.ytimg.com/vi/XzrphEny2P8/maxresdefault.jpg" width="55" height="55"></a>
+                {{ friend.friend.username }}
+                <form action="http://google.com" style="float:right"> # Переделать под диалоги
+                    <button class="btn mr mb-sm-2 btn-lg"> send message </button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col"></div>
+</div>
+{% endblock %}

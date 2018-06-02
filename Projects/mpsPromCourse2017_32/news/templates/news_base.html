@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+
+{%  block css %}
+<link href="{% static 'css/news.css' %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="news container">
+    <h1>{{ news.title }}</h1>
+    <h2>{{ news.subtitle }}</h2>
+    <img src="{{ MEDIA_URL }}{{ news.img }}" alt="Upsss...">
+    <p>{{ news.text }}</p>
+    <h4>{{ news.date }}</h4>
+</div>
+</div>
+
+
+{% endblock %}
+

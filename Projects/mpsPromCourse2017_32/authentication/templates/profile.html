@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<!--here goes profile-->
+
+<div class="form">
+    {% csrf_token %}
+    {% if request.user == profile.user %}
+        <form method="POST">
+            <h1 class="text_ head">Profile page</h1>
+            <div style="margin-top:20px" class="row">
+                <div class="col">
+                    {%if profile.photo %}
+                    <img src="  {{profile.photo.url}} " width="400px" height="400px">
+                    {%else%}
+                    <img src="{% static 'img/ava_plchldr.png' %}" width="400px" height="400px">
+                    {%endif%}
+                </div>
+                <div class="col">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <input class="form-control bg-secondary" name="username" placeholder="Username" readonly value="{{ profile.user.username }}">
+                        <input class="form-control" name="email" placeholder="E-mail" value="{{ profile.user.email }}">
+                        {% if form.errors and request.method == 'POST'%}
+                        <div class="alert alert-danger" role="alert">{{ form.errors }}</div>
+                        {% elif request.method == 'POST' %}
+                        <div class="alert alert-success" role="alert">All changes saved!</div>
+                        {% endif %}
+                        <button type="submit" class="btn">Save</button>
+                        <a class="btn" href="{% url 'main:index' %}">Cancel</a>
+                    </fieldset>
+                    <a class="btn" href="{% url 'authentication:change_password' %}">Change password</a>
+                    <a class="btn" href="{% url 'authentication:change_avatar' request.user.id %}">Change avatar</a>
+                </div>
+            </div>
+        </form>
+    {% else %}
+        <h1 class="text_ head">Profile page</h1>
+        <div style="margin-top:20px" class="row">
+            <div class="col">
+                <img src="{% static 'img/ava_plchldr.png' %}" width="400px" height="400px">
+            </div>
+            <div class="col">
+                <fieldset class="form-group">
+                    <div class="form-control bg-secondary">{{ profile.user.username }}</div>
+                    <hr>
+                    <div class="form-control bg-secondary">{{ profile.user.email }}</div>
+                </fieldset>
+                {% if is_friend == False %}
+                <form method="POST">
+                    <button class="btn mr mb-sm-2 btn-lg"> add to friend </button>
+                </form>
+                {% endif %}
+            </div>
+
+        </div>
+    {% endif %}
+</div>
+</div>
+<!--here profile ends-->
+{% endblock %}

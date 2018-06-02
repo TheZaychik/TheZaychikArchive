@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{%  block content %}
+    <div class="container">
+        <div class="form">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="container-fluid">
+                    <div class="form-group">
+                        <h2 class="text_head">Contact Us</h2>
+                    </div>
+                    <div class="form-group">
+                        <label for="email_text">Email:</label>
+                        <input name="email"  class="form-control col-4"  id="email_text" autocomplete="on" placeholder="Enter your email"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="login_text">Your name:</label>
+                        <input name="username"  class="form-control col-4" id="login_text"  autocomplete="on" placeholder="Enter your name"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="login_text">Your message:</label>
+                        <textarea name="message"  class="form-control" autocomplete="on" placeholder="Write your message to us" rows="6"></textarea>
+                    </div>
+                    {% if form.errors and request.method == 'POST'%}
+                        <div class="alert alert-danger" role="alert">{{ form.errors }}</div>
+                    {% elif request.method == 'POST' %}
+                        <div class="alert alert-success" role="alert">Your message was send!</div>
+                    {% endif %}
+                    <div class="form-group" style="margin-top: 5px">
+                        <button type="submit"  class="btn">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

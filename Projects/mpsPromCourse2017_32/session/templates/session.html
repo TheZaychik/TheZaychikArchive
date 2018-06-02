@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+
+{% block title %}
+<title>CoNetwork:{{ session.name }}</title>
+{% endblock %}
+
+{%  block css %}
+<link href="{% static 'css/session.css' %}" rel="stylesheet">
+{% endblock %}
+
+{%  block content %}
+<div class="card form">
+    <div class="row">
+        <div class="col-9">
+            <div class="row">
+                <div class="col">
+                    <h1 class="text_head">Session #{{ session.id }} ({{ session.name }})</h1>
+                    <h3 class="text_head">Language: {{ session.language }}</h3>
+                </div>
+                <div class="col">
+                    <button class="btn mr runButton">Run</button>
+                   <!-- <button class="btn mr">Stop</button> -->
+                </div>
+            </div>
+            <div class="float-left">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="container-fluid">
+                        <br>
+                        <div class="form-control upperForm" id="codeArea" style="height:300px;width:90%">{{ session.text }}</div>
+                        <script src="{% static 'js/ace.js' %}" type="text/javascript" charset="utf-8"></script>
+                        <script src="{% static 'js/mode-python.js' %}" type="text/javascript" charset="utf-8"></script>
+                        <script>var code = ace.edit("codeArea");
+                                code.setTheme("ace/theme/gruvbox");
+                                var PythonMode = ace.require("ace/mode/python").Mode;
+                                code.session.setMode(new PythonMode());</script>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-10">
+                                    <h5 class="text_head">Output</h5>
+                                    <textarea name="traceback" cols="120" class="form-control bottomForm" autocomplete="on"
+                                              placeholder="Here will be result of your code" rows="6"></textarea>
+                                </div>
+                                <div class="col">
+                                    <button class="btn mr mb-sm-2">Save Code</button>
+                                    <br>
+                                    <button class="btn mr" href="{% url 'session:close' %}">Delete Session</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-sd-3 text-center">
+            <div class="card-header bg-secondary">
+                Featured
+            </div>
+            <ul class="list-group list-group-flush text-white">
+                {% for user in users %}
+                <li class="list-group-item bg-dark">{{ user }}</li>
+                {% endfor %}
+            </ul>
+            <br>
+            <h>http://127.0.0.1:8000/session/{{ token }}</h>
+            <hr> <!--Тут поменять ссылку когда пустим в продакшн -->
+            <button class="btn">Delete User</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+	<script>
+		let token = "{{ token }}";
+</script>
+    <script src="{% static 'js/hash.js' %}"></script>
+    <script src="{% static 'js/sync.js' %}"></script>
+    <script src="{% static 'js/sess.js' %}"></script>
+{% endblock %}

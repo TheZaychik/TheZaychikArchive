@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <input type="submit" class="runButton" value="Run">
+        <input name="code" class="upperForm" value="{{ request.form.cleaned_data }}">
+        <input class="bottomForm">
+
+    </form>
+    <script>
+        /* set in js.configs */
+        let configuration = {"py_network": {"comp_url": "http://127.0.0.1:8000/traceback/"}};
+    </script>
+    <script src="static/jquery/jquery.js"></script>
+    <script src="static/js/traceback.js"></script>
+{% endblock %}

@@ -1,0 +1,26 @@
+version: '2'
+services:
+  mysql:
+    user: "1000:50"
+    image: mysql
+    expose:
+      - 3306
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_DATABASE: py_network
+      MYSQL_USER: mysqluser
+      MYSQL_PASSWORD: qwe123QWE
+    command: --character-set-server=utf8 --collation-server=utf8_unicode_ci
+    volumes:
+      - ./mysql/db:/var/lib/mysql
+      - ./mysql/logs:/var/log/mysql
+    user: root
+    entrypoint: ['/entrypoint.sh', '--default-authentication-plugin=mysql_native_password']
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+    volumes:
+      - ./redis:/data

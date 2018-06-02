@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+<div class="row">
+    <div class="col"></div>
+    <div class="col">
+        <div class="card bg-light">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="container-fluid" style="width: 500px">
+                    <div class="form-group" style="margin-left: 100px">
+                        <h2 class="card-title">Confirm your email</h2>
+                    </div>
+                    <div class="form-group" style="margin-left: 50px">
+                        <label style="margin-left: 48px">We sent a pass-code to your email</label>
+                        <label style="margin-left: 5px">Please, enter it here for complete registration</label>
+                    </div>
+                    <div class="form-group">
+                        <input name="passcode" style="margin-left: 150px" class="form-control col-4" id="login_text"  autocomplete="on" placeholder="Pass-code"/>
+                    </div>
+                    <div class="form-group" style="margin-top: 5px">
+                        <button type="submit" style="margin-left: 180px" class="btn btn-primary bg-dark">Complete</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col"></div>
+    </div>
+</div>
+{% endblock %}

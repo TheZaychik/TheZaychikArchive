@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+ {% csrf_token %}
+ {% if request.user == profile.user %}
+    <div class="form">
+            <div style="margin-top:20px" class="row">
+                <div class="col-3"></div>
+                <div class="col">
+                    <h1 class="text_ head">Change your avatar</h1>
+                    {%if profile.photo %}
+                    <img src="  {{profile.photo.url}} " width="400px" height="400px">
+                    {%else%}
+                    <img src="{% static 'img/ava_plchldr.png' %}" width="400px" height="400px">
+                    {%endif%}
+                     <div class="container-fluid">
+                        <form enctype="multipart/form-data" id="change_avatar" action = "{% url 'authentication:change_avatar' request.user.id%}"  method="post" name="form" class="form">
+                             {% csrf_token %}
+                            <div class="form-group">
+                                <input style="margin-top:30px"  class="btn" src="images/ava_plchldr.png" id="photo" type="file" name="photo" alt="change your  avatar">
+                            </div>
+                            {% if form.errors and request.method == 'POST'%}
+                            <div class="alert alert-danger" role="alert">
+                                {{ form.errors }}
+                            </div>
+                            {% elif request.method == 'POST' %}
+                            <div class="alert alert-success" role="alert">User photo was created !</div>
+                            {% endif %}
+                            <div class="form-group" style="margin-top: 5px">
+                                <button type="submit" class="btn">change your  avatar</button>
+                                <a class="btn" href="{% url 'authentication:profile' request.user.id %}">OK</a>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+    </div>
+    {% else %}
+     <div class="col-3"></div>
+                <div class="col">
+                    <h1 class="text_ head">ACCESS DENIED</h1>
+                </div>
+    {% endif %}
+{% endblock %}

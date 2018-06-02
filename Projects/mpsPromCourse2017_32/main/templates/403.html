@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+
+{%  block content %}
+<div class="e404">
+    <p>403</p>
+    <img src="{% static 'img/403.jpg' %}" height="50%" width="65%">
+    <p class="e404_log">Sorry, you are forbidden to do this</p>
+</div>
+{% endblock %}

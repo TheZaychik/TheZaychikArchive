@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <form class="form" method="POST">
+        {% csrf_token %}
+    <div class="row">
+        {% if request.user.is_authenticated %}
+        <div class="col-md-10">
+            <h1 class="text_head">
+                Create your code session
+            </h1>
+            <h5>
+                Input name of Session:
+            </h5>
+            <input class="form-control" name="name">
+            <h5>
+                Choose language
+            </h5>
+            <ul>
+            </ul>
+            <select class="form-control selector" name="language">
+                <option value="Python">
+                    Python
+                </option>
+                <option value="C++">
+                    C++
+                </option>
+                <option value="C#">
+                    C#
+                </option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <input type="submit" value="Create session" class="btn">
+        </div>
+        {% else %}
+            <h4> Login or register to create session! </h4>
+        {% endif %}
+    </div>
+    </form>
+</div>
+
+{% endblock %}

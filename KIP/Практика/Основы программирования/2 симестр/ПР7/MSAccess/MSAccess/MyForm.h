@@ -111,7 +111,7 @@ namespace MSAccess {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(392, 148);
+			this->textBox1->Location = System::Drawing::Point(360, 142);
 			this->textBox1->Margin = System::Windows::Forms::Padding(6);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(66, 31);
@@ -122,7 +122,7 @@ namespace MSAccess {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(568, 502);
+			this->ClientSize = System::Drawing::Size(1100, 570);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);

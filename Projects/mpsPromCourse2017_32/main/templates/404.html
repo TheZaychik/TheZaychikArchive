@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+
+{%  block content %}
+<div class="e404">
+    <p>404</p>
+    <img src="{% static 'img/ooups.jpg' %}" height="45%" width="55%">
+    <p class="e404_log">Ouups, looks like page you tried to open doesn't exist (:</p>
+</div>
+{% endblock %}

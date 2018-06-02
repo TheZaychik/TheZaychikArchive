@@ -1,0 +1,78 @@
+ #jb1 {
+ background-image: url('../img/bg_index.jpg');
+ background-size: cover;
+ padding: 5%;
+ height: 250px;
+ border-radius:20px
+
+}
+
+#jb1:hover
+{
+ cursor: pointer;
+ }
+
+ #jb2 {
+ background: black;
+ background-size: cover;
+ color: white;
+ display: none;
+ padding: 5%;
+ height: 250px;
+ width: 80%;
+ position: absolute;
+ z-index: 100;
+ opacity: 0.77;
+ top: 0px;
+ border-radius:20px
+}
+
+.title         {
+ color: #FFFF00;
+ text-shadow: 1px 1px 2px black, 0 0 1em #111111;
+ font-weight: 600;
+ text-align: right;
+}
+
+.text        {
+ text-shadow: 1px 1px 2px black, 0 0 1em #111111;
+ color: #FFFF00;
+ font-weight: 500;
+ text-align: right;
+}
+
+.menu        {
+ background-color: #d8b20a;
+ margin: 1.5%;
+ text-align: center;
+ text-shadow: 0px 0px 0.3px, 0 0 1em #ECDB40;
+ padding: 2%;
+ border-radius: 20px;
+}
+
+.menu2        {
+ color: #c3bdcc;
+ margin: 1.5%;
+ text-align: center;
+ border-radius: 20px;
+ padding: 1%;
+}
+
+.par {
+ color: #5e5e5e;
+ padding: 3%;
+}
+
+.right {
+    margin-right: 100%;
+}
+
+.left {
+    margin-left: 92%;
+}
+
+.subtitle {
+ text-shadow: 0 0 0.1em #ccc;
+ color: #c3bdcc;
+ text-align: center;
+}
