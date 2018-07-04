@@ -1,0 +1,573 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+      <ul>
+<li><b><font face="Times New Roman" size=3><a href="#1">УРОК 13. ТЕМА: СОСТАВЛЕНИЕ РАСПИСАНИЯ</a></font></b> </li>
+     <ul>
+     <li><font face="Times New Roman" size=3><a href="#2">ЦЕЛЬ УРОКА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#3">ПРАКТИКА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#4">САМОСТОЯТЕЛЬНОЕ ЗАДАНИЕ</a></font> </li>
+
+     </ul></ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Урок 13</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="5">Тема:</font> 
+  <font face="Times New Roman, Times, serif" size="5">Составление</font> <font face="Times New Roman, Times, serif" size="5">расписания</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="2"></a>Цель 
+  урока</font></B><font size="4"><BR>
+  </font> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В данном 
+  уроке разрабатывается приложение, автоматизирующее составление расписания с 
+  одновременным подведением итогов.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Конструируя 
+  данное приложение, вы узнаете на практике, что такое:<BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Передача информации 
+    между элементами управления при обработке события Click<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Управление видимостью 
+    рисунков<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Управление цветом 
+    элементов управления<BR>
+    </font></li>
+</ul>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="3"></a>Практика</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Трус, Балбес 
+  и Бывалый построили небольшой магазинчик &quot;Придорожный лопух, 24 часа&quot; 
+  у деревне Неелово на трассе Москва—Санкт-Петербург. Работу в магазинчике они 
+  разбили на две смены по 12 часов. В начале очередной недели они вместе составляют 
+  график своего дежурства на неделю, в котором подсчитывается число рабочих смен 
+  каждого компаньона. Через месяц они решили автоматизировать процесс создания 
+  расписания. С этой целью они разработали приложение, процесс создания которого 
+  обсуждается ниже.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В редакторе 
+  форм создадим диалоговое окно магазин придорожный лопух, 24 часа (рис. У13.1).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Кроме этого, 
+  в любом графическом редакторе, например Paint, создадим файл ball.bmp с изображением 
+  красного шара и фоном рисунка того же цвета, что и цвет диалогового окна.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Расписание 
+  составляется очень просто:<BR>
+  </font></P>
+<ol>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Перемещением указателя 
+    на надпись из группы компаньоны и щелчком кнопкой мыши выбирается компаньон, 
+    который будет дежурить Программа информирует пользователя о выборе кандидата 
+    в дежурные отображением красного круга рядом с его именем.<BR>
+    </font></li>
+</ol>
+<P align="left"><img src="13.1.gif" width="539" height="523"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У13.1. Диалоговое окно Магазин </I></B><I>Придорожный лопух, 24 часа</I><BR>
+  </font></P>
+<ol start=2>
+  <li> <font face="Times New Roman, Times, serif" size="3">Для более наглядного 
+    представления надписи, соответствующие сменам с О до 12 часов, имеют белый 
+    цвет фона, а надписи, соответствующие сменам с 12 до 24 часов, — желтый цвет 
+    фона.<BR>
+    </font></li>
+</ol>
+<P align="left"><img src="13.2.gif" width="373" height="378"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У13.2. </I></B><I>Заполнение диалогового окна</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><I>Магазин 
+  Придорожный лопух, 24 часа</I><BR>
+  </font></P>
+<ol start=3>
+  <li> <font face="Times New Roman, Times, serif" size="3">Ввод имени дежурного 
+    в смену производится перемещением указателя на надпись соответствующей смены 
+    и щелчком кнопкой мыши. Программа автоматически вставляет имя дежурного в 
+    надпись смены (рис. У13.2).<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Удалить имя дежурного 
+    из смены можно, указав на пустую надпись в группе компаньон и выполнив щелчок, 
+    а затем переместив указатель на надпись смены, из которой требуется удалить 
+    имя дежурного, и также щелкнув кнопкой мыши.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Подсчет числа рабочих 
+    смен каждого из компаньонов производится нажатием на кнопку ок.<BR>
+    </font></li>
+</ol>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Обсудим, 
+  как приведенная ниже программа решает описанную задачу и что в ней происходит.<BR>
+  </font></P>
+<div align="left">
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="424">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="201" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="416" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="114"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="201" HEIGHT="114"> 
+        <DIV WIDTH="201" HEIGHT="114"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">UserForm Initialize<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="416" HEIGHT="114"> 
+        <ol>
+          <li> 
+            <DIV WIDTH="416" HEIGHT="114"> <font face="Times New Roman, Times, serif" size="3"> 
+              Активизирует диалоговое окно. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="416" HEIGHT="114"><font face="Times New Roman, Times, serif" size="3"> 
+              Очищает все надписи и задает свойства элементов управления Image 
+              .<BR>
+              </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="416" HEIGHT="114"> <font face="Times New Roman, Times, serif" size="3"> 
+              Устанавливает тип границы и цвет фона надписей.<BR>
+              </font></DIV>
+          </li>
+        </ol>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="114"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="81"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="201" HEIGHT="81"> 
+        <DIV WIDTH="201" HEIGHT="81"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            ок запускает на выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButtonl 
+            Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="416" HEIGHT="81"> 
+        <DIV WIDTH="416" HEIGHT="81"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Производит расчет 
+            числа рабочих смен компаньонов.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="81"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="81"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="201" HEIGHT="81"> 
+        <DIV WIDTH="201" HEIGHT="81"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            Отмена запускает на выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButton2 
+            Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="416" HEIGHT="81"> 
+        <DIV WIDTH="416" HEIGHT="81"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Закрывает диалоговое 
+            окно.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="81"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="106"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="201" HEIGHT="106"> 
+        <DIV WIDTH="201" HEIGHT="106"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">От Labell Click 
+            до Label4_Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="416" HEIGHT="106"> 
+        <DIV WIDTH="416" HEIGHT="106"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Считывает имя 
+            кандидата в дежурные при выборе соответствующей надписи из группы 
+            компаньоны. Сигнализирует об этом отображением красного круга рядом 
+            с именем выбранного кандидата.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="106"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="42"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="201" HEIGHT="42"> 
+        <DIV WIDTH="201" HEIGHT="42"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">От Labels Click 
+            до Label18 Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="416" HEIGHT="42"> 
+        <DIV WIDTH="416" HEIGHT="42"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Вводит имя кандидата 
+            в дежурные в надпись соответствующей смены.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="42"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="201" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="416" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></div>
+<P align="left"> <font face="Courier New, Courier, mono" size="3"><SUP>'</SUP> 
+  Переменные уровня модуля<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Имя As String<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Надписи(1 
+  То 2, 1 То 7) As Object<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButtonl_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Смены_1, 
+  Смены_2, Смены_3 As Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Смены_1 = 0<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Смены_2 = 0<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Смены_3 = 0<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 То 
+  2<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For j = 1 То 
+  7<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Надписи(i, 
+  j).Caption = Label1.Caption Then Смены_1 = Смены_1 + 1</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> If Надписи(i, 
+  j).Caption = Label2.Caption Then Смены_2 = Смены_2 + 1 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If Надписи(i, 
+  j).Caption = Label3.Caption Then Смены_3 = Смены_3 + 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Next j<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Next i<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBoxl.Text 
+  = CStr(Смены_1)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox2.Text 
+  = CStr(Смены_2)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBoxS.Text 
+  = CStr(Смены_3)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton2_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">UserForml.Hide 
+  End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедуры 
+  считывания имени дежурного из группы Компаньоны </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Labell_Click () <BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Имя = Label1.Caption 
+  Действие True, False, False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Label2_Click() Имя = Label2.Caption Действие False, True, False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Label3_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Имя = Labels.Caption<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Действие False, 
+  False, True </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Label4_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Имя = Label4.Caption 
+  Действие False, False, False </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедуры 
+  ввода имени дежурного<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Label5_Click() Labels.Caption = Имя</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Label6_Click0 Label6.Caption = Имя </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Label7_Click() Label7.Caption = Имя </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Label8_Click() Labels.Caption = Имя</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Label9_Click() Label9.Caption = Имя </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Labell0_Click() Labell0.Caption = Имя<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Labelll_Click() Labelll.Caption = Имя<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Labell2_Click() Labell2.Caption = Имя<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Labell3__Click ()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Labell3.Caption 
+  = Имя </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Labell4_Click() Labell4.Caption = Имя<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Labell5_Click() Label15.Caption = Имя </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Labell6_Click() Labell6.Caption = Имя<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Labell7_Click() Labell7 .Caption = Имя </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Labell8_Click() LabellS.Caption = Имя</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  UserForm_Initialize() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Инициализация 
+  диалогового окна<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim i, j As 
+  Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set Надписи(1, 
+  1) = Label5<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set Надписи(2, 
+  1} = Label6<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set Надписи(1, 
+  2) = Label7<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set Надписи(2, 
+  2) = Label8<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set Надписи(1, 
+  3) = Label9<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set Надписи(2, 
+  3) = Labell0<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set Надписи(1, 
+  4) = Label11<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set Надписи(2, 
+  4) = Labell2<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set Надписи(1, 
+  5) = Label13<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set Надписи(2, 
+  5) = Label14<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set Надписи(1, 
+  6) = Labell5<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set Надписи(2, 
+  6) = Labell6<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set Надписи(1, 
+  7) = Labell7<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set Надписи(2, 
+  7) = Label18<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With Label4<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Caption = &quot;&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.BorderStyle 
+  = fmBorderStyleSingle </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With Imagel<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Picture = LoadPicture(&quot;ball.bmp&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.BorderStyle 
+  = fmBorderStyleNone<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.PictureSizeMode 
+  = fmPictureSizeModeZoom<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.PictureAlignment 
+  = fmPictureAlignmentTopLeft<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Visible = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With Image2<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Picture = LoadPicture(&quot;ball.bmp&quot;) 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.BorderStyle 
+  = fmBorderStyleNone </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.PictureSizeMode 
+  = fmPictureSizeModeZoom </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.PictureAlignment 
+  = fmPictureAlignmentTopLeft </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Visible = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With Image3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Picture = LoadPicture(&quot;ball.bmp&quot;) 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.BorderStyle 
+  = fmBorderStyleNone</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> .PictureSizeMode 
+  = fmPictureSizeModeZoom </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.PictureAlignment 
+  = fmPictureAlignmentTopLeft</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> .Visible = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  2 For j = 1 To 7<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With Надписи(i, 
+  j) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Caption = &quot;&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.BorderStyle 
+  = fmBorderStyleNone Select Case i Case 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.BackColor = 
+  vbWhite Case 2<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.BackColor = 
+  vbYellow End Select </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Next j </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next i<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Действие(Flagl, 
+  Flag2, Flag3 As Boolean)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура, 
+  устанавливающая отображение или скрытие рисунков<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Imagel.Visible 
+  = Flagl </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Image2.Visible 
+  = Flag2 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Image3.Visible 
+  = Flag3</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="4"></a>Самостоятельное 
+  задание</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Разработать 
+  приложение, которое позволит составить расписание рабочих смен Труса, Балбеса 
+  и Бывалого в магазинчике &quot;Придорожный лопух, 24 часа&quot; на текущий месяц. 
+  При создании приложения надо помнить, что разные месяцы имеют разное число дней 
+  и программа при инициализации диалогового окна должна отображать только то количество 
+  надписей, отводимых под смены, сколько их имеется в текущем месяце.</font></P>
+</BODY>
+</HTML>
+

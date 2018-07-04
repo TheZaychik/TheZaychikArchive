@@ -1,0 +1,1383 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+<ul>
+  <li><b><font face="Times New Roman" size=3><a href="#1">ГЛАВА 12. ПРОЦЕДУРЫ 
+    ОБРАБОТКИ ОШИБОК И ОТЛАДКА ПРОГРАММ </a></font></b> </li>
+  <ul>
+    <li><font face="Times New Roman" size=3><a href="#2">РАЗРАБОТКА ПРОЦЕДУР, 
+      ПРЕДОТВРАЩАЮЩИХ ПОЯВЛЕНИЕ ОШИБОК</a></font> 
+      <ul>
+        <li><font face="Times New Roman" size=3><a href="#3">Перехват и обработка 
+          ошибок</a></font> </li>
+      </ul>
+    </li>
+    <li><font face="Times New Roman" size=3><a href="#4">ОТЛАДКА ПРОГРАММ</a></font> 
+      <ul>
+        <li><font face="Times New Roman" size=3><a href="#5">Ошибки компиляции</a></font> 
+        </li>
+        <li><font face="Times New Roman" size=3><a href="#6">Ошибки выполнения</a></font> 
+        </li>
+        <li><font face="Times New Roman" size=3><a href="#7">Логические ошибки</a></font> 
+        </li>
+        <li><font face="Times New Roman" size=3><a href="#8">Инструкция Option 
+          Explicit</a></font> </li>
+        <li><font face="Times New Roman" size=3><a href="#9">Пошаговое выполнение 
+          программ</a></font> </li>
+        <li><font face="Times New Roman" size=3><a href="#10">Точка останова</a></font> 
+        </li>
+        <li><font face="Times New Roman" size=3><a href="#11">Вывод значений свойств 
+          и переменных</a></font> </li>
+      </ul>
+    </li>
+  </ul>
+</ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Глава 
+  12</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Процедуры 
+  обработки ошибок и отладка программ</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="2"></a>Разработка 
+  процедур, предотвращающих появление ошибок</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">При составлении 
+  приложений важно предусмотреть, чтобы программа анализировала возможные ошибки, 
+  возникающие при ее выполнении по вине пользователя, и информировала его об этом, 
+  подсказывая, что конкретно он сделал неправильно. При этом возможно два подхода:<BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Предотвращение ошибок: 
+    программно анализировать вводимые или вычисляемые данные и в случае, если 
+    они могут приводить к ошибке, обеспечить, чтобы программа информировала пользователя 
+    о необходимости корректного задания данных.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Обработка ошибок: 
+    в случае появления ошибки, перехватить ее, обработать и программно откликнуться 
+    на возникшую ошибку.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">При создании приложений 
+    надо сочетать оба подхода, применяя в каждом конкретном случае и для каждой 
+    возможной ошибки тот, который кажется разработчику наиболее эффективным.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">В данном разделе рассмотрим 
+    процесс создания приложения, в котором предотвращается появление ошибок, на 
+    простейшем примере:<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В диалоговом окне 
+    два поля (числитель и знаменатель) предусмотрены для ввода данных. Пользователь 
+    вводит в них по числу (рис. 12.1).<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">По нажатию кнопки Счет, 
+    программа делит число, введенное в поле Числитель, на число, введенное в поле 
+    знаменатель, и выводит полученный результат в поле ответ.<BR>
+    </font></li>
+</ul>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Следующая 
+  программа производит деление числителя на знаменатель по нажатию кнопки Счет 
+  без контроля появления возможных ошибок:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButtonl_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Числитель, 
+  Знаменатель, Результат As Double<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Числитель = 
+  CDbl(TextBoxl.Text) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Знаменатель = 
+  CDbl(TextBox2.Text)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Результат = 
+  Числитель / Делитель</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> TextBoxS.Text 
+  = CStr(Результат)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub<BR>
+  </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+<P align="left"><img src="12.1.gif" width="366" height="190"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  12.1. </I></B><I>Диалоговое окно Деление</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Несмотря 
+  на то что рассматриваемая ситуация очень простая, она уже таит в себе множество 
+  подводных камней. Например, если пользователь по невнимательности забудет ввести 
+  в поле числитель или в поле Знаменатель число при нажатии кнопки счет происходит 
+  аварийное прерывание программы с малопонятным сообщением о несоответствии типов 
+  отображаемом в диалоговом окне <B>Microsoft Visual Basic </B>(рис. 12.2)<BR>
+  </font></P>
+<P align="left"><img src="12.2.gif" width="432" height="247"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  12.2. </I></B><I>Диалоговое окно <B>Microsoft Visual Basic </B>с сообщением 
+  об ошибке</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Данное сообщение 
+  об ошибке связано с одной из следующих двух инструкций в программе:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Числитель = 
+  CDbl(TextBoxl.Text)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Знаменатель 
+  = CDbl(TextBox2.Text)<BR>
+  </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">где аргументом 
+  функции соы должна быть строка, преобразуемая в число. Если в какое-то из полей, 
+  числитель или Знаменатель, ничего не введено, по умолчанию из этого поля будет 
+  считываться пустая строка. Но пустая строка не может быть преобразована в число, 
+  и поэтому из-за функции CDbl происходит ошибка. Ошибка о несоответствии типов 
+  возникнет также, если в одно из полей пользователь по неосторожности введет 
+  число с десятичной запятой, а установками системы предусматривается десятичная 
+  точка и наоборот.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Такие ошибки 
+  ввода легко избежать, если производить в программе предварительную проверку: 
+  преобразуются ли вводимые данные в числа? Эту предварительную проверку можно, 
+  например, сделать, как показано в следующей процедуре, в которой предусмотрены:<BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Проверка того, будет 
+    ли вводимая информация в поля ввода преобразовываться в числа.<BR>
+    </font></li>
+</ul>
+<P align="left"><img src="12.3.gif" width="486" height="536"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  12.3. </I></B><I>Пример сообщения о некорректном вводе данных</I><BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Если вводимая информация 
+    не преобразуется в числа, то выдается сообщение о поле, в которое некорректно 
+    введены данные, и на него перемещается фокус. Например, в ситуации, показанной 
+    на рис. 12.3, в поле<BR>
+    </font></li>
+</ul>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Знаменатель 
+  было введено число с десятичной запятой, в то время как установки системы предусматривают 
+  десятичную точку. Поэтому процедура вызвала отображение диалогового окна деление 
+  с сообщением об ошибке в знаменателе и установила фокус на поле знаменатель.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CoramandButtonl_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Числитель, 
+  Знаменатель, Результат As Single </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If IsNumeric(TextBoxl.Text) 
+  = False Then MsgBox &quot;Ошибка в числителе&quot;,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">vblnformation, 
+  &quot;Деление&quot; TextBoxl.SetFocus </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If IsNumeric(TextBox2.Text) 
+  = False Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Ошибка 
+  в знаменателе&quot;,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">vblnformation, 
+  &quot;Деление&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox2.SetFocus<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Числитель = 
+  CDbl(TextBoxl.Text)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Знаменатель 
+  = CDbl(TextBox2.Text)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Результат = 
+  Числитель / Делитель</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> TextBox3.Text 
+  = CStr(Результат)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub<BR>
+  </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Но это еще 
+  не все подводные камни, которые подстерегают неосторожного пользователя при 
+  вводе данных даже в этом простом примере. Если пользователь в поле Знаменатель 
+  введет 0, то также произойдет аварийная остановка выполнения программы с отображением 
+  в диалоговом окне <B>Microsoft Visual Basic </B>сообщения: <B>Деление на 0. 
+  </B>Для избежания подобной ошибки будем проверять не только, являются ли введенные 
+  в поле данные числом, но и что это не ноль. Например, добавим перед расчетным 
+  блоком в процедуре следующую дополнительную проверку:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If CDbl(TextBox2.Text) 
+  = 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Знаменатель 
+  не может быть нулем&quot;, vblnformation, &quot;Деление&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox2.SetFocus<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="4"><B><a name="3"></a></B>Перехват 
+  и обработка ошибок</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Из диалогового 
+  окна <B>Microsoft Visual Basic </B>видно, что каждая ошибка имеет свой код. 
+  В табл. 12.1 приведены коды наиболее часто встречаемых ошибок.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Таблица 
+  12.1. </I></B><I>Коды наиболее часто встречаемых ошибок</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="560">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="32"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="32"> 
+        <DIV WIDTH="125" HEIGHT="32"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Код</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="32"> 
+        <DIV WIDTH="537" HEIGHT="32"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Сообщение</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="32"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="28"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="28"> 
+        <DIV WIDTH="125" HEIGHT="28"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">5<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="28"> 
+        <DIV WIDTH="537" HEIGHT="28"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Приложение не 
+            запущено<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="28"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="26"> 
+        <DIV WIDTH="125" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">6<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="26"> 
+        <DIV WIDTH="537" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Переполнение<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="26"> 
+        <DIV WIDTH="125" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">7<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="26"> 
+        <DIV WIDTH="537" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Не хватает памяти<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="28"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="28"> 
+        <DIV WIDTH="125" HEIGHT="28"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">9<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="28"> 
+        <DIV WIDTH="537" HEIGHT="28"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Индекс выходит 
+            за пределы допустимого диапазона<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="28"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="27"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="27"> 
+        <DIV WIDTH="125" HEIGHT="27"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">11<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="27"> 
+        <DIV WIDTH="537" HEIGHT="27"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Деление на нуль<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="27"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="25"> 
+        <DIV WIDTH="125" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">13<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="25"> 
+        <DIV WIDTH="537" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Несоответствие 
+            типа<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="28"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="28"> 
+        <DIV WIDTH="125" HEIGHT="28"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">18<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="28"> 
+        <DIV WIDTH="537" HEIGHT="28"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Произошло прерывание, 
+            вызванное пользователем<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="28"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="27"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="27"> 
+        <DIV WIDTH="125" HEIGHT="27"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">52<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="27"> 
+        <DIV WIDTH="537" HEIGHT="27"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Неправильное 
+            имя файла или идентификатор<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="27"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="26"> 
+        <DIV WIDTH="125" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">53<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="26"> 
+        <DIV WIDTH="537" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Файл не найден<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="28"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="28"> 
+        <DIV WIDTH="125" HEIGHT="28"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">54<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="28"> 
+        <DIV WIDTH="537" HEIGHT="28"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Неверный режим 
+            работы с файлом<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="28"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="26"> 
+        <DIV WIDTH="125" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">55<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="26"> 
+        <DIV WIDTH="537" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Файл уже открыт<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="26"> 
+        <DIV WIDTH="125" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">56<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="26"> 
+        <DIV WIDTH="537" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Ошибка ввода-вывода<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="26"> 
+        <DIV WIDTH="125" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">61<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="26"> 
+        <DIV WIDTH="537" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Переполнение 
+            диска<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="27"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="27"> 
+        <DIV WIDTH="125" HEIGHT="27"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">68<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="27"> 
+        <DIV WIDTH="537" HEIGHT="27"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Устройство недоступно<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="27"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="26"> 
+        <DIV WIDTH="125" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">71<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="26"> 
+        <DIV WIDTH="537" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Диск не готов<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="27"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="27"> 
+        <DIV WIDTH="125" HEIGHT="27"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">72<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="27"> 
+        <DIV WIDTH="537" HEIGHT="27"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Повреждена поверхность 
+            диска<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="27"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="27"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="27"> 
+        <DIV WIDTH="125" HEIGHT="27"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">335<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="27"> 
+        <DIV WIDTH="537" HEIGHT="27"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Невозможен доступ 
+            к системным ресурсам<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="27"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="45"> 
+        <DIV WIDTH="125" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">368<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="45"> 
+        <DIV WIDTH="537" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Истек срок действия 
+            данного файла. Программе требуется файл более новой версии<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="28"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="28"> 
+        <DIV WIDTH="125" HEIGHT="28"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">482<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="28"> 
+        <DIV WIDTH="537" HEIGHT="28"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Ошибка принтера<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="28"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="537" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В идеале 
+  разрабатываемое приложение не должно никогда аварийно прерываться. В приложении 
+  следует создать средства перехвата любой возможной ошибки, обработать ее, выдать 
+  сообщение пользователю и обеспечить безаварийное продолжение работы приложения. 
+  Обычно конструкция перехвата ошибок имеет следующую структуру.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="867">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="144" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="469" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"></TD>
+      <td width="134" height="48"> 
+        <div width="134" height="48"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Инструкция<br>
+            </font></p>
+          <p> <font face="Times New Roman, Times, serif" size="3">On Error<br>
+            </font></p>
+        </div>
+      </td>
+      <td width="487" height="48"> 
+        <div width="487" height="48"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Производит перехват 
+            ошибки. Устанавливает, что про грамма должна делать в случае появления 
+            ошибки.<br>
+            </font></p>
+        </div>
+      </td>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"></TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="391"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="144" HEIGHT="391"> 
+        <DIV WIDTH="144" HEIGHT="391"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Подпрограмма 
+            обработки ошибки<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="469" HEIGHT="391"> 
+        <DIV WIDTH="469" HEIGHT="391"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">В этой подпрограмме 
+            определяется тип возникшей ошибки и устанавливается, что программа 
+            должна де-лать в зависимости от типа ошибки. Допустимы следующие синтаксисы.</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3"> Синтаксис 1:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">On Error GoTo строка</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Активизирует 
+            подпрограмму обработки ошибок, начало которой определяется обязательным 
+            аргументом строка, значением которого может быть либо метка строки, 
+            либо номер строки.<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Синтаксис 2:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">On Error Resume 
+            Next </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Указывает, что 
+            при возникновении ошибки происходит передача управления на инструкцию, 
+            непосредственно следующую за инструкцией, где возникла ошибка. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис 3:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">On Error GoTo 0</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Отключает любой 
+            активизированный обработчик ошибок в текущей процедуре.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="391"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="368"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="144" HEIGHT="368"> 
+        <DIV WIDTH="144" HEIGHT="368"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Инструкция<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Resume<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="469" HEIGHT="368"> 
+        <DIV WIDTH="469" HEIGHT="368"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Обеспечивает 
+            процедуре возможность продолжить работу после обработки ошибки. Допустимы 
+            следующие синтаксисы.</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3"> Синтаксис 1:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Resume </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">После обработки 
+            ошибки управление передается той инструкции, в которой произошла ошибка.</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3"> Синтаксис 2: 
+            </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">Resume строка </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">После обработки 
+            ошибки управление передается инструкции, определенной аргументом строка. 
+            Значением этого аргумента может быть любая метка строки или номер 
+            строки.<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Синтаксис 3:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Resume Next </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">После обработки 
+            ошибки управление передается инструкции, следующей за инструкцией, 
+            в которой произошла ошибка.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="368"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="108"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="144" HEIGHT="108"> 
+        <DIV WIDTH="144" HEIGHT="108"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Инструкция<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Exit<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="469" HEIGHT="108"> 
+        <DIV WIDTH="469" HEIGHT="108"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Останавливает 
+            выполнение процедуры. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Допустимые синтаксисы:<BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li>
+            <DIV WIDTH="469" HEIGHT="108"> <font face="Times New Roman, Times, serif" size="3"> 
+              Exit Sub </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="469" HEIGHT="108"><font face="Times New Roman, Times, serif" size="3"> 
+              Exit Function </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="469" HEIGHT="108"><font face="Times New Roman, Times, serif" size="3"> 
+              Exit Property<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="108"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="144" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="469" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Подпрограмма 
+  обработки ошибки обычно включает объект Err, который содержит информацию об 
+  ошибках выполнения. Приведем свойства и методы объекта Err.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="4"><B><font size="3">Свойства 
+  объекта Err</font></B></font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="218">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="478" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="25"> 
+        <DIV WIDTH="138" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Number</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="478" HEIGHT="25"> 
+        <DIV WIDTH="478" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Возвращает 
+            код ошибки</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="24"> 
+        <DIV WIDTH="138" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Source<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="478" HEIGHT="24"> 
+        <DIV WIDTH="478" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Имя текущего 
+            проекта VBA<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="42"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="42"> 
+        <DIV WIDTH="138" HEIGHT="42"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Description<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="478" HEIGHT="42"> 
+        <DIV WIDTH="478" HEIGHT="42"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает строковое 
+            выражение, содержащее текст сообщения об ошибке<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="42"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="24"> 
+        <DIV WIDTH="138" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">HelpFile<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="478" HEIGHT="24"> 
+        <DIV WIDTH="478" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Полное имя (включая 
+            диск и путь) файла справки VBA<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="58"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="58"> 
+        <DIV WIDTH="138" HEIGHT="58"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">HelpContext<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="478" HEIGHT="58"> 
+        <DIV WIDTH="478" HEIGHT="58"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Контекстный 
+            идентификатор файла справки VBA, соответствующий ошибке с кодом, указанным 
+            в свойстве<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Number<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="58"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="46"> 
+        <DIV WIDTH="138" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">LastDLLError<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="478" HEIGHT="46"> 
+        <DIV WIDTH="478" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Содержит системный 
+            код ошибки для последнего вызова библиотеки динамической компоновки 
+            (DLL)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="478" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Методы 
+  объекта Err</B><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="425">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="101"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="101"> 
+        <DIV WIDTH="70" HEIGHT="101"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Clear<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="101"> 
+        <DIV WIDTH="550" HEIGHT="101"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Очищает все 
+            значения свойств объекта Err. Метод clear используется для явной очистки 
+            значений свойств объекта Err после завершения обработки ошибки. Это 
+            необходимо, например, при отложенной обработке ошибки, которая задается 
+            инструкцией on<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Error Resume 
+            Next<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="101"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="324"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="324"> 
+        <DIV WIDTH="70" HEIGHT="324"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Raise<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="324"> 
+        <DIV WIDTH="550" HEIGHT="324"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Создает ошибку 
+            выполнения. Используется при моделировании ситуаций ошибки. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Raise number, source, 
+            description, helpfile, helpcontext</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Аргументы: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="324"><font face="Times New Roman, Times, serif" size="3">number 
+              — номер ошибки, т. е. целое число от 0 до 65535 </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="324"><font face="Times New Roman, Times, serif" size="3"> 
+              source — строковое выражение, определяющее имя объекта или приложения, 
+              в котором возникла ошибка </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="324"><font face="Times New Roman, Times, serif" size="3">description 
+              — строковое выражение, содержащее описание ошибки </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="324"><font face="Times New Roman, Times, serif" size="3">Helpfile 
+              — полное имя (включая диск и путь) файла справки Microsoft Windows, 
+              содержащего описание данной ошибки </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="550" HEIGHT="324"><font face="Times New Roman, Times, serif" size="3">helpcontext 
+              — контекстный идентификатор, определяющий соответствующий обрабатываемой 
+              ошибке раздел в файле, указанном в аргументе helpfile<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="324"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">На конкретном 
+  примере покажем, как применяется объект Err при создании обработчика ошибок. 
+  В предыдущем разделе в процессе создания диа</font><font face="Times New Roman, Times, serif" size="3">лотового 
+  окна деление и связанной с ним программы, на первый взгляд были предусмотрены 
+  все возможные ошибки. Но это только на первый взгляд. Введем, например, в поле 
+  Знаменатель значение 1е-40. Это число ничем не лучше или не хуже любого другого 
+  числа типа single. Тем не менее, вместо вывода результата произойдет аварийное 
+  прерывание выполнения программы с отображением сообщения об ошибке переполнения. 
+  Усовершенствуем программу с учетом возможности обработки подобной ошибки. В 
+  обработчике ошибок предусмотрим два отклика:<BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3">Пользователь информируется 
+    программой в случае появления ошибки переполнения, знаменателю и числителю 
+    присваиваются 1 и с этими данными проводятся вычисления.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> При появлении ошибки, 
+    отличной от ошибки переполнения, выполнение программы прерывается с информированием 
+    пользователя об ошибке (рис. 12.4).<BR>
+    </font></li>
+</ul>
+<P align="left"><img src="12.4.gif" width="326" height="134"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  12.4. </I></B><I>Диалоговое окно с указанием типа ошибки</I><BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButtonl_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Числитель, 
+  Знаменатель, Результат As Single</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Передача управления 
+  на обработчик ошибок,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' помеченный 
+  меткой Обработка </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">On Error GoTo 
+  Обработка</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Проверка, 
+  является ли числитель числом<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If IsNumeric(TextBoxl.Text) 
+  = False Then MsgBox &quot;Ошибка в числителе&quot;,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">vblnformation, 
+  &quot;Деление&quot; TextBoxl.SetFocus</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Проверка, 
+  является ли знаменатель числом </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If IsNumeric(TextBox2.Text) 
+  = False Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Ошибка 
+  в знаменателе&quot;,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">vblnformation, 
+  &quot;Деление&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox2.SetFocus<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Проверка, 
+  не является ли знаменатель нулем<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If CDbl(TextBox2.Text) 
+  = 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Знаменатель 
+  не может быть нулем&quot;, vblnformation, &quot;Деление&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox2.SetFocus<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Числитель = 
+  CDbl(TextBoxl.Text) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Знаменатель = 
+  CDbl(TextBox2.Text) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Результат = Числитель 
+  / Знаменатель</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> TextBox3 . Text 
+  = CStr (.Результат) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Выход из процедуры 
+  в случае успешного нахождения результата </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Обработчик 
+  ошибок </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Обработка: Select 
+  Case Err.Number<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Обработка 
+  ошибки переполнения </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Case Is = 6<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot; 
+  Произошла ошибка переполнения&quot;,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">vblnformation, 
+  &quot;Деление&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> TextBoxl.Text 
+  = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox2.Text 
+  = 1 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Знаменатель = 
+  1 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Числитель = 1 
+  Resume<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Обработка 
+  любой другой ошибки </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Case Else<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Произошла 
+  ошибка: &quot; &amp; Err.Description &amp;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">vblnformation, 
+  &quot;Деление&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Exit Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Select</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В заключение 
+  отметим, что в случае, если разрабатываемое приложение состоит из нескольких 
+  процедур, причем в некоторых из них необходимо создать по обработчику ошибок, 
+  бывает более удобно для сокращения программы и для большей ясности структуры 
+  кода написать отдельную процедуру с обработчиком всех ошибок.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="4"></a>Отладка 
+  программ</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">При написании 
+  программ пользователь независимо от его опыта допускает те или иные ошибки. 
+  Кто-то из мудрых совершенно верно подметил, что только тот, кто ничего не делает, 
+  не совершает ошибок. Позвольте перефразировать эту жизненную мудрость для изучаемого 
+  в данной книге предмета следующим образом: в программах не делал ошибок только 
+  тот, кто никогда не писал их. Итак, ошибки — это объективная неизбежность или 
+  реальное воплощение этой неизбежности. Какие же бывают ошибки и как с ними бороться? 
+  Условно ошибки можно поделить на три типа: ошибки компиляции, выполнения и логические 
+  ошибки.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="5"></a>Ошибки 
+  компиляции</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Ошибки компиляции 
+  возникают, если VBA не может интерпретировать введенный код. Например, при некорректном 
+  вводе числа скобок, неправильном имени, неполном вводе инструкции и т. д. Некоторые 
+  из этих ошибок обнаруживаются VBA при завершении набора строки с инструкцией 
+  в редакторе кода и после нажатия клавиши &lt;Enter&gt;. Строка, в которой содержится 
+  ошибка, выделяется красным цветом, и на экране отображается диалоговое окно 
+  с сообщением о возможной причине, вызвавшей ошибку (рис. 12.5).<BR>
+  </font></P>
+<P align="left"><img src="12.5.gif" width="524" height="483"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  12.5. </I></B><I>Сообщение об ошибке компиляции, обнаруженной при вводе инструкции</I><BR>
+  </font></P>
+<P align="left"><img src="12.6.gif" width="524" height="482"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  12.6. </I></B><I>Сообщение об ошибке компиляции в диалоговом окне <B>Microsoft 
+  Visual Basic</B></I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Другие ошибки 
+  компиляции обнаруживаются перед выполнением программы. Отметим, что VBA каждый 
+  раз автоматически компилирует программу при ее запуске на выполнение. В VBA 
+  предусмотрена также возможность компилировать программу без запуска на выполнение 
+  посредством команды <B>Отладка, Компилировать </B>(Debug, Compile). В этом случае 
+  предполагаемое местоположение ошибки выделяется синим цветом и на экране отображается 
+  диалоговое окно <B>Microsoft Visual Basic </B>с сообщением о возможной причине, 
+  вызвавшей ошибку (рис. 12.6).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="6"></a>Ошибки 
+  выполнения</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Ошибки выполнения 
+  возникают после успешной компиляции программы при ее выполнении. Причинами таких 
+  ошибок могут быть, например:<BR>
+  </font></P>
+<ol>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Некорректная информация 
+    при считывании файла с диска.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Некорректные данные, 
+    введенные пользователем, например требуется число, а пользователь вводит строковую 
+    информацию.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Некорректность вычислений, 
+    например деление на ноль.<BR>
+    </font></li>
+</ol>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В этих и 
+  подобных случаях на экране отображается диалоговое окно <B>Microsoft Visual 
+  Basic </B>с сообщением о номере ошибки и возможной причине, ее вызвавшей (рис. 
+  12.7).<BR>
+  </font></P>
+<P align="left"><img src="12.7.gif" width="432" height="247"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  12.7. </I></B><I>Сообщение об ошибке выполнения в диалоговом окне <B>Microsoft 
+  Visual Basic</B></I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Если в диалоговом 
+  окне <B>Microsoft Visual Basic </B>нажать кнопку <B>Отладка </B>(Debug), то 
+  в строке модуля желтым цветом будет выделена строка, вызвавшая ошибку и по причине 
+  которой выполнение программы было прервано. Кроме того, эта строка будет помечена 
+  стрелочкой. При прерывании выполнения программы VBA переходит в <I>режим прерывания. 
+  </I>Одной из наиболее удобных возможностей режима прерывания являются возможность 
+  узнать текущее значение переменных и свойств. Для этого достаточно расположить 
+  указатель мыши на имени свойства или переменной. Это вызовет появление всплывающей 
+  подсказки с текущим значением переменной или свойства. Из текста кода, изображенного 
+  на рисунке, видно, что значение переменной у равно 0, что и вызвало ошибку прерывания. 
+  Для задания режима вывода всплывающей подсказки с текущими значениями данных 
+  должен быть установлен флажок <B>Подсказки значений данных </B>(Auto Data Tips) 
+  диалогового окна <B>Параметры </B>(Options), вызываемого с помощью команды <B>Сервис, 
+  Параметры </B>(Tools, Options).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="7"></a>Логические 
+  ошибки</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Логические 
+  ошибки труднее всего обнаружить и устранить. Эти ошибки не приводят к прерыванию 
+  выполнения программы, т. е. визуально все идет гладко и выглядит так, как будто 
+  программа работает безупречно. Но это только кажущаяся идиллия, т. к. программа 
+  выдает неверные результаты. Локализация логических ошибок связана с тщательным 
+  анализом алгоритма программы с привлечением средств отладки VBA (рис. 12.8).<BR>
+  </font></P>
+<P align="left"><img src="12.8.gif" width="524" height="459"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  12.8. </I></B><I>Редактор кода в режиме прерывания</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="8"></a>Инструкция 
+  Option Explicit</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Простейшим 
+  средством предотвращения случайных ошибок является использование инструкции 
+  Option Explicit. Эта инструкция предписывает явно описывать все переменные, 
+  встречающиеся в программе. Использование инструкции option Explicit позволяет 
+  избежать следующей трудно отслеживаемой ошибки. Предположим, что в программе 
+  используется переменная с именем ссуда, а при наборе имени этой переменной где-то 
+  в программе вместо русской буквы с по ошибке набрана латинская буква с. Визуально, 
+  эти имена ничем не отличаются друг от друга, но воспринимаются программой как 
+  имена разных переменных. Если бы использовалась инструкция option Explicit, 
+  а значит имело место явное описание переменной Ссуда, то компилятор указал бы 
+  на переменную ссуда с латинской буквой с, как на неописанную, и эта, трудно 
+  отслеживаемая ошибка, была бы быстро найдена.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="9"></a>Пошаговое 
+  выполнение программ</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Редактор 
+  VBA позволяет выполнять пошаговую отладку программы. Ее можно выполнить либо 
+  при помощи панели инструментов <B>Отладка </B>(Debug), либо меню <B>Отладка 
+  </B>(Debug), которое включает команды и соответствующие комбинации клавиш (рис. 
+  12.9). Если панель инструментов <B>Отладка </B>(Debug) не отображена на экране, 
+  то ее можно отобразить, выполнив команду <B>Вид, Панели инструментов, Отладка 
+  </B>(View, Toolbars, Debug).<BR>
+  </font></P>
+<P align="left"><img src="12.9.gif" width="524" height="459"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  12.9. </I></B><I>Панель инструментов <B>Отладка </B>и раскрывающееся меню <B>Отладка</B></I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Для выполнения 
+  программы в пошаговом режиме используются четыре команды:<BR>
+  </font></P>
+<ol>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Команда <B>Отладка, 
+    Шаг с заходом </B>(Debug, Step Into), либо кнопка <B>Шаг с заходом </B>(Step 
+    Into) панели инструментов <B>Отладка </B>(Debug) осуществляет последовательную 
+    шаг за шагом отладку всей программы, включая процедуры, вызываемые в программе.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Команда <B>Отладка, 
+    Шаг с обходом </B>(Debug, Step Over), либо кнопка <B>Шаг с обходом </B>(Step 
+    Over) панели инструментов <B>Отладка </B>(Debug) осуществляет последовательную 
+    шаг за шагом отладку всей программы, исключая процедуры, т. е. если встречается 
+    процедура, то она выполняется целиком, а не пошагово, как это делается в команде 
+    <B>Отладка, Шаг с заходом </B>(Debug, Step Into).<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Команда <B>Отладка, 
+    Шаг с выходом </B>(Debug, Step Out), либо кнопка <B>Шаг с выходом </B>(Step 
+    Out) панели инструментов <B>Отладка </B>(Debug) завершает выполнение текущей 
+    процедуры и останавливает процесс пошаговой отладки на следующей после вызвавшей 
+    ее инструкции программы.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Команда <B>Отладка, 
+    Выполнить до текущей позиции </B>(Debug, Run to Cursor) выполняет программу 
+    до инструкции, на которой установлен курсор.<BR>
+    </font></li>
+</ol>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="10"></a>Точка 
+  останова</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Точка останова 
+  устанавливается или снимается с помощью команды <B>Отладка, Точка останова </B>(Debug, 
+  Toggle Breakpoint), либо посредством кнопки <B>Точка останова </B>(Toggle Breakpoint) 
+  панели инструментов <B>Отладка </B>(Debug). На листе модуля точки останова выделяются 
+  полосой кирпичного цвета и кругом того же цвета (рис. 12.10).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В одном проекте 
+  может быть несколько точек останова. Точки останова предназначены для приостановки 
+  выполнения программы. Все инструкции, расположенные выше, между и ниже точек 
+  останова, выполняются в обычном режиме.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Одновременно 
+  снять все точки останова можно, выполнив команду <B>Отладка, Снять все точки 
+  останова </B>(Debug, Clear All Breakpoint).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="11"></a>Вывод 
+  значений свойств и переменных</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Одним из 
+  наиболее удобных средств режима отладки является возможность узнать текущее 
+  значение переменных и свойств. Для этого достаточно расположить указатель мыши 
+  на имени свойства или переменной. Это вызовет появление всплывающей подсказки 
+  с текущим значением переменной или свойства. Для установки режима вывода всплывающей 
+  подсказки с текущими значениями данных должен быть установлен флажок <B>Подсказки 
+  значений данных </B>(Auto Data Tips) диалогового окна <B>Параметры </B>(Options), 
+  вызываемого командой <B>Сервис, Параметры </B>(Tools, Options).<BR>
+  </font></P>
+<P align="left"><img src="12.10.gif" width="439" height="369"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  12.10. </I></B><I>Точки останова</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Другим способом 
+  отслеживания текущих значений данных является использование диалогового окна 
+  <B>Контрольные значения </B>(Quick Watch), отображаемого на экране с помощью 
+  команды <B>Вид, Окно контрольного значения </B>(View, Quick Watch), либо команды 
+  <B>Отладка, Контрольное значение </B>(Debug, Quick Watch) (рис. 12.11). Диалоговое 
+  окно <B>Контрольные значения </B>(Quick Watch) применяется для одновременного 
+  отображения текущих значений нескольких данных. Команда <B>Отладка, Добавить 
+  контрольное значение </B>(Debug, Add Watch) позволяет добавить новые контрольные 
+  значения в диалоговом окне <B>Контрольные значения </B>(Quick Watch).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Удаление 
+  контрольного значения из диалогового окна производится посредством его выделения 
+  и нажатия клавиши &lt;Delete&gt;.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Существует 
+  также программный способ вывода значений свойств и переменных в диалоговом окне 
+  <B>Контрольные значения </B>(Quick Watch) при помощи метода Print объекта Debug. 
+  Ниже приведен пример программного способа вывода значения переменной:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ПроверяемаяПеременная 
+  = &quot;Вывод текста в окно отладки.&quot; Debug.Print ПроверяемаяПеременная</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Окно Локальные 
+  переменные </B>(Locals Window), отображаемое на экране командой <B>Вид, Окно 
+  локальных переменных </B>(View, Locals Window), выводит значения всех переменных 
+  текущей процедуры, а не только специально выбранных, как это происходит в окне 
+  <B>Контрольные значения </B>(Quick Watch).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Внешний же 
+  вид и структура обоих окон, <B>Локальные переменные </B>(Locals Window) и <B>Контрольные 
+  значения </B>(Quick Watch), одни и те же.<BR>
+  </font></P>
+<P align="left"><img src="12.11.gif" width="439" height="369"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  12.11. </I></B><I>Диалоговое окно <B>Контрольные значения</B></I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Окно Проверка 
+  </B>(Immediate Window), отображаемое на экране командой <B>Вид, Окно отладки 
+  </B>(View, Immediate Window), предоставляет пользователю возможность:<BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3">Набирать и вычислять 
+    отдельные инструкции VBA. Для этого достаточно в окне <B>Проверка </B>(Immediate 
+    Window) ввести соответствующую инструкцию и нажать клавишу &lt;Enter&gt;. 
+    Единственным ограничением на использование, инструкции является то, что она 
+    должна быть набрана в одну строку. Например,<BR>
+    </font> 
+    <p> <font face="Courier New, Courier, mono" size="3">s=0: For i=1 to 5: s=s+i^2: 
+      Next i: MsgBox s</font><font face="Times New Roman, Times, serif" size="3"><BR>
+      </font></p>
+  </li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Определять текущие 
+    значения переменных и свойств. Для этого в окне <B>Проверка </B>(Immediate 
+    Window) надо набрать вопросительный знак, имя переменной или свойства и нажать 
+    клавишу &lt;Enter&gt;. Например,<BR>
+    </font> 
+    <p> <font face="Courier New, Courier, mono" size="3">?х</font><font face="Times New Roman, Times, serif" size="3"><BR>
+      </font></p>
+  </li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Устанавливать новые 
+    текущие значения переменных. Для этого в окне <B>Проверка </B>(Immediate Window) 
+    надо набрать имя переменной, знак равенства и новое значение переменной:<BR>
+    </font> 
+    <p> <font face="Courier New, Courier, mono" size="3">х = 15</font></p>
+  </li>
+</ul>
+</BODY>
+</HTML>
+

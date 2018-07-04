@@ -1,0 +1,445 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+      <ul>
+<li><b><font face="Times New Roman" size=3><a href="#1">УРОК 3. ТЕМА: РАБОТА СО СПИСКОМ</a></font></b> </li>
+     <ul>
+     <li><font face="Times New Roman" size=3><a href="#2">ЦЕЛЬ УРОКА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#3">ПРАКТИКА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#4">САМОСТОЯТЕЛЬНОЕ ЗАДАНИЕ</a></font> </li>
+
+     </ul></ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Урок 3.</B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Тема:</font></font> 
+  <font face="Times New Roman, Times, serif" size="5">Работа со списком</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="2"></a>Цель 
+  урока</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В данном 
+  уроке создается приложение, на примере которого вы сможете научиться:<BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Заполнять списки<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Выбирать несколько 
+    элементов из списка<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Выполнять специфицированную 
+    операцию над выбранными элементами из списка<BR>
+    </font></li>
+</ul>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="3"></a>Практика</font></B><font size="4"><BR>
+  </font> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Создадим 
+  приложение, которое позволит выбрать несколько чисел, выводимых В списке В диалоговом 
+  Окне Операции над элементами списка (рис. У3.1).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В группе 
+  Операция следует установить один из переключателей: сумма, произведение или 
+  среднее, чтобы указать, какая операция будет выполняться над выбранными числами. 
+  Нажатие кнопки вычислить должно привести к выполнению операции и выводу результата 
+  в поле Результат.<BR>
+  </font></P>
+<P align="left"><img src="3,1.gif" width="384" height="249"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У3.1. </I></B><I>Диалоговое окно Операции над элементами списка</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Обсудим, 
+  как приведенная ниже программа решает перечисленные задачи и что происходит 
+  в программе.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="340">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="230" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="388" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="154"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="230" HEIGHT="154"> 
+        <DIV WIDTH="230" HEIGHT="154"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">UserForm Initialize<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="388" HEIGHT="154"> 
+        <ol>
+          <li> 
+            <DIV WIDTH="388" HEIGHT="154"> <font face="Times New Roman, Times, serif" size="3">Активизирует 
+              диалоговое окно. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="388" HEIGHT="154"><font face="Times New Roman, Times, serif" size="3"> 
+              Запрещает ввод данных в поле Результат, </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="388" HEIGHT="154"><font face="Times New Roman, Times, serif" size="3"> 
+              Назначает клавише &lt;Esc&gt; функцию кнопки Отмена, а клавише &lt;Enter&gt; 
+              — Вычислить. </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="388" HEIGHT="154"><font face="Times New Roman, Times, serif" size="3"> 
+              Связывает с кнопками вычислить и отмена, а также с переключателями 
+              всплывающие подсказки.<BR>
+              </font></DIV>
+          </li>
+        </ol>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="154"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="104"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="230" HEIGHT="104"> 
+        <DIV WIDTH="230" HEIGHT="104"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            вычислить запускает на выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButtonl 
+            Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="388" HEIGHT="104"> 
+        <DIV WIDTH="388" HEIGHT="104"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Определяет, 
+            какой переключатель выбран, В зависимости от выбранного переключателя 
+            производит действие над выбранными в списке числами. Найденное число 
+            выводится в поле Результат.<BR>
+            </font></P>
+          </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="104"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="230" HEIGHT="82"> 
+        <DIV WIDTH="230" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            Отмена запускает на выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButton2 
+            Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="388" HEIGHT="82"> 
+        <DIV WIDTH="388" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Закрывает диалоговое 
+            окно.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="230" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="388" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButtonl_Click()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  проведения вычислений с выбранными элементами<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' списка в зависимости 
+  от выбранной операции </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim i As Integer 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim n As Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' i - вспомогательная 
+  переменная<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' n - играет 
+  роль счетчика числа выбранных элементов из списка</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Сумма As 
+  Double<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Произведение 
+  As Double<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Среднее 
+  As Double<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Результат 
+  As Double</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Сумма - сумма 
+  выбранных элементов из списка<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Произведение 
+  - произведение выбранных элементов из списка<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Среднее - 
+  среднее арифметическое значение выбранных элементов из списка<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Результат 
+  - в эту переменную записывается результат, найденный<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' в зависимости 
+  от выбранного переключателя<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' При выборе 
+  первого переключателя вычисляется сумма выбранных элементов<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If OptionButtonl.Value 
+  = True Then Сумма = 0</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> With ListBoxl 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">For i = 0 To 
+  .ListCount - 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If .Selected(i) 
+  = True Then Сумма = Сумма + .List(i)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next i </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Результат = 
+  Сумма<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' При выборе 
+  второго переключателя вычисляется произведение </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> выбранных элементов<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If OptionButton2.Value 
+  = True Then Произведение = 1 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">With ListBoxl<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 0 To 
+  .ListCount - 1</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> If .Selected(i) 
+  = True Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Произведение 
+  = Произведение * .List(i) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next i</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Результат = 
+  Произведение End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' При выборе 
+  третьего переключателя вычисляется среднее арифметическое</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> ' значение выбранных 
+  элементов </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If OptionButton3.Value 
+  = True Then Среднее = 0<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">n = 0<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With ListBoxl<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 0 To 
+  .ListCount - 1 i<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If .Selected(i) 
+  = True Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">n = n + 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Среднее = Среднее 
+  + .List(i) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Next i </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Результат = 
+  Среднее / n</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Результат 
+  выводится в поле Результат </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBoxl.Text 
+  = CStr(Format(Результат, &quot;Fixed&quot;)) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton2_Click() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  закрытия диалогового окна </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">UserForml.Hide<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  UserForm_Initialize()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  инициализации диалогового окна </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Заполнение 
+  списка и установка режима выбора<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' нескольких 
+  элементов из списка </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With ListBoxl<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.List = Array(1, 
+  3, 4, 5, 6, 7, 8, 10)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Listlndex = 
+  0<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.MultiSelect 
+  = fmMultiSelectMulti<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Первоначальный 
+  выбор переключателя Сумма при </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' инициализации 
+  диалогового окна и задание<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' текста всплывающих 
+  подсказок у переключателей </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With OptionButtonl<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Value = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.ControlTipText 
+  = &quot;Сумма выбранных элементов&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End With OptionButton2.ControlTipText 
+  = &quot;Произведение выбранных элементов&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">OptionButton3.ControlTipText 
+  = &quot;Среднее значение выбранных элементов&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Поле Результат 
+  не доступно для пользователя</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBoxl.Enabled 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Назначение 
+  клавише &lt;Enter&gt; функции кнопки Вычислить </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' и задание текста 
+  всплывающей подсказки<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With CommanandButtonl 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Default = True 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.ControlTipText 
+  = &quot;Нахождение результата&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Назначение 
+  клавише &lt;Esc&gt; функции кнопки Отмена<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' и задание 
+  текста всплывающей подсказки</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">CommandButton2.Cancel 
+  = True </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Задание -заголовка 
+  пользовательской формы</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">UserForm1.Caption 
+  = &quot;Операции над элементами списка&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> UserForm1.Show 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><b><a name="4"></a>Самостоятельное 
+  задание</b></font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Интересной 
+  особенностью приводимой процедуры инициализации userForm_initiaiize является 
+  то, что заголовок диалогового окна вводится программно при помощи свойства Caption, 
+  а не вручную при помощи окна <B>Свойства </B>(Properties).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Стоит также 
+  отметить небольшой недостаток этой программы, связанный с тем, что в ней не 
+  построен обработчик ошибок. Хотя на первый взгляд кажется, что в программе обработчик 
+  ошибок совсем не нужен, это не так. Ошибка может возникнуть, например при вычислениях, 
+  если выводимый в списке массив данных содержит как числа, так и строковые константы.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В качестве 
+  самостоятельного задания составьте программу нахождения среднего балла студентов, 
+  выбранных из списка в диалоговом окне Средний балл (рис. УЗ.2). Список заполните 
+  из данных, введенных из диапазона на рабочем листе с помощью свойства RowSource 
+  объекта ListBox. Фамилии студентов пусть будут расположены в столбце А, а их 
+  оценки в столбце в диапазона с данными о студентах. Создайте в программе обработчик 
+  ошибок, который будет проверять, являются ли данные из второго столбца списка 
+  с оценками студентов числами. Если хотя бы одно из этих данных не является числом, 
+  программа должна проинформировать об этом пользователя с просьбой исправить 
+  найденную некорректность. Обратите внимание также на то, чтобы в диалоговом 
+  окне средний балл надписи на кнопках ок и Отмена для большей презентабельности 
+  были выведены полужирным шрифтом увеличенного размера.<BR>
+  </font></P>
+<P align="left"><img src="3,2.gif" width="352" height="252"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  УЗ.2.</I></B><I> Диалоговое окно Средний балл</I><BR>
+  </font></P>
+</BODY>
+</HTML>
+

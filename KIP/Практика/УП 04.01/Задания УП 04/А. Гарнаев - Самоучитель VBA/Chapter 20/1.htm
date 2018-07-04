@@ -1,0 +1,905 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+      <ul>
+<li><b><font face="Times New Roman" size=3><a href="#1">УРОК 5. ТЕМА: РЕШЕНИЕ УРАВНЕНИЯ, ЗАВИСЯЩЕГО
+
+
+ОТ ПАРАМЕТРА. ПОСТРОЕНИЕ ДИАГРАММЫ
+</a></font></b> </li>
+     <ul>
+     <li><font face="Times New Roman" size=3><a href="#2">ЦЕЛЬ УРОКА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#3">ТЕОРИЯ</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#4">ПРАКТИКА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#5">САМОСТОЯТЕЛЬНОЕ ЗАДАНИЕ</a></font> </li>
+
+     </ul></ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Урок 5</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Тема:Решение 
+  уравнения,</font></font> <font face="Times New Roman, Times, serif" size="5">зависящего</font> 
+  <font face="Times New Roman, Times, serif" size="5">от параметра.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="5">Построение 
+  диаграммы</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="2"></a>Цель 
+  урока</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В уроке разрабатывается 
+  приложение, позволяющее находить корни уравнения в зависимости от параметра, 
+  а также строить диаграмму, демонстрирующую зависимость корня от параметра. Конструируя 
+  данное приложение, вы научитесь:<BR>
+  </font></P>
+<ol>
+  <li> <font face="Times New Roman, Times, serif" size="3">Вводить формулы при 
+    помощи элемента управления RefEdit<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Находить методом Goaiseek 
+    корни уравнения, зависящего от параметра<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Устанавливать параметры 
+    метода Goaiseek<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Создавать профессию 
+    на рабочем листе при помощи метода Dataseries<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Программировать протаскивание 
+    маркера заполнения выделенного диапазона на рабочем листе при помощи метода 
+    AutoFill<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Строить диаграммы<BR>
+    </font></li>
+</ol>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="3"></a>Теория</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В этом разделе 
+  решается уравнение<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><I><font face="Courier New, Courier, mono">х<SUP>3</SUP> 
+  - х - b = 0</font></I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">при различных 
+  величинах параметра <I>Ь, </I>изменяющихся от начального до конечного значения 
+  с указанным шагом. При каждом конкретном значении параметра корень уравнения 
+  находится методом Goaiseek. Для нахождения корней уравнения при различных значениях 
+  параметра, эти значения вводятся в диапазон ячеек рабочего листа, формулы левых 
+  частей уравнений </font><font face="Times New Roman, Times, serif" size="3">в 
+  другой диапазон, третий диапазон отводится под неизвестную. В диапазон с неизвестными 
+  вводятся начальные приближения корня, а потом последовательно перебирая соответствующие 
+  ячейки из этих трех диапазонов методом GoalSeek находятся соответствующие корни.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="4"></a>Практика</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Для решения 
+  задачи нахождения корней уравнения, зависящего от параметра, и построения диаграммы 
+  зависимости корней от параметра с помощью редактора пользовательских форм создадим 
+  диалоговое окно нелинейное уравнение с параметром (рис. У5.1).<BR>
+  </font></P>
+<P align="left"><img src="5.1.gif" width="364" height="288"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У5.1. </I></B><I>Диалоговое окно Нелинейное уравнение с параметром</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">О решаемом 
+  уравнении предполагается, что оно преобразовано к виду, когда только левая часть 
+  зависит от неизвестной и параметра. Правая же часть -постоянна. При вводе левой 
+  части уравнения в поле ввода элемента управления RefEdit вместо переменной х 
+  надо давать ссылку на ячейку В2, а вместо параметра — А2. Кроме того, формула 
+  должна быть составлена по тем же правилам, по которым пишутся формулы рабочего 
+  листа. Например, для упомянутого выше уравнения в поле надо ввести:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">=В2^3-В2-А2</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">либо эквивалентную 
+  формулу с абсолютными ссылками на ячейки.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Обсудим, 
+  как приведенная ниже программа решает перечисленные задачи и что происходит 
+  в программе.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="873">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="2"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="233" HEIGHT="2"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="386" HEIGHT="2"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="2"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="86"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="233" HEIGHT="86"> 
+        <DIV WIDTH="233" HEIGHT="86"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">UserForm_Initialize<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="386" HEIGHT="86"> 
+        <ol>
+          <li> 
+            <DIV WIDTH="386" HEIGHT="86"> <font face="Times New Roman, Times, serif" size="3"> 
+              Активизирует диалоговое окно.<BR>
+              </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="386" HEIGHT="86"> <font face="Times New Roman, Times, serif" size="3">Назначает 
+              клавише &lt;Esc&gt; функцию кнопки отмена, а клавише &lt;Enter&gt; 
+              - вычислить.<BR>
+              </font></DIV>
+          </li>
+        </ol>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="86"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="552"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="233" HEIGHT="552"> 
+        <DIV WIDTH="233" HEIGHT="673"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            вычислить запускает на выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButtonl_Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="386" HEIGHT="552"> 
+        <ol start=3>
+          <li> 
+            <DIV WIDTH="386" HEIGHT="673"> <font face="Times New Roman, Times, serif" size="3">При 
+              выполнении щелчка в соответствующей ячейке в поле элемента управления 
+              Re f Edit вводится абсолютная ссылка на эту ячейку. При выделении 
+              ячейки с формулой и протаскивании ее маркера заполнения вниз вдоль 
+              столбца для получения корректного результата нужна не абсолютная, 
+              а относительная ссылка. С этой целью из строки с формулой, присвоенной 
+              строковой переменной Формула, удаляются все знаки $, тем самым превращая 
+              все абсолютные ссылки в относительные.</font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="386" HEIGHT="673"><font face="Times New Roman, Times, serif" size="3"> 
+              Удаляются с рабочего листа ранее введенные данные и создаются заголовки 
+              полей отчета. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="386" HEIGHT="673"><font face="Times New Roman, Times, serif" size="3"> 
+              Устанавливаются предельное число итераций и относительная погрешность 
+              метода Goal Seek. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="386" HEIGHT="673"><font face="Times New Roman, Times, serif" size="3"> 
+              Методом DataSeries в диапазоне создается арифметическая профессия 
+              изменения значений параметра от начального до конечного значения 
+              с указанным шагом. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="386" HEIGHT="673"><font face="Times New Roman, Times, serif" size="3"> 
+              Вводится начальное приближение в диапазон. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="386" HEIGHT="673"><font face="Times New Roman, Times, serif" size="3"> 
+              Вводится в диапазон левая часть уравнения при различных значениях 
+              параметра. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="386" HEIGHT="673"><font face="Times New Roman, Times, serif" size="3"> 
+              Последовательно для каждой ячейки, имеющей формулу с левой частью 
+              уравнения, методом GoalSeek, находится корень уравнения. </font></DIV>
+          </li>
+          <li><font face="Times New Roman, Times, serif" size="3"> Вызывается 
+            процедура ПостроениеГрафика для построения графика (рис. У5.2).</font></li>
+        </ol>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="552"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="76"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="233" HEIGHT="76"> 
+        <DIV WIDTH="233" HEIGHT="76"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            отмена запускает на выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButton2 
+            _Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="386" HEIGHT="76"> 
+        <DIV WIDTH="386" HEIGHT="76"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">11 . Закрывает 
+            диалоговое окно.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="76"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="38"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="233" HEIGHT="38"> 
+        <DIV WIDTH="233" HEIGHT="38"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Процедура<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">ПостроениеГрафика<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="386" HEIGHT="38"> 
+        <DIV WIDTH="386" HEIGHT="38"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">12. Строит график.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="38"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="2"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="233" HEIGHT="2"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="386" HEIGHT="2"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="2"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><img src="5.2.gif" width="503" height="555"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У5.2. </I></B><I>Отчет, выводимый на рабочем листе программой решения уравнения 
+  с параметром</I><BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButtonl_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  нахождения корней уравнения с параметром<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim ПараметрНач 
+  As Double</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Dim ПараметрКон 
+  As Double </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim ПараметрШаг 
+  As Double</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Dim НачПрибл 
+  As Double </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim ПраваяЧасть 
+  As Double<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Формула 
+  As String </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' ПараметрНач 
+  - начальное значение параметра<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' ПараметрКон 
+  - конечное значение параметра<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' ПараметрШаг 
+  - шаг изменения параметра<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' НачПрибл - 
+  начальное приближение корня, общее для всех<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' значений параметра<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' ПраваяЧасть 
+  - правая часть уравнения<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Формула - 
+  левая часть уравнения. Уравнение записывается так,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' что неизвестная 
+  входит только в левую часть, а </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' правая часть 
+  - постоянна<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim i As Integer 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim Длина As 
+  Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim n As Integer 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' i, n, Длина 
+  - вспомогательные переменные<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Ввод исходных 
+  данных из диалогового окна </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With UserForml<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ПарамётрНач 
+  = CDbl(.TextBoxl.Text) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ПараметрКон = 
+  CDbl(.TextBox2.Text) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ПараметрШаг = 
+  CDbl(.TextBox3.Text) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">НачПрибл = CDbl(.TextBox4.Text) 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Формула = Trim(CStr(.RefEditl.Text)) 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ПраваяЧасть = 
+  CDbl(.TextBox5.Text)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End With</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Элемент управления 
+  RefEdit при вводе в него ссылок на ячейки<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' щелчком в 
+  соответствующей ячейке возвращает абсолютные ссылки на<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' эти ячейки.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' При протаскивании 
+  маркера заполнения выделенной ячейки,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' содержащей 
+  формулу левой части уравнения, вниз по столбцу<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' для получения 
+  корректного результата необходима не абсолютная, а<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' относительная 
+  ссылка. Для преобразования абсолютной ссылки в<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' относительную 
+  ниже в операторе цикла Do-Loop из строки с формулой,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' присвоенной 
+  строковой переменной Формула, удаляются все знаки<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' абсолютной 
+  ссылки $ </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">i = l Do<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Mid(Формула, 
+  i, 1) = &quot;$&quot; Then Длина = Len(Формула)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Формула = Left(Формула, 
+  i - 1) + Right(Формула, Длина - i) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Else<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">i = i + 1</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Loop While i 
+  &lt;= Len(Формула)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Очистка трех 
+  первых столбцов рабочего листа</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;А:С&quot;).Clear<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Форматирование 
+  заголовка отчетной таблицы. </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' Установка:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' ширины первых 
+  трех столбцов высоты первой строки<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">выравнивание 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;A:A&quot;).ColumnWidth 
+  = 12 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Range(&quot;В:В&quot;).ColumnWidth 
+  = 14 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Range(&quot;С:С&quot;).ColumnWidth 
+  = 17 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Range(&quot;Al:Cl&quot;).Select 
+  With Selection<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.RowHeight = 
+  37<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.HorizontalAlignment 
+  = xlGeneral<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.VerticalAlignment 
+  = xlTop<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.WrapText = 
+  True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Font.Bold = 
+  True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Font.Size = 
+  11<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End With '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Ввод заголовков 
+  трех первых столбцов рабочего листа </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Al&quot;).Value 
+  = &quot;Параметр&quot; Range(&quot;Bl&quot;).Value = &quot;Переменная&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Cl&quot;).Value 
+  = &quot;Левая часть уравнения&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Установка 
+  параметров метода Подбор параметра<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With Application<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Maxlterations 
+  = 1000<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.MaxChange = 
+  0.0001 End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Ввод в столбец 
+  А значений параметра<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;A2&quot;)-Value 
+  = ПараметрНач<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;A2&quot;).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Selection.DataSeries 
+  Rowcol:=xlColurnns,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Type:=xlLinear, 
+  Step:=napaметpШaг, Stop:=napaметpKoн </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Определение 
+  числа заполненных строк<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">n = Range (&quot;A2&quot;) 
+  .Current-Region.Rows .Count </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Ввод в диапазон 
+  столбца В начального приближения<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(Cells(2, 
+  2), Cells(n, 2)).Value = НачПрибл </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Ввод в диапазон 
+  столбца С левой части уравнения<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;C2&quot;).Formula 
+  = Формула Range(&quot;C2&quot;).AutoFill<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Destination:=Range(Cells(2, 
+  3), Cells(n, 3)),<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Type:=xlFillDefault 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Последовательное 
+  решение уравнений с помощью команды Подбор параметра<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 2 То 
+  n<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Cells(i, 3).GoalSeek 
+  Goal:=ПраваяЧасть,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ChangingCell:=Cells(i, 
+  2) Next i<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Вызов процедуры 
+  для построения графика </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ПостроениеГрафика</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton2_Click() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  закрытия диалогового окна </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">UserForml.Hide<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  UserForm_Initialize()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  активизации диалогового окна<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Клавише &lt;Enter&gt; 
+  назначена функция кнопки Вычислить.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Клавише &lt;Esc&gt; 
+  назначена функция кнопки Отмена.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">CommandButtonl.Default 
+  = True CommandButton2.Cancel = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">UserForml.Show<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub ПостроениеГрафика()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  построения графика</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim n As Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' n - число 
+  строк диапазона, по которому строится график<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim ДиапазонОсиY 
+  As Object</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Dim ДиапазонОсиХ 
+  As Object</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Dim ИмяДиаграммы 
+  As String </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim Диапазону 
+  As String </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim ДиапазонХ 
+  As String </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim ИмяЛиста 
+  As String<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">n = ActiveSheet.Cells(1, 
+  1).CurrentRegion.Rows.Count</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ИмяЛиста = ActiveSheet.Name<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Удаление всех 
+  ранее построенных диаграмм с. рабочего листа<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.ChartObj 
+  ects.Delete<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Создание новой 
+  диаграммы и установка ее типа<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Charts.Add<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveChart.ChartType 
+  = xlLineMarkers</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Определение 
+  диапазона, отводимого под значения функции </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Диапазону = 
+  &quot;В2:В&quot; &amp; LTrim(CStr(n)}<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set ДиапазонОсиУ 
+  = Sheets(ИмяЛиста).Range(Диапазону)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Определение 
+  диапазона, отводимого под значения аргумента </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ДиапазонХ = &quot;А2:А&quot; 
+  &amp; LTrim(CStr(n))<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set ДиапазонОсиХ 
+  = Sheets(ИмяЛиста).Range(ДиапазонХ) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Построение 
+  графика</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveChart.SetSourceData 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Source:=ДиапазонОсиY, 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">PlotBy:=xlColumns</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> ActiveChart.SeriesCollection(l).XValues 
+  = ДиапазонОсиХ </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ActiveChart.Location 
+  Where:=xlLocationAsObject, Name:=ИмяЛиста With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ActiveChart .HasTitle 
+  = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.ChartTitle.Characters.Text 
+  = &quot;Зависимость корня от параметра&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Axes(xlCategory, 
+  xlPrimary).HasTitle = True ,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Axes(xlCategory, 
+  xlPrimary)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.AxisTitle.Characters.Text 
+  = &quot;Параметр&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Axes(xlValue, 
+  xlPrimary).HasTitle = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Axes(xlValue, 
+  xlPrimary)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.AxisTitle.Characters.Text 
+  = &quot;Корень&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ActiveChart.HasLegend 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ИмяДиаграммы 
+  = ActiveSheet.ChartObjects(1).Name </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Перемещение 
+  диаграммы и изменение ее размеров </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.Shapes(ИмяДиаграммы).ScaleHeight 
+  1.17, msoFalse,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">msoScaleFromBottomRight 
+  ActiveSheet.Shapes(ИмяДиаграммы).IncrementLeft 124.5<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.Shapes(ИмяДиаграммы).IncrementTop 
+  -25.5 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Процедура 
+  построениеграфика выглядит довольно громоздкой. При ее написании лучше всего 
+  воспользоваться MacroRecorder, который переведет производимые пользователем 
+  вручную действия по построению диаграммы на язык VBA. Итак, для активизации 
+  MacroRecorder выберите команду <B>Сервис, Макрос, Начать запись </B>(Tools, 
+  Macro, Record New Macro) и запустите MacroRecorder на запись. После задания 
+  всех параметров в появившемся диалоговом окне <B>Запись макроса </B>(Record 
+  Macro) и нажатия кнопки ОК появится плавающая панель инструментов с кнопкой 
+  <B>Остановить запись </B>(Stop Recording). Теперь все производимые действия 
+  будут записываться до тех пор, пока не будет нажата эта кнопка. Постройте диаграмму 
+  по следующему алгоритму:<BR>
+  </font></P>
+<ol>
+  <li> <font face="Times New Roman, Times, serif" size="3">Нажмите кнопку <B>Мастер 
+    диаграмм </B>(Chart Wizard) панели инструментов <B>Стандартная </B>(Standard).<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В появившемся окне 
+    первого шага мастера диаграм_м на вкладке <B>Стандартные </B>(Standard Types) 
+    в списке <B>Тип </B>(Chart type) выберите <B>График </B>(Line), а в группе 
+    <B>Вид </B>(Chart sub-type) - четвертый элемент. Нажмите кнопку <B>Далее &gt; 
+    </B>(Next &gt;).<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">В появившемся окне 
+    второго шага мастера диаграмм на вкладке <B>Диапазон данных </B>(Data Range) 
+    выберите переключатель <B>Ряды в столбцах </B>(Series in Columns) и в поле 
+    <B>Диапазон </B>(Data range) введите ссылку на диапазон =лист1! $в$2:$в$12, 
+    отводимый под значения функции, график которой строится. В поле <B>Подписи 
+    оси X </B>(Category (X) axis labels) вкладки Ряд (Series) введите ссылку на 
+    диапазон =лист1 !$д$2:$д$12, отводимый под значения аргумента. Нажмите кнопку 
+    Далее &gt; (Next &gt;).<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">В появившемся окне 
+    третьего шага мастера диаграмм на вкладке <B>Заголовки </B>(Titles) в поле 
+    <B>Название диаграммы </B>(Chart title) введите зависимость </font><font face="Times New Roman, Times, serif" size="3">корня 
+    от параметра, в поле <B>Ось X (категорий) </B>(Category (X) axis) - - Параметр, 
+    в поле <B>Ось Y (значений) </B>(Category (Y) axis) - корень. На вкладке <B>Легенда 
+    </B>(Legent) снимите флажок <B>Добавить легенду </B>(Show Legent). Нажмите 
+    кнопку <B>Далее &gt; </B>(Next &gt;).<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В появившемся окне 
+    четвертого шага мастера диаграмм в группе <B>Поместить диаграмму на листе 
+    </B>(Place chart) выберите переключатель <B>имеющемся </B>(As object in). 
+    Нажмите кнопку <B>Готово </B>(Finish).<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В построенной диаграмме 
+    ухватитесь за маркер изменения размера и увеличьте размер диаграммы. После 
+    этого, ухватившись за маркер переноса, переместите диаграмму в требуемое место 
+    на рабочем листе.<BR>
+    </font></li>
+</ol>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Перечисленные 
+  выше действия будут переведены MacroRecorder в следующий макрос.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Макрос1() 
+  '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Макрос1 Макрос<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Макрос запиг.лн 
+  27.04.99 (Андрей)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Charts.Add<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">AcliveChart.ChartType 
+  = xlLineMarkers<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveChart.SetSourceData 
+  _<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Source:=Sheets(&quot;Лист!&quot;).Range(&quot;B2:В12&quot;), 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">PlotBy:=xlColumns<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveChart.SeriesCollection(1).XValues 
+  = &quot;=Лист1!R2C1:R12C1&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ActiveChart.Location 
+  Where:=xlLocationAsObject, Name:=&quot;Лиcтl&quot; With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ActiveChart<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.HasTitle = 
+  False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Axes(xlCategory, 
+  xlPrimary).HasTitle = False </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Axes(xlValue, 
+  xlPrimary).HasTitle = False </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With ActiveChart 
+  .HasTitle = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.ChartTitle.Characters.Text 
+  = &quot;Зависимость корня от параметра&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Axes (xlCategory, 
+  xlPrimary)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.HasTitle = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Axes(xlCategory, 
+  xlPrimary)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.AxisTitle.Characters.Text 
+  = &quot;Параметр&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Axes(xlValue, 
+  xlPrimary)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.HasTitle = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Axes(xlValue, 
+  xlPrimary)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.AxisTitle.Characters.Text 
+  = &quot;Корень&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.ChartObjects(&quot;Диагр. 
+  14&quot;)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Activate ActiveChart.ChartArea.Select</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> ActiveSheet.Shapes(&quot;Диагр. 
+  14&quot;)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.ScaleHeight 
+  1.17, msoFalse,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">msoScaleFromBottomRight<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.Shapes(&quot;Диагр. 
+  14&quot;)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.IncrementLeft 
+  124.5 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ActiveSheet.Shages(&quot;Диагр. 
+  14&quot;)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.IncrementTop 
+  -25.5<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">He трудно 
+  заметить, что данный макрос построения диаграмм сильно привязан к конкретному 
+  диапазону данных, рабочему листу и имени диаграммы. В процедуре построениеГрафика 
+  этот макрос существенно видоизменен для того, чтобы избавиться от этих обременительных 
+  ограничений. Кроме того, в ней предусмотрено удаление всех ранее построенных 
+  на рабочем листе диаграмм с тем, чтобы они не наслаивались друг на друга при 
+  многократном запуске приложения на одном и том же рабочем листе.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Процесс создания 
+  процедур для построения графиков с использованием MacroRecorder, особенно для 
+  избавления процедуры от привязки к кон</font><font face="Times New Roman, Times, serif" size="3">кретному 
+  диапазону данных, рабочему листу и имени диаграммы, кому-то может показаться 
+  излишне искусственным. Им советуем для построения графиков использовать метод 
+  chartwizard, дающий более быстрый путь к цели. Ниже приведены необходимые изменения 
+  в процедуре построение-Графика для метода chartwizard. Уже поверхностное сравнение 
+  старой и новой версий процедуры построениеГрафика показывает, что благодаря 
+  методу chartwizard процедура стала компактнее. Кроме того, теперь она использует 
+  меньше вспомогательных переменных, необходимых при построении диаграммы.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub ПостроениеГрафика()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  построения графика </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim n As Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' n - число 
+  строк диапазона, по которому строится график </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">n = ActiveSheet.Cells(1, 
+  1).CurrentRegion.Rows.Count<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Удаление всех 
+  ранее построенных диаграмм с рабочего листа<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.ChartObjects.Delete<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' (195, 30, 
+  200, 190) - координаты области, где строится диаграмма </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.ChartObjects.Add(195, 
+  30, 200, 190).Select </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Построение 
+  диаграммы<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveChart.Chartwizard 
+  Source:= _<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(Cells(2, 
+  1), Cells(n, 2)),<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Gallery:=xlLine, 
+  Format:=4, PlotBy:=xlColumns,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">CategoryLabels:=l, 
+  SeriesLabels:=0, HasLegend:=False,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Title:=&quot;3ависимость 
+  корня от параметра&quot;,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">CategoryTitle:=&quot;Параметр&quot;,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ValueTitle:=&quot;KopeHb&quot;, 
+  ExtraTitle:=&quot;&quot; End Sub<BR>
+  </font><font face="Times New Roman, Times, serif" size="4"> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="4"><B><a name="5"></a>Самостоятельное 
+  задание</B></font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Разработать 
+  приложение с диалоговым окном уравнение с двумя параметрами (рис. У5.3), которое 
+  позволит:<BR>
+  </font></P>
+<ol>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Находить при всех 
+    возможных комбинациях значений параметров а и b </font></li>
+  <li><font face="Times New Roman, Times, serif" size="3"><I>х<SUP>3</SUP> - ах<SUP>2</SUP> 
+    + b </I>= 0.<BR>
+    </font></li>
+  <li><font face="Times New Roman, Times, serif" size="3">Cтроить график, показывающий 
+    зависимость корня от значений параметров а и b<BR>
+    </font></li>
+</ol>
+<P align="left"><img src="5.3.gif" width="466" height="333"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><i>Рис. 
+  У5.3. </i></B><i>Диалоговое окно Уравнение с двумя параметрами</i></font></P>
+</BODY>
+</HTML>
+

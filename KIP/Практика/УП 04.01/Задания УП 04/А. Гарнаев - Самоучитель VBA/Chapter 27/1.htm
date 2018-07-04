@@ -1,0 +1,1224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+      <ul>
+<li><b><font face="Times New Roman" size=3><a href="#1">УРОК 12. ТЕМА: ЛИНИЯ ТРЕНДА</a></font></b> </li>
+     <ul>
+     <li><font face="Times New Roman" size=3><a href="#2">ЦЕЛЬ УРОКА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#3">ТЕОРИЯ</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#4">ПРАКТИКА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#5">САМОСТОЯТЕЛЬНОЕ ЗАДАНИЕ</a></font> </li>
+  
+     </ul></ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Урок 12</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Тема: 
+  Линия тренда</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="2"></a>Цель 
+  урока</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В данном 
+  уроке разрабатывается приложение с многостраничным диалоговом окном, в котором 
+  по вводимым данным строится линия тренда и определяются ее коэффициенты. Линия 
+  тренда находится как в случае однократного, так и многократного наблюдения событий.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Конструируя 
+  данное приложение, вы освоите на практике:<BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3">Построение многостраничных 
+    диалоговых окон<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Построение линии тренда<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Применение метода offset 
+    для вывода данных на рабочем листе<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Считывание данных 
+    из каждой конкретной ячейки диапазона<BR>
+    </font></li>
+</ul>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="3"></a>Теория</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В этом разделе 
+  предлагается рассмотреть следующие две задачи.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Первая 
+  задача. </B>Теодор Сосулькин решил летом подработать, продавая на улице мороженое. 
+  Сосулькин был очень аккуратным человеком и не хотел прогореть. Поэтому он вел 
+  тщательный учет продажи каждого сорта мороженного, стараясь предвидеть, какой 
+  спрос на мороженое будет на следующий день. В идеале Теодор хотел, чтобы у него 
+  всегда был достаточный запас мороженого любого сорта, чтобы никакой покупатель 
+  не отходил от его лотка без покупки. С другой стороны, Сосулькин не хотел создавать 
+  чрезмерный запас мороженого, т. к. это скоропортящийся продукт и несвоевременная 
+  его реализация ведет к большим издержкам и даже в конечном итоге может привести 
+  к быстрому разорению.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">На основе 
+  своих наблюдений Сосулькин заметил, что объем продажи мороженого зависит, кроме 
+  прочих факторов, от температуры на улице. Объемы продаж эскимо &quot;За ухо 
+  не оторвешь&quot; за первые шесть дней торговли приведены в табл. 31.1. Температура 
+  в эти шесть дней возрастала.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Таблица 
+  31.1. </I></B><I>Температура и объемы продажи</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="65">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="121" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="63" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="83" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="83" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="83" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="83" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="95" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="65"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="121" HEIGHT="65"> 
+        <DIV WIDTH="121" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Температура 
+            </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Продажа, шт.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="63" HEIGHT="65"> 
+        <DIV WIDTH="63" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">23 </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">46<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="83" HEIGHT="65"> 
+        <DIV WIDTH="83" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">24</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3"> 49<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="83" HEIGHT="65"> 
+        <DIV WIDTH="83" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">25 </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">50<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="83" HEIGHT="65"> 
+        <DIV WIDTH="83" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">26</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3"> 52<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="83" HEIGHT="65"> 
+        <DIV WIDTH="83" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">28</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3"> 52<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="95" HEIGHT="65"> 
+        <DIV WIDTH="95" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">30</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3"> 55<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="65"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="121" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="63" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="83" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="83" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="83" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="83" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="95" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Сосулькин 
+  решил определить на основе этих данных, каков ожидаемый объем продажи мороженого 
+  в зависимости от температуры, чтобы зная прогноз погоды составить соответствующий 
+  запас. Из курса математики он вспомнил, что для этих целей служит уравнение 
+  тренда, а критерием адекватности модели является коэффициент корреляции. Сосулькин 
+  также вспомнил, что уравнение тренда можно построить на рабочем листе на основе 
+  диаграммы. Коэффициенты <I>m </I>и <I>b </I>линейного тренда <I>у </I>= <I>mx 
+  + b </I>можно также определить с помощью функций рабочего листа НАКЛОН (SLOPE) 
+  и ОТРЕЗОК (INTERCEPT), a коэффициент корреляции функцией КОРРЕЛ </font><font face="Times New Roman, Times, serif" size="3">(CORREL).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Функция НАКЛОН 
+  определяет коэффициент наклона линейного тренда, а функция ОТРЕЗОК определяет 
+  точку пересечения линии линейного тренда с осью ординат.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">НАКЛОН(известные_значения_у; 
+  известные_значения_х) ОТРЕЗОК(известные_значения_х; известные_значения_у) КОРРЕЛ(известные_значения_х; 
+  известные_значения_у)<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Аргументы:<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="148">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="183" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="429" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="183" HEIGHT="46"> 
+        <DIV WIDTH="183" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">известные значения 
+            у<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="429" HEIGHT="46"> 
+        <DIV WIDTH="429" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Массив известных 
+            значений зависимой наблюдаемой величины<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="102"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="183" HEIGHT="102"> 
+        <DIV WIDTH="183" HEIGHT="102"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">известные значения 
+            х<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="429" HEIGHT="102"> 
+        <DIV WIDTH="429" HEIGHT="102"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Массив известных 
+            значений независимой наблюдаемой величины. Если аргумент известные 
+            значения х опущен, то предполагается, что этот массив {1; 2; 3; ...} 
+            такого же размера, как и известные значения у<BR>
+            </font></P>
+          </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="102"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="183" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="429" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Вторая 
+  задача. </B>Сосулькин продолжал наблюдения за продажей эскимо в течение 29 дней. 
+  Температуры и объемы продаж на протяжении этого срока повторялись. Результат 
+  своих наблюдений Теодор занес в табл. 31.2.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Таблица 
+  31.2. </I></B><I>Температура и объемы продажи</I></font></P>
+<table width="550" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td>46</td>
+    <td>48</td>
+    <td>49</td>
+    <td>50</td>
+    <td>52</td>
+    <td>52</td>
+    <td>55</td>
+  </tr>
+  <tr>
+    <td>23</td>
+    <td>7</td>
+    <td>3</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>24</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>25</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>26</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>27</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>3</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>28</td>
+    <td>&nbsp;</td>
+    <td>2</td>
+    <td>&nbsp;</td>
+    <td>1</td>
+    <td>&nbsp;</td>
+    <td>1</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>29</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>1</td>
+    <td>2</td>
+    <td>1</td>
+    <td>2</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>30</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>1</td>
+    <td>3</td>
+    <td>2</td>
+  </tr>
+</table>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Отличием 
+  второй задачи от первой является то, что таблица данных состоит не из двух строк, 
+  в которые введены значения зависимой и независимой переменных, что, как вы уже 
+  знаете, в первой задаче позволило найти решение как графически, так и при помощи 
+  функций рабочего листа НАКЛОН, ОТРЕЗОК и КОРРЕЛ, Теодор решил, что это несущественное 
+  различие. Достаточно только написать программу, которая преобразует вторую таблицу 
+  к виду первой таблицы, а по полученной таблице программа сможет найти и уравнение 
+  тренда, и коэффициент корреляции, как и в первом случае.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="4"></a><b>Практика</b></font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В редакторе 
+  форм создадим диалоговое окно линейная регрессия (рис. У12.1). Это окно состоит 
+  из двух вкладок тренд и параметры (рис. У12.2).<BR>
+  </font></P>
+<P align="left"><img src="12.1.gif" width="447" height="347"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У12.1. </I></B><I>Вкладка Тренд диалогового окна Линейная регрессия</I><BR>
+  </font></P>
+<P align="left"><img src="12.2.gif" width="447" height="347"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У12.2. </I></B><I>Вкладка Параметры диалогового окна Линейная регрессия</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Обсудим, 
+  как приведенная ниже программа решает описанную задачу и что в ней происходит.<BR>
+  </font><i><font face="Times New Roman, Times, serif" size="3"> </font></i></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="487">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="201" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="413" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="106"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="201" HEIGHT="106"> 
+        <DIV WIDTH="201" HEIGHT="106"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">UserForm Initialize<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="413" HEIGHT="106"> 
+        <ol>
+          <li> 
+            <DIV WIDTH="413" HEIGHT="106"> <font face="Times New Roman, Times, serif" size="3"> 
+              Активизирует диалоговое окно.</font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="413" HEIGHT="106"><font face="Times New Roman, Times, serif" size="3"> 
+              В начальном состоянии выбран переключатель Без повторений, что обеспечивает 
+              скрытие надписи повторения соответствующим полем.<BR>
+              </font></DIV>
+          </li>
+        </ol>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="106"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="103"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="201" HEIGHT="103"> 
+        <DIV WIDTH="201" HEIGHT="103"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            ок запускает на выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButtonl 
+            Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="413" HEIGHT="103"> 
+        <DIV WIDTH="413" HEIGHT="103"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">При выборе переключателя 
+            с повторениями производит расчет по процедуре трендсповто-рениями 
+            (вторая задача), а при выборе переключателя Без повторений - по процедуре 
+            Обыч-ныйтренд (первая задача).<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="103"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="78"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="201" HEIGHT="78"> 
+        <DIV WIDTH="201" HEIGHT="78"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            выход запускает на выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButton2 
+            Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="413" HEIGHT="78"> 
+        <DIV WIDTH="413" HEIGHT="78"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Закрывает диалоговое 
+            окно.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="78"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="201" HEIGHT="62"> 
+        <DIV WIDTH="201" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">OptionButton1_Click<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">и<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">OptionButton2_Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="413" HEIGHT="62"> 
+        <DIV WIDTH="413" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Обеспечивает 
+            скрытие и отображение в диалоговом окне надписи повторения и соответствующего 
+            поля.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="138"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="201" HEIGHT="138"> 
+        <DIV WIDTH="201" HEIGHT="138"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ОбычныйТренд<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="413" HEIGHT="138"> 
+        <ol>
+          <li> 
+            <DIV WIDTH="413" HEIGHT="138"> <font face="Times New Roman, Times, serif" size="3"> 
+              В поля Независимая величина (в данном Случае Температура) и Зависимая 
+              величина (объем продаж) вводит ссылки на диапазоны, по которым строится 
+              линия тренда. Исходя из рис. У 12.3 В Поле Независимая величина 
+              вводится ссылка на диапазон А2:А7, а в поле Зависимая величина — 
+              В2 : В7 .</font></DIV>
+          </li>
+          <li><font face="Times New Roman, Times, serif" size="3"> Проверяет, 
+            располагаются ли данные только в столбцах, либо только в строках. 
+            Также проверяет, располагаются ли данные в столбцах с или D (эти два 
+            столбца зарезервированы программой для вывода результатов расчета). 
+            Если располагаются, то отображается соответствующее сообщение.</font></li>
+          <li><font face="Times New Roman, Times, serif" size="3"> На рабочий 
+            лист вводятся функции рабочего листа НАКЛОН, ОТРЕЗОК и КОРРЕЛ, по 
+            которым вычисляются параметры линии тренда и коэффициент корреляции.</font></li>
+          <li><font face="Times New Roman, Times, serif" size="3"> При помощи 
+            процедуры диаграмма строится диаграмма и линия тренда.</font></li>
+        </ol>
+        <DIV WIDTH="413" HEIGHT="138">
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="138"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="201" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="413" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+  <p><img src="12.3.gif" width="489" height="539"></p>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У 12.3. </I></B><I>Результат решения первой задачи</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="241">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="184" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="431" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="194"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="184" HEIGHT="194"> 
+        <DIV WIDTH="184" HEIGHT="194"> 
+          <P> <font size="3" face="Times New Roman, Times, serif">ТрендСПовторениями 
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="431" HEIGHT="194"> 
+        <DIV WIDTH="431" HEIGHT="194"> 
+          <P><font face="Times New Roman, Times, serif" size="3">В поля Независимая 
+            величина (в данном случае температура) и зависимая величина (объем 
+            продаж) вводит ссылки на диапазоны, по которым строится линия тренда. 
+            Исходя из рис. У 12. 4 в поле Независимая величина вводится ссылка 
+            на диапазон А2:А9, в поле Зависимая величина — В1:Н1, 3 в поле Повторения 
+            — В2:Н9</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">В остальном процедура 
+            действует аналогично процедуре обычныйТренд за исключением того, что 
+            перед вычислением параметров уравнения тренда она: </font></P>
+        </DIV>
+        <ol>
+          <li> 
+            <DIV WIDTH="431" HEIGHT="194"><font face="Times New Roman, Times, serif" size="3"> 
+              Находит число повторений каждой наблюдаемой величины, общее число 
+              всех наблюдений и выводит эти результаты в диапазоны, сопряженные 
+              с диапазоном, введенным в поле повторения . </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="431" HEIGHT="194"><font face="Times New Roman, Times, serif" size="3"> 
+              Преобразует наблюдения в таблицу из двух столбцов с учетом повторения 
+              наблюдений.<BR>
+              </font></DIV>
+          </li>
+        </ol>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="194"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="184" HEIGHT="46"> 
+        <DIV WIDTH="184" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Диаграмма<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="431" HEIGHT="46"> 
+        <DIV WIDTH="431" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Строит диаграмму 
+            и линию тренда по диапазону, заданному в аргументе диапазон.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="184" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="431" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<p>&nbsp;</p>
+<p><img src="12.4.gif" width="489" height="552"></p>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У12.4. </I></B><I>Результат решения второй задачи</I><BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Option Explicit<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Переменные 
+  уровня модуля<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Независимая 
+  As String </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim Зависимая 
+  As String </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim Повторения 
+  As String<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim НезависимаяЗависимая 
+  As Object </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim Корреляция 
+  As Double </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim m As Double<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim b As Double</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButtonl_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' При выборе 
+  переключателя С повторениями<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' производится 
+  расчет по процедуре ТрендСПовторениями,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' а при выборе 
+  переключателя.Без повторений<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' производится 
+  расчет по процедуре ОбьиныйТренд </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If OptionButtonl.Value 
+  = True Then ОбычныйТренд<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If OptionButton2.Value 
+  = True Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ТрендСПовторениями 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton2_Click() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Закрытие диалогового 
+  окна </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">UserForm1.Hide<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  OptionButtonl_Click()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Обеспечивается 
+  скрытие надписи Повторения и RefEdit3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' при выборе 
+  переключателя Без повторений</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">RefEdit3.Visible 
+  = False </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Label3.Visible 
+  = False </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  OptionButton2_Click() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Обеспечивается 
+  видимость надписи Повторения и RefEdit3 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' при выборе 
+  переключателя С повторениями<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">RefEdit3.Visible 
+  = True</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Label3.Visible 
+  = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  UserForm_Initialize()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Активизация 
+  диалогового окна<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' <BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Caption = &quot;Линейная 
+  регрессия&quot; MultiPagel.Value = 0 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">CommandButton2.Cancel 
+  = True RefEddt3.Visible = False</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Label3.Visible 
+  = False OptionButtonl.Value = True </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">UserForml.Show<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub ОбычныйТренд()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  расчета обычного тренда<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Ввод диапазонов 
+  данных<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Независимая 
+  = RefEdit1.Value </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Зависимая = RefEdit2.Value<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Проверка, 
+  располагаются ли данные в столбцах С или D.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Если располагаются, 
+  то отображается соответствующее сообщение<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If InStr(Range(Независимая).Address, 
+  &quot;С&quot;) &gt; 0 Or _ InStr(Range(Независимая).Address, &quot;D&quot;) 
+  &gt; 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Независимая 
+  переменная не может располагаться в&quot; &amp; Chr(13) &amp; &quot;столбцах 
+  С и D&quot;, vblnformation, &quot;Линейная регрессия&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">RefEditl.SetFocus</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If InStr(Range(Зависимая).Address, 
+  &quot;C&quot;) &gt; 0 Or _ InStr(Range(Зависимая).Address, &quot;D&quot;) <I>&gt; 
+  </I>0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Зависимая 
+  переменная не может располагаться в&quot; &amp; Chr(13) &amp; &quot;столбцах 
+  С и D&quot;,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">vblnformation, 
+  &quot;Линейная регрессия&quot; RefEdit2.SetFocus </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Проверка, 
+  располагаются ли данные только в столбцах,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' либо только 
+  в строках </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Range(Зависимая).Rows.Count 
+  &gt; 1 And<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(Зависимая).Columns.Count 
+  &gt; 1 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Зависимая 
+  переменная должна располагаться &quot; &amp; Chr(13) &amp; &quot;либо в строке, 
+  либо в столбце&quot;, vblnformation, &quot;Линейная регрессия&quot; RefEdit2.SetFocus 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Range(Независимая).Rows.Count 
+  &gt; 1 And _ Range(Независимая).Columns.Count &gt; 1 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Независимая 
+  переменная должна располагаться&quot; &amp; Chr(13) &amp; &quot;либо в строке, 
+  либо в столбце&quot;,' vblnformation, &quot;Линейная регрессия&quot; RefEditl.SetFocus 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If (Range(Независимая).Rows.Count 
+  &gt; 1 And _ </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Range(Зависимая).Columns.Count 
+  &gt; 1) Or </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">(Range(Независимая).Columns.Count 
+  &gt; 1 And _</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Range(Зависимая).Rows.Count 
+  &gt; 1) Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Независимая 
+  и Зависимая переменные должны располагаться &quot; &amp; Chr(13) &amp; &quot;либо 
+  в строках, либо в столбцах&quot;, vblnformation, &quot;Линейная регрессия&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">RefEditl.SetFocus<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Ввод на рабочий 
+  лист заголовков<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Cl&quot;).Value 
+  = &quot;Отрезок=&quot; Range(&quot;C2&quot;).Value = &quot;Наклон=&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;C3&quot;).Value 
+  = &quot;R=&quot; '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Расчет коэффициентов 
+  линии тренда ' и коэффициента корреляции<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;D1'&quot;) 
+  .FormulaLocal = &quot;=OTPE30K(&quot; &amp; Зависимая &amp; &quot;;&quot; &amp; 
+  Независимая &amp; &quot;)&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Range(&quot;D2&quot;).FormulaLocal 
+  = &quot;=НАКЛОН(&quot; &amp; Зависимая &amp; &quot;;&quot; &amp; Независимая 
+  &amp; &quot;)&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;D3&quot;) 
+  .FormulaLocal = &quot;=KOPPEЛ(&quot; &amp; Зависимая <I>&amp; &quot;;&quot; 
+  </I>&amp; Независимая &amp; &quot;)&quot; '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">b = Range(&quot;Dl&quot;).Value 
+  m = Range(&quot;D2&quot;).Value Корреляция = Range(&quot;D3&quot;).Value<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Вывод данных 
+  в диалоговое окно</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBoxl.Text 
+  = CStr(b) TextBox2.Text = CStr(m)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox3.Text 
+  = CStr(Корреляция) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Построение 
+  диаграммы по двум диапазонам: Независимая и Зависимая<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set НезависимаяЗависимая 
+  = _<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Application.Union(Range(Независимая) 
+  , Range(Зависимая)) Диаграмма НезависимаяЗависимая<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub ТрендСПовторениями()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim ИмяЛиста 
+  As String<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Ячейка As 
+  Object<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dimx(), y(), 
+  Nxy(), Nx(), Ny() As Double<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim i, j, k, 
+  p, N_x, N_y, Nобщая As Integer '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Независимая 
+  = RefEditl.Value '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Range(Независимая).Columns.Count 
+  &gt; 1 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Данные 
+  для независимой переменной&quot; &amp; Chr(13) &amp; &quot;должны располагаться 
+  в одном столбце&quot;, vblnformation, &quot;Линейная регрессия&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Exit Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For Each Ячейка 
+  In Range(Независимая).Cells</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> If IsNumeric(Ячейка.Value) 
+  = False Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;В 
+  ячейках данных для независимой&quot; &amp; Chr(13) &amp; _<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;переменной 
+  должны быть только числа&quot;, vblnformation, &quot;Линейная регрессия&quot; 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Exit Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Next Ячейка<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3"><I>'</I><BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Зависимая = 
+  RefEdit2.Value</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Range(Зависимая).Rows.Count 
+  &gt; 1 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Данные 
+  для независимой переменной&quot; &amp; Chr(13) &amp; &quot;должны располагаться 
+  в одной строке&quot;, vblnformation, &quot;Линейная регрессия&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For Each Ячейка 
+  In Range(Зависимая).Cells </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If IsNumeric(Ячейка.Value) 
+  = False Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;В 
+  ячейках данных для зависимой&quot; &amp; Chr(13) &amp; &quot;переменной должны 
+  быть только числа&quot;, vblnformation, &quot;Линейная регрессия&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next Ячейка<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Повторения = 
+  RefEdit3.Value<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">N_x = Range(Повторения).Rows.Count<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">N_y = Range(Повторения).Columns.Count</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' N_x - число 
+  различных реализаций независимой переменной </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' N у - число 
+  различных реализаций зависимой переменной<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Range(Независимая).Columns.Count 
+  = N_x And _</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Range(Зависимая).Rows.Count 
+  = N_y Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Размеры 
+  таблицы повторений должны быть&quot; &amp; Chr(13) &amp; </font><font face="Courier New, Courier, mono" size="3">&quot;согласованы 
+  с диапазонами данных наблюдаемых величин &quot;, vblnformation, &quot;Линейная 
+  регрессия&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For Each Ячейка 
+  In Range(Повторения).Cells </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If IsNumeric(Ячейка.Value) 
+  - False Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;В 
+  ячейках данных таблицы повторений&quot; &amp; Chr(13) &amp; &quot;переменной 
+  должны быть только числа&quot;, vblnformation, &quot;Линейная регрессия&quot; 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next Ячейка<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ReDim Nxy(1 
+  To N_x, 1 To N_y) , Nx(l To N_x) , Ny(l To N_y) ,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">x(l To N_x), 
+  y(1 To N_y) '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  N_x </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">For j = 1 To 
+  N_y<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Nxy(i, j) = 
+  Range(Повторения).Cells(i, j).Value </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next j<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Next i '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  N_x<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Nx(i) =0<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For j = 1 To 
+  N_y<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Nx(i) = Nx(i) 
+  + Nxy(i, j) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next j<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(Повторения).Cells(i, 
+  N_y).Select </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Selection.Offset(0, 
+  1).Value = Nx(i) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next i<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Nx(i) - число 
+  повторений i-го значения независимой переменной '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Nобщая = 0<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 То 
+  N_x<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Ыобщая = Ыобщая 
+  + Nx(i)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Next i </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Ыобщая - число 
+  наблюдений<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For j = 1 То 
+  N_y<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Ny(j) = 0<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  N_x<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Ny(j) = Ny(j) 
+  + Nxy(i, j)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Next i<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(Повторения).Cells(N_x, 
+  j).Select </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Selection.Offset(1, 
+  0).Value = Ny(j)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Next j</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Ny(j) - число 
+  повторений i-го значения зависимой переменной<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(Повторения).Cells(N_x, 
+  N_y).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Selection. Offset 
+  (1, 1) .Value = Nобщая</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' x(i) - i-e 
+  значение независимой переменной </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  N_x<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">x(i) = Range(Независимая).Cells(i).Value</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Next i<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' y(i) - i-e 
+  значение зависимой переменной<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  N_y<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">y(i) = Range(Зависимая).Cells(i).Value</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Next i<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Записывание 
+  значений зависимой и независимой переменной ' в два столбца с учетом повторений<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Р = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 То 
+  N_x </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">For j = 1 То 
+  N_y<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Nxy(i, j) 
+  &lt;&gt; 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For k = 1 To 
+  Nxy(i, j)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Cells(p, 100).Value 
+  = x(i) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Cells(p, 101).Value 
+  = y(j) P = p + 1 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next k</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Next j </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next i<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Независимая 
+  = &quot;R1C100:R&quot; &amp; CStr(p - 1) &amp; &quot;C100&quot; Зависимая.= 
+  &quot;R1C101:R&quot; &amp; CStr(p - 1) &amp; &quot;C101&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Расчет коэффициентов 
+  линии тренда<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' и коэффициента 
+  корреляции</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Cells (1, 102).FormulaLocal 
+  =<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;=ОТРЕЗОК(&quot; 
+  &amp; Зависимая &amp; &quot;;&quot; &amp; Независимая &amp; &quot;)&quot; Cells 
+  (2, 102).FormulaLocal =<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;=НАКЛОН(&quot; 
+  &amp; Зависимая &amp; &quot;;&quot; &amp; Независимая &amp; &quot;)&quot; Cells(3, 
+  102).FormulaLocal =<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;=КОРРЕЛ(&quot; 
+  &amp; Зависимая &amp; &quot;;&quot; &amp; Независимая &amp; &quot;)&quot; '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">b = Cells(1, 
+  102).Value</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> m = Cells(2, 
+  102).Value Корреляция = Cells(3, 102).Value<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBoxl.Text 
+  = CStr(b)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox2.Text 
+  = CStr(m) TextBox3.Text = CStr(Корреляция) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Построение 
+  диаграммы Диаграмма Range(Cells(1, 100), Cells(p - 1, 101))<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Диаграмма(Диапазон 
+  As Object)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Построение 
+  диаграммы по диапазону</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.ChartObjects.Delete<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.ChartObjects.Add(150, 
+  49.25, 259.5, 169.5).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Application.CutCopyMode 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveChart.ChartWizard 
+  Source:=Диапазон, Gallery:=xlXYScatter, Format:=1, </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">PlotBy:=xlColumns, 
+  CategoryLabels:=l, SeriesLabels:=0, HasLegend:=False, </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Title:=&quot;&quot;, 
+  CategoryTitle:=&quot;&quot;,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ValueTitle:=&quot;&quot;, 
+  ExtraTitle:=&quot;&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Добавление 
+  в диаграмму линии тренда </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.ChartObjects(1).Activate 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ActiveChart.SeriesCollection(1).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveChart.SeriesCollection(1)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Trendlines.Add(Type:=xlLinear,</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Forward:=0, 
+  Backward:=0, DisplayEquation:=True,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">DisplayRSquared:=True).Select 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><b><a name="5"></a>Самостоятельное 
+  задание</b></font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Разработать 
+  программу, которая позволит определить уравнение тренда в виде полинома второй 
+  степени. Программа должна вычислять коэффициенты уравнения тренда, коэффициент 
+  корреляции и строить уравнение тренда графически.</font></P>
+</BODY>
+</HTML>
+

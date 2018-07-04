@@ -1,0 +1,804 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+      <ul>
+<li><b><font face="Times New Roman" size=3><a href="#1">ГЛАВА 4. СЦЕНАРИИ И ОПРЕДЕЛЕНИЕ СТРУКТУРЫ ДАННЫХ</a></font></b> </li>
+     <ul>
+     <li><font face="Times New Roman" size=3><a href="#2">ОБЪЕКТ SCENARIO</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#3">ОБЪЕКТ OUTLINE</a></font> </li>
+ 
+
+
+     </ul></ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Глава 
+  4</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Сценарии</font></font> 
+  <font face="Times New Roman, Times, serif" size="5">и определение</font> <font face="Times New Roman, Times, serif" size="5">структуры 
+  данных</font> <font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="2"></a>Объект 
+  Scenario</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Объект scenario 
+  (сценарий) позволяет хранить несколько значений в одной ячейке. Каждое уникальное 
+  значение в ячейке или каждая уникальная группа значений для группы ячеек называется 
+  <I>сценарием. </I>Семейство scenarios (сценарии) содержит все сценарии рабочего 
+  листа. Вручную сценарии создаются с помощью команды <B>Сервис, Сценарии </B>(Tools, 
+  Scenarios).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Рассмотрим 
+  методы объекта Scenario.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="428">
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="258"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="130" HEIGHT="258"> 
+        <DIV WIDTH="161" HEIGHT="357"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Add<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="409" HEIGHT="258"> 
+        <DIV WIDTH="456" HEIGHT="357"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Добавляет новый 
+            сценарий. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Add (Name, ChangingCells, 
+            Values, Comment, Locked, Hidden)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Аргументы: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="456" HEIGHT="357"><font face="Times New Roman, Times, serif" size="3"> 
+              Name — имя сценария </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="456" HEIGHT="357"><font face="Times New Roman, Times, serif" size="3"> 
+              ChangingCells — диапазон, отводимый под изменяемые ячейки сценария 
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="456" HEIGHT="357"><font face="Times New Roman, Times, serif" size="3">values 
+              — массив значений, вводимых в изменяемые ячейки </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="456" HEIGHT="357"><font face="Times New Roman, Times, serif" size="3"> 
+              Comment — текстовая строка комментариев </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="456" HEIGHT="357"><font face="Times New Roman, Times, serif" size="3"> 
+              Locked — допустимые значения: True (заблокировано изменение сценария) 
+              и False (в противном случае) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="456" HEIGHT="357"><font face="Times New Roman, Times, serif" size="3"> 
+              Hidden — допустимые значения: True (сценарий скрыт) и False (в противном 
+              случае)</font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="258"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="130" HEIGHT="45"> 
+        <DIV WIDTH="161" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Show<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="409" HEIGHT="45"> 
+        <DIV WIDTH="456" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Показывает сценарий 
+            посредством ввода значений сценария в изменяемые ячейки<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="45"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"></TD>
+      <td width="130" height="158"> 
+        <div width="160" height="158"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">ChangeScenario<br>
+            </font></p>
+        </div>
+      </td>
+      <td width="409" height="158"> 
+        <div width="454" height="158"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Изменяет группу 
+            изменяемых ячеек. </font></p>
+          <p><font face="Times New Roman, Times, serif" size="3">Синтаксис:<br>
+            </font></p>
+          <p> <font face="Courier New, Courier, mono" size="3">ChangeScenario 
+            (ChangingCells, Values)</font><font face="Times New Roman, Times, serif" size="3"><br>
+            </font></p>
+        </div>
+        <ul>
+          <li> 
+            <div width="454" height="158"> <font face="Times New Roman, Times, serif" size="3"> 
+              ChangingCells — группа ячеек, которая будет играть роль новой группы 
+              изменяемых ячеек </font></div>
+          </li>
+          <li>
+            <div width="454" height="158"><font face="Times New Roman, Times, serif" size="3"> 
+              values — массив с новыми значениями изменяемых ячеек<br>
+              </font></div>
+          </li>
+        </ul>
+      </td>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="26"></TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="130" HEIGHT="26"> 
+        <DIV WIDTH="161" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Delete<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="409" HEIGHT="26"> 
+        <DIV WIDTH="456" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Удаляет сценарий<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="26"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Рассмотрим 
+  наиболее часто используемые свойства объекта scenario.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="186">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="478" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="44"> 
+        <DIV WIDTH="138" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ChangingCells<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="478" HEIGHT="44"> 
+        <DIV WIDTH="478" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает диапазон 
+            изменяемых ячеек. Например,<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Scenarios (1) .ChangingCells 
+            . Select</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="142"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="142"> 
+        <DIV WIDTH="138" HEIGHT="142"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Value<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="478" HEIGHT="142"> 
+        <DIV WIDTH="478" HEIGHT="142"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает массив 
+            текущих значений изменяемых ячеек. Например,<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Scenarios (I) .Values 
+            = Worksheets ( &quot;Sheetl&quot;) .Range (&quot;C5:T5&quot;) или 
+            Scenarios (1) .Values = Array (1, 3, 5, 7, 11, 13, 17, 19)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="142"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="478" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  соответствие между аргументами методов Add и show семейства scenarios и созданием 
+  сценариев вручную при помощи команды <B>Сервис, Сценарии </B>(Tools, Scenarios) 
+  на примере создания расчета суммарных затрат (рис. 4.1) при двух вариантах (сценариях) 
+  стоимостей комплектующих и расходных материалов (табл. 4.1).<BR>
+  </font></P>
+<P align="left"><img src="4.1.gif" width="317" height="183"></P>
+<P align="left"> <i><font face="Times New Roman, Times, serif" size="3"><B>Рис. 
+  4.1. </B>Расчет суммарных затрат</font></i><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Таблица 
+  4.1. </I></B><I>Два варианта стоимостей</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="82">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="156" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="224" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="236" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="33"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="156" HEIGHT="33"> 
+        <DIV WIDTH="156" HEIGHT="33"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Вариант</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="224" HEIGHT="33"> 
+        <DIV WIDTH="224" HEIGHT="33"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Комплектующие</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="236" HEIGHT="33"> 
+        <DIV WIDTH="236" HEIGHT="33"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Расходные 
+            материалы</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="33"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="50"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="156" HEIGHT="50"> 
+        <DIV WIDTH="156" HEIGHT="50"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">1 </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">2<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="224" HEIGHT="50"> 
+        <DIV WIDTH="224" HEIGHT="50"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">1000 </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">800<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="236" HEIGHT="50"> 
+        <DIV WIDTH="236" HEIGHT="50"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">200 </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">300<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="50"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="156" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="224" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="236" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Суммарные 
+  затраты вычисляются в ячейке В5 по формуле:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">=СУММ(В3:В4)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="88">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="88"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="88"> 
+        <DIV WIDTH="69" HEIGHT="88"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="88"> 
+        <DIV WIDTH="551" HEIGHT="88"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выберите команду 
+            Сервис, Сценарии (Tools, Scenarios). Появится диалоговое окно Диспетчер 
+            сценариев (Scenario Manager) (рис. 4.2). Нажмите кнопку Добавить (Add).<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="88"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+<p>&nbsp;</p></div>
+<P align="left"><img src="4.2.gif" width="327" height="323"> </P>
+<P align="left"><i><font face="Times New Roman, Times, serif" size="3"><B>Рис. 
+  4.2. </B>Диалоговое окно <B>Диспетчер сценариев</B></font></i><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="278">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="549" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="190"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="190"> 
+        <DIV WIDTH="69" HEIGHT="190"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 2<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="549" HEIGHT="190"> 
+        <DIV WIDTH="549" HEIGHT="190"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">В появившемся 
+            диалоговом окне Добавление сценария (Add Scenario) (рис. 4.3): </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="549" HEIGHT="190"><font face="Times New Roman, Times, serif" size="3">В 
+              поле Название сценария (Scenario Name) вводится имя создаваемого 
+              сценария. Введите, например, вариант 1 . </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="549" HEIGHT="190"><font face="Times New Roman, Times, serif" size="3"> 
+              В поле Изменяемые ячейки (Changing Cells) вводятся ссылки на ячейки, 
+              в которые будут заноситься значения, соответствующие данному сценарию. 
+              Введите ссылки на диапазон ячеек $В$3:$В$4.<BR>
+              </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="549" HEIGHT="190"> <font face="Times New Roman, Times, serif" size="3"> 
+              Нажмите кнопку ОК.<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="190"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="87"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="87"> 
+        <DIV WIDTH="69" HEIGHT="87"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ШагЗ<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="549" HEIGHT="87"> 
+        <DIV WIDTH="549" HEIGHT="87"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">В появившемся 
+            диалоговом окне Значения ячеек сценария<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">(Scenario Values) 
+            в поля, помеченные именами изменяемых ячеек, . вводятся соответствующие 
+            значения (рис. 4.4). В данном случае в поле $в$з введите юоо, а в 
+            поле $в$4 введите 200. Нажатие кнопки Добавить (Add) приведет к появлению 
+            диалогового окна Добавление сценария (Add Scenario), в котором следует 
+            ввести параметры второго сценария и т. д. После создания требуемого 
+            количества сценариев нажмите кнопку ОК, которая приведет к завершению 
+            создания сценариев.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="87"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="549" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+  <p><img src="4.3.gif" width="333" height="320"></p>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  4.3. </I></B><I>Диалоговое окно <B>Добавление сценария</B></I><BR>
+  </font></P>
+<P align="left"><img src="4.4.gif" width="377" height="178"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  4.4. </I></B><I>Диалоговое окно <B>Значения ячеек сценария</B></I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="105">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="58" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="105"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="58" HEIGHT="105"> 
+        <DIV WIDTH="58" HEIGHT="105"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 4<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="105"> 
+        <DIV WIDTH="551" HEIGHT="105"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">В появившемся 
+            диалоговом окне Диспетчер сценариев (Scenario Manager) выбором в списке 
+            Сценарии (Scenarios) соответствующего сценария и нажатием на кнопку 
+            Вывести (Show) производится ввод соответствующих этому сценарию значений 
+            в изменяемые ячейки (рис. 4.5).Приведенное выше создание вручную сценариев 
+            программируется следующими инструкциями:<br>
+            </font></P>
+          <p> <font face="Courier New, Courier, mono" size="3">ActiveSheet . Scenarios 
+            . Add Name := &quot;Вариант 1&quot;, ChangingCells:=Range (&quot;B3:B4&quot;) 
+            , Values:=Array(&quot;1000&quot;, &quot;200&quot;) , Comment :=&quot;Автор: 
+            Андрей Гарнаев, 28.03.99&quot;, Locked:=True, Hidden:=False ActiveSheet. 
+            Scenarios. Add Name : =&quot;Вариант 2&quot;, ChangingCells:=Range(&quot;B3:B4&quot;) 
+            , Values :=Array (&quot;800&quot;, &quot;300&quot;), Comment :=&quot;Автор: 
+            Андрей Гарнаев, 28.03.99&quot;, Locked :=True, Hidden :=False Отображение 
+            сценариев на рабочем листе осуществляется следующими двумя инструкциями:<br>
+            </font></p>
+          <p> <font face="Courier New, Courier, mono" size="3">ActiveSheet . Scenarios 
+            ( &quot;Вариант 1&quot; ) . Show ActiveSheet . Scenarios ( &quot;Вариант 
+            2 &quot; ) . Show</font><font face="Times New Roman, Times, serif" size="3"><br>
+            </font></p>
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="105"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="58" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp;</P>
+<P align="left"><img src="4.5.gif" width="327" height="323"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  4.5. </I></B><I>Диалоговое окно <B>Диспетчер сценариев</B> после создания двух 
+  сценариев</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="3"></a>Объект 
+  Outline</font></B><BR>
+  </font> </P>
+<P> <FONT FACE="Times New Roman" SIZE="3">В общем случае структура — это такой 
+  режим работы, который позволяет разбить данные на определенные уровни детализации, 
+  а также просматривать только заголовки и подзаголовки документа. Структура наиболее 
+  по</FONT><font face="Times New Roman, Times, serif" size="3">лезна при создании 
+  итоговых отчетов, где не требуется чрезмерная детализация. Структуру невозможно 
+  создавать на основе произвольной таблицы данных. Ее построение основывается 
+  на таблицах с иерархической структурой данных. Объект Outline (структура) по 
+  своей иерархии вкладывается в семейство рабочих листов worksheets. Свойство 
+  outline рабочего листа возвращает объект Outline. Вручную на рабочем листе структура 
+  создается с помощью команды <B>Данные, Группа и структура, Создание структуры 
+  </B>(Data, Group and Outline, Auto Outline).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  основные свойства объекта outline.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="242">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="154" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="463" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="68"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="154" HEIGHT="68"> 
+        <DIV WIDTH="154" HEIGHT="68"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">AutomaticStyles<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="463" HEIGHT="68"> 
+        <DIV WIDTH="463" HEIGHT="68"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (структура строится на основе автоматических стилей) и False 
+            (в противном случае)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="68"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="86"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="154" HEIGHT="86"> 
+        <DIV WIDTH="154" HEIGHT="86"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">SummaryColumn<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="463" HEIGHT="86"> 
+        <DIV WIDTH="463" HEIGHT="86"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает местоположение 
+            итоговых столбцов. Допустимые значения: xiLef t (итоговые столбцы 
+            располагаются слева от столбцов, по которым подводятся итоги) и xiRight 
+            (итоговые столбцы располагаются слева)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="86"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="88"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="154" HEIGHT="88"> 
+        <DIV WIDTH="154" HEIGHT="88"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">SummaryRow<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="463" HEIGHT="88"> 
+        <DIV WIDTH="463" HEIGHT="88"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает местоположение 
+            итоговых строк. Допустимые значения: xiAbove (итоговые строки располагаются 
+            выше строк, по которым подводятся итоги) и xiBelow (итоговые строки 
+            располагаются ниже)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="88"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="154" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="463" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Обсудим наиболее 
+  часто используемые методы объекта outline.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="227">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="153" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="460" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="201"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="153" HEIGHT="201"> 
+        <DIV WIDTH="153" HEIGHT="201"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ShowLevels<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="460" HEIGHT="201"> 
+        <DIV WIDTH="460" HEIGHT="201"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Отображает указанное 
+            число уровней структуры по строкам и столбцам.<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">ShowLevels (RowLevels, 
+            ColumnLevels)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Аргументы: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="460" HEIGHT="201"><font face="Times New Roman, Times, serif" size="3"> 
+              RowLevels - устанавливает число отображаемых уровней структуры по 
+              строкам </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="460" HEIGHT="201"><font face="Times New Roman, Times, serif" size="3"> 
+              ColumnLevels - устанавливает число отображаемых уровней структуры 
+              по столбцам<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="201"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="153" HEIGHT="26"> 
+        <DIV WIDTH="153" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ClearOutline<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="460" HEIGHT="26"> 
+        <DIV WIDTH="460" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Удаляет структуру<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="153" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="460" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  соответствие между построением структуры вручную и аргументами методов и свойств 
+  объекта outline на примере организации отчета о продаже в виде структуры с двумя 
+  уровнями по столбцам и строкам (рис. 4.6). В строках Итого отчета и столбцах 
+  1-й кв. и 2-й кв. вычисляется итоговая информация по продаже компьютеров.<BR>
+  </font></P>
+<P align="left"><img src="4.6.gif" width="450" height="447"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  4.6. </I></B><I>Отчет о продажах</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="526">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="336"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="336"> 
+        <DIV WIDTH="70" HEIGHT="336"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="336"> 
+        <DIV WIDTH="550" HEIGHT="336"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выберите команду 
+            Данные, Группа и структура, Настройка (Data, Group and Outline, Settings). 
+            На экране отобразится диалоговое окно Структура документа (Outline) 
+            (рис. 4.7): </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="336"><font face="Times New Roman, Times, serif" size="3">Флажки 
+              в строках под детальными (Summary Rows Below Details) и в столбцах 
+              справа от детальных (Summary Columns to Right of Details) устанавливают 
+              расположение итоговых данных относительно детальных. В данном случае 
+              установите оба флажка. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="336"><font face="Times New Roman, Times, serif" size="3"> 
+              Флажок Автоматические стили (Automatic Styles) устанавливает, будут 
+              ли ячейки при создании структуры отформатированы стандартными стилями. 
+              В данном случае установите этот флажок. </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="550" HEIGHT="336"><font face="Times New Roman, Times, serif" size="3"> 
+              Нажмите кнопку Создать (Create). Описанные выше действия соответствуют 
+              следующим двум инструкциям:<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="550" HEIGHT="336">
+          <P> <font face="Courier New, Courier, mono" size="3">ActiveSheet .Outline 
+            . AutomaticStyles = True Selection . AutoOutline</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="336"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="190"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="190"> 
+        <DIV WIDTH="70" HEIGHT="190"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 2<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="190"> 
+        <DIV WIDTH="550" HEIGHT="190"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Теперь таблица 
+            отструктурирована (рис. 4.8). При выводе структуры по левому и верхнему 
+            краю рабочего листа отображаются кнопки, помеченные символами &quot;+&quot; 
+            и &quot;-&quot;, которые управляют отображением и скрытием уровней 
+            детализации структуры, а также номеров уровней. Щелчок на кнопке со 
+            знаком плюс приводит к отображению детализации, а на кнопке со знаком 
+            минус — к скрытию детализации. Щелчком на кнопке с номером уровня 
+            детализации также можно управлять отображением и скрытием всего уровня.Нажмите 
+            кнопки со знаком минус — с тем, чтобы скрыть детализацию отчетной 
+            таблицы (рис. 4.9). Описанные выше действия соответствуют следующей 
+            единственной инструкции:<br>
+            </font></P>
+          <p> <font face="Courier New, Courier, mono" size="3">ActiveSheet. Outline. 
+            ShowLevels RowLevels:=l, ColumnLevels : =1</font></p>
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="190"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+  <p><img src="4.7.gif" width="374" height="160"></p>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  4.7.</I></B><I> Диалоговое окно <B>Структура документа</B></I><BR>
+  </font></P>
+<P align="left"><img src="4.8.gif" width="478" height="354"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  4.8. </I></B><I>Структурированная таблица с детализацией</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="103">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="103"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="103"> 
+        <DIV WIDTH="69" HEIGHT="103"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ШагЗ<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="103"> 
+        <DIV WIDTH="550" HEIGHT="103"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Если структуризация 
+            листа не требуется, то ее можно отменить, выбрав команду Данные, Группа 
+            и структура, Удалить структуру (Data, Group and Outline, Clear Outline). 
+            Тот же результат достигается следующей инструкцией:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Selection. ClearOutline<BR>
+            </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="103"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp;</P>
+<P align="left"><img src="4.9.gif" width="320" height="378"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  4.9. </I></B><I>Структурированная таблица без детализации</I></font></P>
+</BODY>
+</HTML>
+

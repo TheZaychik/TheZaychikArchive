@@ -1,0 +1,559 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+<ul>
+  <li><b><font face="Times New Roman" size=3><a href="#1">ЧАСТЬ П. ПРАКТИЧЕСКИЕ 
+    ПРИЕМЫ ПРОГРАММИРОВАНИЯ НА VBA </a></font></b> </li>
+  <ul>
+    <li><font face="Times New Roman" size=3><a href="#2">УРОК 1. ТЕМА: ИГРА "ОРЕЛ 
+      И РЕШКА"</a></font> 
+      <ul>
+        <li><font face="Times New Roman" size=3><a href="#3">ЦЕЛЬ УРОКА</a></font> 
+        </li>
+        <li><font face="Times New Roman" size=3><a href="#4">ТЕОРИЯ</a></font> 
+        </li>
+        <li><font face="Times New Roman" size=3><a href="#5">ПРАКТИКА</a></font> 
+        </li>
+        <li><font face="Times New Roman" size=3><a href="#6">САМОСТОЯТЕЛЬНОЕ ЗАДАНИЕ</a></font> 
+        </li>
+      </ul>
+    </li>
+  </ul>
+</ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Часть 
+  II</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="5">Практические 
+  приемы программирования на VBA</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><a name="2"></a>Урок 
+  1</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Тема: 
+  Игра &quot;Орел и Решка&quot;</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="3"></a>Цель 
+  урока</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">На примере 
+  простейшей компьютерной игры будет полностью разработано первое приложение в 
+  этой книге. Это приложение должно моделировать игру в орел и решку. Игрок вносит 
+  в банк определенную сумму денег. Во время игры нельзя добавлять деньги в банк. 
+  Игра состоит из последовательности шагов, которая, вообще говоря, может быть 
+  бесконечной. На очередном шаге игрок загадывает либо орел, либо решку. Компьютер 
+  &quot;бросает монету&quot;. Если &quot;монета падает той же стороной&quot;, 
+  которую загадал игрок, то банк увеличивается на единицу, в противном случае 
+  - уменьшается на единицу. Игра заканчивается либо по желанию игрока, либо когда 
+  величина банка становится нулем или больше 10 000. Игрок забирает себе содержимое 
+  банка. В приложении отслеживаются максимальные и минимальные суммы, которые 
+  были в банке в течение игры.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Конструируя 
+  данное приложение, вы на практике узнаете, как: </font></P>
+<ul>
+  <li><font face="Times New Roman, Times, serif" size="3"> Создавать из формы 
+    диалоговое окно</font></li>
+  <li><font face="Times New Roman, Times, serif" size="3"> Набирать код программы<BR>
+    </font> </li>
+  <li><font face="Times New Roman, Times, serif" size="3"> Программировать контроль 
+    ввода, т. е. проверять вводятся ли в поля числа или строковая информация<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Управлять запретом 
+    ввода данных в поле<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Работать с функцией 
+    генератора случайных чисел<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Выводить числовую 
+    информацию в поле<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Запускать программы 
+    на выполнение<BR>
+    </font></li>
+</ul>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="4"></a>Теория</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Для моделирования 
+  бросания монеты потребуется генератор случайных чисел. Функция Rnd возвращает 
+  случайное число типа single из диапазона [0,1). Это приятное известие, что в 
+  VBA имеется генератор случайных чисел из диапазона [0,1). Но нам-то надо, чтобы 
+  моделировался процесс бросания монеты и с равной вероятностью генерировались 
+  два числа, скажем, 1 для орла и 0 для решки. На самом деле, этого легко достичь, 
+  рассматривая вместо Rnd функцию Int(2*Rnd). Функция int отбрасывает дробную 
+  часть аргумента и возвращает его целую часть. По аналогии с помощью функции 
+  Int (6*Rnd) <I>+1 </I>можно моделировать бросание игральной кости.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="5"></a>Практика</font></B><BR>
+  </font></P>
+<ol>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Выберите команду <B>Сервис, 
+    Макрос, Редактор Visual Basic </B>(Tools, Macro, Edit Visual Basic), откроется 
+    окно редактора Visual Basic.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Выберите команду <B>Вставить 
+    User Form </B>(Insert UserForm).<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Используя панель элементов 
+    и окно свойств, заполните пользовательскую форму элементами управления (рис. 
+    У1.1), создав требуемое диалоговое окно приложения.<BR>
+    </font></li>
+</ol>
+<P align="left"><img src="1.1.gif" width="550" height="413"> </P>
+<P align="left"><img src="1.1b.gif" width="527" height="471"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У1.1. </I></B><I>Вид редактора Visual Basic при создании пользовательской формы 
+  для игры в орел и решка</I><BR>
+  </font></P>
+<ol start=4>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Для написания кода 
+    программы, связанного с пользовательской формой, достаточно дважды щелкнуть, 
+    например, кнопку Бросание монеты. От</font><font face="Times New Roman, Times, serif" size="3">кроется 
+    редактор кода на листе модуля userFormi. Более того, он откроется на том месте, 
+    где программируются действия, связанные с элементом управления, который вы 
+    дважды щелкнули. Если код еще не набран, то при открытии редактора кода появятся 
+    инструкции заголовка и окончания процедуры, которая будет ассоциирована с 
+    элементом управления. В данном случае в редакторе кода будет:<BR>
+    </font> 
+    <p> <font face="Courier New, Courier, mono" size="3">Private Sub CommandButtonl_Click() 
+      End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+      </font></p>
+    <p> <font face="Times New Roman, Times, serif" size="3">Конечно, редактор 
+      кода заботится о вас, создавая инструкции заголовка и окончания процедуры. 
+      Но не требуйте от него невозможного, а именно, чтобы он телепатически прочитал 
+      ваши мысли и ввел их в виде кода в тело процедуры. Код в тело процедуры 
+      кроме вас никто вводить не будет. Как это ни печально, но вы должны вводить 
+      их вручную, при этом используя интеллектуальные качества редактора кода 
+      и средства визуального программирования, которые существенно упростят процесс 
+      создания программы.<BR>
+      </font></p>
+  </li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Когда-то Конфуций 
+    сказал: &quot;То что слышу — забываю, то что вижу -запоминаю, а то что делаю 
+    — поминаю&quot;, а Мао Дзе Дун добавил: &quot;Для того чтобы стул сдвинулся, 
+    его надо сдвинуть&quot;. Итак, вдохновившись этими двумя мудростями, наберем 
+    текст следующей программы на листе </font><font face="Times New Roman, Times, serif" size="3">модуля 
+    UserForm1.</font></li>
+</ol>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"> <font face="Courier New, Courier, mono">' 
+  Переменные уровня модуля<BR>
+  </font></font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Банк As 
+  Long<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Партия As 
+  Long<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim НомерМаксимум 
+  As Long<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim НомерМинимум 
+  As Long<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Максимум 
+  As Long<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Минимум 
+  As Long<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButtonl_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Определяет 
+  номер очередной партии<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Партия = Партия 
+  + 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Запрещается 
+  изменение пользователем значения<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' в поле Банк 
+  в течение игры<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TektBoxl.Enabled 
+  = False</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Проверяется, 
+  являются ли вводимыми в поле Банк данные числом<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If IsNumeric(TextBoxl.Text) 
+  = False Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Введите 
+  ставку&quot;, vbExclamation, &quot;Орел и решка&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBoxl.Enabled 
+  = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBoxl.SetFocus<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub End 
+  If Банк = CLng(TextBoxl.Text)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Проверяется, 
+  не превышает ли Банк максимально допустимую величину<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Банк &gt; 
+  10000 Or Банк &lt;= 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Ставка 
+  должна быть в диапазоне [1,10000]&quot;, </font><font face="Courier New, Courier, mono" size="3">vbExclamation, 
+  &quot;Орел и решка&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">TextBoxl.Enabled 
+  = True TextBoxl.SetFocus</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Бросается 
+  монета </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Randomize<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Монета = Int(2'* 
+  Rnd)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Сравнение 
+  результата бросания монеты компьютером<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' с ситуацией, 
+  когда игрок загадал &quot;орел&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If OptionButtonl.Value 
+  = True Then </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If Монета = 0 
+  Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Банк = Банк 
+  - 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBoxl,Text 
+  = CStr(BaHK) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If Монета = 1 
+  Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Банк = Банк 
+  + 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBoxl.Text 
+  = CStr(Банк) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<I> </I>Сравнение 
+  результата бросания монеты компьютером </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' с ситуацией, 
+  когда игрок загадал &quot;решка&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If OptionButton2.Value 
+  = True Then </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If<I> </I>Монета 
+  = 1 Then Банк = Банк - 1 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">TextBoxl.Text 
+  = CStr(Банк) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End <I>If</I><BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If<I> </I>Монета 
+  = 0 Then Банк = Банк + 1 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">TextBoxl.Text 
+  = CStr(Банк) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End <I>If</I></font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End <I>If </I>TextBox2.Text 
+  = CStr(Партия)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Определяется, 
+  превышает ли текущее значение поля Банк максимальную<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' величину<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Банк &gt; 
+  Максимум Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Максимум = Банк<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">НомерМаксимум 
+  = Партия<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox3.Text 
+  = CStr(Максимум)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox5.Text 
+  = CStr(НомерМаксимум)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Определяется, 
+  превышает ли минимальное значение поля Банк текущее </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' значение<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If<I> </I>Банк 
+  &lt; Минимум Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Минимум = Банк<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">НомерМинимум 
+  = Партия<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox4.Text 
+  = CStr(Минимум)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox6.Text 
+  = CStr(НомерМинимум) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton2_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  закрытия диалогового окна </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">UserForml.Hide 
+  End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  UserForm_Initialize()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  инициализации диалогового окна<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Максимум = 0 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Минимум = 10000<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Партия = 0</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Поле Банк 
+  доступно для ввода информации пользователем<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' при инициализации 
+  диалогового окна</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBoxl.Enabled 
+  = True </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Поля Партия, 
+  Максимум, Минимум и Игра не доступны для<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' ввода информации 
+  пользователем</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox2.Enabled 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox3.Enabled 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox4 ..Enabled 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox5.Enabled 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox6.Enabled 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' При инициализации 
+  диалогового окна выбран переключатель Орел<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">OptionButtonl.Value 
+  = True</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Ниже описывается, 
+  для чего предназначена каждая из процедур данной программы.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="679">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="209" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="411" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="179"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="209" HEIGHT="179"> 
+        <DIV WIDTH="209" HEIGHT="179"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">UserForm_Initialize<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="411" HEIGHT="179"> 
+        <ol>
+          <li> 
+            <DIV WIDTH="411" HEIGHT="179"> <font face="Times New Roman, Times, serif" size="3"> 
+              Активизирует диалоговое окно. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="411" HEIGHT="179"><font face="Times New Roman, Times, serif" size="3">Поле 
+              Банк доступно для ввода информации пользователем при инициализации 
+              диалогового окна.<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="411" HEIGHT="179"> <font face="Times New Roman, Times, serif" size="3"> 
+              В поля Партия, Максимум, Минимум и Игра разрешен только программный 
+              ввод данных. </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="411" HEIGHT="179"><font face="Times New Roman, Times, serif" size="3"> 
+              При инициализации диалогового окна выбран переключатель орел.<BR>
+              </font></DIV>
+          </li>
+        </ol>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="179"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="421"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="209" HEIGHT="421"> 
+        <DIV WIDTH="209" HEIGHT="421"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Бросание монеты<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">запускает на 
+            выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButton1 
+            Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="411" HEIGHT="421"> 
+        <ol start=5>
+          <li> 
+            <DIV WIDTH="411" HEIGHT="421"> <font face="Times New Roman, Times, serif" size="3"> 
+              В переменной партия учитывается номер очередной партии. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="411" HEIGHT="421"><font face="Times New Roman, Times, serif" size="3">В 
+              поле Банк разрешен только программный ввод данных. Перед началом 
+              игры первой партии проверяется, является ли вводимое данное числом 
+              в диапазоне от 1 до 10 000. Если это условие не выполняется, отображается 
+              соответствующее сообщение (рис. У 1.2), предлагающее пользователю 
+              откорректировать данные. В поле Банк снова разрешен ввод данных 
+              пользователем. После чего происходит выход из процедуры для повтора 
+              ввода данных. </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="411" HEIGHT="421"><font face="Times New Roman, Times, serif" size="3">Генерируется 
+              бросание модели. Определяется, кто выиграл в текущей партии. Корректируется 
+              информация о максимальном и минимальном выигрыше в течение игры, 
+              если какие-то изменения в этой информации имели место. Вся информация 
+              о текущем состоянии игры отображается в полях ввода.<BR>
+              </font></DIV>
+          </li>
+        </ol>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="421"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="79"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="209" HEIGHT="79"> 
+        <DIV WIDTH="209" HEIGHT="79"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            Отмена запускает на выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButton2 
+            Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="411" HEIGHT="79"> 
+        <DIV WIDTH="411" HEIGHT="79"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Закрывает диалоговое 
+            окно.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="79"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="209" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="411" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Для запуска 
+  приложения достаточно нажать кнопку <B>Запуск подпрограммы/UserForm </B>или 
+  выбрать команду <B>Запуск, Запуск подпрограммы/UserForm.</B></font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">На экране 
+  появится диалоговое окно игры. Игрок вводит в поле Банк сумму денег, и потом, 
+  выбирая соответствующий переключатель в группе выбор, загадывает орел или Решка. 
+  Нажатие кнопки Бросание монеты приводит к подбрасыванию компьютером монеты. 
+  Текущий счет игрока отображается в поле Банк. В поле партия выводится номер 
+  текущей партии, а в полях максимум и минимум выводятся максимальный и минимальный 
+  счет игрока втечение предыдущих партий. На рис. У 1.3 приведено диалоговое окно 
+  орел-решка на 30-м ходе игры при начальном банке в 100 единиц. Отображаемая 
+  информация в диалоговом окне Орел-Решка показывает, что 30 партий изнурительной 
+  игры принесли игроку выигрыш только в 2 единицы. Если бы игрок не жадничал и 
+  остановил игру на 18 ходе, то его выигрыш был бы в два раза больше. А если бы 
+  игрок струсил, когда стал проигрывать, и вышел из игры на 3 ходе, то его проигрыш 
+  составил бы 3 единицы. <BR>
+  </font></P>
+<P align="left"><img src="1.2.gif" width="374" height="115"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У1.2. </I></B><I>Возможное сообщение о неправильном вводе данных в поле Банк</I><BR>
+  </font></P>
+<P align="left"><img src="1.3.gif" width="421" height="248"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У1.3. </I></B><I>Диалоговое окно Орел-Решка</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="4"><B><a name="6"></a>Самостоятельное 
+  задание</B></font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Разработайте 
+  приложение для игры, которую назовем <I>игрой в двенадцать. </I>В этой игре 
+  последовательно до трех раз бросается игральная кость. Игрок может бросить игральную 
+  кость только один раз, или оценив результат первого броска - выполнить его во 
+  второй раз, или помня результаты двух предыдущих попыток -- бросить кость в 
+  третий раз. Все выпавшие очки суммируются. Если эта сумма 12 и более очков, 
+  то игрок проигрывает и игра заканчивается. Если сумма менее 12 очков, в игру 
+  вступает компьютер. Компьютеру известно только то, что игрок набрал менее 12 
+  очков. Компьютер, как и игрок, может совершить до трех попыток бросания игральной 
+  кости. Если он наберет 12 и более очков, то компьютер проигрывает. Если компьютер 
+  набирает менее 12 очков, очки, набранные игроком и компьютером, сравниваются. 
+  Побеждает тот, у кого большая сумма очков. Конечно </font><font face="Times New Roman, Times, serif" size="3">при 
+  равенстве очков — ничья. Попытайтесь построить для компьютера оптимальную стратегию. 
+  Если вы знаете хотя бы немного теории вероятности, то ее легко найти математически. 
+  Если вы не знакомы с теорией вероятности, попытайтесь определить стратегию экспериментально. 
+  Экспериментальный подход может быть даже более увлекательным, чем формальный.</font></P>
+</BODY>
+</HTML>
+

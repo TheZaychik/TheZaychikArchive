@@ -1,0 +1,1985 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+      <ul>
+<li><b><font face="Times New Roman" size=3><a href="#1">ГЛАВА 8. ПРОГРАММИРОВАНИЕ ПАНЕЛИ ИНСТРУМЕНТОВ</a></font></b> </li>
+     <ul>
+     <li><font face="Times New Roman" size=3><a href="#2">ОБЪЕКТ COMMANDBAR и СЕМЕЙСТВО COMMANDBARS</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#3">СЕМЕЙСТВО COMMANDBARCONTROLS и ОБЪЕКТ COMMANDBARCONTROL</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#4">ПРИМЕР СОЗДАНИЯ ПАНЕЛИ ИНСТРУМЕНТОВ ПОЛЬЗОВАТЕЛЯ</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#5">ПРИМЕР СОЗДАНИЯ СТРОКИ МЕНЮ ПОЛЬЗОВАТЕЛЯ</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#6">СОЗДАНИЕ ПОЛЬЗОВАТЕЛЬСКОЙ ПАНЕЛИ ИНСТРУМЕНТОВ ВРУЧНУЮ</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#7">УДАЛЕНИЕ ЭЛЕМЕНТА УПРАВЛЕНИЯ из ПАНЕЛИ ИНСТРУМЕНТОВ ВРУЧНУЮ </a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#8">УДАЛЕНИЕ ПОЛЬЗОВАТЕЛЬСКОЙ ПАНЕЛИ ИНСТРУМЕНТОВ ВРУЧНУЮ</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#9">НАЗНАЧЕНИЕ ВРУЧНУЮ МАКРОСА КНОПКЕ</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#10">ИЗМЕНЕНИЕ и СОЗДАНИЕ ВРУЧНУЮ ИЗОБРАЖЕНИЯ НА КНОПКЕ</a></font> </li>
+
+     </ul></ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Глава 
+  8</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Программирование 
+  панели инструментов</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Программирование 
+  панели инструментов позволяет создавать для приложений пользователя собственный 
+  интерфейс, например, исключить из меню и панелей инструментов основного приложения 
+  кнопки и команды, не относящиеся к разрабатываемому пользователем приложению 
+  и добавить новые необходимые средства.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="2"></a>Объект 
+  CommandBar и семейство CommandBars</font></B><font size="4"><BR>
+  </font> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Объект CommandBar 
+  и семейство CommandBars используются для программирования строк меню и панелей 
+  инструментов. В семействе CommandBars хранятся все строки меню и панели инструментов 
+  конкретного приложения.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Семейство 
+  CommandBars содержится в объекте Application. Оно представляет собой панели 
+  команд. В свою очередь каждый объект CommandBar содержит семейство commandBarControls, 
+  состоящее из всех элементов управления данной панели инструментов. Свойство 
+  controls объекта CommandBar возвращает семейство CommandBarControls. Элементы 
+  семейства CommandBarControis относятся к одному из трех типов.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="130">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="196" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="422" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="43"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="196" HEIGHT="43"> 
+        <DIV WIDTH="196" HEIGHT="43"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandBar But 
+            ton<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="422" HEIGHT="43"> 
+        <DIV WIDTH="422" HEIGHT="43"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Кнопка или элемент 
+            меню, вызывающий выполнение команды или подпрограммы<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="43"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="196" HEIGHT="62"> 
+        <DIV WIDTH="196" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandBarComboBox<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="422" HEIGHT="62"> 
+        <DIV WIDTH="422" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Сложно организованные 
+            меню, такие как поле ввода, раскрывающийся список или поле со списком<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="196" HEIGHT="25"> 
+        <DIV WIDTH="196" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandBarPopUp<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="422" HEIGHT="25"> 
+        <DIV WIDTH="422" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Меню или вложенное 
+            меню<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="196" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="422" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">На рис. 8.1 
+  показана иерархическая схема объекта CommandBar.<BR>
+  </font></P>
+<P align="left"><img src="8.1.gif" width="448" height="266"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  8.1. </I></B><I>Иерархическая схема объекта CommandBar</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Обсудим наиболее 
+  часто используемые методы и свойства объекта CommandBar. Начнем с его методов.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="601">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="110" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="502" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="555"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="110" HEIGHT="555"> 
+        <DIV WIDTH="110" HEIGHT="555"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Add Delete<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="502" HEIGHT="555"> 
+        <DIV WIDTH="502" HEIGHT="555"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Создает новую 
+            панель команд и добавляет ее в семейство CommandBars<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Add (Name, Position, 
+            MenuBar, Temporary)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="502" HEIGHT="555"> <font face="Times New Roman, Times, serif" size="3">Name 
+              — имя создаваемой панели команд </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="502" HEIGHT="555"><font face="Times New Roman, Times, serif" size="3"> 
+              Position — определяет местоположение панели команд. Допустимые значения: 
+              </font></DIV>
+            <ul>
+              <li> 
+                <DIV WIDTH="502" HEIGHT="555"><font face="Times New Roman, Times, serif" size="3"> 
+                  msoBarLeft (привязка строки меню к левой границе окна основного 
+                  приложения) </font></DIV>
+              </li>
+              <li> 
+                <DIV WIDTH="502" HEIGHT="555"><font face="Times New Roman, Times, serif" size="3"> 
+                  msoBarTop (привязка строки меню к верхней границе окна основного 
+                  приложения) </font></DIV>
+              </li>
+              <li> 
+                <DIV WIDTH="502" HEIGHT="555"><font face="Times New Roman, Times, serif" size="3"> 
+                  msoBarRight (привязка строки меню к правой границе окна основного 
+                  приложения) </font></DIV>
+              </li>
+              <li> 
+                <DIV WIDTH="502" HEIGHT="555"><font face="Times New Roman, Times, serif" size="3">msoBarBottom 
+                  (привязка строки меню к нижней границе окна основного приложения) 
+                  </font></DIV>
+              </li>
+              <li> 
+                <DIV WIDTH="502" HEIGHT="555"><font face="Times New Roman, Times, serif" size="3"> 
+                  msoBarFloating (свободное размещение строки меню на экране) 
+                  </font></DIV>
+              </li>
+              <li> 
+                <DIV WIDTH="502" HEIGHT="555"><font face="Times New Roman, Times, serif" size="3"> 
+                  msoBarPopup (устанавливает, будет ли панель команд контекстным 
+                  меню) </font></DIV>
+              </li>
+            </ul>
+          </li>
+          <li> 
+            <DIV WIDTH="502" HEIGHT="555"><font face="Times New Roman, Times, serif" size="3"> 
+              MenuBar — допустимые значения: True (панель команд заменяет активную 
+              строку меню) и False (в противном случае) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="502" HEIGHT="555"><font face="Times New Roman, Times, serif" size="3"> 
+              Temporary — допустимые значения: True (панель команд удаляется при 
+              закрытии Excel) и False (в противном случае) Удаляет панель команд<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="555"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"></TD>
+      <td width="114" height="156"> 
+        <div width="114" height="156"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">ShowPopUp<br>
+            </font></p>
+        </div>
+      </td>
+      <td width="502" height="156"> 
+        <div width="502" height="156"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Отображает контекстную 
+            панель команд в специфицированном местоположении, если указаны координаты, 
+            либо в месте расположения указателя, если они опущены.</font></p>
+          <p><font face="Times New Roman, Times, serif" size="3"> Синтаксис: </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">ShowPopUp (х, у) 
+            </font></p>
+        </div>
+        <ul>
+          <li>
+            <div width="502" height="156"><font face="Times New Roman, Times, serif" size="3"> 
+              х — х-координата панели команд </font></div>
+          </li>
+          <li>
+            <div width="502" height="156"><font face="Times New Roman, Times, serif" size="3">у 
+              — у-координата панели команд<br>
+              </font></div>
+          </li>
+        </ul>
+      </td>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"></TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="110" HEIGHT="46"> 
+        <DIV WIDTH="110" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Reset<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="502" HEIGHT="46"> 
+        <DIV WIDTH="502" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Восстанавливает 
+            в исходное состояние (по умолчанию) встроенную панель инструментов<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="110" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="502" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Перейдем 
+  к обсуждению наиболее часто употребляемых свойств объекта CommandBar.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="630">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="112" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="503" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="112" HEIGHT="26"> 
+        <DIV WIDTH="112" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Enabled<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="503" HEIGHT="26"> 
+        <DIV WIDTH="503" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Определяет возможность 
+            доступа к панели команд<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="142"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="112" HEIGHT="142"> 
+        <DIV WIDTH="112" HEIGHT="142"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Visible<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="503" HEIGHT="142"> 
+        <DIV WIDTH="503" HEIGHT="142"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Определяет, 
+            видима ли строка панели команд. Например, скрыть панель инструментов 
+            Форматирование (Formatting) можно с помощью следующей инструкции:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Application. CommandBars 
+            (&quot;Formatting&quot; ) .Visible = False</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Отобразить все 
+            панели инструментов можно с помощью следующей инструкции:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Application. CommandBars 
+            .Visible = True</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="142"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="63"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="112" HEIGHT="63"> 
+        <DIV WIDTH="112" HEIGHT="63"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Controls<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="503" HEIGHT="63"> 
+        <DIV WIDTH="503" HEIGHT="63"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает семейство 
+            commandBarControis, состоящее из всех элементов управления конкретной 
+            панели инструментов<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="63"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="298"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="112" HEIGHT="298"> 
+        <DIV WIDTH="112" HEIGHT="298"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Position<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="503" HEIGHT="298"> 
+        <DIV WIDTH="503" HEIGHT="298"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает местоположение 
+            панели команд. Допустимые значения: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="503" HEIGHT="298"><font face="Times New Roman, Times, serif" size="3"> 
+              msoBarLeft (привязка строки меню к левой границе окна основного 
+              приложения) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="503" HEIGHT="298"><font face="Times New Roman, Times, serif" size="3">msoBarTop 
+              (привязка строки меню к верхней границе окна основного приложения) 
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="503" HEIGHT="298"><font face="Times New Roman, Times, serif" size="3">msoBarRight 
+              (привязка строки меню к правой границе окна основного приложения)</font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="503" HEIGHT="298"><font face="Times New Roman, Times, serif" size="3"> 
+              msoBarBottom (привязка строки меню к нижней границе окна основного 
+              приложения) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="503" HEIGHT="298"><font face="Times New Roman, Times, serif" size="3"> 
+              msoBarFloating (свободное размещение строки меню на экране) </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="503" HEIGHT="298"><font face="Times New Roman, Times, serif" size="3"> 
+              msoBarPopup (устанавливает, будет ли панель команд контекстным меню)<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="298"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="102"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="112" HEIGHT="102"> 
+        <DIV WIDTH="112" HEIGHT="102"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Protection<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="503" HEIGHT="102"> 
+        <DIV WIDTH="503" HEIGHT="102"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Устанавливает 
+            защиту строки меню от изменений со стороны пользователя. Допустимые 
+            значения: </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">msoBarNoProtection, 
+            msoBarNoCustomize, msoBarNoResize, msoBarNoMove, msoBarNoChangeVisible, 
+            msoBarNoChangeDock, msoBarNoVerticalDock и msoBarNoHorizontalDock</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="102"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="112" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="503" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Как отмечалось 
+  выше, в семействе CommandBars хранятся все строки меню и панели инструментов 
+  конкретного приложения. В табл. 8.1 приведены названия наиболее часто используемых 
+  встроенных панелей инструментов Excel.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Таблица 
+  8.1. </I></B><I>Названия панелей инструментов</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="481" HEIGHT="597">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="33"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="33"> 
+        <DIV WIDTH="216" HEIGHT="33"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Название 
+            (англ.)</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="33"> 
+        <DIV WIDTH="265" HEIGHT="33"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Название 
+            (рус.)</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="33"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="25"> 
+        <DIV WIDTH="216" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Formatting<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="25"> 
+        <DIV WIDTH="265" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Форматирование<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="26"> 
+        <DIV WIDTH="216" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Standard<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="26"> 
+        <DIV WIDTH="265" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Стандартная<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="23"> 
+        <DIV WIDTH="216" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Visual Basic<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="23"> 
+        <DIV WIDTH="265" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Visual Basic<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="26"> 
+        <DIV WIDTH="216" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Drawing<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="26"> 
+        <DIV WIDTH="265" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Рисование<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="25"> 
+        <DIV WIDTH="216" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Web<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="25"> 
+        <DIV WIDTH="265" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Web<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="26"> 
+        <DIV WIDTH="216" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">WordArt<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="26"> 
+        <DIV WIDTH="265" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">WordArt<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="26"> 
+        <DIV WIDTH="216" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">External Data<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="26"> 
+        <DIV WIDTH="265" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Внешние данные<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="26"> 
+        <DIV WIDTH="216" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Chart<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="26"> 
+        <DIV WIDTH="265" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Диаграммы<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="26"> 
+        <DIV WIDTH="216" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Picture<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="26"> 
+        <DIV WIDTH="265" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Настройка изображения<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="25"> 
+        <DIV WIDTH="216" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Worksheet Menu 
+            Bar<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="25"> 
+        <DIV WIDTH="265" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Строка меню 
+            листа<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="26"> 
+        <DIV WIDTH="216" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Reviewing<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="26"> 
+        <DIV WIDTH="265" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Рецензирование<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="25"> 
+        <DIV WIDTH="216" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">PivotTable<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="25"> 
+        <DIV WIDTH="265" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Сводные таблицы<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="26"> 
+        <DIV WIDTH="216" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Control Toolbox<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="26"> 
+        <DIV WIDTH="265" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Элементы управления<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="26"> 
+        <DIV WIDTH="216" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Clipboard<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="26"> 
+        <DIV WIDTH="265" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Буфер обмена<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="26"> 
+        <DIV WIDTH="216" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Custom 1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="26"> 
+        <DIV WIDTH="265" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Настраиваемая 
+            1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="26"> 
+        <DIV WIDTH="216" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Stop Recording<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="26"> 
+        <DIV WIDTH="265" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Остановка записи<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="26"> 
+        <DIV WIDTH="216" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Shadow Settings<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="26"> 
+        <DIV WIDTH="265" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Настройка тени<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="26"> 
+        <DIV WIDTH="216" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">3-D Settings<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="26"> 
+        <DIV WIDTH="265" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Настройка объема<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="26"> 
+        <DIV WIDTH="216" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Circular Reference 
+            .<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="26"> 
+        <DIV WIDTH="265" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Циклические 
+            ссылки<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="26"> 
+        <DIV WIDTH="216" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Full Screen<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="26"> 
+        <DIV WIDTH="265" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Во весь экран<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="26"> 
+        <DIV WIDTH="216" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Chart Menu Bar<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="26"> 
+        <DIV WIDTH="265" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Строка меню 
+            диаграммы<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="29"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="29"> 
+        <DIV WIDTH="216" HEIGHT="29"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Auditing<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="29"> 
+        <DIV WIDTH="265" HEIGHT="29"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Зависимости<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="29"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="216" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="265" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+<p>&nbsp;</p></div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="3"></a>Семейство 
+  CommandBarControls и объект CommandBarControl</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Семейство 
+  CommandBarControls содержит все элементы конкретной панели инструментов или 
+  меню. Важнейшим методом этого семейства является метод Add, создающий новый 
+  элемент. Рассмотрим синтаксис метода Add.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="505">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="55" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="560" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="505"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="55" HEIGHT="505"> 
+        <DIV WIDTH="55" HEIGHT="505"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Add<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="560" HEIGHT="505"> 
+        <DIV WIDTH="560" HEIGHT="505"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Добавляет новый 
+            элемент на панель управления или в меню. Возвращает объект CommandBarButton, 
+            CommandBarComboBox или CommandBarPopup. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Add (Type, Id, 
+            Parameter, Before, Temporary)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="560" HEIGHT="505"> <font face="Times New Roman, Times, serif" size="3"> 
+              Type — задает тип добавляемого элемента. Допустимые значения:<BR>
+              </font></DIV>
+            <ul>
+              <li> 
+                <DIV WIDTH="560" HEIGHT="505"><font face="Times New Roman, Times, serif" size="3"> 
+                  msoControlButton (кнопка или элемент меню) </font></DIV>
+              </li>
+              <li> 
+                <DIV WIDTH="560" HEIGHT="505"><font face="Times New Roman, Times, serif" size="3"> 
+                  msoControlEdit (поле ввода) </font></DIV>
+              </li>
+              <li> 
+                <DIV WIDTH="560" HEIGHT="505"><font face="Times New Roman, Times, serif" size="3"> 
+                  msoControlOropdown (раскрывающийся список)<BR>
+                  </font></DIV>
+              </li>
+              <li> 
+                <DIV WIDTH="560" HEIGHT="505"><font face="Times New Roman, Times, serif" size="3"> 
+                  msoControlComboBox (поле со списком)<BR>
+                  </font></DIV>
+              </li>
+              <li> 
+                <DIV WIDTH="560" HEIGHT="505"><font face="Times New Roman, Times, serif" size="3"> 
+                  msoControlPopup (вложенное меню) </font></DIV>
+              </li>
+            </ul>
+          </li>
+          <li> 
+            <DIV WIDTH="560" HEIGHT="505"><font face="Times New Roman, Times, serif" size="3">id 
+              — целое число, идентифицирующее встроенный элемент управления. Если 
+              аргумент Id равен 1 или опущен, то добавляется пустой элемент управления 
+              заданного типа </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="560" HEIGHT="505"><font face="Times New Roman, Times, serif" size="3"> 
+              Parameter — задает параметр, используемый встроенным элементом управления 
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="560" HEIGHT="505"><font face="Times New Roman, Times, serif" size="3">Before 
+              — индекс или имя элемента управления, перед которым добавляется 
+              новый элемент управления. Если аргумент опущен, то элемент размещается 
+              в конце панели инструментов или меню </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="560" HEIGHT="505"><font face="Times New Roman, Times, serif" size="3"> 
+              Temporary — допустимые значения: True (новый элемент управления 
+              автоматически удаляется из меню или панели инструментов при закрытии 
+              приложения) и False (в противном случае)<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="505"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="55" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="560" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Обсудим вкратце 
+  основные свойства объекта CommandBarControi.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="294">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="155" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="464" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="155" HEIGHT="26"> 
+        <DIV WIDTH="155" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Caption<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="464" HEIGHT="26"> 
+        <DIV WIDTH="464" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Текстовая строка, 
+            отображаемая в заголовке<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="155" HEIGHT="25"> 
+        <DIV WIDTH="155" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">DescriptionText<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="464" HEIGHT="25"> 
+        <DIV WIDTH="464" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает описание 
+            элемента управления<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="155" HEIGHT="46"> 
+        <DIV WIDTH="155" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Enabled<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="464" HEIGHT="46"> 
+        <DIV WIDTH="464" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Устанавливает, 
+            является ли допустимым выбранный пользователем элемент управления<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="155" HEIGHT="64"> 
+        <DIV WIDTH="155" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">FacelD<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="464" HEIGHT="64"> 
+        <DIV WIDTH="464" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает номер 
+            встроенной кнопки, используемой в качестве элемента управления. Если 
+            это свойство равно нулю, то возвращается пустой элемент управления<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="155" HEIGHT="44"> 
+        <DIV WIDTH="155" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">OnAction<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="464" HEIGHT="44"> 
+        <DIV WIDTH="464" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает имя 
+            макроса, выполняемого при активизации элемента управления<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="155" HEIGHT="45"> 
+        <DIV WIDTH="155" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ShortcutText<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="464" HEIGHT="45"> 
+        <DIV WIDTH="464" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает комбинацию 
+            горячих клавиш, назначенных элементу управления<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="155" HEIGHT="45"> 
+        <DIV WIDTH="155" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Style<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="464" HEIGHT="45"> 
+        <DIV WIDTH="464" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Только для объекта 
+            CommandBarButton. Устанавливает . внешний вид кнопки. Допустимые значения:</font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="464" HEIGHT="45"><font face="Times New Roman, Times, serif" size="3"> 
+              msoButtonAutomatic (кнопка не содержит текста и рисунка)<br>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="464" HEIGHT="45"> <font face="Times New Roman, Times, serif" size="3"> 
+              msoButtonIcon (кнопка содержит рисунок, в этом случае надо также 
+              задать свойство Icon) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="464" HEIGHT="45"><font face="Times New Roman, Times, serif" size="3"> 
+              msoButtonCaption (кнопка содержит текст, в этом случае надо также 
+              задать свойство caption) </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="464" HEIGHT="45"><font face="Times New Roman, Times, serif" size="3"> 
+              msoButtonIconandCaption (кнопка содержит текст и рисунок, в этом 
+              случае надо также задать свойства Icon и Caption)<br>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="464" HEIGHT="45">
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="155" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="464" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="257">
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="36"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="155" HEIGHT="36"> 
+        <DIV WIDTH="155" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">TooltipText</font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="463" HEIGHT="36"> 
+        <DIV WIDTH="463" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Текст, отображаемый 
+            в окне всплывающей подсказки</font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="36"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="71"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="155" HEIGHT="71"> 
+        <DIV WIDTH="155" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Visible</font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="463" HEIGHT="71"> 
+        <DIV WIDTH="463" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Устанавливает 
+            режим отображения (видимость) на экране кнопки</font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="71"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="4"></a>Пример 
+  создания панели инструментов пользователя</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  пример проекта, который создает интерфейс приложения, состоящего из строки меню 
+  и одной панели инструментов. В панель инструментов входят две кнопки и раскрывающийся 
+  список. На поверхности одной из кнопок выводится рисунок, а другой — надпись 
+  (рис. 8.2).<BR>
+  </font></P>
+<P align="left"><img src="8.2.gif" width="493" height="434"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  8.2. </I></B><I>Пользовательский интерфейс</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Каждая из 
+  кнопок связана с макросом таким образом, что их активизация приводит к выполнению 
+  соответствующего макроса. Кроме того, эти кнопки снабжены пояснительными надписями, 
+  которые отображаются в окне всплывающей подсказки. При закрытии приложения данная 
+  панель инструментов удаляется, а ее место занимают панели инструментов <B>Стандартная 
+  </B>(Standard) и <B>Форматирование </B>(Formatting).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В окне <B>Проект 
+  — VBAProject </B>(Project - VBAProject) выберите лист ThisWorkbook и наберите 
+  следующие две процедуры.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Workbook_WindowActivate(ByVal Wn As Excel.Window)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  создания новой панели инструментов при<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' открытии рабочей 
+  книги </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' При открытии 
+  рабочей книги панели инструментов Форматирование<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' и Стандартная 
+  скрываются </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3"><I>'</I><BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With Application<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.CommandBars(&quot;Formatting&quot;).Visible 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.CommandBars(&quot;Standard&quot;).Visible 
+  = False End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Создание новой 
+  панели инструментов с именем </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' МояПанельИнструментов, 
+  которая будет<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' удаляться 
+  при закрытии приложения </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With Application.CommandBars</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Add(Name:=&quot;МояПанельИнструментов&quot;,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Position:=msoBarTop, 
+  MenuBar:=False, Temporary:=True) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Visible = True 
+  With .Controls<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Создание кнопки 
+  с рисунком<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With .Add(Type:=msoControlButton, 
+  Id:=2950) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.TooltipText 
+  = &quot;КнопкаДейства!&quot; .OnAction = &quot;Действо 1&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Создание кнопки 
+  с надписью<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With .Add(Type:=msoControlButton, 
+  Id:=l)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Caption = &quot;Действо&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.TooltipText 
+  = &quot;КнопкаДейства2&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Style = msoButtonCaption<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.OnAction = 
+  &quot;Действо 2&quot; End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3"><I>' </I>Создание 
+  раскрывающегося списка<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With .Add(Type:=msoControlDropdown) 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Addltem &quot;Приедет&quot;, 
+  1 .Addltem &quot;Уедет&quot;, 2</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> .Addltem &quot;Еще 
+  не решил&quot;, 3</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> .Listlndex = 
+  i </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Workbook_WindowDeactivate(ByVal Wn As Excel.Window)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура, 
+  отображающая панели инструментов Форматирование<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' ' и Стандартная 
+  при закрытии приложения<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With Application<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.CommandBars(&quot;Formatting&quot;).Visible 
+  = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.CommandBars(&quot;Standard&quot;).Visible 
+  = True </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">А на листе 
+  модуля введите следующие две процедуры, которые будут выполняться при нажатии 
+  на соответствующие кнопки.</font><font face="Courier New, Courier, mono" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Действо1()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Результат 
+  действа 1&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Действо 
+  2()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot; 
+  Результат действа 2&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><b><a name="5"></a>Пример 
+  создания строки меню пользователя</b></font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  пример проекта, который создает интерфейс приложения, состоящего из пользовательской 
+  строки меню. Пользовательская строка меню включает два пункта меню, причем первый 
+  пункт содержит в себе также раскрывающееся меню (рис. 8.3). Каждый пункт связан 
+  с макросом так, что при их выборе выполняется -соответствующий макрос. При закрытии 
+  приложения пользовательская строка меню удаляется.<BR>
+  </font></P>
+<P align="left"><img src="8.3.gif" width="493" height="434"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  8.3. </I></B><I>Интерфейс с пользовательской строкой меню</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В окне <B>Проект 
+  — VBA Project </B>(Project - VBAProject) выберите лист Thisworkbook и введите 
+  на нем следующие две процедуры.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Workbook_WindowActivate(ByVal Wn As Excel.Window)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  создания новой строки меню при<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' открытии рабочей 
+  книги. При закрытии приложения<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' подданная 
+  строка удаттететея</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With Application.CoimnandBars.Add(Name:=&quot;МоеМеню&quot;, 
+  MenuBar:=True, Temporary:=True) .Visible = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With .Controls 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Создание меню 
+  Меню! </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With .Add(Type:=msoControlPopup) 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Caption = &quot;&amp;Меню1&quot; 
+  With .Controls<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With .Add (Type 
+  :=msoControlButtoj&raquo;) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Caption = &quot;Пункт&amp;1&quot; 
+  .OnAction = &quot;АтьДва!&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Создание подменю 
+  Меню1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With -Add(Type:=msoControlPopup) 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Caption = &quot;&amp;ПодМеню1&quot; 
+  With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Controls<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With .Add(Type:=msoControlButton) 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Caption = &quot;Пункт&amp;2&quot; 
+  .OnAction = &quot;АтьДва2&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With .Add(Type:=msoControlButton) 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Caption = &quot;Пункт&amp;З&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.OnAction = 
+  &quot;АтьДваЗ&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Создание меню 
+  Меню2</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With .Add(Type:=msoControlPopup)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Caption = &quot;&amp;Меню2&quot; 
+  With .Controls<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With .Add(Type:=msoControlButton)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> .Caption = &quot;Пункт&amp;4&quot; 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.OnAction = &quot;АтьДва4&quot; 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">А на листе модуля 
+  введите следующие четыре процедуры, которые будут выполняться при выборе соответствующего 
+  пункта меню.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub АтьДва!()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Стой! 
+  Стоять! Буду стрелять!&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub АтьДва2 
+  ()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Стой! 
+  Стоять! Стреляю в воздух!&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub АтьДваЗ()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Стой! 
+  Стоять! Последний раз стреляю в воздух!&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub АтьДва4()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Стой! 
+  Стоять! Стреляю!&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="4"><b><a name="6"></a>Создание 
+  пользовательской панели инструментов вручную</b></font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Иногда бывает 
+  удобнее проектировать собственную панель вручную, чем ее программировать. </font></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3">Создается 
+  панель пользователя по следующему алгоритму.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="43">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="553" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="43"></TD>
+      <td width="69" height="43"> 
+        <div width="69" height="43"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Шаг 1<br>
+            </font></p>
+        </div>
+      </td>
+      <td width="553" height="43"> 
+        <div width="553" height="43"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Выберите команду 
+            Вид, Панели инструментов, Настройка (View, Toolbars, Customize) или 
+            переместите указатель на любую панель инструментов и сделайте щелчок 
+            правой кнопкой мыши, а затем выберите команду Настройка (Customize).<br>
+            </font></p>
+        </div>
+      </td>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="43"></TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="43"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="43"> 
+        <DIV WIDTH="69" HEIGHT="43"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 2 <BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="553" HEIGHT="43"> 
+        <DIV WIDTH="553" HEIGHT="43"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">В появившемся 
+            диалоговом окне Настройка (Customize) нажмите кнопку Создать (New) 
+            (рис. 8.4).<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="43"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="553" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+  <p><img src="8.4.gif" width="497" height="337"></p>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  8.4.</I></B><I> Диалоговое окно <B>Настройка</B></I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="64">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="64"> 
+        <DIV WIDTH="70" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ШагЗ<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="64"> 
+        <DIV WIDTH="550" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">В появившемся 
+            диалоговом окне Создание панели инструментов в поле Панель инструментов 
+            (Toolbars) введите имя новой панели инструментов, например моя панель 
+            (рис. 8.5).<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><img src="8.5.gif" width="270" height="149"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  8.5. </I></B><I>Диалоговое окно <B>Создание панели инструментов</B></I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="85">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="544" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="85"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="85"> 
+        <DIV WIDTH="68" HEIGHT="85"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 4<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="544" HEIGHT="85"> 
+        <DIV WIDTH="544" HEIGHT="85"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажмите кнопку 
+            ОК. Это приведет к появлению новой панели инструментов (рис. 8.6). 
+            Пусть вас не смущает ширина панели инструментов. Она будет автоматически 
+            расширяться по мере ее заполнения элементами управления.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="85"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="544" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp;</P>
+<P align="left"><img src="8.6.gif" width="497" height="341"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  8.6. </I></B><I>Новая панель инструментов и диалоговое окно <B>Настройка</B></I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="315">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="552" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="315"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="315"> 
+        <DIV WIDTH="68" HEIGHT="315"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 5<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="552" HEIGHT="315"> 
+        <DIV WIDTH="552" HEIGHT="315"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Раскройте вкладку 
+            Команды (Commands) диалогового окна Настройка (Customize) и перетащите 
+            на новую панель нужные кнопки из списка Команды (Commands). Итак, 
+            панель инструментов создана (рис. 8.7). Программно та же панель инструментов 
+            создается следующими инструкциями:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Application. CommandBars 
+            </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">.Add (Name :=&quot; 
+            Моя панель&quot; )</font></P>
+          <P><font face="Courier New, Courier, mono" size="3"> .Visible = True 
+            Application. CommandBars ( &quot;Моя панель&quot;) </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">. Controls .Add 
+            Type : =msoControlButton, Id:=23, Before:=l Application. CommandBars 
+            ( &quot;Моя панель&quot;) </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">. Controls. Add 
+            Type:=msoControlButton, Id:=211, Before:=2 Application. CommandBars 
+            ( &quot;Моя панель&quot;)</font><font face="Courier New, Courier, mono" size="3">.Controls. 
+            </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">Add Type:=msoControlButton, 
+            </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">Id:=1031, Before 
+            :=3 </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">Application. CommandBars 
+            (&quot;Моя панель&quot;) .Controls.</font></P>
+          <P><font face="Courier New, Courier, mono" size="3"> Add Type:=msoControlButton, 
+            Id:=166, Before:=4<BR>
+            </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="315"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="552" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">По указанному 
+  выше алгоритму, опустив шаги со второго по четвертый, можно также добавлять 
+  элементы управления в уже существующие панели инструментов.<BR>
+  </font></P>
+<P align="left"><img src="8.7.gif" width="109" height="49"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  8.7. </I></B><I>Новая панель инструментов Моя панель</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="7"></a>Удаление 
+  элемента управления из панели инструментов вручную</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Вручную элемент 
+  управления удаляется из панели инструментов по следующему алгоритму.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="286">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="66" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="548" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="89"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="66" HEIGHT="89"> 
+        <DIV WIDTH="66" HEIGHT="89"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="548" HEIGHT="89"> 
+        <DIV WIDTH="548" HEIGHT="89"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выберите команду 
+            Вид, Панели инструментов, Настройка (View, Toolbars, Customize) или 
+            переместите указатель на любую панель инструментов и сделайте щелчок 
+            правой кнопкой мыши, а затем выберите команду Настройка (Customize).<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="89"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="86"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="66" HEIGHT="86"> 
+        <DIV WIDTH="66" HEIGHT="86"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 2<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="548" HEIGHT="86"> 
+        <DIV WIDTH="548" HEIGHT="86"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">После появления 
+            диалогового окна Настройка (Customize) выберите удаляемую кнопку и 
+            перетащите ее за пределы панели инструментов в область рабочего листа, 
+            но так, чтобы она не попала на другую панель инструментов.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="86"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="111"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="66" HEIGHT="111"> 
+        <DIV WIDTH="66" HEIGHT="111"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ШагЗ<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="548" HEIGHT="111"> 
+        <DIV WIDTH="548" HEIGHT="111"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Отпустите кнопку 
+            мыши. Элемент управления удален. Удалите по указанному выше алгоритму, 
+            например, четвертую кнопку из панели инструментов моя панель. Программно 
+            тот же результат достигается инструкцией:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Application. 
+            CommandBars (&quot;Моя панель&quot;) .Controls (4) .Delete<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="111"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="66" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="548" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><a name="8"></a><font size="4">Удаление 
+  пользовательской панели инструментов вручную</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Вручную пользовательская 
+  панель инструментов удаляется по следующему алгоритму.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="134">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="549" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="90"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="90"> 
+        <DIV WIDTH="68" HEIGHT="90"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="549" HEIGHT="90"> 
+        <DIV WIDTH="549" HEIGHT="90"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выберите команду 
+            Вид, Панели инструментов, Настройка (View, Toolbars, Customize) или 
+            переместите указатель на любую панель инструментов и сделайте щелчок 
+            правой кнопкой мыши, а затем выберите команду Настройка (Customize).<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="90"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="44"> 
+        <DIV WIDTH="68" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 2<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="549" HEIGHT="44"> 
+        <DIV WIDTH="549" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Раскройте вкладку 
+            Панели инструментов (Toolbars) диалогового окна Настройка (Customize). 
+            Выделите пользовательскую панель и сбросьте соответствующий флажок, 
+            а затем нажмите кнопку Удалить (Delete). Программно тот же результат 
+            достигается инструкцией:<br>
+            </font></P>
+          <p> <font face="Courier New, Courier, mono" size="3">Application. CommandBars 
+            (&quot;Моя панель&quot;) .Delete</font></p>
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="549" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="9"></a><b>Назначение 
+  вручную макроса кнопке</b></font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Вручную элементу 
+  управления на панели инструментов макрос назначается по следующему алгоритму.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="189">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="85"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="85"> 
+        <DIV WIDTH="69" HEIGHT="85"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="85"> 
+        <DIV WIDTH="550" HEIGHT="85"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выберите команду 
+            Вид, Панели инструментов, Настройка (View, Toolbars, Customize) или 
+            переместите указатель на любую панель инструментов и сделайте щелчок 
+            правой кнопкой мыши, а затем выберите команду Настройка (Customize).<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="85"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="104"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="104"> 
+        <DIV WIDTH="69" HEIGHT="104"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 2<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="104"> 
+        <DIV WIDTH="550" HEIGHT="104"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Раскройте вкладку 
+            Команды (Commands) диалогового окна Настройка (Customize) и выберите 
+            элемент управления, который требуется связать с макросом. Нажмите 
+            кнопку Изменить выделенный объект (Modify selection). В появившемся 
+            меню выберите команду Назначить макрос (Assign Macro) (рис. 8.8).<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="104"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><img src="8.8.gif" width="497" height="474"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  8.8. </I></B><I>Меню с командой <B>Назначить макрос</B></I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="122">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="552" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="122"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="122"> 
+        <DIV WIDTH="68" HEIGHT="122"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ШагЗ<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="552" HEIGHT="122"> 
+        <DIV WIDTH="552" HEIGHT="122"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Появится диалоговое 
+            окно Назначить макрос (Assign Macro) (рис. 8.9). В списке Имя макроса 
+            (Macro Name) выберите имя макроса, назначаемое элементу управления. 
+            Нажмите кнопку ОК диалогового окна Назначить макрос (Assign Macro) 
+            и кнопку Закрыть (Close) диалогового окна Настройка (Customize). Теперь 
+            макрос назначен кнопке.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="122"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="552" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <p><img src="8.9.gif" width="402" height="313"></p>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  8.9. </I></B><I>Диалоговое окно <B>Назначить макрос</B></I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><b><a name="10"></a>Изменение 
+  и создание вручную изображения на кнопке</b></font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Вручную можно 
+  изменить изображение любой кнопки. В Excel имеется коллекция из 42 встроенных 
+  кнопок. Кроме того, при помощи встроенного редактора можно создать любой рисунок 
+  на поверхности кнопки и изменить уже существующий. Для этого надо воспользоваться 
+  следующим алгоритмом.</font></P>
+<table width="550" border="1">
+  <tr> 
+    <td width="76"><font face="Times New Roman, Times, serif" size="3">1 Шаг </font></td>
+    <td width="458"> 
+      <p><font face="Times New Roman, Times, serif" size="3">Выберите команду 
+        Вид, Панели инструментов, Настройка (View,<br>
+        Toolbars, Customize) или переместите указатель на любую панель 1 инструментов 
+        и сделайте щелчок правой кнопкой мыши, а затем выберите команду Настройка 
+        (Customize).</font></p>
+    </td>
+  </tr>
+  <tr> 
+    <td width="76"><font face="Times New Roman, Times, serif" size="3">Шаг 2 </font></td>
+    <td width="458"><font face="Times New Roman, Times, serif" size="3"> Раскройте 
+      вкладку Команды (Commands) диалогового окна Настройка (Customize) и выберите 
+      кнопку, которую следует видоизменить. Нажмите кнопку Изменить выделенный 
+      объект (Modify selection). Выберите команду Выбрать значок для кнопки (ChangeButton 
+      Image) и один из значков в появившемся меню (рис. 8.10). Нажмите кнопку 
+      Закрыть (Close) диалогового окна Настройка (Customize). Теперь изображение 
+      на кнопке изменилось.</font></td>
+  </tr>
+</table>
+<P align="left"><img src="8.10.gif" width="160" height="177"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  8.10. </I></B><I>Диалоговое окно со значками</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Если необходимо 
+  создать пользовательское изображение на кнопке или подкорректировать уже существующее, 
+  шаг 2 алгоритма должен быть следующим.<BR>
+  </font></P>
+<P align="left"><img src="8.11.gif" width="367" height="328"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  8.11.</I></B><I> Диалоговое окно <B>Редактор кнопок</B></I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="62">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"></TD>
+      <td width="70" height="62"> 
+        <div width="70" height="62"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Шаг 2<br>
+            </font></p>
+        </div>
+      </td>
+      <td width="551" height="62"> 
+        <div width="551" height="62"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Раскройте вкладку 
+            Команды (Commands) диалогового окна Настройка (Customize) и выберите 
+            кнопку, которую следует видоизменить. Нажмите кнопку Изменить выделенный 
+            объект (Modify selection). Выберите команду Изменить значок на кнопке 
+            (Edit Button Image).<br>
+            </font></p>
+        </div>
+      </td>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"></TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+      <td width="69" height="123"> 
+        <div width="69" height="123"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">ШагЗ<br>
+            </font></p>
+        </div>
+      </td>
+      <td width="553" height="123"> 
+        <div width="553" height="123"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Появится диалоговое 
+            окно Редактор кнопок (Edit Button) (рис. 8.11). Используя средства 
+            этого редактора можно создать любое изображение на поверхности кнопки. 
+            Нажмите кнопку OK диалогового окна Редактор кнопок (Edit Button) и 
+            кнопку Закрыть (Close) диалогового окна Настройка (Customize). Теперь 
+            изображение на кнопке изменилось.<br>
+            </font></p>
+        </div>
+      </td>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+</BODY>
+</HTML>
+

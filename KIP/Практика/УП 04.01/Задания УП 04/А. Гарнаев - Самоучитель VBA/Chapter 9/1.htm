@@ -1,0 +1,767 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+      <ul>
+<li><b><font face="Times New Roman" size=3><a href="#1">ГЛАВА 9. ПРОГРАММИРОВАНИЕ СРЕДСТВ ДЛЯ РАБОТЫ
+
+
+СО СПРАВОЧНОЙ ИНФОРМАЦИЕЙ
+</a></font></b> </li>
+     <ul>
+     <li><font face="Times New Roman" size=3><a href="#2">СТРУКТУРА ПОМОЩНИКА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#3">ТИПЫ  ПОМОЩНИКА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#4">СВОЙСТВА ОБЪЕКТА ASSISTANT</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#5">ОБЪЕКТ BALLOON</a></font> </li>
+
+     </ul></ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Глава 
+  9</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Программирование 
+  средств для работы со справочной информацией</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Для удобства 
+  работы с пользовательскими приложениями обычно их снабжают различной справочной 
+  информацией. Прекрасным средством отображения и работы со справочной информацией 
+  является <I>помощник. </I>Помощник может принимать образы различных героев, 
+  обладает выразительной мимикой, очень подвижен и разговорчив, но кроме того, 
+  он отличный и заботливый гид по приложению. В любой ситуации у него имеется 
+  подсказка, как правильно совершить то или иное действие, как преодолеть те или 
+  иные возникшие заковырки.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="4"><B><a name="2"></a>Структура 
+  помощника</B><BR>
+  </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Помощник 
+  программируется на VBA при помощи объекта Assistant. Структура объекта Assistant 
+  приведена на рис. 9.1. Важной особенностью объекта является то, что это единичный 
+  объект, не являющийся элементом никакого семейства объектов. В каждый момент 
+  времени можно вывести только одного помощника. Но помощника можно видоизменять 
+  по ходу работы программы. Объект Balloon представляет собой окно помощника, 
+  содержащее список разделов справки, связанных с помощником. В этот список могут 
+  входить надписи и флажки. Все надписи, входящие в объект Balloon, образует семейство 
+  BalloonLabeis, а все флажки - семейство BalloonCheckBoxes.<BR>
+  </font></P>
+<P align="left"><img src="9.1.gif" width="410" height="234"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  9.1. </I></B><I>Структура объекта Assistant</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="3"></a><b>Типы 
+  помощника</b></font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Всего имеется 
+  9 типов помощников. По умолчанию используется помощник с именем скрепыш (Clippit). 
+  Отображением помощника на экране управляет свойство Visible объекта Assistant. 
+  Свойство Filename объекта Assistant позволяет изменить вид помощника. А свойство 
+  Name возвращает имя текущего помощника.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Перечислим 
+  используемые в VBA типы помощников.</font></P>
+<table width="550" border="1">
+  <tr> 
+    <td width="252"><b><font face="Times New Roman, Times, serif" size="3">Внешний 
+      вид </font></b></td>
+    <td width="282"><b><font face="Times New Roman, Times, serif" size="3">Название 
+      (рус.)</font></b></td>
+  </tr>
+  <tr> 
+    <td width="252"><img src="1.gif" width="116" height="114"></td>
+    <td width="282"><font face="Times New Roman, Times, serif" size="3">Скрепыш</font></td>
+  </tr>
+  <tr> 
+    <td width="252"><img src="2.gif" width="105" height="93"></td>
+    <td width="282"><font face="Times New Roman, Times, serif" size="3">Колобок</font></td>
+  </tr>
+  <tr> 
+    <td width="252"><img src="3.gif" width="120" height="108"></td>
+    <td width="282">Робот</td>
+  </tr>
+  <tr> 
+    <td width="252"><img src="4.gif" width="108" height="106"></td>
+    <td width="282"><font face="Times New Roman, Times, serif" size="3">Ученый</font></td>
+  </tr>
+  <tr> 
+    <td width="252"><img src="5.gif" width="100" height="96"></td>
+    <td width="282"><font face="Times New Roman, Times, serif" size="3">Эмблема</font></td>
+  </tr>
+  <tr> 
+    <td width="252"><img src="6.gif" width="104" height="98"></td>
+    <td width="282"><font face="Times New Roman, Times, serif" size="3">Планета 
+      Земля</font></td>
+  </tr>
+  <tr> 
+    <td width="252"><img src="8.gif" width="110" height="114"></td>
+    <td width="282">Кот</td>
+  </tr>
+  <tr> 
+    <td width="252"><img src="9.gif" width="126" height="114"></td>
+    <td width="282"><font face="Times New Roman, Times, serif" size="3">Пес-барбос</font></td>
+  </tr>
+</table>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font><font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="4"></a>Свойства 
+  объекта Assistant</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Перечислим 
+  основные свойства объекта Assistant.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="502">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="173" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="444" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="502"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="173" HEIGHT="502"> 
+        <DIV WIDTH="173" HEIGHT="502"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Animation<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="444" HEIGHT="502"> 
+        <DIV WIDTH="444" HEIGHT="502"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Управляет движением 
+            помощника на экране. Допустимы 34 значения, программирующие разовые 
+            движения помощника, и 8 значений, задающих его непрерывные движения. 
+            Отметим, что некоторые анимационные эффекты не работают для всех персонажей, 
+            но использование их не приводит к ошибкам, просто помощник остается 
+            в покое, не производя предписанное действие. Приведем значения свойства 
+            Animation, задающие непрерывные действия помощника: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationCheckingSomething </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationGetArtsy </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationGetTechy </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationSaving </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3">msoAnimationSearching 
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationThinking </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationWorkingAtSomething </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationWritingNotingSome thing </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3">Приведем 
+          некоторые значения свойства Animation, задающие разовые действия помощника:<BR>
+          </font></DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"> <font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationGestureDown </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationGestureLeft </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationGestureRight </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationGestureUp</font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationGoodbye </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationGreeting </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationLookDown </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationLookDownLeft </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationLookDownRight </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationLookLeft </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationLookRight </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationLookUp </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationLookUpLeft </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="444" HEIGHT="502"><font face="Times New Roman, Times, serif" size="3"> 
+              msoAnimationLookUpRight</font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="502"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="173" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="444" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="735">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="3"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="145" HEIGHT="3"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="395" HEIGHT="3"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="3"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="102"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="145" HEIGHT="102"> 
+        <DIV WIDTH="172" HEIGHT="102"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">AssistWithAlerts<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="395" HEIGHT="102"> 
+        <DIV WIDTH="443" HEIGHT="102"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (автоматическое отображение справочной информации при возникновении 
+            ситуации, приводящей к отображению предупреждения, например при удалении 
+            рабочего листа) и False (в противном случае)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="102"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="145" HEIGHT="64"> 
+        <DIV WIDTH="172" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">AssistWithHelp<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="395" HEIGHT="64"> 
+        <DIV WIDTH="443" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (отображается помощник со справкой, при нажатии клавиши &lt;F1&gt;) 
+            и False (в противном случае)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="117"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="145" HEIGHT="117"> 
+        <DIV WIDTH="172" HEIGHT="117"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Filename<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="395" HEIGHT="117"> 
+        <DIV WIDTH="443" HEIGHT="117"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает полное 
+            имя файла (т. е. с указанием папки, где находится файл) для активного 
+            помощника. Имена файлов помощников имеют расширение act. Обычно Windows-файлы 
+            помощников располагаются В папке \Program Files\Microsoft Office\0ffiсе\Actors<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="117"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="65"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="145" HEIGHT="65"> 
+        <DIV WIDTH="172" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">GuessHelp<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="395" HEIGHT="65"> 
+        <DIV WIDTH="443" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (отображается помощник с наиболее подходящей справкой при нажатии 
+            клавиши &lt;F1&gt;) и False (в противном случае)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="65"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="63"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="145" HEIGHT="63"> 
+        <DIV WIDTH="172" HEIGHT="63"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Sounds<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="395" HEIGHT="63"> 
+        <DIV WIDTH="443" HEIGHT="63"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (помощник воспроизводит звуковой сигнал, соответствующий информационному 
+            сообщению) и False (в противном случае)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="63"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="145" HEIGHT="64"> 
+        <DIV WIDTH="172" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">TipOfDay<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="395" HEIGHT="64"> 
+        <DIV WIDTH="443" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (помощник отображает сообщение при запуске приложения) и False 
+            (в противном случае)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="145" HEIGHT="46"> 
+        <DIV WIDTH="172" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Visible<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="395" HEIGHT="46"> 
+        <DIV WIDTH="443" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (помощник отображается на экране) и False (в противном случае)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="2"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="145" HEIGHT="2"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="395" HEIGHT="2"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="2"> </TD>
+    </TR>
+  </TABLE>
+  <p>&nbsp;</p>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="4"><b><a name="5"></a>Объект 
+  Balloon</b></font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Помощник 
+  выводит анимационную картинку, задаваемую типом помощника, и список разделов 
+  справки, выводимых в окне помощника. Содержание и вид окна помощника определяется 
+  объектом Balloon. Объект Balloon создается методом NewBalion объекта Assistant. 
+  Метод show отображает объект Balloon на экране.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Перечислим 
+  основные свойства объекта Balloon.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="782">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="114"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="114"> 
+        <DIV WIDTH="149" HEIGHT="114"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">BalloonType<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="114"> 
+        <DIV WIDTH="466" HEIGHT="114"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Задает тип надписей 
+            объекта Balloon. Допустимые значения: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="466" HEIGHT="114"><font face="Times New Roman, Times, serif" size="3"> 
+              msoBalloonTypeButtons </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="466" HEIGHT="114"><font face="Times New Roman, Times, serif" size="3"> 
+              msoBalloonTypeBullets </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="466" HEIGHT="114"><font face="Times New Roman, Times, serif" size="3"> 
+              msoBalloonTypeNumbers<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="114"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="355"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="355"> 
+        <DIV WIDTH="149" HEIGHT="355"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Button<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="355"> 
+        <DIV WIDTH="466" HEIGHT="355"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Устанавливает 
+            тип кнопок, отображаемых в окне помощника. Допустимые значения:<BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="466" HEIGHT="355"> <font face="Times New Roman, Times, serif" size="3"> 
+              mpsoButtonSetAbortRetrylgnore </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="466" HEIGHT="355"><font face="Times New Roman, Times, serif" size="3"> 
+              msoButtonSetBackClose </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="466" HEIGHT="355"><font face="Times New Roman, Times, serif" size="3"> 
+              msoButtonSetBackNextClose </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="466" HEIGHT="355"><font face="Times New Roman, Times, serif" size="3"> 
+              msoButtonSetBackNextSnooze </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="466" HEIGHT="355"><font face="Times New Roman, Times, serif" size="3"> 
+              msoButtonSetCancel </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="466" HEIGHT="355"><font face="Times New Roman, Times, serif" size="3"> 
+              rasoButtonSetNextClose </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="466" HEIGHT="355"><font face="Times New Roman, Times, serif" size="3"> 
+              msoButtonSetNon</font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="466" HEIGHT="355"><font face="Times New Roman, Times, serif" size="3">msoButtonSetOK 
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="466" HEIGHT="355"><font face="Times New Roman, Times, serif" size="3">msoButtonSetOkCancel 
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="466" HEIGHT="355"><font face="Times New Roman, Times, serif" size="3"> 
+              msoButtonSetRetryCancel </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="466" HEIGHT="355"><font face="Times New Roman, Times, serif" size="3">msoButtonSetSearchClose 
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="466" HEIGHT="355"><font face="Times New Roman, Times, serif" size="3"> 
+              msoButtonSetTipsOptionsClose </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="466" HEIGHT="355"><font face="Times New Roman, Times, serif" size="3"> 
+              msoButtonSetYesAllNoCancel </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="466" HEIGHT="355"><font face="Times New Roman, Times, serif" size="3"> 
+              msoButtonSetYesNoCancel </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="466" HEIGHT="355"><font face="Times New Roman, Times, serif" size="3"> 
+              msoButtonSetYesNo<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="355"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="44"> 
+        <DIV WIDTH="149" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Callback<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="44"> 
+        <DIV WIDTH="466" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Устанавливает 
+            имя процедуры, которая выполняется при отображении окна помощника<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="46"> 
+        <DIV WIDTH="149" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">CheckBoxes<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="46"> 
+        <DIV WIDTH="466" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает семейство 
+            BallooncheckBoxes, флажки окна помощника<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="24"> 
+        <DIV WIDTH="149" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Heading<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="24"> 
+        <DIV WIDTH="466" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает заголовок 
+            окна помощника<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="109"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="109"> 
+        <DIV WIDTH="149" HEIGHT="109"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Icon<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="109"> 
+        <DIV WIDTH="466" HEIGHT="109"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает тип 
+            значка, отображаемого в левом верхнем углу окна помощника. Допустимые 
+            значения:<BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="466" HEIGHT="109"> <font face="Times New Roman, Times, serif" size="3"> 
+              msoIconAlert </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="466" HEIGHT="109"><font face="Times New Roman, Times, serif" size="3"> 
+              msoIconNone </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="466" HEIGHT="109"><font face="Times New Roman, Times, serif" size="3"> 
+              msoIconTip<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="109"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="43"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="43"> 
+        <DIV WIDTH="149" HEIGHT="43"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Labels<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="43"> 
+        <DIV WIDTH="466" HEIGHT="43"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает семейство 
+            BalloonLabels, все надписи окна помощника<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="43"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="47"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="47"> 
+        <DIV WIDTH="149" HEIGHT="47"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Text<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="47"> 
+        <DIV WIDTH="466" HEIGHT="47"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает текст, 
+            располагаемый в окне помощника между заголовком и надписями.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="47"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  два примера программирования помощника.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В первом 
+  примере в окне помощника отображаются три надписи и два флажка (рис. 9.2). Надписи 
+  выводятся в виде нумерованного списка. Выбор надписей программой игнорируется. 
+  Зато установка флажка приводит к программному отклику. В данном случае в виде 
+  отображения диалогового окна с соответствующим сообщением. В качестве помощника 
+  выбран Скрепыш, который используется по умолчанию. Для Скрепыша установлена 
+  не прерывная анимация до тех пор, пока окно помощника отображается на экране.<BR>
+  </font></P>
+<P align="left"><img src="9.2.gif" width="507" height="452"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  9.2. </I></B><I>Первый пример окна помощника</I><BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub ПримерПомощника()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set МойПомощник 
+  = Assistant.NewBalloon<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Assistant.Animation 
+  = msoAnimationSearching<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With МойПомощник<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.BalloonType 
+  = msoBalloonTypeNumbers </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Heading = &quot;Советы 
+  дня&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Text = &quot;Народные 
+  мудрости&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Labels(1).Text 
+  = &quot;Под лежачий камень вода не течет&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Labels(2).Text 
+  = &quot;Капля воды камень точит&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Labels(3).Text 
+  = &quot;Жизнь с VBA стала веселей&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.CheckBoxes(1).Text 
+  = &quot;Жить - хорошо&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Checkboxes(2).Text 
+  = &quot;А хорошо жить - еще лучше&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">. Show Select 
+  Case True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Case . CheckBoxes 
+  (1) .Checked<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Выбрали 
+  хорошую жизнь&quot; Case</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> .CheckBoxes(2).Checked<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Выбрали 
+  лучшую жизнь&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Select</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End With</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Во втором 
+  примере в окне помощника отображаются три надписи с кнопками (рис. 9.2). Теперь 
+  нажатие кнопки у надписи будет вызывать программный отклик. В данном случае 
+  в виде отображения диалогового окна с соответствующим сообщением. Для Скрепыша 
+  установлена непрерывная анимация, отличная от первого примера.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub ПримерЕщеОдногоПомощника() 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim Номер As 
+  Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set МойПомощник 
+  = Assistant.NewBalloon</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Assistant.Animation 
+  = msoAnimationSaving<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With МойПомощник<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.BalloonType 
+  = msoBalloonTypeButtons<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Heading = &quot;Советы 
+  дня&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Text = &quot;Народные 
+  мудрости&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Labels(1).Text 
+  = &quot;Под лежачий камень вода не течет&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Labels(2).Text 
+  = &quot;Капля воды камень точит&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Labels(3).Text 
+  = &quot;Жизнь с VBA стала веселей&quot; Номер = .Show Snd With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Select Case 
+  Номер Case Is = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Вывод: 
+  пора начать читать книгу по VBA&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Case Is = 2<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Вывод: 
+  если приложить достаточно усилий,&quot; &amp; Chr(13) &amp;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;то можно 
+  разобраться с любой проблемой&quot; Case Is = 3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Что 
+  верно, то верно. Excel с VBA - это мощь&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Select</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"><img src="9.3.gif" width="507" height="452"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  9.3. </I></B><I>Второй пример окна помощника</I></font></P>
+</BODY>
+</HTML>
+

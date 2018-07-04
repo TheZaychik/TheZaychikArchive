@@ -1,0 +1,1255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+      <ul>
+<li><b><font face="Times New Roman" size=3><a href="#1">УРОК 11. ТЕМА: ИГРА В КРЕСТИКИ И НОЛИКИ</a></font></b> </li>
+     <ul>
+     <li><font face="Times New Roman" size=3><a href="#2">ЦЕЛЬ УРОКА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#3">ПРАКТИКА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#4">САМОСТОЯТЕЛЬНОЕ ЗАДАНИЕ</a></font> </li>
+
+     </ul></ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Урок 11</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Тема:</font> 
+  <font size="5">Игра в крестики </font></font><font face="Times New Roman, Times, serif" size="5">и 
+  нолики</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="2"></a>Цель 
+  урока</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В данном 
+  уроке запрограммируем игру с компьютером в крестики—нолики на игровом поле размером 
+  3x3 условных клетки. Эта не такая уж тривиальная игра является хорошим примером, 
+  чтобы легко научить компьютер играть и воспользоваться возможностью выиграть, 
+  если вы, по невнимательности, дадите ему этот шанс.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Конструируя 
+  данное приложение, вы на практике освоите следующие операции:<BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Удаление рисунка из 
+    элемента управления<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Выполнение учета количества 
+    щелчков по элементу управления<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Управление видимостью 
+    границ элемента управления<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Создание игрового 
+    поля<BR>
+    </font></li>
+</ul>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="3"></a>Практика</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В редакторе 
+  форм создадим диалоговое окно крестики нолики<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">(рис. У11.1). 
+  Поле игры будут образовывать девять элементов управления Caption (надпись). 
+  Для видимости границ элементов управления Caption <B>установите свойство </B>BorderStyle 
+  <B>равным </B>fmBorderStyleSingle.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В данной 
+  игре запрограммируем только более сложную для компьютера ситуацию, когда первым 
+  ходит игрок. В этой ситуации компьютеру надо умело обороняться, создавая ситуации 
+  для внезапных атак. Играющему первым игроку достаточно все время атаковать, 
+  поэтому его стратегия для программирования более легкая. Общий случай, когда 
+  в параметрах игры устанавливается, кто ходит первым компьютер или человек, будет 
+  оставлен в качестве хорошего самостоятельного задания для читателя.<BR>
+  </font></P>
+<P align="left"><img src="11.1.gif" width="461" height="496"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У11.1. </I></B><I>Диалоговое окно Крестики — нолики в редакторе форм</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Итак, в нашей 
+  игре первый ход за пользователем. Ход осуществляется двойным щелчком по игровому 
+  полю. Если игровое поле пусто, то в нем отображается крестик. Компьютер мгновенно 
+  отвечает на ход игрока, постановкой нолика в другое игровое поле и т. д. О результате 
+  игры компьютер информирует пользователя. При желании сыграть еще одну игру с 
+  компьютером, нажмите кнопку переиграть, которая очистит игровые поля. На рис. 
+  У11.2 приведен вид партии в крестики—нолики после второго шага игры.<BR>
+  </font></P>
+<P align="left"><img src="11.2.gif" width="240" height="229"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У11.2. </I></B><I>Пример партии игры в крестики—нолики после второго шага игры</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Крестик и 
+  нолик, которые выводятся на игровом поле, содержатся в файлах cross.bmp и ou.bmp, 
+  а их образы можно создать при помощи любого графического редактора.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В связи с 
+  небольшим числом возможных стратегий в этой игре, составляя программу можно 
+  пойти по пути наименьшего сопротивления: а именно, применить подход простого 
+  перебора вариантов возможных действий. Если бы в игре было большое число стратегий, 
+  то этот подход был бы неприменим, т. к. программа не смогла бы играть в режиме 
+  реального времени.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Стратегия 
+  компьютера в игре крестики—нолики очень проста:<BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3">Если в игре сложилась 
+    ситуация, когда на очередном ходе он может проставить в ряд три нолика, компьютер 
+    ставит их и выигрывает.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Если игрок на очередном 
+    ходе угрожает поставить подряд три крестика, а у компьютера есть возможность 
+    помешать этому, поставив нолик, он это делает.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Первый и второй ход 
+    игры являются основными и здесь компьютер должен действовать осторожно. Поэтому 
+    некоторые особые ситуации в них программируются отдельно.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> После каждого хода 
+    как игрока, так и компьютера необходимо производить проверку на возможный 
+    результат игры.<BR>
+    </font></li>
+</ul>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Обсудим, 
+  как приведенная ниже программа решает описанную задачу и что в ней происходит.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="355">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="203" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="416" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="67"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="203" HEIGHT="67"> 
+        <DIV WIDTH="203" HEIGHT="67"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">UserForm Initialize<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="416" HEIGHT="67"> 
+        <ol>
+          <li> 
+            <DIV WIDTH="416" HEIGHT="67"> <font face="Times New Roman, Times, serif" size="3"> 
+              Активизирует диалоговое окно. </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="416" HEIGHT="67"><font face="Times New Roman, Times, serif" size="3"> 
+              Очищает все надписи от рисунков и текста, обнуляет все переменные.<BR>
+              </font></DIV>
+          </li>
+        </ol>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="67"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="100"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="203" HEIGHT="100"> 
+        <DIV WIDTH="203" HEIGHT="100"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            Переиграть запускает на выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButtonl_Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="416" HEIGHT="100"> 
+        <DIV WIDTH="416" HEIGHT="100"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Очищает все 
+            надписи от рисунков и текста, обнуляет все переменные.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="100"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="203" HEIGHT="82"> 
+        <DIV WIDTH="203" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            выход запускает на<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CoramandButton2_Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="416" HEIGHT="82"> 
+        <DIV WIDTH="416" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Закрывает диалоговое 
+            окно.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="106"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="203" HEIGHT="106"> 
+        <DIV WIDTH="203" HEIGHT="106"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">От процедуры<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Labell_DblClick<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">до<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Label9 DblClick<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="416" HEIGHT="106"> 
+        <DIV WIDTH="416" HEIGHT="106"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">При двойном 
+            щелчке в ячейке игрового поля ставит крестик при условии, что эта 
+            ячейка была ранее пустой. Проверяет, привел ли этот ход к победе игрока, 
+            если да, то выдается соответствующее сообщение и игра завершается.</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Если нет, то 
+            компьютер делает свой ответный ход. Проверяет, привел ли ход компьютера 
+            к его победе, если да, то выдается соответствующее сообщение (рис. 
+            У11.3) и игра завершается.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="106"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="203" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="416" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="482">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="192" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="348" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="55"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="192" HEIGHT="55"> 
+        <DIV WIDTH="202" HEIGHT="55"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Strategy 1<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">и<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Strategy<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="348" HEIGHT="55"> 
+        <DIV WIDTH="416" HEIGHT="55"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Генерируют первый 
+            и последующие ходы соответственно.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="55"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="192" HEIGHT="24"> 
+        <DIV WIDTH="202" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Проверка<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="348" HEIGHT="24"> 
+        <DIV WIDTH="416" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Проверяет, нет 
+            ли в игре победителей.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="192" HEIGHT="44"> 
+        <DIV WIDTH="202" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">НачальноеСостояние<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="348" HEIGHT="44"> 
+        <DIV WIDTH="416" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Очищает все 
+            надписи от рисунков и текста, обнуляет все переменные.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="84"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="192" HEIGHT="84"> 
+        <DIV WIDTH="202" HEIGHT="84"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Состояние<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="348" HEIGHT="84"> 
+        <DIV WIDTH="416" HEIGHT="84"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">В массиве Статус 
+            отмечаются расставленные в ячейках игрового — 10, а пусто — 0. Процедура 
+            Состояние находит суммы элементов массива на диагоналях, в строках 
+            и столбцах.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="84"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="63"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="192" HEIGHT="63"> 
+        <DIV WIDTH="202" HEIGHT="63"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Диагональ!<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="348" HEIGHT="63"> 
+        <DIV WIDTH="416" HEIGHT="63"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Определяет в 
+            зависимости от состояние, надо ли компьютеру ходить по главной диагонали 
+            и, если надо, то в какую ячейку.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="63"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="192" HEIGHT="64"> 
+        <DIV WIDTH="202" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Диагональ 2<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="348" HEIGHT="64"> 
+        <DIV WIDTH="416" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Определяет в 
+            зависимости от состояние, надо ли компьютеру ходить по второй диагонали 
+            и, если надо, то в какую ячейку.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="65"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="192" HEIGHT="65"> 
+        <DIV WIDTH="202" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Бок, Верх<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="348" HEIGHT="65"> 
+        <DIV WIDTH="416" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Определяет в 
+            зависимости от Состояние, надо ли компьютеру ходить и, если надо, 
+            то в какую ячейку.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="65"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="192" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="348" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp;</P>
+<P align="left"><img src="11.3.gif" width="260" height="139"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У11.3. </I></B><I>Пример сообщения о результате игры</I><BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Переменные 
+  уровня модуля<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Поле (1 
+  То 3, 1 То 3) As Ob j ect<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Статус(1 
+  To 3, 1 To 3) As Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim k As Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim i As Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim j As Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Su(0 To 
+  4, 0 To 4} As Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButtonl_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  переигрывания<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'НачальноеСостояние<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CoirniandButton2_Click() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Закрытие диалогового 
+  окна</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">UserForml.Hide 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Labell_DblClick(ByVal Cancel As MSForms.ReturnBoolean)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Inf As Boolean<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Статус(1, 
+  1) = 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(1, 1).Picture 
+  = LoadPicture(&quot;cross.bmp&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Статус(1, 1) 
+  = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">k = k + 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Проверка Inf<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Inf = True 
+  Then Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Strategy<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Проверка Inf<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Inf = True 
+  Then Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Label2_DblClick(ByVal Cancel As MSForms.ReturnBoolean)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Inf As Boolean<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Статус(1, 
+  2) = 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(1, 2).Picture 
+  = LoadPicture(&quot;cross.bmp&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Статус(1, 2) 
+  = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">k = k + 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Проверка Inf<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Inf = True 
+  Then Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Strategy<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Проверка Inf<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Inf = True 
+  Then Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Label3_DblClick(ByVal Cancel As MSForms.ReturnBoolean)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Inf As Boolean<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Статус(1, 
+  3) = 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(1, 3).Picture 
+  = LoadPicture(&quot;cross.bmp&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Статус(1, 3) 
+  = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">k = k + 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'Проверка Inf<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Inf = True 
+  Then Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Strategy<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'Проверка Inf<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Inf = True 
+  Then Exit Sub End If End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Label4_DblClick(ByVal Cancel As MSForms.ReturnBoolean)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Inf As Boolean<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Статус(2, 
+  1) = 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(2, 1).Picture 
+  = LoadPicture(&quot;cross.bmp&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Статус(2, 1) 
+  = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">k = k + 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'Проверка Inf<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Inf = True 
+  Then Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Strategy<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'Проверка Inf<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Inf = True 
+  Then Exit Sub End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Label5_DblClick(ByVal 
+  Cancel As MSForms.ReturnBoolean)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Inf As Boolean<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Статус(2, 
+  2) = 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(2, 2).Picture 
+  = LoadPicture(&quot;cross.bmp&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Статус(2, 2) 
+  = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">k = k + 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'Проверка Inf<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Inf = True 
+  Then Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Strategy<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'Проверка Inf<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Inf = True 
+  Then Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Label6_DblClick(ByVal 
+  Cancel As MSForms.ReturnBoolean)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Inf As Boolean<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Статус(2, 
+  3) = 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(2, 3).Picture 
+  = LoadPicture(&quot;cross.bmp&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Статус(2, 3) 
+  = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">k = k + 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'Проверка Inf<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Inf = True 
+  Then Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Strategy<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'Проверка Inf<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Inf = True 
+  Then Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Label7_DblClick(ByVal Cancel As MSForms.ReturnBoolean)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Inf As Boolean<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Статус(3, 
+  1) = 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(3, 1).Picture 
+  = LoadPicture(&quot;cross.bmp&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Статус(3, 1) 
+  = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">k = k + 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'Проверка Inf<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Inf = True 
+  Then Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Strategy<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'Проверка Inf<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Inf = True 
+  Then Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Label8_DblClick(ByVal Cancel As MSForms.ReturnBoolean)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Inf As Boolean<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Статус(3, 
+  2) = 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(3, 2).Picture 
+  = LoadPicture(&quot;cross.bmp&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Статус(3, 2) 
+  = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">k = k + 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'Проверка Inf<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Inf = True 
+  Then Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Strategy<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'Проверка Inf<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Inf = True 
+  Then Exit Sub End If End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Label9_DblClick(ByVal Cancel As MSForms.ReturnBoolean)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Inf As Boolean<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Статус(3, 
+  3) = 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(3, 3).Picture 
+  = LoadPicture(&quot;cross.bmp&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Статус(3, 3) 
+  = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">k = k + 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'Проверка Inf<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Inf = True 
+  Then Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Strategy<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'Проверка Inf<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Inf = True 
+  Then Exit Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub UserFona 
+  Initialize 0<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set Поле(1, 
+  1<I>) = </I>Label1</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Set Поле(1<I>, 
+  </I>2) = Label2</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Set Поле(1, 
+  3) = Label3</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Set Поле(2, 
+  <I>1) </I>= Label4</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Set Поле(2, 
+  2) = Label5</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Set Поле(2, 
+  3) = Label6</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Set Поле(3, 
+  1) = Label7</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Set Поле(3, 
+  2) = Label8 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Set Поле(3, 3) 
+  = Label9</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' НачальноеСостояние 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Strategy()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim flag As 
+  Boolean<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Стратегия 
+  первого хода<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If k = 1 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Strategy_1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If k = 2 And 
+  Su(0, 0) = 12 And Статус(2, 2) = 1 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(1, 3).Picture 
+  = LoadPicture(&quot;ou.bmp&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Статус(1, 3) 
+  = 10<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub End 
+  If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' <BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If k = 2 And 
+  Статус(2, 2) = 10 And (Su(0, 0) = 12 Or Su{0, 4) = 12) Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(1, 2).Picture 
+  = LoadPicture(&quot;ou.bmp&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Статус(1, 2) 
+  = 10<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub End 
+  If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If k = 2 And 
+  Статус (2, 2) = 10 And Su(0, 0) = 11 And __<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">(Статус(3, 2) 
+  = 1 Or Статус(2, 1) = 1) Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(3, 1).Picture 
+  = LoadPicture(&quot;ou.bmp&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Статус(3, 1) 
+  = 10<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub End 
+  If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'Состояние</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Диагональ1 20, 
+  10,.flag<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If flag = True 
+  Then Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Диагональ2 20, 
+  10, flag<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If flag = True 
+  Then Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For j = 1 To 
+  3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Бок 20, 10, 
+  j, flag </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If flag = .True 
+  Then </font><font face="Courier New, Courier, mono" size="3">Exit Sub Next j<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Верх 20, 10, 
+  i, flag </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If<I> </I>flag 
+  = True Then Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Next i '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Диагональ1 2, 
+  10, flag<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If flag = True 
+  Then Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Диагональ2 2, 
+  10, flag<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If flag = True 
+  Then Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For j = 1 To 
+  3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Бок 2, 10, j, 
+  flag </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If flag = True 
+  Then Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Next j '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i =-1 To 
+  3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Верх 2, 10, 
+  i, flag </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If flag = True 
+  Then Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next i<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Диагональ1 10, 
+  10, flag<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If flag = True 
+  Then Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Диагональ2 10, 
+  10, flag<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If flag = True 
+  Then Exit Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For j = 1 To 
+  3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Бок 10, 10, 
+  j, flag </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If flag = True 
+  Then </font><font face="Courier New, Courier, mono" size="3">Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Next j </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Верх 10, 10, 
+  i, flag </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If flag = True 
+  Then Exit Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Next i<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  3 For j = 1 To 3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Статус(i, 
+  j) = 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(i, j).Picture 
+  = LoadPicture(&quot;ou.bmp&quot;) Статус(i, j) = 10</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next j<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Next i </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Strategy_l() 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Статус(2, 
+  2) = 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(2, 2).Picture 
+  = LoadPicture(&quot;ou.bmp&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Статус(2, 2) 
+  = 10 Else<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(1, 1).Picture 
+  = LoadPicture(&quot;ou.bmp&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Статус(1, 1) 
+  = 10 End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Проверка(ByRef 
+  Inf As Boolean)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  проверяет, <I>не </I>выиграл ли кто-то<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Если аргумент 
+  Inf равен True, то выигравший есть<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Если аргумент 
+  Inf равен False, то пока выигравшего нет </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Inf = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Состояние </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Su(0, 0) 
+  = 3 Or Su(0, 0) = 30 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Сообщение Su(0, 
+  0)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Inf = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub End 
+  If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Su(0, 4) 
+  = 3 Or Su(0, 4) = 30 Then Сообщение Su(0, 4)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Inf = True</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For j = 1 To 
+  3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Su(0, j) 
+  =3 Or Su(0, j) = 30 Then Сообщение Su(0, j)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Inf = .True 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Exit Sub End 
+  If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Next j '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Su(i, 0) 
+  = 3 Or Su(i, 0) = 30 Then Сообщение Su(i, 0) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Inf = True</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Next i </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Проверка, 
+  не завершилась ли игра </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 То 
+  3</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> For j = 1 То 
+  3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Статус(i, 
+  j) = 0 Then Exit Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Next j </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next i </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">MsgBox &quot;Пока 
+  фифти-фифти&quot;, vbExclamation, &quot;Крестики-Нолики&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Inf = True</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Сообщение(Inf 
+  As Integer)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Возможные 
+  сообщения о победителе<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Если Inf=3, 
+  то поздравления принимает игрок<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Если Inf=30, 
+  то поздравления принимает компьютер<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Inf = 3 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Поздравляю 
+  с выигрышем&quot;, vbExclamation, &quot;Крестики-Нолики&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Inf = 30 
+  Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Компьютер 
+  пока сильнее&quot;, vbExclamation, &quot;Крестики-Нолики&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub End 
+  If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub НачальноеСостояние() 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Обнуление 
+  данных и очистка картинок</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 То 
+  3 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">For j = 1 То 
+  3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(i, j).Caption 
+  = &quot;&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(i, j).Picture 
+  = LoadPicture(&quot;&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(i, j ) 
+  .BorderStyle = fmBorderStyleSingle<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Статус(i, j) 
+  = 0 Next j</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Next i</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> k = 0<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 0 To 
+  4 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">For j = 0 To 
+  4<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Su(i, j) = 0 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next j </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next i </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Состояние()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Su(0, 0) = 0 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Su(0, 0) = Su(0, 
+  0) + Статус(1, i) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next i<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Su(0, 4) =0 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Su(0, 4) = Su(0, 
+  4) + Статус(1, 4 - i)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Next i<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For j = 1 To 
+  3</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Su(0, j) = 0 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Su(0, j) = Su(0, 
+  j) + Статус(i, j) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next i<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Next j </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  3 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Su(i, 0) = 0</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> For j = 1 To 
+  3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Su(i, 0) = Su(i, 
+  0) + Статус(i, j) Next j<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Next i</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Диагональ1(ByRef 
+  p, ByRef q, ByRef flag As Boolean) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">flag = False 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If Su(0, 0) = 
+  p Then </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' If Статус(i, 
+  i) = 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(1, i).Picture 
+  = LoadPicture(&quot;ou.bmp&quot;) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Статус(i, i) 
+  = q flag = True</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next i </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Диагональ2(ByRef 
+  p, ByRef q, ByRef flag As Boolean) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">flag = False 
+  If Su(0, 4) = p Then </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Статус(i, 
+  4 - i) = 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(i, 4 - 
+  i).Picture = LoadPicture(&quot;ou.bmp&quot;) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Статус(i, 4 - 
+  i) = q </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">flag = True Exit 
+  Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If Next 
+  i End If End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Бок(ByRef 
+  p, ByRef q, ByRef j, ByRef flag As Boolean) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">flag =. False 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If Su(0, j) = 
+  p Then </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Статус(i, 
+  j) = 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(i, j).Picture 
+  = LoadPicture (&quot;ou.bmp&quot;) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Статус(i, j) 
+  = q </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">flag = True</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next i </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Верх(ByRef 
+  p, ByRef q, ByRef i, ByRef flag As Boolean)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">flag = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Su(i, 0) 
+  = p Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For j = 1 To 
+  3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Статус (i, 
+  j) = 0 Then <BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Поле(1, j).Picture 
+  = LoadPicture(&quot;ou.bmp&quot;) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Статус(i, j) 
+  = q </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">flag = True </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Exit Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next j</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="4"></a>Самостоятельное 
+  задание</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Разработать 
+  программу игры крестики—нолики, в которой в зависимости от установок параметров 
+  игры первый ход может делать либо компьютер, либр игрок (рис. У11.4). Игрок 
+  также может выбрать, что он ставит в игровые поля: крестики или нолики. Программа 
+  ведет учет числа побед как игрока, так и компьютера. Программа также подсчитывает 
+  число ничейных партий.<BR>
+  </font></P>
+<P align="left"><img src="11.4.gif" width="445" height="284"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У11.4. Диалоговое окно </I></B><I>Крестики — Нолики</I><BR>
+  </font></P>
+</BODY>
+</HTML>
+

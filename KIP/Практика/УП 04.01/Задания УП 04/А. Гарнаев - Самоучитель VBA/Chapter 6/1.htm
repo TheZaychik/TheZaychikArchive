@@ -1,0 +1,1223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+      <ul>
+<li><b><font face="Times New Roman" size=3><a href="#1">ГЛАВА 6. СВОДНЫЕ ТАБЛИЦЫ</a></font></b> </li>
+     <ul>
+     <li><font face="Times New Roman" size=3><a href="#2">ОБЪЕКТ PIVOTTABLE</a></font> </li>
+     
+    <li><font face="Times New Roman" size=3><a href="#3">МЕТОД PIVOTTABLEWIZARD</a></font> 
+    </li>
+     <li><font face="Times New Roman" size=3><a href="#4">ПРЕОБРАЗОВАНИЕ СВОБОДНОЙ  ТАБЛИЦЫ</a></font> </li>
+
+     </ul></ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Глава 
+  6</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Сводные 
+  таблицы</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="2"></a>Объект 
+  PivotTable</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Сводные таблицы 
+  являются одним из наиболее мощных средств Excel для анализа данных, помещенных 
+  в таблицы или списки. Сводные таблицы позволяют группировать данные и производить 
+  их анализ. Создавая сводные таблицы, пользователь оперирует именами полей, которые 
+  должны помещаться в ее строках и столбцах. Возможно также задание поля страницы, 
+  превращающего сводную таблицу в подшивку из нескольких страниц. Иерархически 
+  сводная таблица входит в рабочий лист. Все сводные таблицы рабочей книги образуют 
+  семейство pivotTabies (сводные таблицы), которое содержит в себе семейство pivotFieids 
+  (поля сводной таблицы) всех полей, входящих в сводную таблицу. Объект Pivotitem 
+  (элемент сводной таблицы) является конкретным элементом объекта pivotFieid. 
+  Все объекты Pivotitem образуют семейство Pivotitems. На рис. 6.1 показана иерархия 
+  этих семейств.<BR>
+  </font></P>
+<P align="left"><img src="6.1.gif" width="322" height="210"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  6.1. </I></B><I>Иерархия семейства объектов PivotTabies, PivotFieids и Pivotitems</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Семейство 
+  PivotTabies имеет единственный метод item, возвращающий элемент этого семейства, 
+  т. е. конкретную сводную таблицу.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Item(Index)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3">Index — имя или номер 
+    возвращаемого элемента семейства PivotFieids<BR>
+    </font></li>
+</ul>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Из свойств 
+  семейства PivotTabies отметим только свойство Count, возвращающее число элементов 
+  этого семейства.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="3"></a>Метод 
+  PivotTableWizard</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Программно 
+  сводная таблица создается методом PivotTableWizard. Вручную на рабочем листе 
+  сводная таблица конструируется с помощью команды <B>Данные, Сводная таблица 
+  </B>(Data, Pivot Table and Pivot Chart Report).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Объект.PivotTableWizard(SourceType, 
+  SourceData, TableDestination,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TableName, RowGrand, 
+  ColumnGrand, SaveData, HasAutoFormat, AutoPage, Reserved, BackgroundQuery, OptimizeCache, 
+  PageFieldOrder, PageFieldWrapCount, ReadData, Connection)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Аргументы<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="527">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="178" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="441" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="42"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="178" HEIGHT="42"> 
+        <DIV WIDTH="178" HEIGHT="42"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Объект</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="441" HEIGHT="42"> 
+        <DIV WIDTH="441" HEIGHT="42"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Объект Worksheet 
+            (рабочий лист ) или PivotTable (сводная таблица)</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="42"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="132"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="178" HEIGHT="132"> 
+        <DIV WIDTH="178" HEIGHT="132"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">SourceType<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="441" HEIGHT="132"> 
+        <DIV WIDTH="441" HEIGHT="132"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Тип источника 
+            данных. Допустимые значения: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="441" HEIGHT="132"><font face="Times New Roman, Times, serif" size="3">xlConsolidation 
+              (консолидация нескольких диапазонов рабочих листов Excel) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="441" HEIGHT="132"><font face="Times New Roman, Times, serif" size="3">xlDatabase 
+              (список или база данных Excel) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="441" HEIGHT="132"><font face="Times New Roman, Times, serif" size="3"> 
+              xlExternal (внешняя база данных) </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="441" HEIGHT="132"><font face="Times New Roman, Times, serif" size="3">xlPivotTabie 
+              (сводная таблица)<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="132"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="182"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="178" HEIGHT="182"> 
+        <DIV WIDTH="178" HEIGHT="182"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">SourceData<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="441" HEIGHT="182"> 
+        <DIV WIDTH="441" HEIGHT="182"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Определяет вид 
+            источника данных в зависимости от значения аргумента SourceType:<BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="441" HEIGHT="182"> <font face="Times New Roman, Times, serif" size="3">Диапазон, 
+              если значением аргумента является xlDatabase<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="441" HEIGHT="182"><font face="Times New Roman, Times, serif" size="3">Массив 
+              строк, содержащий строку связи ODBC и SQL-оператор, если — xlExternal 
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="441" HEIGHT="182"><font face="Times New Roman, Times, serif" size="3"> 
+              Массив диапазонов, если — xlConsolidation<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="441" HEIGHT="182"><font face="Times New Roman, Times, serif" size="3"> 
+              Имя существующей сводной таблицы, если -xlPivotTable<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="441" HEIGHT="182">
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="182"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="178" HEIGHT="23"> 
+        <DIV WIDTH="178" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">TableDestination<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="441" HEIGHT="23"> 
+        <DIV WIDTH="441" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Диапазон, где 
+            будет размещена сводная таблица<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="22"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="178" HEIGHT="22"> 
+        <DIV WIDTH="178" HEIGHT="22"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">TableName<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="441" HEIGHT="22"> 
+        <DIV WIDTH="441" HEIGHT="22"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Имя создаваемой 
+            сводной таблицы<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="22"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="61"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="178" HEIGHT="61"> 
+        <DIV WIDTH="178" HEIGHT="61"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">RowGrand<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="441" HEIGHT="61"> 
+        <DIV WIDTH="441" HEIGHT="61"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (отображается суммарный итог по строкам сводной таблицы) и False 
+            (итог не отображается)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="61"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="178" HEIGHT="64"> 
+        <DIV WIDTH="178" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ColumnGrand<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="441" HEIGHT="64"> 
+        <DIV WIDTH="441" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (отображается суммарный итог по столбцам сводной таблицы) и False 
+            (итог не отображается)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="178" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="441" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="665">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="378" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="63"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="63"> 
+        <DIV WIDTH="176" HEIGHT="63"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">SaveData<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="378" HEIGHT="63"> 
+        <DIV WIDTH="440" HEIGHT="63"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (сохраняются данные вместе со сводной таблицей) и False (сохраняется 
+            только сводная таблица)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="63"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="62"> 
+        <DIV WIDTH="176" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">HasAuto Format<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="378" HEIGHT="62"> 
+        <DIV WIDTH="440" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (автоматическое пере-форматирование сводной таблицы при изменении 
+            данных) и False (в противном случае)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="82"> 
+        <DIV WIDTH="176" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">AutoPage<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="378" HEIGHT="82"> 
+        <DIV WIDTH="440" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Применим только 
+            при аргументе sourceType, равным xlConsolidation. Допустимые значения: 
+            True (Excel создает поле страницы) и False (пользователь должен создать 
+            поле)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="24"> 
+        <DIV WIDTH="176" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Reserved<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="378" HEIGHT="24"> 
+        <DIV WIDTH="440" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Не используется<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="62"> 
+        <DIV WIDTH="176" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">BackgroundQuery<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="378" HEIGHT="62"> 
+        <DIV WIDTH="440" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (Excel выполняет запрос в фоновом режиме) и False (в последовательном)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="102"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="102"> 
+        <DIV WIDTH="176" HEIGHT="102"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">OptimizeCache<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="378" HEIGHT="102"> 
+        <DIV WIDTH="440" HEIGHT="102"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (создается сводная таблица в режиме оптимизации, применяется 
+            для сводных таблиц, обрабатывающих большие базы данных) и False (оптимизация 
+            выключена, что убыстряет создание сводной таблицы)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="102"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="82"> 
+        <DIV WIDTH="176" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">PagePieldOrder<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="378" HEIGHT="82"> 
+        <DIV WIDTH="440" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Задает ориентацию 
+            поля страницы. Допустимые значения: xlDownThenOver (поле страницы 
+            располагается вертикально) и xlOverThenDown (поле страницы располагается 
+            горизонтально)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="62"> 
+        <DIV WIDTH="176" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">PageFieldWrapCount<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="378" HEIGHT="62"> 
+        <DIV WIDTH="440" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Задает номер 
+            поля, с которого начинается новая страница. По умолчанию 0, т. е. 
+            отменена разбивка на страницы<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="64"> 
+        <DIV WIDTH="176" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ReadData<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="378" HEIGHT="64"> 
+        <DIV WIDTH="440" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (данные сразу считываются в кэш) и False (данные считываются 
+            в кэш по мере необходимости)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="62"> 
+        <DIV WIDTH="176" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Connection<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="378" HEIGHT="62"> 
+        <DIV WIDTH="440" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Используется 
+            для указания источника данных ODBC, источника данных URL и имени файла, 
+            содержащего запрос<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="378" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">С методом 
+  pivotTableWizard тесно связан метод PivotTables, применяемый к рабочему листу. 
+  Метод PivotTabies возвращает объект PivotTable или семейство сводных таблиц, 
+  размещенных на рабочем листе. Этот метод имеет два синтаксиса.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Синтаксис 
+  1:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Объект.PivotTabies</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Возвращает 
+  семейство сводных таблиц. Здесь и во втором синтаксисе объект -рабочий лист.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Синтаксис 
+  2:</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Объект.PivotTables(Index)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Возвращает 
+  сводную таблицу из семейства сводных таблиц с именем или номером, указанным 
+  в аргументе index .<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Объект PivotTable 
+  имеет следующие наиболее часто используемые методы.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="718">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="130" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="486" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="155"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="130" HEIGHT="155"> 
+        <DIV WIDTH="130" HEIGHT="155"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">PivotFields<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="486" HEIGHT="155"> 
+        <DIV WIDTH="486" HEIGHT="155"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает объект, 
+            являющийся либо единичным полем (синтаксис 1), либо семейством полей. 
+            </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис 1:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">PivotFields (Index)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li>
+            <DIV WIDTH="486" HEIGHT="155"> <font face="Times New Roman, Times, serif" size="3">Index 
+              — имя или номер поля сводной таблицы Синтаксис 2:<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="486" HEIGHT="155">
+          <P> <font face="Courier New, Courier, mono" size="3">PivotFields</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="155"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="213"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="130" HEIGHT="213"> 
+        <DIV WIDTH="130" HEIGHT="213"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">PivotSelect<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="486" HEIGHT="213"> 
+        <DIV WIDTH="486" HEIGHT="213"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выбирает элементы 
+            сводной таблицы. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">PivotSelect (Name, 
+            Mode)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Аргументы: G 
+            Name — строковое выражение, идентифицирующее выбранный элемент </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="486" HEIGHT="213"><font face="Times New Roman, Times, serif" size="3"> 
+              Mode — специфицирует структуры выбранного элемента. Допустимые значения: 
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="486" HEIGHT="213"><font face="Courier New, Courier, mono" size="3">xlBlanks, 
+          xiButton,<BR>
+          </font></DIV>
+        <DIV WIDTH="486" HEIGHT="213"> 
+          <P> <font face="Courier New, Courier, mono" size="3">xlDataAndLabel, 
+            xlDataOnly, xlLabelOnly или xlOrigin</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="213"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="140"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="130" HEIGHT="140"> 
+        <DIV WIDTH="130" HEIGHT="140"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">RefreshTable<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="486" HEIGHT="140"> 
+        <DIV WIDTH="486" HEIGHT="140"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Обновляет данные. 
+            Дело в том, что в сводной таблице не происходит автоматического перерасчета 
+            при изменении исходных данных. Для перерасчета сводной таблицы вручную 
+            надо ее выделить и выбрать команду Данные, Обновить данные (Data, 
+            Refresh Data). Программно перерасчет сводной таблицы производится 
+            методом RefreshTable<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="140"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="210"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="130" HEIGHT="210"> 
+        <DIV WIDTH="130" HEIGHT="210"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">AddFields<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="486" HEIGHT="210"> 
+        <DIV WIDTH="486" HEIGHT="210"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Добавляет строки, 
+            столбцы и страницы в сводную таблицу.<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">AddFields (RowFields, 
+            ColumnFields, PageFields, AddToTable)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Аргументы: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="486" HEIGHT="210"><font face="Times New Roman, Times, serif" size="3"> 
+              RowFields — специфицирует имя или массив имен полей, которые будут 
+              играть роль строк сводной таблицы </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="486" HEIGHT="210"><font face="Times New Roman, Times, serif" size="3">ColumnFields 
+              — специфицирует имя или массив имен полей, которые будут играть 
+              роль столбцов сводной таблицы</font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="486" HEIGHT="210"><font face="Times New Roman, Times, serif" size="3">FageFields 
+              — специфицирует имя или массив имен полей, которые будут играть 
+              роль страниц сводной таблицы </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="486" HEIGHT="210"><font face="Times New Roman, Times, serif" size="3"> 
+              AddToTabie — допустимые значения: True (добавляет поля в сводную 
+              таблицу) и False (заменяет существующие поля)<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="210"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="130" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="486" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Объект pivotTabie 
+  имеет следующие наиболее часто используемые свойства.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="528">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="475" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="300"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="300"> 
+        <DIV WIDTH="143" HEIGHT="300"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ColumnFields, 
+            RowFields, DataFields<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">И<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">PageFields<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="475" HEIGHT="300"> 
+        <DIV WIDTH="475" HEIGHT="300"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает объект, 
+            являющийся либо единичным полем (синтаксис 1), либо семейством полей 
+            (синтаксис 2), который является столбцом (строкой, данными или страницей) 
+            сводной таблицы. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис 1:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">ColumnFields (Index) 
+            RowFields (Index) DataFields (Index) PageFields (Index) </font></P>
+        </DIV>
+        <ul>
+          <li>
+            <DIV WIDTH="475" HEIGHT="300"><font face="Times New Roman, Times, serif" size="3">Index 
+              — имя или номер поля сводной таблицы </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="475" HEIGHT="300">
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис 2: 
+            </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">ColumnFields RowFields 
+            DataFields PageFields</font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="300"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="228"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="228"> 
+        <DIV WIDTH="143" HEIGHT="228"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">VisibleFields 
+            и HiddenFields<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="475" HEIGHT="228"> 
+        <DIV WIDTH="475" HEIGHT="228"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает объект, 
+            являющийся либо единичным полем (синтаксис 1), либо семейством полей 
+            (синтаксис 2), который в данный момент отображается (скрыт) в сводной 
+            таблице. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис 1:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">VisibleFields 
+            (Index) HiddenFields (Index) </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="475" HEIGHT="228"><font face="Times New Roman, Times, serif" size="3">Index 
+              — имя или номер поля сводной таблицы </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="475" HEIGHT="228">
+          <p><font face="Times New Roman, Times, serif" size="3">Синтаксис 2:</font></p>
+          
+        </DIV>
+        <DIV WIDTH="475" HEIGHT="228">
+          <P><font face="Courier New, Courier, mono" size="3">VisibleFields HiddenFields</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="228"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="475" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Объект PivotField 
+  имеет следующие наиболее часто используемые свойства. </font></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3">Orientation 
+  Возвращает местоположение поля в сводной таблице.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Допустимые 
+  значения: </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">xlColumnField, 
+  xlDataField,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">xlHidden, xlPageField 
+  или xlRowField</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Возвращает 
+  позицию поля (первая, вторая и т. д.) среди полей того же местоположения<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Рассмотрим 
+  соответствие между аргументами метода pivotTabiewizard и созданием сводной таблицы 
+  вручную на рабочем листе с помощью команды <B>Данные, Сводная таблица </B>(Data, 
+  Pivot Table). Сводную таблицу будем создавать для отчета по продажам компьютеров 
+  сети из трех магазинов (рис. 6.2).<BR>
+  </font></P>
+<P align="left"><img src="6.2.gif" width="439" height="209"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  6.2. </I></B><I>Отчет о продаже компьютеров сети из трех магазинов</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="406">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="71" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="406"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="71" HEIGHT="406"> 
+        <DIV WIDTH="71" HEIGHT="406"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="406"> 
+        <DIV WIDTH="551" HEIGHT="406"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выберите команду 
+            Данные, Сводная таблица (Data, Pivot Table and Pivot Chart Report). 
+            Появится первое диалоговое окно мастера сводных таблиц (рис. 6.3). 
+            Выбор переключателей, расположенных под заголовком Создать таблицу 
+            на основе данных, находящихся: (Where is the data that you want to 
+            analyze?) позволяет установить источник данных для сводной таблицы. 
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="551" HEIGHT="406"><font face="Times New Roman, Times, serif" size="3"> 
+              Переключатель в списке или базе данных Microsoft Excel (Microsoft 
+              Excel List or Database) устанавливает создание сводной таблицы на 
+              основе списка данных, расположенных на рабочем листе. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="551" HEIGHT="406"><font face="Times New Roman, Times, serif" size="3"> 
+              Переключатель во внешнем источнике данных (External Data Source) 
+              устанавливает создание сводной таблицы на основе файлов или таблиц, 
+              созданных другими программами. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="551" HEIGHT="406"><font face="Times New Roman, Times, serif" size="3"> 
+              Переключатель в нескольких диапазонах консолидации (Multiple Consolidation 
+              Ranges) устанавливает создание сводной таблицы на основе нескольких 
+              списков. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="551" HEIGHT="406"><font face="Times New Roman, Times, serif" size="3"> 
+              Переключатель в другой сводной таблице (Another Pivot Table) устанавливает 
+              создание сводной таблицы на основе другой существующей сводной таблицы.<BR>
+              </font> </DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="551" HEIGHT="406"><font face="Times New Roman, Times, serif" size="3">Установите 
+          переключатель в списке или базе данных Microsoft<br>
+          </font></DIV>
+        <DIV WIDTH="551" HEIGHT="406"><font face="Times New Roman, Times, serif" size="3">Excel 
+          (Microsoft Excel List or Database), т. к. сводная таблица будет создаваться 
+          на основе одного списка активного рабочего листа. Нажмите кнопку Далее 
+          &gt; (Next &gt;)</font></DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="406"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="71" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+  <p><img src="6.3.gif" width="527" height="334"></p>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  6.3. </I></B><I>Первое диалоговое окно мастера сводных таблиц</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="107">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="107"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="107"> 
+        <DIV WIDTH="69" HEIGHT="107"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 2<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="107"> 
+        <DIV WIDTH="551" HEIGHT="107"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">На экране появится 
+            второе диалоговое окно мастера сводных таблиц (рис. 6.4). В поле Диапазон 
+            (Range) введите ссылку, например AI :Е1б, на диапазон, по которому 
+            будет строиться сводная таблица. Нажмите кнопку Далее &gt; (Next &gt;).<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="107"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp;</P>
+<P align="left"><img src="6.4.gif" width="390" height="134"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  6.4. </I></B><I>Второе диалоговое окно мастера сводных таблиц</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="83">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="67" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="552" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="83"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="67" HEIGHT="83"> 
+        <DIV WIDTH="67" HEIGHT="83"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ШагЗ<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="552" HEIGHT="83"> 
+        <DIV WIDTH="552" HEIGHT="83"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">На экране появится 
+            третье диалоговое окно мастера сводных таблиц (рис. 6.5), в котором 
+            создается структура сводной таблицы. </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="552" HEIGHT="83"><font face="Times New Roman, Times, serif" size="3">Выберите 
+              поле, по которому будут подводиться итоги сводных таблиц, и перетащите 
+              кнопку, соответствующую этому полю в область Данные (Data). В данном 
+              случае перетащим кнопку Стоимость в область Данные (Data) (рис. 
+              6.6). Двойной щелчок на кнопке Стоимость в области Данные (Data) 
+              приводит к отображению диалогового окна Вычисления поля сводной 
+              таблицы (PivotTable Field), позволяющее установить операцию, на 
+              основе которой будут подводиться итоги. Выберите операцию Сумма 
+              (Sum). </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="552" HEIGHT="83"><font face="Times New Roman, Times, serif" size="3"> 
+              Выберите поля, которые будут образовывать строки сводной таблицы 
+              и перетащите кнопки, соответствующие этим полям в область Строка 
+              (Row). В данном случае строки сводной таблицы будут соответствовать 
+              магазинам. Поэтому перетащим кнопку магазин в область Строка (Row). 
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="552" HEIGHT="83"><font face="Times New Roman, Times, serif" size="3"> 
+              Выберите поля, которые будут образовывать столбцы сводной таблицы 
+              и перетащите кнопки, соответствующие этим полям в область Столбец 
+              (Column). В данном случае строки сводной таблицы будут соответствовать 
+              месяцам. Поэтому перетащим кнопку месяц в область Столбец (Column). 
+              </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="552" HEIGHT="83"><font face="Times New Roman, Times, serif" size="3"> 
+              Если вы хотите создать сводную таблицу в виде подшивки страниц, 
+              то перетащите кнопку, соответствующую полю, по которому будут строиться 
+              страницы в область Страница (Page). В данном случае сводная таблица, 
+              состоящая из страниц, не строится и поэтому не будем перетаскивать 
+              никакую кнопку в область Страница (Page). Нажмите кнопку Далее &gt; 
+              (Next &gt;).<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="83"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="67" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="552" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><img src="6.5.gif" width="494" height="346"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  6.5. </I></B><I>Третье диалоговое окно мастера сводных таблиц</I><BR>
+  </font></P>
+<P align="left"><img src="6.6.gif" width="494" height="346"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  6.6. </I></B><I>Третье диалоговое окно мастера сводных таблиц после создания 
+  структуры сводной таблицы</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="485">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="321"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="321"> 
+        <DIV WIDTH="70" HEIGHT="321"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ШагЗ<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="321"> 
+        <DIV WIDTH="550" HEIGHT="321"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Появится последнее 
+            четвертое диалоговое окно мастера сводных таблиц (рис. 6.7). В этом 
+            окне устанавливается местоположение сводной таблицы. П Выбор переключателя 
+            новый лист (New worksheets) приводит к созданию нового рабочего листа 
+            и размещения на нем сводной таблицы. Выберите переключатель новый 
+            лист. П Выбор переключателя существующий лист* (Existing worksheets) 
+            позволяет разместить сводную таблицу в любом месте уже существующего 
+            листа. Для этого в поле Поместить таблицу в (Pivot Table Starting 
+            Cell) надо указать ссылку на ячейку, в которой будет располагаться 
+            левый верхний угол сводной таблицы. О Нажав кнопку Параметры (Options) 
+            можно вызвать диалоговое окно Параметры сводной таблицы (Pivot Table 
+            Options), где задаются имя сводной таблицы и ее формат. Нажмите кнопку 
+            Готово (Finish).<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="321"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="164"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="164"> 
+        <DIV WIDTH="70" HEIGHT="164"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 4<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="164"> 
+        <DIV WIDTH="550" HEIGHT="164"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Сводная таблица 
+            построена (рис. 6.8). Такую же сводную таблицу можно построить при 
+            помощи следующей последовательности инструкций VBA:<font face="Courier New, Courier, mono"><BR>
+            </font></font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">ActiveSheet. PivotTableWizard 
+            SourceType:=xlDatabase, SourceData:= &quot;Лист1 !R1C1:R16C5&quot;, 
+            TableDestination:=&quot;&quot;, TableName : =&quot;СводнаяТаблица1 
+            &quot; </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">ActiveSheet . PivotTables 
+            ( &quot;СводнаяТаблица! &quot; ) . AddFields RowFields : =&quot;Магазин&quot; 
+            , ColumnFields : =&quot;Месяц&quot;</font></P>
+          <P><font face="Courier New, Courier, mono" size="3">ActiveSheet . PivotTables 
+            ( &quot;СводнаяТаблица! &quot; } . PivotFields (&quot;Стоимость&quot;) 
+            .Orientation = xlDataField</font><font face="Times New Roman, Times, serif" size="3"><br>
+            </font></P>
+          <p> <font face="Times New Roman, Times, serif" size="3">Если в данных, 
+            по которым строилась сводная таблица, произошли изменения, для перерасчета 
+            сводной таблицы надо ее выделить и выбрать команду Данные, Обновить 
+            данные (Data, Refresh Data). Программно перерасчет сводной таблицы 
+            осуществляется следующими инструкциями:<br>
+            </font></p>
+          <p> <font face="Courier New, Courier, mono" size="3">ActiveSheet . PivotTables 
+            ( &quot;СводнаяТаблица! &quot; ) . PivotSelect &quot;&quot;, xlDataAndLabel</font></p>
+          <p><font face="Courier New, Courier, mono" size="3"> ActiveSheet . PivotTables 
+            (&quot;СводнаяТаблица!&quot;) . Ref reshTable</font></p>
+          <P><font face="Courier New, Courier, mono" size="3"><BR>
+            </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="164"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+  <p><img src="6.7.gif" width="531" height="232"></p>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  6.7. </I></B><I>Четвертое диалоговое окно мастера сводных таблиц</I><BR>
+  </font></P>
+<P align="left"><img src="6.8.gif" width="455" height="226"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  6.8. </I></B><I>Сводная таблица</I></font></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><b><font size="4"><a name="4"></a></font></b></font><font face="Times New Roman, Times, serif" size="4"><b>Преобразования 
+  свободной таблицы</b></font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Рассмотрим 
+  наиболее часто используемые операции преобразования сводной таблицы.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="188">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="133" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="487" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="188"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="133" HEIGHT="188"> 
+        <DIV WIDTH="133" HEIGHT="188"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><I>Удаление 
+            поля</I><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="487" HEIGHT="188"> 
+        <DIV WIDTH="487" HEIGHT="188"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Для удаления 
+            поля сводной таблицы достаточно расположить на нем указатель мыши 
+            и перетащить поле за пределы сводной таблицы. Например, удалим поле 
+            месяц (рис. 6.9). Программно тот же результат получается при ** помощи 
+            следующих двух инструкций:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">ActiveSheet . PivotTables 
+            </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">(СводнаяТаблица!&quot; 
+            ) . _ </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">PivotSelect &quot;Месяц&quot;, 
+            xlButton </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">ActiveSheet. PivotTables 
+            (&quot;СводнаяТаблица!&quot;) . _ </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">PivotFields (&quot;Месяц&quot;) 
+            .Orientation = xlHidden</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="188"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="133" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="487" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <p><img src="6.9.gif" width="320" height="286"></p>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  6.9. </I></B><I>Сводная таблица после удаления поля Месяц</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="397">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="132" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="482" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="291"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="132" HEIGHT="291"> 
+        <DIV WIDTH="132" HEIGHT="291"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><I>Перемещение 
+            поля</I><BR>
+            </font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="482" HEIGHT="291"> 
+        <DIV WIDTH="482" HEIGHT="291"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Местоположение 
+            полей сводной таблицы легко изменяется. Для этого достаточно расположить 
+            указатель мыши на требуемом поле и перетащить его на новое место. 
+            Например, переместим в первоначальной сводной таблице поле месяц из 
+            столбцов в строки (рис. 6.10). Программно тот же результат получается 
+            при помощи следующих двух инструкций:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">ActiveSheet . PivotTables 
+            (&quot;СводнаяТаблица!&quot;) . _ </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">PivotSelect &quot;Месяц 
+            [Все] &quot;, xlLabelOnly With ActiveSheet . </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">PivotTables ( &quot;СводнаяТаблица!&quot;). 
+            </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">PivotFields (&quot;Месяц&quot;) 
+            .Orientation = xlRowField .Position = 1</font></P>
+          <P><font face="Courier New, Courier, mono" size="3"> End With<BR>
+            </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="291"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="106"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="132" HEIGHT="106"> 
+        <DIV WIDTH="132" HEIGHT="106"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><I>Группировка 
+            полей</I><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="482" HEIGHT="106"> 
+        <DIV WIDTH="482" HEIGHT="106"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Поля сводной 
+            таблицы можно группировать. Например, объединим магазины Альфа и Бета 
+            в одну группу. Для этого надо выделить поля этих магазинов и выбрать 
+            команду Данные, Группа и структура, Группировать (Data, Group and 
+            Outline, Group) (рис. 6.11). Программно тот жерезультат получается 
+            при помощи следующих двух инструкций:<br>
+            </font></P>
+          <p> <font face="Courier New, Courier, mono" size="3">ActiveSheet . PivotTables 
+            ( &quot;СводнаяТаблица1 &quot; ) . PivotSelect &quot;Альфа: Бета&quot;, 
+            xlDataAndLabel Selection . Group</font><font face="Times New Roman, Times, serif" size="3"><br>
+            </font></p>
+          <p> <font face="Times New Roman, Times, serif" size="3">Скрыть детали 
+            элементов группы можно командой Данные, Группа и структура, Скрыть 
+            детали (Data, Group and Outline, Hide Details) (рис. 6.12), предварительно 
+            выделив поле этой группы. Программно тот же результат получается при 
+            помощи следующих двух инструкций:<br>
+            </font></p>
+          <p> <font face="Courier New, Courier, mono" size="3">ActiveSheet . PivotTables 
+            ( &quot;СводнаяТаблица1 &quot; ) . </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">PivotSelect &quot;Группа1 
+            Январь&quot;, xlDataAndLabel Selection. ShowDetail = False<br>
+            </font><font face="Times New Roman, Times, serif" size="3"> </font></p>
+          <p> <font face="Times New Roman, Times, serif" size="3">Показать детали 
+            элементов группы можно, выполнив команду Данные, Группа и структура, 
+            Отобразить детали (Data, Group and Outline, Show Details). Программно 
+            это осуществляется инструкциями:<br>
+            </font></p>
+          <p> <font face="Courier New, Courier, mono" size="3">Active Sheet . 
+            PivotTables (&quot;СводнаяТаблица! &quot; ). </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">PivotSelect &quot;Группа! 
+            Январь&quot;, xlDataAndLabel Selection. ShowDetail = True</font></p>
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="106"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="132" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="482" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+<p>&nbsp;</p></div>
+<P align="left"><img src="6.10.gif" width="383" height="317"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  6.10. </I></B><I>Сводная таблица после перемещения поля Месяц из столбцов в 
+  строки</I></font></P>
+<P align="left"><img src="6.11.gif" width="446" height="345"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><b><i>Рис. 
+  6.11. </i></b><i>Сводная таблица после группировки магазинов Альфа и Бета</i><BR>
+  </font></P>
+<P align="left"><img src="6.12.gif" width="376" height="290"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  6.12. </I></B><I>Сводная таблица со скрытой детализацией элементов группы магазинов 
+  Альфа и Бета</I><BR>
+  </font></P>
+</BODY>
+</HTML>
+

@@ -1,0 +1,730 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+<ul>
+  <li><b><font face="Times New Roman" size=3><a href="#16">ЧАСТЬ I. ОСНОВНЫЕ СРЕДСТВА 
+    И ВОЗМОЖНОСТИ VBA</a></font> </b></li>
+  <ul>
+    <li><font face="Times New Roman" size=3><a href="#1">ГЛАВА 1. ОСНОВНЫЕ ЭЛЕМЕНТЫ 
+      VBA</a></font> 
+      <ul>
+        <li><font face="Times New Roman" size=3><a href="#2">ЧТО ТАКОЕ VBA</a></font> 
+        </li>
+        <li><font face="Times New Roman" size=3><a href="#3">ОБЪЕКТЫ И СЕМЕЙСТВА</a></font> 
+        </li>
+        <ul>
+          <li><font face="Times New Roman" size=3><a href="#4">Объекты OLE и ActiveX</a></font> 
+          </li>
+          <li><font face="Times New Roman" size=3><a href="#5">Классы</a></font> 
+          </li>
+          <li><font face="Times New Roman" size=3><a href="#6">Иерархия объектов</a></font> 
+          </li>
+          <li><font face="Times New Roman" size=3><a href="#7">Методы</a></font> 
+          </li>
+          <li><font face="Times New Roman" size=3><a href="#8">Свойства</a></font> 
+          </li>
+          <li><font face="Times New Roman" size=3><a href="#9">События</a></font> 
+          </li>
+        </ul>
+        <li><font face="Times New Roman" size=3><a href="#10">СТРУКТУРА РЕДАКТОРА 
+          VBA</a></font> 
+          <ul>
+            <li><font face="Times New Roman" size=3><a href="#11">Окно проекта</a></font> 
+            </li>
+            <li><font face="Times New Roman" size=3><a href="#12">Окно для редактирования 
+              кода</a></font> </li>
+            <li><font face="Times New Roman" size=3><a href="#13">Окно редактирования 
+              форм (UserForm)</a></font> </li>
+            <li><font face="Times New Roman" size=3><a href="#14">Окно свойств</a></font> 
+            </li>
+            <li><font face="Times New Roman" size=3><a href="#15">Окно Просмотр 
+              объектов (Object Browser)</a></font> </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</ul>
+
+
+<A NAME="16"></A> 
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Часть 
+  I</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="5">Основные 
+  средства и возможности VBA</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><a name="1"></a>Глава 
+  1</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Основные 
+  элементы VBA</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font face="Times New Roman, Times, serif" size="3"><b><a name="2"></a></b></font><font size="4">Что 
+  такое VBA</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">VBA — относительно 
+  легкий язык программирования. Он прост в освоении и позволяет быстро получать 
+  ощутимые результаты — конструировать профессиональные приложения, решающие практически 
+  все задачи, встречающиеся в среде Windows. При этом создание многих приложений 
+  с использованием VBA проще и быстрее, чем при помощи других языков программирования.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">VBA применяет 
+  технологию визуального программирования, т. е. конструирование рабочей поверхности 
+  приложения и элементов его управления непосредственно на экране, а также запись 
+  всей программы или ее частей при помощи MacroRecorder.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">При беглом 
+  знакомстве с технологией визуального программирования может создаться впечатление, 
+  что она сводится к записи макросов, помещению в формы элементов управления и 
+  определении их связей с макросами. Довольно часто при решении простейших задач 
+  так и происходит. Но если требуется создать сколько-нибудь продвинутое приложение 
+  с содержательной обработкой данных, то на первый план выступает сам язык VBA. 
+  Такое заключение можно сделать даже на примере, рассмотренном в предыдущей главе. 
+  Если бы требовалось сделать макрос Расходы универсальным, не зависящим от имени 
+  рабочего листа, то необходимо было бы внести изменения в коды программы, а для 
+  этого надо понимать их структуру.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font face="Times New Roman, Times, serif" size="3"><b><a name="3"></a></b></font><font size="4">Объекты 
+  и их семейства</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">VBA относится 
+  к языкам объектно-ориентированного программирования (ООП). ООП можно описать 
+  как методику анализа, проектирования и написания приложений с помощью объектов. 
+  Что такое объект? Объект nq-зволяет инкапсулировать данные вместе с кодом, предназначенным 
+  для их обработки, т. е. объединить их в нечто целое, именуемое объектом. VBA 
+  не является объектно-ориентированном языком в строгом понимании этого слова, 
+  однако объектный подход играет в нем большую роль. Все визуальные объекты, такие 
+  как <I>рабочий лист (worksheet), диапазон (Range), диаграмма (Chart), форма 
+  (userForm), </I>являются объектами. В VBA имеется более 100 встроенных объектов.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><I>Семейство 
+  </I>(объект collection) представляет собой объект, содержащий несколько других 
+  объектов, как правило, одного и того же типа. Например, объект workbooks (рабочие 
+  книги) содержит все открытые объекты Workbook (рабочая книга). Каждый элемент 
+  семейства нумеруется и может быть идентифицирован либо по номеру, либо по имени. 
+  Например, worksheets (1) обозначает первый рабочий лист активной книги, a worksheets 
+  (&quot;Лист1&quot;) — рабочий лист с именем лист1.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><b><a name="4"></a></b></font><font size="4">Объекты 
+  OLE и ActiveX</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В VBA используется 
+  механизм OLE (Object Linking and Embedding — связывание и внедрение объектов), 
+  который позволяет взаимодействовать с любыми программами, поддерживающими OLE. 
+  Примером элементов, которые можно интегрировать при помощи механизма OLE, являются 
+  вставляемые объекты OLEObject, создаваемые, например, при помощи программ WordArt, 
+  ClipArt и т. д. Все OLE-объекты рабочего листа образуют семейство oLEObjects. 
+  Вручную в рабочий лист OLE-объекты вставляются командой <B>Вставка, Объект </B>(Insert, 
+  Object) с выбором в появившемся диалоговом окне <B>Вставка объекта </B>(Object) 
+  из списка на вкладке <B>Создание </B>(Create New) внедряемого объекта. OLE-объект 
+  отличается от обычного тем, что при выборе внедренного объекта (перемещении 
+  на него указателя и щелчке кнопкой мыши) активизируется программа, связанная 
+  с этим объектом, и меню приложения заменяется меню программы, его создавшей. 
+  Теперь можно, не выходя из основного приложения, работать с данным объектом, 
+  редактируя и видоизменяя его средствами создавшей его программы. Кроме того, 
+  OLE-технологля обладает так называемым свойством Automation, с помощью которого 
+  можно устанавливать свойства, применять методы и обрабатывать события внедренных 
+  объектов, как обычных объектов приложения.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">С 1996 года 
+  фирма Microsoft ввела новую терминологию и теперь то, что раньше именовалось 
+  OLE-объект, называется объектом ActiveX, a OLE Automation называется ActiveX 
+  Automation.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><b><a name="5"></a></b></font><font size="4">Классы</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Важнейшим 
+  понятием ООП является <I>класс. </I>Класс обычно описывается, как проект, на 
+  основе которого впоследствии будет создан конкретный объект. Таким образом, 
+  класс определяет имя объекта, его свойства и действия, вы</font><font face="Times New Roman, Times, serif" size="3">полняемые 
+  над объектом. В свою очередь каждый объект, в соответствии с описанным выше, 
+  является <I>экземпляром класса.</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><b><a name="6"></a></b></font><font size="4">Иерархия 
+  объектов</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Объектная 
+  библиотека VBA располагает более 100 различных объектов, находящихся на различных 
+  уровнях иерархии. Иерархия определяет связь между объектами и показывает пути 
+  доступа к ним. На рис. 1.1 приведена модель встроенных объектов VBA.<BR>
+  </font></P>
+<P align="left"><img src="1.1.gif" width="478" height="364"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  1.1. </I></B><I>Иерархия встроенных объектов VBA</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Полная ссылка 
+  на объект состоит из ряда имен вложенных последовательно друг в друга объектов. 
+  Разделителями имен объектов в этом ряду являются точки, ряд начинается с объекта 
+  Application и заканчивается именем самого объекта. Например, полная ссылка на 
+  ячейку AI рабочего листа лист1 рабочей книги с именем Архив имеет вид:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Application.Workbooks(&quot;Архив&quot;)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Worksheets(&quot;Лист1&quot;).Range(&quot;Al&quot;)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приводить 
+  каждый раз полную ссылку на объект совершенно не обязательно. Обычно достаточно 
+  ограничиться только неявной ссылкой на объект.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В неявной 
+  ссылке, в отличие от полной, объекты, которые активны в данный момент, как правило, 
+  можно опускать. В рассмотренном случае, если ссылка на ячейку AI дана в программе, 
+  выполняемой в среде Excel, то ссылка на объект Application может быть опущена, 
+  т. е. достаточно привести относительную ссылку:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Workbooks(&quot;Архив&quot;).Worksheets(&quot;Лист1&quot;).Range(&quot;A1&quot;)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Если рабочая 
+  книга Архив является активной, то ссылку можно записать еще короче:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Worksheets(&quot;Лист1&quot;).Range(&quot;A1&quot;)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Если и рабочий 
+  лист лист! активен, то в относительной ссылке вполне достаточно ограничиться 
+  упоминанием только диапазона A1:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;A1&quot;)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><b><a name="7"></a></b></font><font size="4">Методы</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Объект сам 
+  по себе не представляет большого значения. Намного значительнее то, какие действия 
+  можно совершать над объектом, и какими свойствами он обладает. <I>Метод </I>как 
+  раз и представляет собой действие, выполняемое над объектом.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Синтаксис 
+  применения метода:<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Объект.Метод<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В данном 
+  примере при помощи метода Quit (закрыть) закрывается приложение (объект Application). 
+  <BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Application.Quit</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Метод можно 
+  применять ко всем объектам семейства. В данном примере к семейству chartobjects 
+  (диаграммы) рабочего листа Лист! применен метод Delete (удалить), который приводит 
+  к удалению всех диаграмм с рабочего листв<B> </B>Лист1:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Worksheets(&quot;Лист!&quot;).Chartobjects.Delete</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><b><a name="8"></a></b></font><font size="4">Свойства</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><I>Свойство 
+  </I>представляет собой атрибут объекта, определяющий его характеристики, такие 
+  как размер, цвет, положение на экране и состояние объекта, например, доступность 
+  или видимость. Чтобы изменить характеристики объекта, надо просто изменить значения 
+  его свойств.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Синтаксис 
+  установки значения свойства: </font></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3">Объект.Свойство 
+  = ЗначениеСвойства<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В следующем 
+  примере изменяется заголовок окна Excel посредством задания свойства Caption 
+  объекту Application:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Application.Caption 
+  = &quot;Пример&quot;</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Свойство 
+  можно изменять сразу у всех объектов семейства. В приведенном ниже примере с 
+  помощью установки свойству visible (видимость) значения False (ложь) все рабочие 
+  листы активной книги (семейство объектов worksheets) скрываются:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Worksheets.Visible 
+  = False</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Среди свойств 
+  особое место занимают свойства, возвращающие объект. Приведем наиболее часто 
+  употребляемые подобные свойства.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="170">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="475" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="26"> 
+        <DIV WIDTH="143" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>ActiveWindow</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="475" HEIGHT="26"> 
+        <DIV WIDTH="475" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает активное 
+            окно Excel<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="25"> 
+        <DIV WIDTH="143" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>ActiveWorkbook</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="475" HEIGHT="25"> 
+        <DIV WIDTH="475" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает активную 
+            рабочую книгу активного окна Excel<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="25"> 
+        <DIV WIDTH="143" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>ActiveSheet</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="475" HEIGHT="25"> 
+        <DIV WIDTH="475" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает активный 
+            лист активной рабочей книги<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="45"> 
+        <DIV WIDTH="143" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>ActiveDialog</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="475" HEIGHT="45"> 
+        <DIV WIDTH="475" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает активное 
+            диалоговое окно активного рабочего листа<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="25"> 
+        <DIV WIDTH="143" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>ActiveChart</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="475" HEIGHT="25"> 
+        <DIV WIDTH="475" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает активную 
+            диаграмму активного рабочего листа<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="25"> 
+        <DIV WIDTH="143" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>ActiveCell</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="475" HEIGHT="25"> 
+        <DIV WIDTH="475" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает активную 
+            ячейку активного рабочего листа<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="475" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Свойство 
+  ActiveCell возвращает активную ячейку активного рабочего листа активной рабочей 
+  книги. Следующие три примера возвращают одну и ту же активную ячейку. Обратите 
+  внимание на первый из них. Его особенностью является то, что свойство, возвращающее 
+  объект, в инструкции записывается без этого объекта. Такой способ записи является 
+  допустимым и применяется к широкому классу свойств, возвращающих объекты.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveCell<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveWindow.ActiveCell 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Application.ActiveWindow.ActiveCell<BR>
+  </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><b><a name="9"></a></b></font><font size="4">События</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><I>Событие 
+  </I>представляет собой действие, распознаваемое объектом (например, щелчок мышью 
+  или нажатие клавиши), для которого можно запрограммировать отклик. События возникают 
+  в результате действий пользователя или программы, или же они могут быть вызваны 
+  системой.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Суть программирования 
+  на VBA как раз и заключается в этих двух понятиях: <I>событие </I>и <I>отклик 
+  </I>на него. Если пользователь производит какое-то воздействие на систему, скажем 
+  нажимает кнопку, тогда в качестве отклика выполняется код созданной пользователем 
+  процедуры. Если такой отклик не создан, </font><font face="Times New Roman, Times, serif" size="3">т. 
+  е. не написана соответствующая процедура, то система никак не реагирует на данное 
+  событие, и оно остается безответным. Как говорится, на нет и суда нет. Таким 
+  образом, действия, происходящие в системе, являются событиями, а отклики на 
+  них — процедурами. Этот специальный вид процедур, генерирующих отклик на события, 
+  называется <I>процедурами обработки событий. </I>В целом программирование на 
+  VBA состоит в создании кода программ, которые генерируют прямо или косвенно 
+  отклики на события.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font face="Times New Roman, Times, serif" size="3"><b><a name="10"></a></b></font><font size="4">Структура 
+  редактора VBA</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Редактор 
+  VBA активизируется командой <B>Сервис, Макрос, Редактор Visual</B> </font><font face="Times New Roman, Times, serif" size="3"><B>Basic 
+  </B>(Tools, Macro, Visual Basic Editor) или нажатием кнопки <B>Редактор</B> 
+  </font><font face="Times New Roman, Times, serif" size="3"><B>Visual Basic </B>(Visual 
+  Basic Editor) панели инструментов <B>Visual Basic. </B>Возвратиться из редактора 
+  VBA в рабочую книгу можно нажатием кнопки <B>Вид</B> </font><font face="Times New Roman, Times, serif" size="3"><B>Microsoft 
+  Excel </B>(View Microsoft Excel) Интерфейс VBA состоит из сле</font><font face="Times New Roman, Times, serif" size="3">дующих 
+  основных компонентов: окно проекта, окно свойств, окно редактирования кода, 
+  окна форм, меню и панели инструментов.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><b><a name="11"></a></b></font><font size="4">Окно 
+  проекта</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Окно проекта 
+  в редакторе VBA активизируется выбором команды <B>Вид, Окно проекта </B>(View, 
+  Project window) или нажатием кнопки <B>Окно проекта </B>(Project window) В окне 
+  проекта (VBAProject) представлена иерархическая структура файлов форм и модулей 
+  текущего проекта (рис. 1.2).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В проекте 
+  автоматически создается модуль для каждого рабочего листа и для всей книги. 
+  Кроме того, модули создаются для каждой пользовательской формы, макросов и классов. 
+  По своему предназначению модули делятся на два типа: <I>модули объектов </I>и 
+  <I>стандартные. </I>К стандартным модулям относятся те, которые содержат макросы. 
+  Такие модули добавляются в проект командой <B>Вставка, Модуль </B>(Insert, Module). 
+  К модулям объектов относятся модули, связанные с рабочей книгой, рабочими листами, 
+  формами, и модули класса.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Формы создаются 
+  командой <B>Вставка, UserForm </B>(Insert, UserForm), а модули класса — командой 
+  <B>Вставка, Модуль класса </B>(Insert, Module). По мере создания, добавления 
+  и удаления файлов из проекта эти изменения отображаются в окне проекта. Отметим, 
+  что удаление файла из окна проекта производится выбором значка файла с последующим 
+  выполнением команды <B>Файл, Удалить </B>(File, Delete).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В окне проекта 
+  выводится проект всех открытых рабочих книг. Это позволяет легко копировать 
+  формы и коды из одного проекта в другой, что убыстряет процесс создания новых 
+  приложений.<BR>
+  </font></P>
+<P align="left"><img src="1.2.gif" width="462" height="547"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  1.2. </I></B><I>Окно проекта</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><b><a name="12"></a></b></font><font size="4">Окно 
+  для редактирования кода</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Перемещение 
+  указателя на значок файла в окне проекта и выполнение двойного щелчка кнопкой 
+  мыши открывает окно редактора кода (рис. 1.3) для соответствующего модуля.<BR>
+  </font></P>
+<P align="left"><img src="1.3.gif" width="448" height="338"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  1.3. </I></B><I>Окно редактирования кода</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Окно редактирования 
+  кода служит в качестве редактора для ввода и изменения кода процедур приложения. 
+  Код внутри модуля организован в виде отдельных разделов для каждого объекта, 
+  программируемого в модуле. В окне редактирования доступны два режима представления 
+  кода: просмотр отдельной процедуры и всего модуля. Переключение режимов работы 
+  окна редактирования кода осуществляется выбором одной из двух кнопок в нижнем 
+  левом углу окна редактирования кода (табл. 1.1), либо установкой или снятием 
+  флажка <B>Просмотр всего модуля </B>(Default to Full Module View) вкладки <B>Редактор 
+  </B>(Editor) диалогового окна <B>Параметры </B>(Options), отображаемого на экране 
+  командой <B>Сервис, Параметры </B>(Tools, Options) (рис. 1.4).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Таблица 
+  1.1. </I></B><I>Режимы работы редактора кода</I></font></P>
+<table width="550" border="1">
+  <tr> 
+    <td width="85"><b><font face="Times New Roman, Times, serif" size="3">Кнопка</font></b></td>
+    <td width="449"><b><font face="Times New Roman, Times, serif" size="3">Режим 
+      работы</font></b></td>
+  </tr>
+  <tr> 
+    <td width="85">&nbsp;</td>
+    <td width="449"><font face="Times New Roman, Times, serif" size="3">Отдельная 
+      процедура </font></td>
+  </tr>
+  <tr> 
+    <td width="85">&nbsp;</td>
+    <td width="449"><font face="Times New Roman, Times, serif" size="3">Все процедуры 
+      модуля</font></td>
+  </tr>
+</table>
+<P align="left"><img src="1.4.gif" width="492" height="399"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  1.4.</I></B><I> Диалоговое окно <B>Параметры</B></I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Два раскрывающихся 
+  списка в верхней части окна редактора кода облегчают ориентацию в процедурах. 
+  Левый раскрывающийся список позволяет выбрать управляющий элемент или форму, 
+  а правый — содержит список событий, допустимых для выбранного в левом списке 
+  объекта. Отметим, что при выборе элемента управления в форме посредством двойного 
+  щелчка или перемещении указателя на элемент управления и нажатии кнопки <B>Программа 
+  </B>(Veiw Code) открывается окно редактирования кода как раз в том месте, где 
+  располагается процедура, связанная с этим элементом управле</font><font face="Times New Roman, Times, serif" size="3">ния. 
+  Обратный переход от процедуры к объекту управления быстрее всего осуществить 
+  нажатием кнопки <B>Объект </B>(Veiw Object).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Интеллектуальные 
+  возможности редактора кода</B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Написание 
+  программ существенно облегчается за счет способности редактора кода автоматически 
+  завершать написание операторов, свойств и параметров. При написании кода редактор 
+  сам предлагает пользователю список компонентов, логически завершающих вводимую 
+  пользователем инструкцию. Например, набирая код<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;A1&quot;).</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">после ввода 
+  точки на экране отобразится список компонентов (рис. 1.5), которые логически 
+  завершают данную инструкцию. Двойной щелчок на выбранном элементе из этого списка 
+  или нажатие клавиши &lt;Таb&gt; вставляет выбранное имя в код программы. При 
+  этом использование клавиши &lt;Таb&gt; вместо мышки иногда предпочтительней, 
+  т. к. эта клавиша находится прямо под рукой и нажатие на нее производится только 
+  одним движением пальца левой руки, что не требует особого времени и усилий.<BR>
+  </font></P>
+<P align="left"><img src="1.5.gif" width="456" height="346"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  1.5. </I></B><I>Список компонентов</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Автоматическое 
+  отображение списка компонентов происходит только при установленном флажке <B>Список 
+  компонентов </B>(Auto List Members) вкладки <B>Редактор </B>(Editor) диалогового 
+  окна <B>Параметры </B>(Options), отображаемого на экране после выбора команды 
+  <B>Сервис, Параметры </B>(Tools, Options).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Список компонентов 
+  можно выводить на экран нажатием комбинации клавиш &lt;Ctrl&gt;+&lt;J&gt;, при 
+  этом список отображается как при установленном, так и при снятом флажке <B>Список 
+  компонентов </B>(Auto List Members) вкладки <B>Редактор </B>(Editor) диалогового 
+  окна <B>Параметры </B>(Options).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Отображение 
+  списка компонентов, логически завершающих вводимую инструкцию,, является одним 
+  из интеллектуальных качеств редактора кода. Этим качеством интеллектуальные 
+  ресурсы редактора кода не исчерпываются. Другим его такого рода качеством является 
+  автоматическое отображение на экране сведений о процедурах, функциях, свойствах 
+  и методах после набора их имени (рис. 1.6).<BR>
+  </font></P>
+<P align="left"><img src="1.6.gif" width="529" height="348"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  1.6. </I></B><I>Отображаемые сведения о вводимой процедуре</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Автоматическое 
+  отображение на экране сведений о процедурах, функциях, свойствах и методах после 
+  ввода их имени происходит только при установленном флажке <B>Краткие сведения 
+  </B>(Auto Quick Info) вкладки Редактор (Editor) диалогового окна <B>Параметры 
+  </B>(Options), отображаемого на экране после выбора команды <B>Сервис, Параметры 
+  </B>(Tools, Options) (см. рис. 1.4).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Описанную 
+  выше всплывающую подсказку можно также выводить на экран нажатием комбинации 
+  клавиш &lt;Ctrl&gt;+&lt;!&gt;. При этом всплывающая подсказка отображается как 
+  при установленном, так и при снятом флажке <B>Краткие сведения </B>вкладки <B>Редактор 
+  </B>диалогового окна <B>Параметры </B>(Options).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Редактор 
+  кода также производит автоматическую проверку синтаксиса набранной строки кода 
+  сразу после нажатия клавиши &lt;Enter&gt;. Если после набора строки и нажатия 
+  клавиши &lt;Enter&gt; строка выделяется красным цветом, то это как раз и указывает 
+  на наличие синтаксической ошибки в набранной строке. Эту ошибку необходимо найти 
+  и исправить. Кроме того, если установлен флажок <B>Проверка_синтаксиса </B>(Auto 
+  Syntax Check) вкладки <B>Редактор </B>(Editor) диалогового окна <B>Параметры 
+  </B>(Options), отображаемого на экране посредством выбора команды <B>Сервис, 
+  Параметры </B>(Tools, Options) (см. рис. 1.4), помимо выделения красным цветом 
+  фрагмента кода с синтаксической ошибкой, на экране отображается диалоговое окно, 
+  поясняющее, какая возможная ошибка произошла.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Редактор 
+  кода обладает еще одной мощной интеллектуальной возможностью, увеличивающей 
+  эффективность работы пользователя. Если курсор расположить на ключевом слове 
+  языка VBA, имени процедуры, функции, свойства или метода и нажать клавишу &lt;F1&gt;, 
+  то на экране появится окно со справочной информацией об этой функции. Обычно 
+  в справке имеется пример использования кода, что позволяет быстрее разобраться 
+  в ситуации, которая при написании программы озадачила вас.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Работа <I>от 
+  </I>примера является одним из краеугольных принципов миропозна-ния и творчества. 
+  Стиль работы от примера очень ярко отображен в <I>принципе чайника. </I>Несмотря 
+  на всю его шутливость и кажущуюся абсурдность, в нем сформулирован многовековой 
+  опыт работы, который очень часто приводит к быстрым и эффективным результатам. 
+  Попытаемся описать принцип чайника следующим образом. У программиста спросили, 
+  как надо вскипятить воду, если на кухне есть спички, газовая плита, водопроводный 
+  кран и пустой чайник, стоящий на кухонном столе. &quot;Тривиально! — ответил 
+  программист. - Налейте в чайник воду, зажгите горелку газовой плиты и поставьте 
+  на нее чайник.&quot; Тогда программисту задают следующий вопрос: &quot;На кухонном 
+  столе стрит чайник с водой, горелка газовой плиты зажжена. Как вскипятить чайник?&quot; 
+  &quot;Элементарно! - отвечает программист. — Надо просто вылить воду из чайника, 
+  погасить горелку и мы оказываемся в условиях задачи, которая только что была 
+  успешно решена!&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><b><a name="13"></a></b></font><font size="4">Окно 
+  редактирования форм (UserForm)</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Для создания 
+  диалоговых окон, разрабатываемых приложений в VBA, используются формы. Редактор 
+  форм является одним из основных инструментов визуального программирования. Форма 
+  в проект добавляется с помощью команды <B>Вставка, Форма </B>(Insert, Form) 
+  или нажатием кнопки <B>Вставить UserForm</B> </font><font face="Times New Roman, Times, serif" size="3">(Insert 
+  UserForm). В результате на экран выводится незаполненная форма с панелью инструментов 
+  <B>Панель элементов </B>(Toolbox) (рис. 1.7).<BR>
+  </font></P>
+<P align="left"><img src="1.7.gif" width="438" height="277"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  1.7.</I></B><I> Окно редактирования форм и панель инструментов <B>Панель элементов</B></I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Используя 
+  панель инструментов <B>Панель элементов </B>из незаполненной формы, можно сконструировать 
+  любое требуемое для приложения диалоговое окно. Размещение нового управляющего 
+  элемента в форме осуществляется следующей последовательностью действий:<BR>
+  </font></P>
+<ol>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Щелкните значок того 
+    элемента, который вы собираетесь разместить в форме.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Поместите указатель 
+    мыши на то место, где будет располагаться управляющий элемент.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Нажмите левую кнопку 
+    мыши и, не отпуская ее, растяните появившийся прямоугольник до требуемых размеров.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Отпустите кнопку мыши. 
+    Элемент управления на нужном место создан.<BR>
+    </font></li>
+</ol>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Размеры формы 
+  и расположенных на ней элементов управления можно изменять. Технология изменения 
+  размеров стандартная для Windows: выделить изменяемый элемент, разместить указатель 
+  мыши на одном из размерных маркеров и протащить его при нажатой левой кнопки 
+  мыши так, чтобы объект принял требуемые размеры. Окно редактирования форм поддерживает 
+  операции буфера обмена.<BR>
+  </font></P>
+<P align="left"><img src="1.8.gif" width="524" height="482"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  1.8. </I></B><I>Команды меню <B>Формат</B></I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Таким образом, 
+  можно копировать, вырезать и вставлять элементы управления, расположенные на 
+  поверхности формы. Для облегчения размещения и выравнивания элементов управления 
+  используется сетка. Активизировать ее можно с помощью вкладки <B>Общие </B>(General) 
+  диалогового окна <B>Параметры </B>(Options), вызываемого командой <B>Сервис, 
+  Параметры </B>(Tools, Options), там же устанавливается шаг сетки. Кроме того, 
+  команды меню <B>Формат </B>(Format) автоматизируют и облегчают процесс выравнивания 
+  элементов управления как по их взаимному местоположению, так и по размерам (рис. 
+  1.8).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><b><a name="14"></a></b></font><font size="4">Окно 
+  свойств</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В окне свойств 
+  перечисляются основные установки свойств выбранной формы или элемента управления. 
+  Используя это окно, можно просматривать свойства и изменять их установки. Для 
+  просмотра свойств выбранного объекта надо либо щелкнуть кнопку <B>Окно свойств 
+  </B>(Properties Window) либо выбрать команду <B>Вид, Окно свойств </B>(View, 
+  Properties Window) (рис. 1.9).<BR>
+  </font></P>
+<P align="left"><img src="1.9.gif" width="367" height="450"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  1.9. </I></B><I>Окно свойств</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Окно свойств 
+  состоит из двух составных частей: верхней и рабочей. В верхней части окна свойств 
+  располагается раскрывающийся список, из которого можно выбрать любой элемент 
+  управления текущей формы или саму форму. Рабочая часть состоит из двух вкладок: 
+  <B>По алфавиту </B>(Alphabetic) и <B>По категориям </B>(Categorized), отображающие 
+  набор свойств в алфавитном порядке или по категориям. В обоих вкладках свойство 
+  Name (имя элемента управления) будет первым. Изменяются значения свойств одним 
+  из следующих способов:<BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Вводом с клавиатуры 
+    значения свойства в соответствующее поле.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Значения большинства 
+    свойств можно выбрать из раскрывающегося списка. Раскрывающийся список активизируется 
+    щелчком в соответствующем поле окна свойств.<BR>
+    </font></li>
+</ul>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><b><a name="15"></a></b></font><font size="4">Окно 
+  Просмотр объектов (Object Browser)</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Окно <B>Просмотр 
+  объектов </B>(Object Browser) вызывается командой <B>Вид, Просмотр объектов 
+  </B>(View, Object Browser) или нажатием кнопки <B>Просмотр объектов </B>(Object 
+  Browser) (рис. 1.10). В этом окне приведен список всех объектов, которые имеются 
+  в системе и которые можно использовать при создании проекта.<BR>
+  </font></P>
+<P align="left"><img src="1.10.gif" width="447" height="479"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  1.10. Окно Просмотр объектов</I></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Окно <B>Просмотр 
+  объектов (Object </B>Browser) состоит из трех основных частей:<BR>
+  </font></P>
+<ol>
+  <li> <font face="Times New Roman, Times, serif" size="3">Раскрывающегося списка 
+    <B>Проект/Библиотека </B>(Project/Library) в левом верхнем углу окна. В этом 
+    раскрывающемся списке можно выбрать различные проекты и библиотеки объектов. 
+    В частности, библиотеки объектов Excel, VBA, Office и VBAProject (объекты 
+    пользовательского проекта). Выбор в списке строки <B>&lt;Все библиотеки&gt; 
+    </B>(&lt;Аll Libraries&gt;) отображает список объектов всех библиотек.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Списка <B>Классы </B>(Classes). 
+    После выбора из раскрывающегося списка <B>Проект/Библиотека </B>(Project/Library) 
+    просматриваемой библиотеки, например <B>VBA, </B>все классы объектов выбранной 
+    библиотеки выводятся в списке <B>Классы </B>(Classes).<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Списка <B>Компоненты 
+    </B>(Members). После выбора класса из списка <B>Классы </B>(Classes) просматриваемой 
+    библиотеки, например FileSystem, все компоненты выбранного класса выводятся 
+    в списке <B>Компоненты </B>(Members). При выделении строки в этом списке в 
+    нижней части окна <B>Просмотр объектов </B>(Object Browser) приводится дополнительная 
+    информация о выбранном компоненте. Кроме того, если нажать на кнопку <B>Справка 
+    </B>(Help), расположенную на панели инструментов в правой верхней части окна 
+    <B>Просмотр объектов </B>(Object Browser), то на экране отобразится окно <B>Справочник 
+    Visual_Basic </B>(Microsoft Visual Basic Help) с подробной информацией о выделенном 
+    компоненте.</font></li>
+</ol>
+</BODY>
+</HTML>
+

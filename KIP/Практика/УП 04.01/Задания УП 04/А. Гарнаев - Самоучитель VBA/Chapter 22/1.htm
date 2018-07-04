@@ -1,0 +1,1030 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+      <ul>
+<li><b><font face="Times New Roman" size=3><a href="#1">УРОК 7. ТЕМА: ЗАПОЛНЕНИЕ БАЗЫ ДАННЫХ</a></font></b> </li>
+     <ul>
+     <li><font face="Times New Roman" size=3><a href="#2">ЦЕЛЬ УРОКА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#3">ПРАКТИКА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#4">САМОСТОЯТЕЛЬНОЕ ЗАДАНИЕ</a></font> </li>
+
+     </ul></ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Урок 7</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Тема:</font></font> 
+  <font face="Times New Roman, Times, serif" size="5">Заполнение базы данных</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="2"></a>Цель 
+  урока</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В этом уроке 
+  разрабатывается приложение, позволяющее при помощи диалогового окна заполнять 
+  базу данных. Конструируя данное приложение, вы сможете освоить следующие операции:<BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3">Последовательное заполнение 
+    плоской базы данных<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Программирование примечаний<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Программирование текстовых 
+    полей на рабочем листе<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Использование переключателя 
+    и флажков<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Создание пользовательского 
+    заголовка окна приложения<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Как на рабочем листе 
+    программно закрепить область<BR>
+    </font></li>
+</ul>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="3"></a>Практика</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Для заполнения 
+  базы данных на рабочем листе с помощью редактора пользовательских форм создадим 
+  диалоговое окно Регистрация туристов фирмы &quot;Эх, прокачу!&quot; (рис. У7.1).<BR>
+  </font></P>
+<P align="left"><img src="7.1.gif" width="325" height="270"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У7.1. </I></B><I>Диалоговое окно Регистрация туристов фирмы &quot;Эх, прокачу!&quot;</I><BR>
+  </font></P>
+<P align="left"><img src="7.2.gif" width="523" height="338"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У7.2. </I></B><I>База данных о туристах на рабочем листе</I><BR>
+  </font></P>
+<P align="left"><img src="7.3.gif" width="509" height="508"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У7.3. </I></B><I>Пояснительное текстовое поле, появляющееся при выборе переключателя 
+  О программе</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">При инициализации 
+  диалогового окна программа проверяет, есть ли заголовки у полей создаваемой 
+  базы данных о регистрации туристов. Если этих заголовков нет, то программа автоматически 
+  создает их, снабжая примечаниями, имеющими пояснительный текст о содержании 
+  полей (рис. У7.2). Выбор переключателя о программе приведет к отображению на 
+  экране текстового поля с пояснениями к данной программе. Снятие этого флажка 
+  удаляет данное поле (рис. У7.3). Обратите внимание, что у окна приложения пользовательское<B> 
+  </B>имя Регистрация. База данных туристов.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Обсудим, 
+  как приведенная ниже программа решает перечисленные задачи и что происходит 
+  в программе.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="641">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="234" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="388" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="377"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="234" HEIGHT="377"> 
+        <DIV WIDTH="234" HEIGHT="377"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">UserForm Initialize<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="388" HEIGHT="377"> 
+        <ol>
+          <li> 
+            <DIV WIDTH="388" HEIGHT="377"> <font face="Times New Roman, Times, serif" size="3"> 
+              Активизирует диалоговое окно. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="388" HEIGHT="377"><font face="Times New Roman, Times, serif" size="3"> 
+              Назначает клавише &lt;Esc&gt; функцию кнопки Отмена, а Клавише &lt;Enter&gt; 
+              - Вычислить.<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="388" HEIGHT="377"> <font face="Times New Roman, Times, serif" size="3"> 
+              Назначает кнопкам вычислить, отмена и переключателю о программе 
+              всплывающие подсказки. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="388" HEIGHT="377"><font face="Times New Roman, Times, serif" size="3"> 
+              Закрепляет первую строку так, чтобы она всегда отображалась на экране. 
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="388" HEIGHT="377"><font face="Times New Roman, Times, serif" size="3"> 
+              Создает заголовки полей базы данных, если они еще не были созданы. 
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="388" HEIGHT="377"><font face="Times New Roman, Times, serif" size="3">Устанавливает 
+              начальное значение переключателя 0 программе. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="388" HEIGHT="377"><font face="Times New Roman, Times, serif" size="3"> 
+              Заполняет раскрывающийся список. </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="388" HEIGHT="377"><font face="Times New Roman, Times, serif" size="3"> 
+              Устанавливает текст заголовка окна приложения.<BR>
+              </font></DIV>
+          </li>
+        </ol>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="377"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="114"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="234" HEIGHT="114"> 
+        <DIV WIDTH="234" HEIGHT="114"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            вычислить запускает на выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButton1_Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="388" HEIGHT="114"> 
+        <ol>
+          <li> 
+            <DIV WIDTH="388" HEIGHT="114"> <font face="Times New Roman, Times, serif" size="3"> 
+              Определяет номер первой пустой строки в базе данных о регистрации 
+              туристов, куда будет введена новая запись. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="388" HEIGHT="114"><font face="Times New Roman, Times, serif" size="3">Считывает 
+              данные из диалогового окна. </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="388" HEIGHT="114"><font face="Times New Roman, Times, serif" size="3"> 
+              Вводит их в первую пустую строку.<BR>
+              </font></DIV>
+          </li>
+        </ol>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="114"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="106"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="234" HEIGHT="106"> 
+        <DIV WIDTH="234" HEIGHT="106"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            Отмена запускает на выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButton2_Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="388" HEIGHT="106"> 
+        <DIV WIDTH="388" HEIGHT="106"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Закрывает диалоговое 
+            окно. Устанавливает заголовок приложения, используемый по умолчанию, 
+            т. е. удаляет пользовательский заголовок приложения, созданный при 
+            активизации формы.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="106"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="234" HEIGHT="44"> 
+        <DIV WIDTH="234" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">SpinButtonl_Change<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="388" HEIGHT="44"> 
+        <DIV WIDTH="388" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Вводит значение 
+            в поле продолжительность тура.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="234" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="388" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="114">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="213" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="327" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="213" HEIGHT="46"> 
+        <DIV WIDTH="232" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ToggleButtonl 
+            Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="327" HEIGHT="46"> 
+        <DIV WIDTH="386" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Отображает текстовое 
+            поле в выбранном состоянии и удаляет его — в снятом состоянии.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="67"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="213" HEIGHT="67"> 
+        <DIV WIDTH="232" HEIGHT="67"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ЗаголовокРабочегоЛиста<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="327" HEIGHT="67"> 
+        <DIV WIDTH="386" HEIGHT="67"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Создает заголовки 
+            полей базы данных о регистрации туристов. Эти заголовки отображаются 
+            с примечаниями.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="67"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="213" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="327" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButtonl_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  считывания информации из диалогового окна<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' и записи ее 
+  в базу данных на рабочем листе </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Смысл переменных 
+  однозначно определен их названиями</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Фамилия 
+  As String * 20 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim Имя As String 
+  * 20 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim Пол As String 
+  * 3 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim ВыбранныйТур 
+  As String * 20 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim Оплачено 
+  As String * 3 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim Фото As String 
+  * 3 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim Паспорт As 
+  String * 3</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Dim Срок As 
+  String * 3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim НомерСтроки 
+  As Integer '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' НомерСтроки 
+  - номер первой пустой строки рабочего листа </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">НомерСтроки 
+  = Application.CountA(ActiveSheet.Columns(1)) + 1</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Считывание 
+  информации из диалогового окна в переменные </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With UserForml<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Фамилия = .TextBoxl.Text<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Имя = .TextBox2.Text<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Срок = .TextBox3.Text<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If .OptionButtonl.Value 
+  = True Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Пол = &quot;Муж&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Else<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Пол = &quot;Жен&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If .CheckBoxl.Value 
+  = True Then Оплачено = &quot;Да&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Else<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Оплачено = &quot;Нет&quot; 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> If .CheckBox2.Value 
+  = True Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Фото = &quot;Да&quot; 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Else<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Фото = &quot;Нет&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If .CheckBoxS.Value 
+  = True Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Паспорт = &quot;Да&quot; 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Else<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Паспорт = &quot;Нет&quot; 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ВыбранныйТур 
+  = .ComboBoxl.List(.ComboBoxl.Listlndex, 0)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Ввод данных 
+  в строку с номером НомерСтроки рабочего листа </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With ActiveSheet<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Cells(НомерСтроки, 
+  1).Value = Фамилия<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Cells(НомерСтроки, 
+  2).Value = Имя<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Cells(НомерСтроки, 
+  3).Value = Пол<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Cells(НомерСтроки, 
+  4).Value = ВыбранныйТур<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Cells(НомерСтроки, 
+  5).Value = Оплачено<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Cells(НдмерСтроки, 
+  6).Value = Фото<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Cells(НомерСтроки, 
+  7).Value = Паспорт<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Cells(НомерСтроки, 
+  8).Value = Срок </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton2_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  закрытия диалогового окна </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Установка 
+  заголовка окна приложения по умолчанию</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">UserForm1.Hide 
+  Application.Caption = Empty </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ActiveSheet.DrawingObjects.Delete<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  SpinButtonl_Change() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  ввода значения счетчика в поле ввода<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With UserForml<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.TextBox3.Text 
+  = CStr(.SpinButtonl.Value) End With End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  TextBox3_Change()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  установки значения счетчика из поля ввода</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With UserForml<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.SpinButtonl.Value 
+  = CInt(.TextBoxS.Text)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  ToggleButtonl_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  отображения или удаления поля с текстом </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If ToggleButtonl.Value 
+  = True Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.DrawingObjects.Delete<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.Shapes.</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">AddTextbox(msoTextOrientationHorizontal,</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> 11.25, 44.25, 
+  106.5, 96#)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Select Selection.Characters.Text 
+  = &quot;&quot; With Selection.Font<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Name = &quot;Arial 
+  Cyr&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.FontStyle = 
+  &quot;обычный&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Size = 10<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Strikethrough 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Superscript 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Subscript = 
+  False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.OutlineFont 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Shadow = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Underline = 
+  xlUnderlineStyleNone<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Colorlndex 
+  = xlAutomatic End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Selection.ShapeRange.Fill.ForeColor.SchemeColor 
+  = 13 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Selection.ShapeRange.Fill.Visible 
+  = msoTrue </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Selection.ShapeRange.Fill.Solid 
+  Selection.Characters.Text = _<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;Программа 
+  составлена &quot; &amp; Chr(10) &amp;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;Андреем 
+  Гарнаевым для регистрации &quot; &amp; Chr(10) &amp;_<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;клиентов&quot; 
+  &amp; Chr(10) &amp; &quot;туристической &quot; &amp; Chr(10) &amp; &quot;фирмы&quot; 
+  With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Selection.Characters(Start:=1, 
+  Length:=86).Font<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Name = &quot;Arial 
+  Cyr&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.FontStyle = 
+  &quot;обычный&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Size = 10<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Strikethrough 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Superscript 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Subscript = 
+  False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.OutlineFont 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Shadow = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Underline = 
+  xlUnderlineStyleNone<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Colorlndex 
+  = xlAutomatic </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> If ToggleButtonl.Value 
+  = False Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.DrawingObjects.Delete</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  UserForm_Initialize()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  вызова диалогового окна<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' и задание 
+  элементов раскрывающегося списка<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ЗаголовокРабочегоЛиста<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Задание пользовательского 
+  заголовка окна приложения<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Application.Caption 
+  = &quot;Регистрация. База данных туристов&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Закрытие строки 
+  формул окна Excel<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Application.DisplayFormulaBar 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Задание элементов 
+  раскрывающегося списка<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With CommandButtonl<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Default = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.ControlTipText 
+  = &quot;Ввод данных в базу данных&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">With CommandButton2<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Cancel = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.ControlTipText 
+  = &quot;Кнопка отмены&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">OptionButtonl.Value 
+  = True</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> With ToggleButtonl<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Value = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.ControlTipText 
+  = &quot;Информация о программе&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End With</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> With ComboBoxl<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.List = Array(&quot;Лондон&quot;, 
+  &quot;Париж&quot;, &quot;Берлин&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Listlndex = 
+  0 End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Активизация 
+  диалогового окна </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">UserForml.Show 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub ЗаголовокРабочегоЛиста()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  создания заголовков полей базы данных<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Если заголовки 
+  существуют, то досрочный выход из процедуры</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Range(&quot;Al&quot;).Value 
+  = &quot;Фамилия&quot; Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;A2&quot;).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Если заголовки 
+  не существуют, то создаются заголовки полей </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.Cells.Clear<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Al:HI&quot;).Value 
+  = Array(&quot;Фамилия&quot;, &quot;Имя&quot;, &quot;Пол&quot;,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;Выбранный 
+  Тур&quot;, &quot;Оплачено&quot;, &quot;Фото&quot;, &quot;Паспорт&quot;, &quot;Срок&quot;) 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Range(&quot;A:A&quot;).ColumnWidth 
+  =12 Range(&quot;D:D&quot;).ColumnWidth = 14.4<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3"><I>' </I>Закрепляется 
+  первая строка с тем, чтобы она всегда<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' отображалась 
+  на экране '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;2:2&quot;).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveWindow.FreezePanes 
+  = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;A2&quot;).Select 
+  <BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' К каждому 
+  заголовку поля базы данных<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Al&quot;).AddComment<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Al&quot;).Comment.Visible 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Al&quot;).Comment.Text 
+  Text:=&quot;Фамилия клиента&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Bl&quot;).AddComment<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Bl&quot;).Comment.Visible 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Bl&quot;).Comment.Text 
+  Text:=&quot;Имя клиента&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Cl&quot;).AddComment<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Cl&quot;).Comment.Visible 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Cl&quot;).Comment.Text 
+  Text:=&quot;Пол клиента&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Dl&quot;).AddCorament<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Dl&quot;).Comment.Visible 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Dl&quot;).Comment.Text 
+  Text:=&quot;Направление&quot; &amp; Chr(10) &amp;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;выбранного 
+  тура&quot; Range(&quot;El&quot;)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.AddComment Range(&quot;El&quot;)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Comment.Visible 
+  = False Range(&quot;El&quot;)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Comment.Text 
+  Text:=&quot;Путевка оплачена?&quot; &amp; Chr(10) &amp;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;(Да/Нет)&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Fl&quot;).AddComment 
+  Range(&quot;Fl&quot;).Comment.Visible = False </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Range(&quot;Fl&quot;).Comment.Text 
+  Text:=&quot;OoTo сданы&quot; &amp; Chr(lO) &amp;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;(Да/Нет) 
+  &quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Gl&quot;).AddComment 
+  Range(&quot;Gl&quot;).Comment.Visible = False </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Range(&quot;Gl&quot;).Comment.Text 
+  Text:=&quot;Наличие паспорта&quot; <I>&amp; </I>Chr(10) &amp;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;(Да/Нет)&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;HI&quot;).AddComment 
+  Range(&quot;HI&quot;).Comment.Visible = False </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Range(&quot;HI&quot;).Comment.Text 
+  Text^&quot;Продолжительность&quot; &amp; Chr(10) &amp;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;поездки&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В данной 
+  программе для определения первой пустой строки в заполняемой базе данных о туристах 
+  используется инструкция<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">НомерСтроки 
+  = Application.CountA(ActiveSheet.Columns(1)) + 1,</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">правая часть 
+  которой вычисляет число непустых ячеек в первом столбце активного рабочего листа. 
+  Переменной НомерСтроки присваивается значение на единицу большее, чем число 
+  непустых строк, что естественно, т. к. ей должен быть присвоен номер первой 
+  непустой строки базы данных. Подобные инструкции довольно часто используется 
+  при разработке приложений, поэтому рекомендуем обратить на них внимание.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Процедура 
+  заголовокрабочегоЛиста выглядит немножко устрашающе. При ее написании лучше 
+  всего воспользоваться MacroRecorder, который переведет производимые действия 
+  по созданию примечаний пользователем вручную на язык VBA. Итак, для активизации 
+  MacroRecorder выберите команду <B>Сервис, Макрос, Начать запись </B>(Tools, 
+  Macro, Record New Macro) и запустите MacroRecorder на запись. После задания 
+  всех параметров в появившемся диалоговом окне <B>Запись макроса </B>(Record 
+  Macro) и нажатия кнопки ОК появится плавающая панель инструментов с кнопкой 
+  <B>Остановить запись </B>(Stop Recording). Теперь все производимые действия 
+  будут записываться до тех </font><font face="Times New Roman, Times, serif" size="3">пор, 
+  пока не будет нажата эта кнопка. Постройте примечания по следующему алгоритму. 
+  Кроме того, для того чтобы разобраться, как программируется закрепление области 
+  на рабочем листе, в этот алгоритм входит также и закрепление первой строки рабочего 
+  листа.<BR>
+  </font></P>
+<ol>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Щелкните кнопку заголовка 
+    второй строки. Вторая строка выделится. Выберите команду <B>Окно, Закрепить 
+    области </B>(Window, Freeze Panes).<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Выделите ячейку A1 
+    и нажмите кнопку <B>Надпись </B>(Text box) панели инструментов <B>Рисование 
+    </B>(Drawing). В появившееся текстовое поле введите </font><font face="Times New Roman, Times, serif" size="3"><B>текст 
+    </B>Фамилия клиента.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Выделите ячейку BI 
+    и нажмите кнопку <B>Надпись </B>(Text Box) панели инструментов <B>Рисование 
+    </B>(Drawing). В появившееся текстовое поле введите текст имя клиента и т. 
+    д. последовательно для ячеек от С1 до H1 .<BR>
+    </font></li>
+</ol>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Перечисленные 
+  выше действия будут переведены MacroRecorder в следующий макрос.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Макрос1() 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Макрос1 Макрос<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Макрос записан 
+  28.04.99 (Андрей)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;2:2&quot;).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveWindow.FreezePanes 
+  = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Al&quot;).AddComment<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;A1&quot;}.Comment.Visible 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range (&quot;Al&quot;). 
+  Comment.Text Тех^=&quot;Фамилия клиента&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Bl&quot;).AddComment<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Bl&quot;).Comment.Visible 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Bl&quot;).Comment.Text 
+  Text:=&quot;Имя клиента&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Cl&quot;).AddComment<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Cl&quot;).Comment.Visible 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Cl&quot;).Comment.Text 
+  Text:=&quot;Пол клиента&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Dl&quot;).AddComment<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Dl&quot;).Comment.Visible 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Dl&quot;).Comment.Text 
+  Text:=&quot;Направление&quot; &amp; Chr(10) &amp;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;выбранного 
+  тура&quot; Range(&quot;El&quot;).AddComment </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Range(&quot;El&quot;).Comment.Visible 
+  = False </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Range(&quot;El&quot;).Comment.Text 
+  Text:=&quot;Путевка оплачена?&quot; &amp; Chr(10) &amp;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;(Да/Нет)&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Fl&quot;).AddComnent<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Fl&quot;).Comment.Visible 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Fl&quot;).Comment.Text 
+  Text:=&quot;Фото сданы&quot; &amp; Chr(10) &amp;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;(Да/Нет)&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Gl&quot;).AddComment 
+  Range(&quot;Gl&quot;).Comment.Visible = False </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Range(&quot;Gl&quot;).Comment.Text 
+  Text:=&quot;Наличие паспорта&quot; &amp; Chr(10) &amp;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot; (Да/Нет) 
+  &quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;H1&quot;).AddComment 
+  Range(&quot;H1&quot;).Comment.Visible = False </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Range(&quot;H1&quot;).Comment.Text 
+  Text:=&quot;Продолжительность&quot; &amp; Chr(10) &amp;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;поездки&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Первые две 
+  инструкции записанного макроса показывают, как программно закрепляется область, 
+  а остальные - как создаются примечания у ячеек рабочего листа. Теперь, при создании 
+  приложения эти фрагменты просто надо вставить в требуемое место набираемой программы.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Аналогично, 
+  при написании фрагмента программы, связанного с созданием текстового поля, лучше 
+  всего воспользоваться MacroRecorder, который переведет производимые пользователем 
+  вручную действия по созданию текстового поля на язык VBA. Итак, для активизации 
+  MacroRecorder выберите команду <B>Сервис, Макрос, Начать запись </B>(Tools, 
+  Macro, Record New Macro) и запустите MacroRecorder на запись. После задания 
+  всех параметров в появившемся диалоговом окне <B>Запись макроса </B>(Record 
+  Macro) и нажатия кнопки <B>ОК </B>появится плавающая панель инструментов с кнопкой 
+  <B>Остановить запись </B>(Stop Recording). Теперь все производимые действия 
+  будут записываться до тех пор, пока не будет нажата эта кнопка. Постройте текстовое 
+  поле по алгоритму:<BR>
+  </font></P>
+<ol>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Нажмите кнопку <B>Надпись 
+    </B>(Text box) панели <B>Рисование </B>(Drawing) и создайте на рабочем листе 
+    текстовое поле.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Наберите в текстовом 
+    поле следующий текст:<BR>
+    </font> 
+    <p> <font face="Times New Roman, Times, serif" size="3">Программа составлена 
+      Андреем Гарнаевым для регистрации клиентов туристической фирмы.<BR>
+      </font></p>
+  </li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Выделите текстовое 
+    поле и смените цвет его заливки на желтый, нажав кнопку <B>Цвет заливки </B>(Fill 
+    Color) панели инструментов <B>Рисование </B>(Drawing).<BR>
+    </font></li>
+</ol>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Перечисленные 
+  выше действия будут переведены MacroRecorder в следующий макрос.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Макрос4() 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Макрос4 Макрос<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Макрос записан 
+  30.04.99 (Андрей)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.Shapes.</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">AddTextbox(msoTextOrientationHorizontal, 
+  9.75, 45#, _ </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">108.75, 96#).Select</font><font face="Courier New, Courier, mono" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Selection.Characters.Text 
+  = _<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;Программа 
+  составлена &quot; &amp; Chr(10) &amp;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;Андреем 
+  Гарнаевым для регистрации &quot; &amp; Chr(10)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&amp; &quot;клиентов&quot; 
+  &amp; Chr(10) <I>&amp; </I></font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">&quot;туристической 
+  &quot; &amp; Chr(10) &amp; &quot;фирмы&quot; </font><font face="Courier New, Courier, mono" size="3">With 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Selection.Characters(Start:=1, 
+  Length:=86).Font<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Name = &quot;Arial 
+  Cyr&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.FontStyle = 
+  &quot;обычный&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Size = 10<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Strikethrough 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Superscript 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Subscript = 
+  False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.OutlineFont 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Shadow = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Underline = 
+  xlUnderlineStyleNone,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Colorlndex 
+  = xlAutomatic<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Selection.ShapeRange.Fill.ForeColor.SchemeColor 
+  = 13<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Selection.ShapeRange.Fill.Visible 
+  = msoTrue Selection.ShapeRange.Fill.Solid </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Из записанного 
+  макроса остается только скопировать нужные фрагменты в программу создаваемого 
+  приложения о базе данных регистрации туристов.</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="4"></a>Самостоятельное 
+  задание</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Разработать 
+  приложение с диалоговым окном регистрация клиентов отеля &quot;хромая кобыла&quot; 
+  (рис. У7.4), в котором:<BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3">Счетчик управляет вводом 
+    продолжительности проживания<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">В раскрывающемся списке 
+    выводятся три типа номеров: одноместный, Двухместный, Люкс, стоимость проживания 
+    в которых равна 150, 100 и 250 руб. в сутки<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Если постоялец заказывает 
+    завтраки в номер, то суточная оплата возрастает на 15 руб.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">При нажатии на кнопку 
+    ок в поле Стоимость проживания выводится суммарная стоимость проживания клиента, 
+    и все данные из диалогового окна должны вводится в базу данных, создаваемую 
+    на рабочем листе<BR>
+    </font></li>
+</ul>
+<P align="left"><img src="7.4.gif" width="370" height="357"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У7.4. </I></B><I>Диалоговое окно Регистрация клиентов отеля &quot;Хромая кобыла&quot;</I></font></P>
+</BODY>
+</HTML>
+

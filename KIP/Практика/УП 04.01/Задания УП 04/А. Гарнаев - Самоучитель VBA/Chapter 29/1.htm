@@ -1,0 +1,1212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+<body background=../FON.JPG>
+<ul>
+  <li><b><font face="Times New Roman" size=3><a href="#1">УРОК 14. ТЕМА: РАБОТА 
+    С ФАЙЛАМИ</a></font></b> </li>
+  <ul>
+    <li><font face="Times New Roman" size=3><a href="#2">ЦЕЛЬ УРОКА</a></font> 
+    </li>
+    <li><font face="Times New Roman" size=3><a href="#3">ПРАКТИКА</a></font> 
+      <ul>
+        <li><font face="Times New Roman" size=3><a href="#4">Файл последовательного 
+          доступа</a></font> </li>
+        <li><font face="Times New Roman" size=3><a href="#5">Файл произвольного 
+          доступа</a></font> </li>
+        <li><font face="Times New Roman" size=3><a href="#6">Создание заставки 
+          приложения</a></font> </li>
+      </ul>
+    </li>
+  </ul>
+</ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Урок 14</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Тема:</font> 
+  <font size="5">Работа с файлами</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="2"></a>Цель 
+  урока</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В данном 
+  уроке рассматриваются примеры работы с файлами последовательного и прямого доступа.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Конструируя 
+  данное приложение, вы на практике узнаете, как осуществить:<BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3">Считывание файла последовательного 
+    доступа в поле<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Запись в файл последовательного 
+    доступа<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Считывание и запись 
+    в файл прямого доступа<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Работу с пользовательскими 
+    типами данных<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Создание простейшего 
+    текстового редактора<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Создание заставки 
+    приложения<BR>
+    </font></li>
+</ul>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="3"></a>Практика</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="4"></a>Файл 
+  последовательного доступа</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">При последовательном 
+  доступе файл рассматривается как последовательность строк произвольной длины, 
+  разделенных специальными знаками. Чтение из файла и запись в файл производится 
+  построчно.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведенная 
+  ниже программа является примером создания простейшего текстового редактора, 
+  в который можно загрузить из файла уже существующий текст, отредактировать его 
+  и записать измененный текст в файл. Имя открываемого файла вводится в переменную 
+  имяФайла. Свободный номер для файла получается при помощи функции FreeFile и 
+  записывается в переменную Номер.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Итак, в редакторе 
+  форм создадим диалоговое окно Файл последовательного доступа (рис. У 14.1).<BR>
+  </font></P>
+<P align="left"><img src="14.1.gif" width="382" height="324"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У14.1. </I></B><I>Диалоговое окно Файл последовательного доступа</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Обсудим, 
+  как приведенная ниже программа решает описанную задачу и что в ней происходит.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="382">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="203" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="418" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="118"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="203" HEIGHT="118"> 
+        <DIV WIDTH="203" HEIGHT="118"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">UserForm_Initialize<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="418" HEIGHT="118"> 
+        <ol>
+          <li> 
+            <DIV WIDTH="418" HEIGHT="118"> <font face="Times New Roman, Times, serif" size="3"> 
+              Активизирует диалоговое окно.</font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="418" HEIGHT="118"><font face="Times New Roman, Times, serif" size="3">Отображает 
+              переключатель Подсказка и скрывает поле и кнопку Сохранить изменения?.<BR>
+              </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="418" HEIGHT="118"> <font face="Times New Roman, Times, serif" size="3">Устанавливает 
+              свойства поля, кнопки, а также задает заголовок диалогового окна.<BR>
+              </font></DIV>
+          </li>
+        </ol>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="118"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="104"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="203" HEIGHT="104"> 
+        <DIV WIDTH="203" HEIGHT="104"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ToggleButton1_Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="418" HEIGHT="104"> 
+        <DIV WIDTH="418" HEIGHT="104"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">При установке 
+            переключателя отображается поле, в которое выводится текст из файла, 
+            а также отображается кнопка Сохранить изменения? При снятии переключателя, 
+            поле и кнопка скрываются.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="104"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="97"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="203" HEIGHT="97"> 
+        <DIV WIDTH="203" HEIGHT="97"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Сохранить изменения?<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">запускает на 
+            выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButton1_Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="418" HEIGHT="97"> 
+        <DIV WIDTH="418" HEIGHT="97"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Записывает содержимое 
+            поля в файл.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="97"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="203" HEIGHT="64"> 
+        <DIV WIDTH="203" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Открытие<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">и<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Запись<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="418" HEIGHT="64"> 
+        <DIV WIDTH="418" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Процедуры считывают 
+            содержимое файла в поле и записывают содержимое поля в файл соответственно.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="203" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="418" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Переменные 
+  уровня модуля </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Option Explicit<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim ИмяФайла 
+  As String </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim Номер As 
+  Integer </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButtonl_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' По нажатию 
+  кнопки содержимое поля записывается в файл<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Запись<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  ToggleButtonl_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' При установке 
+  переключателя отображается поле,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' в которое 
+  выводится текст из файла, и кнопка для<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' записи изменений 
+  в поле в файл.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' При снятии 
+  переключателя поле и кнопка скрываются<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Номер = FreeFile<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ИмяФайла = &quot;c:\my_doc\book_ex\help.txt&quot; 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If ToggleButtonl.Value 
+  = True </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Then TextBoxl.Visible 
+  = True</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> CommandButtonl.Visible 
+  = True </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Открытие </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If ToggleButtonl.Value 
+  = False </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Then CommandButtonl.Visible 
+  = False </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">TextBoxl.Visible 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  UserForm_Initialize()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Инициализация 
+  диалогового окна<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With TextBoxl<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.MultiLine = 
+  True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.ScrollBars 
+  = fmScrollBarsBoth<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Visible = False 
+  End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ToggleButtonl.TripleState 
+  = False </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">With CommandButtonl<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Wordwrap = 
+  True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Visible = False 
+  End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">UserForm2.Caption 
+  = &quot;Файл последовательного доступа&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Запись()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Запись файла<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Открывается 
+  файл последовательного доступа для записи информации<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Open ИмяФайла 
+  For Output As Номер<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Содержание 
+  поля выводится в файл</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Print #Номер, 
+  TextBoxl.Text<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Закрытие файла 
+  <BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Close Номер</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Открытие() 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Считывание 
+  из файла в поле<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Открывается 
+  файл последовательного доступа для считывания информации </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Open ИмяФайла 
+  For Input As Номер<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Содержание 
+  файла выводится в поле </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBoxl.Text 
+  = Input(LOF(Номер), Номер)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Закрытие файла 
+  '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Close Номер 
+  End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="5"></a>Файл 
+  произвольного доступа</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">При последовательном 
+  доступе файл рассматривается как последовательность строк фиксированной длины, 
+  причем при открытии указывается длина строки. Благодаря этому становится возможным 
+  переход на любую запись по ее номеру.<BR>
+  </font></P>
+<P align="left"><img src="14.2.gif" width="287" height="283"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У14.2. </I></B><I>Диалоговое окно для работы с файлом произвольного доступа</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведенная 
+  ниже программа реализует простейшую базу данных с помощью файла произвольного 
+  доступа. Данный файл предназначен для хранения информации о студентах: фамилии, 
+  имени и группе. Диалоговое окно информация о студентах позволяет перемещаться 
+  от записи к записи, редактировать существующие и создавать новые записи. Переход 
+  от записи к записи производится при помощи счетчика. Отметим, что заголовок 
+  диалогового окна является переменным: при создании нового файла или записи в 
+  заголовок выводится информация о студентах, а при выводе информации о текущем 
+  студенте — его имя и фамилия. При активизации диалогового окна доступными для 
+  пользователя являются только поле со списком и кнопка открытие файла. В поле 
+  со списком отображаются все файлы текущей папки с расширением dat. Пользователь 
+  может выбрать файл из этого списка или ввести в поле имя нового файла. После 
+  ввода имени файла поле со списком и кнопка Открытие файла становятся недоступными 
+  для пользователя, а все остальные элементы управления, наоборот, становятся 
+  доступными. На стандартном листе модуля описан пользовательский тип студенттуре, 
+  который используется в модуле UserForm1 для объявления переменной данного типа. 
+  Эта переменная задает структуру в файле произвольного доступа. Имя открываемого 
+  или вновь создаваемого файла вводится в переменную ИмяФайла. Свободный номер 
+  для файла получается при помощи функции FreeFile и записывается в переменную 
+  Номер.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Итак, в редакторе 
+  форм создадим диалоговое окно для работы с файлом произвольного доступа (рис. 
+  У14.2).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Обсудим, 
+  как приведенная ниже программа решает описанную задачу и что в ней происходит.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="573">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="203" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="417" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="186"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="203" HEIGHT="186"> 
+        <DIV WIDTH="203" HEIGHT="186"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">UserForm Initialize<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="417" HEIGHT="186"> 
+        <ol>
+          <li> 
+            <DIV WIDTH="417" HEIGHT="186"> <font face="Times New Roman, Times, serif" size="3">Активизирует 
+              диалоговое окно. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="417" HEIGHT="186"><font face="Times New Roman, Times, serif" size="3"> 
+              При помощи процедуры Управление задает режим доступа к элементам 
+              управления. Пользователю доступны только поле и кнопка Открытие 
+              файла .</font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="417" HEIGHT="186"> <font face="Times New Roman, Times, serif" size="3"> 
+              Задает первоначальный заголовок диалогового окна и надписи с номером 
+              текущей записи. 4. Выводит рисунки (стрелки) на поверхность двух 
+              кнопок.<BR>
+              </font></DIV>
+          </li>
+        </ol>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="186"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="301"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="203" HEIGHT="301"> 
+        <DIV WIDTH="203" HEIGHT="301"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            Открытие файла запускает на выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButton4_Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="417" HEIGHT="301"> 
+        <ol>
+          <li> 
+            <DIV WIDTH="417" HEIGHT="301"> <font face="Times New Roman, Times, serif" size="3"> 
+              Открывает или создает файл по имени, которое введено в поле со списком 
+              Открытие файла .</font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="417" HEIGHT="301"><font face="Times New Roman, Times, serif" size="3">Считывает 
+              первую запись из файла в диалоговое окно при помощи процедуры Показать 
+              Запись .<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="417" HEIGHT="301"> <font face="Times New Roman, Times, serif" size="3"> 
+              При помощи процедуры Управление задает режим доступа к элементам 
+              управления: пользователю теперь недоступны поле со списком и кнопка 
+              Открытие файла, а все остальные элементы управления, наоборот, становятся 
+              доступными.</font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="417" HEIGHT="301"><font face="Times New Roman, Times, serif" size="3">В 
+              надписи с номером текущей записи выводится также общее число записей 
+              открытого файла.<BR>
+              </font></DIV>
+          </li>
+        </ol>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="301"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="86"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="203" HEIGHT="86"> 
+        <DIV WIDTH="203" HEIGHT="86"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">SpinButton1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="417" HEIGHT="86"> 
+        <ol>
+          <li> 
+            <DIV WIDTH="417" HEIGHT="86"> <font face="Times New Roman, Times, serif" size="3">Устанавливает 
+              границы изменения счетчика. Отметим, что верхняя граница значения 
+              счетчика — число записей, может изменяться по ходу программы.</font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="417" HEIGHT="86"><font face="Times New Roman, Times, serif" size="3">Выводит 
+              текущее значение счетчика в пол Номер записи .<br>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="417" HEIGHT="86"><font face="Times New Roman, Times, serif" size="3">Считывает 
+              текущую запись из файла в диалоговое окно при помощи процедуры показать 
+              Запись .</font><font face="Times New Roman, Times, serif" size="3"><BR>
+              </font></DIV>
+          </li>
+        </ol>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="86"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="203" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="417" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="674">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="199" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="414" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="105"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="199" HEIGHT="105"> 
+        <DIV WIDTH="199" HEIGHT="105"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            Новая запись запускает на выполнение процедуру <BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButtonl_Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="414" HEIGHT="105"> 
+        <DIV WIDTH="414" HEIGHT="105"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Создает новую 
+            запись в конце файла.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="105"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="105"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="199" HEIGHT="105"> 
+        <DIV WIDTH="199" HEIGHT="105"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            Записать изменения запускает на выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButton2_Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="414" HEIGHT="105"> 
+        <DIV WIDTH="414" HEIGHT="105"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Считывает из 
+            диалогового окна в текущую запись файла информацию при помощи процедуры 
+            ЗаписатьЗапись .<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="105"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="83"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="199" HEIGHT="83"> 
+        <DIV WIDTH="199" HEIGHT="83"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            Закрыть запускает на выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButton3 
+            Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="414" HEIGHT="83"> 
+        <DIV WIDTH="414" HEIGHT="83"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Закрывает открытый 
+            файл и диалоговое окно.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="83"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="85"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="199" HEIGHT="85"> 
+        <DIV WIDTH="199" HEIGHT="85"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            запускает на выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButton5 
+            Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="414" HEIGHT="85"> 
+        <DIV WIDTH="414" HEIGHT="85"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Осуществляет 
+            переход на последнюю запись.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="85"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="85"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="199" HEIGHT="85"> 
+        <DIV WIDTH="199" HEIGHT="85"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            запускает на выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButton6 
+            Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="414" HEIGHT="85"> 
+        <DIV WIDTH="414" HEIGHT="85"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Осуществляет 
+            переход на первую запись.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="85"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="199" HEIGHT="46"> 
+        <DIV WIDTH="199" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Показать Запись<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="414" HEIGHT="46"> 
+        <DIV WIDTH="414" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выводит в поля 
+            диалогового окна запись с номером, указанным в переменной текущаяЗапись 
+            .<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="199" HEIGHT="64"> 
+        <DIV WIDTH="199" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Записать Запись<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="414" HEIGHT="64"> 
+        <DIV WIDTH="414" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Записывает в 
+            файл из полей диалогового окна запись с номером, указанным в переменной 
+            текущаяЗапись .<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="199" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="414" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">На листе 
+  стандартного модуля наберите описание пользовательского типа:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Option Explicit<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Public Type 
+  СтудентТуре<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Фамилия As String 
+  * 30<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Имя As String 
+  * 30<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Группа As String 
+  * 11</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Type</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">На листе 
+  модуля userForm1 наберите следующую программу:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Option Explicit 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Переменные 
+  уровня модуля </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Студент 
+  Аs СтудентТуре </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim ДлинаФайла 
+  As Long </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim ДлинаЗаписи 
+  As Long </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim ИмяФайла 
+  As String </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim ТекущаяЗапись 
+  As Long </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim ПоследняяЗапись 
+  As Long<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Номер As 
+  Integer</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub ПоказатьЗапись()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Get #Номер, 
+  ТекущаяЗапись, Студент</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> With Студент<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBoxl.Text 
+  = Trim(.Фамилия)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox2.Text 
+  = Trim(.Имя)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBoxB.Text 
+  = Trim(.Группа)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox4.Text 
+  = ТекущаяЗапись<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">UserFormi.Caption 
+  = TextBoxl.Text &amp; &quot; &quot; &amp; TextBox2.Text </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub ЗаписатьЗапись()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> With Студент<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Фамилия = TextBoxl.Text 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Имя = TextBox2.Text 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Группа = TextBox3.Text 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Put Шомер, ТекущаяЗапись, 
+  Студент End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButtonl_Click{} </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Кнопка Новая 
+  запись '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">UserForml.Caption 
+  = &quot;Информация о студентах&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'ЗаписатьЗапись<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ПоследняяЗапись 
+  = ПоследняяЗапись + 1 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">With Студент<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Фамилия = &quot;&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Имя = &quot;&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Группа = &quot;&quot; 
+  End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">I'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBoxl.Text 
+  =&gt; &quot;&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">TextBox2.Text 
+  = &quot;&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">TextBox3.Text 
+  = &quot;&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox4.Text 
+  = CStr{ПоследняяЗапись} </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Put #Номер, 
+  ПоследняяЗапись, Студент </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ТекущаяЗапись 
+  = ПоследняяЗапись </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton2_Click ()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Кнопка Записать 
+  изменения '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Записать Запись<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton3_Click()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Кнопка Закрыть 
+  '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Close #Номер 
+  UserForml.Hide </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton4_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Открытие файла 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Начало As 
+  Boolean<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Управление СЗаписями:=Тгие, 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">СФайлом:=False 
+  ИмяФайла = Trim(ComboBoxl.Text)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ДлинаЗаписи 
+  = Len(Студент) '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Номер = FreeFile<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Open ИмяФайла</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> For Random As 
+  Номер Len = ДлинаЗаписи '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ТекущаяЗапись 
+  = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ПоследняяЗапись 
+  = FileLen(ИмяФайла) / ДлинаЗаписи<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Начало = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If ПоследняяЗапись 
+  = 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">UserForml.Caption 
+  = &quot;Информация о студентах&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ПоследняяЗапись 
+  = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Начало = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ПоказатьЗапись<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Начало = 
+  False Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">UserForml.Caption 
+  = &quot;Информация о студентах&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBoxl.SetFocus<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Label4.Caption 
+  = &quot;Номер записи из &quot; &amp; ПоследняяЗапись</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> ' <BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton5_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Переход на 
+  последнюю запись </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ТекущаяЗапись 
+  = ПоследняяЗапись </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">SpinButtonl.Value 
+  = ПоследняяЗапись Показать Запись</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton6_Click()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Переход на 
+  первую запись</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">SpinButtonl.Value 
+  = 1 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ТекущаяЗапись 
+  = 1 ПоказатьЗапись<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  SpinButtonl_Change() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">SpinButtonl.Min 
+  = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">SpinButtonl.Max 
+  = ПоследняяЗапись<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ТекущаяЗапись 
+  = SpinButtonl.Value<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ПоказатьЗапись 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  UserForeinitialize () </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim ИмяПапки 
+  As String</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Dim ИмяФайла 
+  As String </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim ДлинаПути 
+  As Integer</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Dim i As Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Управление СЗаписями:=False, 
+  СФайлом:=Тгие<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">UserForml.Caption 
+  = &quot;Информация о студентах&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With CommandButtonS<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Picture = LoadPicture(&quot;vbal7f.bmp&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.PicturePosition 
+  = fmPicturePositionCenter<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With CommandButton6<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Picture = LoadPicture(&quot;vbal7b.bmp&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.PicturePosition 
+  = fmPicturePositionCenter<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Label4.Caption 
+  = &quot;Номер записи&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ComboBoxl.Clear<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ИмяПапки = CurDir<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ДлинаПути = 
+  Len(ИмяПапки}<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With Application.FileSearch</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> .FileName = 
+  &quot;*.dat&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.SearchSubFolders 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If .Execute(SortBy:=msoSortByFileName,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">sortorder:=msoSortOrderAscending) 
+  &gt; 0 Then</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> For i = 1 To 
+  .FoundFiles.Count<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ИмяФайла = Right(.FoundFiles(i), 
+  Len{.FoundFiles(i))<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ДлинаПути - 
+  1) ComboBoxl.Addltem ИмяФайла </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next i</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ComboBoxl.Listlndex 
+  = 0 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Управление(СЗаписями 
+  As Boolean, СФайлом As Boolean) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim ЭлементУправления 
+  As Object<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For Each ЭлементУправления 
+  In Controls<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ЭлементУправления.Enabled 
+  = СЗаписями Next ЭлементУправления CommandButton4.Enabled = СФайлом </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ComboBox1.Enabled 
+  = СФайлом </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В рассмотренном 
+  выше приложении последовательно считывалась каждая запись из файла. Если файл 
+  с данными небольшой, то иногда удобнее создать массив, компоненты которого являются 
+  записями из файла произвольного доступа, а в приложении уже работать не с записями 
+  из файла, а с элементами массива. В приведенной ниже программе записи из файла 
+  Student.dat, созданного в приложении, считываются в массив студенты с последующим 
+  их выводом на рабочий лист.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub СчитываниеФайлаВМассив 
+  ()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim i As Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Студенты() 
+  As СтудентТуре<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Студент 
+  As СтудентТуре<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ДлинаЗаписи 
+  = Len(Студент)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ПоследняяЗапись 
+  = FileLen(&quot;Student.dat&quot;) / ДлинаЗаписи + 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ReDim Студенты(1 
+  To ПоследняяЗапись)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Open &quot;Student.dat&quot; 
+  For Random As #1 Len = ДлинаЗаписи<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">i = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Do Until EOF(l)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Get #1, i, Студенты(i)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Вывод записи 
+  на рабочий лист<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Cells (i, 1) 
+  .Value = Студенты(i) .Фамилия<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Cells (i, 2).Value 
+  = Студенты(i).Имя<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Cells(i, 3).Value 
+  = Студенты(i).Группа<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">i = i + 1 Loop 
+  Close #1</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="6"></a>Создание 
+  заставки приложения</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">При создании 
+  приложений довольно часто принято перед началом его работы создавать заставки 
+  с пояснительным текстом: какие функции выполняет приложение, кто является его 
+  автором.<BR>
+  </font></P>
+<P align="left"><img src="14.3.gif" width="412" height="334"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У14.3. </I></B><I>Пример заставки приложения</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">При многократном 
+  использовании приложения появление подобной заставки может начать действовать 
+  на пользователя, как красная тряпка на быка, поэтому, чтобы не злоупотреблять 
+  терпением и временем пользователя в подобных случаях, необходимо предусмотреть 
+  режим отказа от вывода заставки при активизации документа. Естественно, программа 
+  должна хранить где-то информацию о режиме работы: с заставкой или без нее. Эту 
+  и подобную информацию об установках режимов работы приложения обычно хранят 
+  в создаваемых дополнительно ini-файлах.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Рассмотрим 
+  простейший пример создания заставки приложения (рис. У14.3).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">На стандартном 
+  листе модуля наберите приведенную ниже процедуру, которая позволит запустить 
+  диалоговое окно заставки. В области описания переменных уровня модуля описывается 
+  пользовательский тип, используемый при записи информации о режиме работы приложения 
+  в файл Файл.INI.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Переменные 
+  уровня приложения '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Туре ФАЙЛ_INI<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Информация As 
+  String * 30 Код As Boolean<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Type '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Public Заставка 
+  As ФАЙЛ_INI<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' <BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3"><I>Sub </I>ПоказатьЗаставку() 
+  '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With UserForml<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Picture = LoadPicture(&quot;c:\my_doc\book_ex\bhv.bmp&quot;) 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.PictureAlignment 
+  = fmPictureAlignmentCenter </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.PictureSizeMode 
+  = fmPictureSizeModeZoom </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Caption = &quot;Пример 
+  заставки&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.BorderColor 
+  = vbBlue </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.BorderStyle 
+  = fmBorderStyleSingle </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.CheckBoxl.BackColor 
+  = vbWhite .Show<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">На листе 
+  модуля UserForm1 наберите следующую процедуру, которая при закрытии заставки 
+  позволит считать из флажка не отображать выбранный пользователем режим работы 
+  для следующего открытия приложения.</font><font face="Courier New, Courier, mono" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub<I> 
+  </I>UserFormJIerminate()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Open &quot;Файл.INI&quot; 
+  For Random As #1</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Len = Len(Заставка)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With Заставка<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Информация 
+  = &quot;Отображать заставку:&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If CheckBoxl.Value 
+  = False Then .Код = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If CheckBoxl.Value 
+  = True Then .Код = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Put #1, 1, Заставка 
+  Close #1</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub<BR>
+  </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">На листе 
+  модуля ThisWorkbook наберите следующую процедуру, которая при открытии рабочей 
+  книги в зависимости от указанного в файле Файл.INI режима либо будет отображать 
+  заставку, либо нет.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Workbook_Open()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Open &quot;Файл.INI&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> For Random As 
+  #1</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Len = Len(Заставка)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Get #1, 1, Заставка 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Close #1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Заставка.Код 
+  = False Then ПоказатьЗаставку </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub</font></P>
+</BODY>
+</HTML>
+

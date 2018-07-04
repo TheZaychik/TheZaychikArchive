@@ -1,0 +1,826 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+<ul>
+  <li><b><font face="Times New Roman" size=3><a href="#1">УРОК 6. ТЕМА: УПРАВЛЕНИЕ 
+    РАЗМЕРОМ И ПЕРЕМЕЩЕНИЕМ ЭЛЕМЕНТОВ УПРАВЛЕНИЯ</a></font></b> </li>
+  <ul>
+    <li><font face="Times New Roman" size=3><a href="#2">ЦЕЛЬ УРОКА</a></font> 
+    </li>
+    <li><font face="Times New Roman" size=3><a href="#3">ТЕОРИЯ</a></font> </li>
+    <li><font face="Times New Roman" size=3><a href="#4">ПРАКТИКА</a></font> 
+      <ul>
+        <li><font face="Times New Roman" size=3><a href="#5">Пример управления 
+          размером и перемещением элемента управления</a></font> </li>
+        <li><font face="Times New Roman" size=3><a href="#6">Перемещение элемента 
+          управления при помощи операции drag-and-drop </a></font> </li>
+      </ul>
+    </li>
+    <li><font face="Times New Roman" size=3><a href="#7">САМОСТОЯТЕЛЬНОЕ ЗАДАНИЕ</a></font> 
+    </li>
+  </ul>
+</ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Урок 6</B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Тема:</font></font> 
+  <font face="Times New Roman, Times, serif" size="5">Управление размером и перемещением 
+  элементов управления</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="2"></a>Цель 
+  урока</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В уроке разрабатывается 
+  приложение, позволяющее управлять размерами диалогового окна и вычислять текущий 
+  объем вклада при равномерных выплатах и постоянной процентной ставке. Конструируя 
+  данное приложение, вы узнаете, как:<BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Управлять размерами 
+    диалогового окна<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Задавать последовательности 
+    элементов управления в виде массива объектов<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Определять текущий 
+    объем вклада </font></li>
+  <li><font face="Times New Roman, Times, serif" size="3"> Задавать параметры 
+    счетчика<BR>
+    </font></li>
+</ul>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Кроме того, 
+  в этом уроке приведены примеры, показывающие, как можно управлять размерами 
+  элементов управления, перемещать их программно и при помощи метода drag-and-drop 
+  по поверхности диалогового окна.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="3"></a>Теория</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В первый 
+  свой рабочий день в банке молодой программист Нестор Щукин получил задание от 
+  менеджера составить приложение, вычисляющее чистый текущий объем инвестиций 
+  от вкладов банка. Допустим, что с помощью этого приложения необходимо найти 
+  чистый текущий объем инвестиции 10 000 руб. при 7% годовой ставке, при которой 
+  банк получает годовые доходы 2 000 руб., 4 000 руб. и 7 000 руб. в последующие 
+  три года после вложения денег в инвестиционный проект.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Прежде чем 
+  описывать, с какими мыслями тялся за выполнение своего первого задания Нестор 
+  Щукин, поговорим немного о том, что же такое чистый текущий объем инвестиции. 
+  Предположим, что банк осуществляет некоторый инвестиционный проект, который 
+  через <I>k1</I> год приносит прибыль или требует дополнительных капиталовложений 
+  в объеме <I>P<SUB>k1</SUB></I>денег, </font><font face="Times New Roman, Times, serif" size="3">через 
+  <I>k-i </I>года приносит прибыль или требует дополнительных капиталовложений 
+  в объеме <I>P<SUB>k</SUB> </I>денег и т. д., через <I>k<SUB>n</SUB> </I>лет 
+  приносит прибыль или требует<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">дополнительных 
+  капиталовложений в объеме /V денег. Тогда чистый текущий объем инвестиции при 
+  <I>i% </I>годовой ставке равен:<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><I><font face="Courier New, Courier, mono">P<SUB>k1</SUB>/(1+i)<SUP>k1</SUP> 
+  + ... + P<SUB>kn</SUB>(d+i)<SUP>kn</SUP>,</font></I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">где <I>Р<SUB>kn</SUB> 
+  , </I>которые соответствуют прибыли, входят в формулу со знаком плюс, </font><font face="Times New Roman, Times, serif" size="3">а 
+  те, которые соответствуют дополнительным инвестициям - со знаком минус.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Итак, мы 
+  разобрались с тем, что должен подготовить Нестор Щукин. Осталось только узнать, 
+  как он это сделал. Нестор Щукин был амбициозным молодым человеком и, что само 
+  собой разумеется, решением своей первой задачи он хотел произвести наиболее 
+  благоприятное впечатление на менеджера, в надежде доказать свою незаменимость 
+  и необходимость, а может быть даже повышения зарплаты. На пользователей обычно 
+  впечатляюще действуют всевозможные динамические штучки, которые можно производить 
+  с диалоговым окном и элементами управления. Поэтому Нестор решил создать приложение 
+  с диалоговым окном, изменяющим свой размер в зависимости от числа членов в формуле, 
+  вычисляющей чистый текущий объем инвестиции.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="4"></a>Практика</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Для решения 
+  задачи нахождения чистого текущего объема инвестиций и управления размером диалогового 
+  окна с помощью редактора пользовательских форм cоздадим диалоговое окно Чистый 
+  текущий объем инвестиций (рис. У6.1). Отметим, что данное приложении предназначено 
+  для расчета до шести финансовых операций (инвестиций и прибыли).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">При инициализации 
+  диалогового окна его отображение на экране имеет меньшую ширину (в нем только 
+  поля ввода для двух выплат), хотя при его конструировании в него помещается 
+  поля ввода для всех шести выплат. При помощи счетчика Число операций можно управлять 
+  шириной диалогового окна так, чтобы было достаточно места для размещения в нем 
+  того количества полей ввода данных, которое задается счетчиком (рис. У6.2).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Обсудим, 
+  как приведенная ниже программа решает перечисленные задачи и что происходит 
+  в программе.<BR>
+  </font></P>
+<P align="left"><img src="6.1.gif" width="504" height="445"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У6.1. </I></B><I>Диалоговое окно Чистый текущий объем инвестиций</I><BR>
+  </font></P>
+<P align="left"><img src="6.2.gif" width="452" height="336"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У6.2. </I></B><I>Диалоговое окно </I></font></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><I>Чистый 
+  текущий объем инвестиций со значением счетчика </I></font></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><I>Число операций 
+  равным 4</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="340">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="207" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="412" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="66"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="207" HEIGHT="66"> 
+        <DIV WIDTH="207" HEIGHT="66"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><BR>
+            UserForm_Initialize </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="412" HEIGHT="66"> 
+        <ol>
+          <li> 
+            <DIV WIDTH="412" HEIGHT="66"><font face="Times New Roman, Times, serif" size="3">Активизирует 
+              диалоговое окно. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="412" HEIGHT="66"><font face="Times New Roman, Times, serif" size="3"> 
+              Назначает клавише &lt;Esc&gt; функцию кнопки отмена, а клавише &lt;Enter&gt; 
+              — вычислить.<br>
+              </font> </DIV>
+          </li>
+          <li>
+            <DIV WIDTH="412" HEIGHT="66"><font face="Times New Roman, Times, serif" size="3">Устанавливает 
+              максимальное и минимальное значения счетчика, а также его значение 
+              при инициализации диалогового окна.<BR>
+              </font></DIV>
+          </li>
+        </ol>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="66"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="128"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="207" HEIGHT="128"> 
+        <DIV WIDTH="207" HEIGHT="128"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            вычислить запускает на выполнение процедуры<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CoramandButtonl_Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="412" HEIGHT="128"> 
+        <ol start=4>
+          <li>
+            <DIV WIDTH="412" HEIGHT="128"> <font face="Times New Roman, Times, serif" size="3">Создает 
+              массив, элементами которого являются инвестиции и прибыли, и массив 
+              лет, когда совершались операции. 5. Проверяет корректность ввода 
+              данных. 6. Вычисляет чистый текущий объем инвестиций.<BR>
+              </font></DIV>
+          </li>
+        </ol>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="128"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="80"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="207" HEIGHT="80"> 
+        <DIV WIDTH="207" HEIGHT="80"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            отмена запускает на выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CoramandButton2_Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="412" HEIGHT="80"> 
+        <DIV WIDTH="412" HEIGHT="80"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Закрывает диалоговое 
+            окно.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="80"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="66"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="207" HEIGHT="66"> 
+        <DIV WIDTH="207" HEIGHT="66"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">SpinButtonl 
+            Change<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="412" HEIGHT="66"> 
+        <DIV WIDTH="412" HEIGHT="66"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Изменяет при 
+            помощи счетчика размер диалоге вого окна благодаря управлению свойством 
+            width в зависимости от введенного числа операций.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="66"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="207" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="412" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Переменная 
+  уровня модуля<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim n As Integer 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' n - число 
+  операций </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButtonl_Click() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  расчета чистого текущего объема инвестиций</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Операции(1 
+  То 6) As Double<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Годы(1 То 
+  6) As Byte<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Процент 
+  As Double<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim i As Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim ТекущийОбъем 
+  As Double<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Операции - 
+  массив инвестиций и прибылей<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Годы - массив 
+  лет, когда совершались операции<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процент - 
+  годовая процентная ставка<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' ТекущийОбъем 
+  - объем чистого начального.вклада<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' i - вспомогательная 
+  переменная<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim ПолеВвода(1 
+  То 6, 1 To 2) As Object </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Вспомогательный 
+  массив объектов, который будет </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' использоваться 
+  при вводе данных из полей ввода<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Задание компонент 
+  массива объектов<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set ПолеВвода(1, 
+  1) = TextBoxl</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Set ПолеВвода 
+  (2, 1) = TextBox2 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Set ПолеВвода(3, 
+  1) = TextBox3 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Set ПолеВвода(4, 
+  1) = TextBox4 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Set ПолеВвода(5, 
+  1) = TextBox5 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Set ПолеВвода(6, 
+  1) = TextBox6 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Set ПолеВвода(1, 
+  2) = TextBoxl0 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Set ПолеВвода(2, 
+  2),= TextBoxl1 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Set ПолеВвода(3, 
+  2) '= TextBoxl2 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Set ПолеВвода(4, 
+  2) = TextBoxl3 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Set ПолеВвода(5, 
+  2) = TextBoxl4<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set ПолеВвода(6, 
+  2) = TextBoxl5 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Проверка того, 
+  являются ли введенные в диалоговом окне значения числами </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 То 
+  n<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If IsNumeric(ПолеВвода(i, 
+  1).Text) = False Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Ошибка 
+  в размере прибыли или инвестиции&quot;,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">vblnformation, 
+  &quot;Расчет инвестиции&quot; ПолеВвода(i, l).SetFocus </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Exit Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next i </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  n<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If IsNumeric(ПолеВвода(i, 
+  2).Text) = False Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Ошибка 
+  в годе&quot;, vblnformation, &quot;Расчет инвестиции&quot; ПолеВвода(i, 2).SetFocus 
+  Exit Sub End If Next i<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If isNumeric(TextBoxS.Text) 
+  = False Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Ошибка 
+  в процентной ставке&quot;, vblnformation,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;Расчет 
+  инвестиции&quot; TextBoxS.SetFocus<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Ввод в массивы 
+  Операции и Годы данных из диалогового окна </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 То 
+  n<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Операции(i) 
+  = CDbl(ПолеВвода(i, l).Text)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Годы(1) = CByte(ПолеВвода(i, 
+  2).Text) Next i </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Ввод процентной 
+  ставки '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Процент = CDbl(TextBoxS.Text) 
+  / 100<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Расчет чистого 
+  текущего объема инвестиции<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ТекущийОбъем 
+  = 0 For i = 1 То п<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ТекущийОбъем 
+  = ТекущийОбъем + Операции(i) / (1 + Процент) ^ Годы(1)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Next i<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Вывод в диалоговом 
+  окне величины чистого текущего объема инвестиций<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ТекущийОбъем 
+  = Format(ТекущийОбъем, &quot;Fixed&quot;) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">TextBox9.Text 
+  = CStr(ТекущийОбъем) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton2_Click() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  закрывает диалоговое окно</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">UserForml.Hide 
+  End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  SpinButtonl_Change()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  изменения размера диалогового окна </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' в зависимости 
+  от введенного числа операций<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Вывод числа 
+  операций со счетчика в поле ввода<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBoxV.Text 
+  = CStr(SpinButtonl.Value)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Присвоение 
+  значения переменной n (числа операций) из поля ввода </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">n = CInt(TextBox7.Text)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Изменение 
+  размера диалогового окна </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">UserForml.Width 
+  = 120 + (n - 1) * 50<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  UserForm_Initialize() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  активизации диалогового окна Чистый текущий объем инвестиций<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Устанавливается 
+  первоначальное значение счетчика<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">SpinButtonl.Value 
+  = 2<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Запрет не 
+  программного ввода данных в поля Процентная ставка<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' и Чистый текущий 
+  объем инвестиций </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox7.Enabled 
+  = False TextBox9.Enabled = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Назначение 
+  клавише &lt;Enter&gt; функции кнопки Вычислить</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">CommandButtonl.Default 
+  = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Назначение 
+  функции клавиши &lt;Esc&gt; кнопке Отмена </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">CommandButton2.Cancel 
+  = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Установка 
+  максимального и минимального<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' допустимого 
+  значений счетчика, а также текста всплывающей подсказки<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With SpinButton1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Max = 6<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Min = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.ControlTipText 
+  = &quot;Ввод числа операций&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="5"></a>Пример 
+  управления размером</font> </font><font face="Times New Roman, Times, serif" size="4">и 
+  перемещением элемента управления</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Рассмотрим 
+  простой пример диалогового окна похождения колобка (рис. У6.3), в котором при 
+  нажатии на кнопку катись! Колобок перемещается по поверхности формы, а при нажатии 
+  на кнопку Расти <I>\ </I>он начинает увеличиваться в размерах. На рис. У6.4 
+  показан вид Колобка после нескольких нажатий на кнопки катись! и Расти!. Приведенная 
+  ниже программа позволяет реализовать описанные выше действия Колобка.<BR>
+  </font></P>
+<P align="left"><img src="6,3.gif" width="394" height="325"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У6.3. </I></B><I>Диалоговое окно Похождения Колобка</I><BR>
+  </font></P>
+<P align="left"><img src="6.4.gif" width="394" height="325"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У6.4. </I></B><I>Вид Колобка после нескольких движений</I><BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButtonl_Click() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Передвижение 
+  Колобка по поверхности формы </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Imagel.Top 
+  &gt; 0 And Imagel.Left &gt; 0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Imagel.Move 
+  Imagel.Left - 5, Imagel.Top - 6<I> </I></font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Else<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Imagel.Visible 
+  = False</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton2_Click()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Изменение 
+  размера Колобка </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Imagel.Height 
+  = Imagel.Height + 3 Imagel. Width = Imagel.Width + 3</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  UserForm_Initialize() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3"><I>' </I>Инициализация 
+  диалогового окна Похождения Колобка<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With Imagel<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Изображение 
+  колобка хранится в файле Dot.bmp<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Picture = LoadPicture(&quot;Dot.bmp&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.PictureAlignment 
+  = fmPictureAlignmentTopLeft<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.PictureSizeMode 
+  = fmPictureSizeModeZoom<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.BorderStyle 
+  = fmBorderStyleNone<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Visible = True 
+  End With End Sub<BR>
+  </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="6"></a>Перемещение 
+  элемента управления при помощи операции drag-and-drop</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Рассмотрим 
+  диалоговое окно новые похождения колобка (рис. У6.5), с которым связана ниже 
+  приведенная программа, дающая два простых примера программирования операций 
+  drag-and-drop.<BR>
+  </font></P>
+<P align="left"><img src="6.5.gif" width="394" height="325"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У6.5. </I></B><I>Диалоговое окно Новые похождения Колобка</I><BR>
+  </font></P>
+<ol>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Если расположить указатель 
+    мыши на Колобке и нажать правую кнопку становится печальным Если далее перемещать 
+    указатель мыши при нажатой правой кнопке по поверхности диалогового окна, 
+    то колобок будет передвигаться вслед за указателем мыши. Настроение колобка 
+    запрограммировано в процедурах веселыйКолобок и печальныйколобок. Изменение 
+    настроения колобка при нажатии и отпускании правой клавиши мыши запрограммировано 
+    в процедурах Image1_MouseDown и Image1_MouseUp, а перемещение — в Imagel_MouseMove.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Если расположить указатель 
+    мыши на надписи колобок и переместить указатель мыши при нажатой правой кнопке 
+    в область второй надписи, обведенной рамкой, а там уже отпустить правую клавишу 
+    мыши, то во вторую надпись будет скопирован текст колобок. Процедура Labeli_MouseMove 
+    копирует заголовок первой надписи в объект Dataobject, играющий роль буфера 
+    обмена, процедура Label2_BeforeDragOver контролирует операции drag-and-drop 
+    во время перемещения указателя мыши, a Label2_BeforeDropOrPaste в момент отпускания 
+    правой кнопки мыши.<BR>
+    </font></li>
+</ol>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Определение 
+  переменной уровня модуля<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Kono6oкDataObject 
+  As DataObject </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  imagel_MouseDown(ByVal Button As Integer,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ByVal Shift 
+  As Integer, ByVal X As Single, ByVal Y As Single)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> If Button = 
+  1 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'ПечальныйКолобок 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Imagel_MouseUp(ByVal Button As Integer,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ByVal Shift 
+  As Integer, ByVal X As Single, ByVal Y As Single) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If Button = 1 
+  Then ВеселыйКолобок </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Imagel_MouseMove(ByVal Button As Integer,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ByVal Shift 
+  As Integer, ByVal X As Single, ByVal Y As Single) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If Button = 1 
+  Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">IfX^2+Y^2 = 
+  0 Then A = 0 В = 0 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Else<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">A = X / Sqr(X 
+  <SUP>л</SUP> 2 + Y <SUP>л</SUP> 2) В = Y / SqrtX <SUP>л</SUP> 2 + Y <SUP>л</SUP> 
+  2)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End if With 
+  Imagel<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Top = Imagel.Top 
+  + В<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Left = Imagel.Left 
+  + A </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Labell_MouseMove(ByVal Button As Integer,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ByVal Shift 
+  As Integer, ByVal X As Single, ByVal Y As Single)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> If Button = 
+  1 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set КoлoбoкDataObject 
+  = New DataObject<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim ТипПеремещения 
+  As Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Kono6oKDataObject.SetText 
+  Labell.Caption<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ТипПеремещения 
+  = КoлoбoкDataObject.StartDrag</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Label2_BeforeDragOver(ByVal Cancel As MSForms.ReturnBoolean, </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ByVal Data As 
+  MSForms.DataObject,</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> ByVal X As Single, 
+  ByVal Y As Single,</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> ByVal DragState 
+  As Long, </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ByVal Effect 
+  As MSForms.ReturnEffeet, </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ByVal Shift As 
+  Integer)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Cancel = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Effect = fmDropEffectCopy<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Label2_BeforeDropOrPaste(ByVal Cancel<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">As MSForms.ReturnBoolean, 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ByVal Action 
+  As Long, </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ByVal Data As 
+  MSForms.DataObject,</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> ByVal X As Single,</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> ByVal Y As Single,</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> ByVal Effect 
+  As MSForms.ReturnEffeet, </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ByVal Shift As 
+  Integer)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Cancel = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Effect = fmDropEffectCopy<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Label2. Caption 
+  = KолoбoкDataObject .GetText<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  UserForm_Initialize()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Labell.BorderStyle 
+  = fmBorderStyleSingle</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Label2.BorderStyle 
+  = fmBorderStyleSingle </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">With Imagel<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.PictureAlignment 
+  = fmPictureAlignmentTopLeft<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.PictureSizeMode 
+  = fmPictureSizeModeZoom<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.BorderStyle 
+  = fmBorderStyleNone End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'ВеселыйКолобок</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub ВесельйКолобок()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Imagel.Picture 
+  = LoadPicture(&quot;Dot_a.bmp&quot;)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub ПечальныйКолобок()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Image1.. Picture 
+  = LoadPicture (&quot;Dotl_a.bmp&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">) End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="4"><B><a name="7"></a>Самостоятельное 
+  задание</B></font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Разработать 
+  приложение с диалоговым окном сумма квадратов (рис. У6.6), которое позволит:<BR>
+  </font></P>
+<ol>
+  <li> <font face="Times New Roman, Times, serif" size="3"> При помощи счетчиков 
+    управлять шириной и высотой диалогового окна.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Вычислять сумму квадратов 
+    элементов, введенных в поля ввода данных.<BR>
+    </font></li>
+</ol>
+<P align="left"><img src="6.6.gif" width="398" height="413"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У6.6. </I></B><I>Диалоговое окно Сумма квадратов</I></font></P>
+</BODY>
+</HTML>
+

@@ -1,0 +1,3711 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+<ul>
+  <li><b><font face="Times New Roman" size=3><a href="#1">ГЛАВА 2. ОСНОВНЫЕ ОБЪЕКТЫ 
+    VBA</a></font></b> </li>
+  <ul>
+    <li><font face="Times New Roman" size=3><a href="#2">ОБЪЕКТ APPLICATION</a></font> 
+      <ul>
+        <li><font face="Times New Roman" size=3><a href="#3">Свойства объекта 
+          Application</a></font> </li>
+        <li><font face="Times New Roman" size=3><a href="#4">Методы объекта Application</a></font> 
+        </li>
+        <li><font face="Times New Roman" size=3><a href="#5">События объекта Application</a></font> 
+        </li>
+      </ul>
+    </li>
+    <li><font face="Times New Roman" size=3><a href="#6">ОБЪЕКТ WORKBOOK и СЕМЕЙСТВО 
+      WORKBOOKS</a></font> 
+      <ul>
+        <li><font face="Times New Roman" size=3><a href="#7">Свойства объекта 
+          Workbook и семейства Workbooks</a></font> </li>
+        <li><font face="Times New Roman" size=3><a href="#8">Методы объекта Workbook 
+          и семейства Workbooks</a></font> </li>
+        <li><font face="Times New Roman" size=3><a href="#9">События объекта Workbook 
+          и семейства Workbooks</a></font> </li>
+      </ul>
+    </li>
+    <li><font face="Times New Roman" size=3><a href="#10">ОБЪЕКТ WORKSHEET и СЕМЕЙСТВО 
+      WORKSHEETS</a></font> 
+      <ul>
+        <li><font face="Times New Roman" size=3><a href="#11">Свойства объекта 
+          Worksheet и семейства Worksheets</a></font> </li>
+        <li><font face="Times New Roman" size=3><a href="#12">Методы объекта Worksheet 
+          и семейства Worksheets</a></font> </li>
+        <li><font face="Times New Roman" size=3><a href="#13">События объекта 
+          Worksheet</a></font> </li>
+      </ul>
+    </li>
+    <li><font face="Times New Roman" size=3><a href="#14">ОБЪЕКТЫ RANGE и SELECTION</a></font> 
+      <ul>
+        <li><font face="Times New Roman" size=3><a href="#15">Адресация ячеек 
+          </a></font> </li>
+        <li><font face="Times New Roman" size=3><a href="#16">Задание групп строк 
+          и столбцов с помощью объекта Range</a></font> </li>
+        <li><font face="Times New Roman" size=3><a href="#17">Связь объекта Range 
+          и свойства Cells</a></font> </li>
+        <li><font face="Times New Roman" size=3><a href="#18">Свойства и методы 
+          объекта Range</a></font> </li>
+      </ul>
+    </li>
+  </ul>
+</ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Глава 
+  2</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Основные 
+  объекты VBA</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="2"></a>Объект 
+  Application</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Объект Application 
+  (приложение) является главным в иерархии объектов Excel и представляет само 
+  приложение Excel. Он имеет более 120 свойств и 40 методов. Эти свойства и методы 
+  предназначены для установки общих параметров приложения Excel. Кроме того, объект 
+  Application позволяет вызывать более 400 встроенных функций рабочего листа при 
+  помощи конструкции вида:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Application.ФункцияРабочегоЛиста(Аргументы)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Например:<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="136">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="248" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="369" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="248" HEIGHT="26"> 
+        <DIV WIDTH="248" HEIGHT="26"> 
+          <P> <b><font face="Times New Roman, Times, serif" size="3">Application 
+            . Pi ( )<BR>
+            </font></b></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="369" HEIGHT="26"> 
+        <DIV WIDTH="369" HEIGHT="26"> 
+          <P> <b><font face="Times New Roman, Times, serif" size="3">Вычисление 
+            числа <I>п</I><BR>
+            </font></b></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="65"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="248" HEIGHT="65"> 
+        <DIV WIDTH="248" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Application. 
+            Pmt (Аргументы)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="369" HEIGHT="65"> 
+        <DIV WIDTH="369" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Определение 
+            постоянных периодических платежей при постоянной процентной ставке 
+            с помощью функции ППЛАТ (РМТ)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="65"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="248" HEIGHT="45"> 
+        <DIV WIDTH="248" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Application 
+            . Sum (Аргументы)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="369" HEIGHT="45"> 
+        <DIV WIDTH="369" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нахождение суммы 
+            значений из ячеек диапазона<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="248" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="369" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  несколько наиболее часто используемых свойств, методов и событий объекта Application.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="3"></a>Свойства 
+  объекта Application</font><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="111">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="33"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="33"> 
+        <DIV WIDTH="149" HEIGHT="33"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Свойства</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="33"> 
+        <DIV WIDTH="466" HEIGHT="33"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Выполняемые 
+            действия и допустимые значения</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="33"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="78"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="78"> 
+        <DIV WIDTH="149" HEIGHT="78"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ActiveWorkbook, 
+            </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3"> ActiveSheet 
+            </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">ActiveCell<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="78"> 
+        <DIV WIDTH="466" HEIGHT="78"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращают активный 
+            объект: рабочую книгу, лист, ячейку, диаграмму, диалоговое окно. Свойство 
+            ActiveCell содержится В ActiveSheet, а свойства ActiveSheet, ActiveChart 
+            И ActiveDialog в ActiveWorkbook.<BR>
+            </font></P>
+          </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="78"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="843">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="34"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="34"> 
+        <DIV WIDTH="156" HEIGHT="34"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Свойства</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="34"> 
+        <DIV WIDTH="466" HEIGHT="34"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Выполняемые 
+            действия и допустимые значения</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="34"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="22"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="22"> 
+        <DIV WIDTH="156" HEIGHT="22"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ActiveChart<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="22"> 
+        <DIV WIDTH="466" HEIGHT="22"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">В следующем 
+            примере в активной ячейке устанавливается по-<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="22"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="113"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="113"> 
+        <DIV WIDTH="156" HEIGHT="113"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ActiveDialog<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="113"> 
+        <DIV WIDTH="466" HEIGHT="113"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">лужирный шрифт 
+            и в нее вводится строка текста Отчет за май: With ActiveCell .Font. 
+            Bold = True .Value = &quot;Отчет за май&quot; End With<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="113"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="98"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="98"> 
+        <DIV WIDTH="156" HEIGHT="98"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ThisWorkbook<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="98"> 
+        <DIV WIDTH="466" HEIGHT="98"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает рабочую 
+            книгу, содержащую выполняющийся в данный момент макрос. Это свойство 
+            может возвращать рабочую книгу, отличную от возвращаемой свойством 
+            Active-Workbook, т. к. выполняемый макрос может находиться в неактивной 
+            книге<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="98"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="126"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="126"> 
+        <DIV WIDTH="156" HEIGHT="126"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Calculation<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="126"> 
+        <DIV WIDTH="466" HEIGHT="126"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Устанавливает 
+            режим вычислений. Допустимые значения: xlCalculationAutomatic (автоматический 
+            режим) xlCalculationManual (вычисления выполняются вручную)<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">xlCalculationSemiAutomatic 
+            (автоматический режим, не распространяется на таблицы)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="126"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="162"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="162"> 
+        <DIV WIDTH="156" HEIGHT="162"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Caption<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="162"> 
+        <DIV WIDTH="466" HEIGHT="162"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает текст 
+            в строке имени главного окна Excel. Установка свойства равным Empty 
+            возвращает заголовок, используемый по умолчанию. В следующем примере 
+            первая инструкция устанавливает в качестве заголовка окна приложения 
+            текст Отчет за 1999 год, а вторая возвращает имя окна, используемое 
+            по умолчанию, т. е. Microsoft Excel:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Application. 
+            Caption = &quot;Отчет за 1999 год&quot; Application. Caption = Empty<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="162"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="63"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="63"> 
+        <DIV WIDTH="156" HEIGHT="63"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">DisplayAlerts<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="63"> 
+        <DIV WIDTH="466" HEIGHT="63"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (отображаются встроенные предупреждения о работе программы) и 
+            False (предупреждения не отображаются)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="63"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="110"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="110"> 
+        <DIV WIDTH="156" HEIGHT="110"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">DisplayFormulaBar<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="110"> 
+        <DIV WIDTH="466" HEIGHT="110"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (строка формул выводится в окне Excel) и False (строка формул 
+            не выводится).<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">В данном ниже 
+            примере установлен режим, при котором строка формул не будет выводиться 
+            в окне Excel:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Application. 
+            DisplayFormulaBar = False<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="110"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="114"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="114"> 
+        <DIV WIDTH="156" HEIGHT="114"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">DisplayScrollBars<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="114"> 
+        <DIV WIDTH="466" HEIGHT="114"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (полосы прокрутки видны в окне Excel) и False (полосы прокрутки 
+            не отображаются). Например: Application. DisplayScrollBars = False 
+            — строка формул не будет выводиться в окне Excel<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="114"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="848">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="32"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="32"> 
+        <DIV WIDTH="157" HEIGHT="32"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Свойства</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="32"> 
+        <DIV WIDTH="466" HEIGHT="32"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Выполняемые 
+            действия и допустимые значения</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="32"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="86"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="86"> 
+        <DIV WIDTH="157" HEIGHT="86"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">DisplayStatusBar<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="86"> 
+        <DIV WIDTH="466" HEIGHT="86"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (строка состояния видна в окне Excel) и False (строка состояния 
+            не видна). Например:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Application. 
+            DisplayStatusBar = True — строка состояния не будет выводиться в окне 
+            Excel<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="86"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="128"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="128"> 
+        <DIV WIDTH="157" HEIGHT="128"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">EnableCancelKey<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="128"> 
+        <DIV WIDTH="466" HEIGHT="128"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Определяет действие 
+            при нажатии комбинации клавиш &lt;Ctrl&gt;+&lt;Break&gt;, используемой 
+            для прерывания выполнения процедуры. Допустимые значения:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">xlDisabled (прерывания 
+            программы запрещено) xllnterrupt (прерывание процедуры разрешено) 
+            XlErrorHandler (прерывание воспринимается как ошибка)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="128"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="23"> 
+        <DIV WIDTH="157" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Height<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="23"> 
+        <DIV WIDTH="466" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Высота окна 
+            приложения в пунктах<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="23"> 
+        <DIV WIDTH="157" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Width<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="23"> 
+        <DIV WIDTH="466" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Ширина окна 
+            приложения в пунктах<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="38"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="38"> 
+        <DIV WIDTH="157" HEIGHT="38"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Left<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="38"> 
+        <DIV WIDTH="466" HEIGHT="38"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Расстояние в 
+            пунктах от левой границы окна приложения до левого края экрана<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="38"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="40"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="40"> 
+        <DIV WIDTH="157" HEIGHT="40"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Right<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="40"> 
+        <DIV WIDTH="466" HEIGHT="40"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Расстояние в 
+            пунктах от правой границы окна приложения до правого края экрана<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="40"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="39"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="39"> 
+        <DIV WIDTH="157" HEIGHT="39"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Top<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="39"> 
+        <DIV WIDTH="466" HEIGHT="39"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Расстояние в 
+            пунктах от верхней границы окна приложения до верхнего края экрана<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="39"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="94"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="94"> 
+        <DIV WIDTH="157" HEIGHT="94"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ScreenUpdating<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="94"> 
+        <DIV WIDTH="466" HEIGHT="94"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (изображение обновляется во время выполнения программы) и False 
+            (изображение не обновляется). Задание False в качестве значения свойства 
+            ускоряет выполнение процедуры. В конце процедуры свойству<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">ScreenUpdating 
+            необходимо присвоить значение True<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="94"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="98"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="98"> 
+        <DIV WIDTH="157" HEIGHT="98"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">StatusBar<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="98"> 
+        <DIV WIDTH="466" HEIGHT="98"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выводит заданный 
+            текст в строке состояния. Выполнение приведенного ниже примера позволит 
+            вывести текст Ввод данных. . . в строке состояния:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Application. 
+            DisplayStatusBar = True Application. StatusBar = &quot;Ввод данных...&quot;<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="98"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="78"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="78"> 
+        <DIV WIDTH="157" HEIGHT="78"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Version<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="78"> 
+        <DIV WIDTH="466" HEIGHT="78"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает номер 
+            текущей версии Excel. Применяется для проверки того, что приложение 
+            используется в корректной версии. Например:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">If Application. 
+            Version о &quot;8.0&quot; Then Exit Sub<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="78"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="168"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="168"> 
+        <DIV WIDTH="157" HEIGHT="168"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">WindowState<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="168"> 
+        <DIV WIDTH="466" HEIGHT="168"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Устанавливает 
+            размер окна. Допустимые значения: xlMaximized (максимальный) xlMinimized 
+            (минимальный) xlNormal (нормальный) Например: Application. WindowState 
+            = xlMaximized — устанавливается максимальный размер окна<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="168"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="398" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="4"></a>Методы 
+  объекта Application</font><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="822">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="109" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="507" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="32"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="109" HEIGHT="32"> 
+        <DIV WIDTH="109" HEIGHT="32"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Методы</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="507" HEIGHT="32"> 
+        <DIV WIDTH="507" HEIGHT="32"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Выполняемые 
+            действия</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="32"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="790"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="109" HEIGHT="790"> 
+        <DIV WIDTH="109" HEIGHT="790"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Calculate </font></P>
+          <P>&nbsp;</P>
+          <P><font face="Times New Roman, Times, serif" size="3">Run<BR>
+            </font></P>
+          <P>&nbsp; </P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P><font face="Times New Roman, Times, serif" size="3">Volatile</font></P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P><font face="Times New Roman, Times, serif" size="3">Wait<BR>
+            </font></P>
+          <P>&nbsp; </P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P><font face="Times New Roman, Times, serif" size="3">OnKey<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="507" HEIGHT="790"> 
+        <DIV WIDTH="507" HEIGHT="790"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Вызывает принудительное 
+            вычисление во всех открытых рабочих книгах. Например:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Application. Calculate 
+            </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Запускает на 
+            выполнение подпрограмму или макрос. Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Run (Macro, 
+            Argl, Arg2, ...)<BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="507" HEIGHT="790"> <font face="Times New Roman, Times, serif" size="3"> 
+              Macro — строка с именем макроса </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="507" HEIGHT="790"><font face="Times New Roman, Times, serif" size="3"> 
+              Arg1, Arg2, ... — аргументы передаваемые макррсу Например:<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="507" HEIGHT="790"> 
+          <P> <font face="Courier New, Courier, mono" size="3">Application. Run 
+            Macro:= &quot;Расчет&quot; </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">- запускает макрос 
+            Расчет<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Вызывает перевычисление 
+            функции пользователя при изменении значений параметров. Например, 
+            функция Квадрат будет автоматически пересчитывать результат на рабочем 
+            листе при изменении значения аргумента:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Function Квадрат 
+            (х) Application .</font></P>
+          <P><font face="Courier New, Courier, mono" size="3"> Volatile Квадрат 
+            = х^2 End Function</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Временно приостанавливает 
+            работу приложения без остановки работы других программ.<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Wait (Time)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="507" HEIGHT="790"> <font face="Times New Roman, Times, serif" size="3"> 
+              Time — время, в которое предполагается возобновить работу приложения<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="507" HEIGHT="790"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">В следующем 
+            примере показывается, как установить время, чтобы возобновление работы 
+            приложения началось в 17 часов:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Application. Wait 
+            &quot;17:00:00&quot;</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Устанавливает 
+            выполнение специфицированной процедуры при нажатии заданной комбинации 
+            клавиш.<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">OnKey(Key, Procedure)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="507" HEIGHT="790"> <font face="Times New Roman, Times, serif" size="3"> 
+              Procedure — имя выполняемой подпрограммы при нажатии клавиш<BR>
+              </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="507" HEIGHT="790"> <font face="Times New Roman, Times, serif" size="3"> 
+              Key — строка, определяющая комбинацию клавиш, которая должна быть 
+              нажата. В этой строке можно также указывать специальные клавиши, 
+              используя следующие коды:<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="790"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="109" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="507" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="839">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="99" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="441" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="32"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="99" HEIGHT="32"> 
+        <DIV WIDTH="103" HEIGHT="32"> 
+          <P> <b><font face="Times New Roman, Times, serif" size="3">Методы<BR>
+            </font></b></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="441" HEIGHT="32"> 
+        <DIV WIDTH="513" HEIGHT="32"> 
+          <P> <b><font face="Times New Roman, Times, serif" size="3">Выполняемые 
+            действия<BR>
+            </font></b></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="32"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="807"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="99" HEIGHT="807"> 
+        <DIV WIDTH="103" HEIGHT="807"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">OnRepeat и OnUndo<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="441" HEIGHT="807"> 
+        <ul>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"> <font face="Times New Roman, Times, serif" size="3">&lt;Backspace&gt; 
+              — {BACKSPACE} или (BS) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"><font face="Times New Roman, Times, serif" size="3">&lt;Break&gt; 
+              — {BREAK} </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"><font face="Times New Roman, Times, serif" size="3">&lt;Caps 
+              Lock&gt; — {CAPSLOCK} </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"><font face="Times New Roman, Times, serif" size="3">&lt;Delete&gt; 
+              или &lt;Del&gt; — {DELETE} или {DEL}<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"> <font face="Times New Roman, Times, serif" size="3"><I>&lt;вниз&gt;— 
+              </I>{DOWN} </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"><font face="Times New Roman, Times, serif" size="3">&lt;End&gt; 
+              — {END}<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"> <font face="Times New Roman, Times, serif" size="3">&lt;Enter&gt; 
+              (цифровая клавиатура) — {ENTER}<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"> <font face="Times New Roman, Times, serif" size="3">&lt;ESC&gt; 
+              — {ESCAPE}или {ESC}<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"> <font face="Times New Roman, Times, serif" size="3">&lt;Home&gt; 
+              — {HOME}<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"> <font face="Times New Roman, Times, serif" size="3">&lt;lns&gt;или 
+              &lt;lnsert&gt;— {INSERT}<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"> <font face="Times New Roman, Times, serif" size="3">&lt;&lt;-&gt; 
+              — {LEFT}<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"> <font face="Times New Roman, Times, serif" size="3">&lt;Num 
+              Lock&gt; — {NUMLOCK} </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"><font face="Times New Roman, Times, serif" size="3">&lt;Page 
+              Down&gt; — {PGDN} </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"><font face="Times New Roman, Times, serif" size="3">&lt;Page 
+              Up&gt; — {PGUP}</font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"><font face="Times New Roman, Times, serif" size="3">&lt;Return&gt; 
+              — {RETURN}<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"> <font face="Times New Roman, Times, serif" size="3">&lt;-&gt;&gt; 
+              — {RIGHT}</font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"><font face="Times New Roman, Times, serif" size="3">&lt;Scroll 
+              Lock&gt; — {SCROLLLOCK}<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"> <font face="Times New Roman, Times, serif" size="3">&lt;Tab&gt;- 
+              {TAB} </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"><font face="Times New Roman, Times, serif" size="3">&lt;вверх&gt;- 
+              {UP}<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"> <font face="Times New Roman, Times, serif" size="3"> 
+              ОТ &lt;F1&gt; до&lt;F15&gt; — ОТ {F1}до{F15}<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="513" HEIGHT="807"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимо использование 
+            сочетания одновременно нажатых клавиш. С этой целью для перечисленных 
+            трех клавиш установлены следующие коды:<BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"> <font face="Times New Roman, Times, serif" size="3">&lt;Shift&gt; 
+              - + </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="513" HEIGHT="807"><font face="Times New Roman, Times, serif" size="3">&lt;Ctrl&gt; 
+              ^ </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="513" HEIGHT="807"><font face="Times New Roman, Times, serif" size="3">&lt;Alt&gt;-%<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="513" HEIGHT="807">
+          <P> <font face="Times New Roman, Times, serif" size="3">В примере процедуре 
+            Амортизация назначена комбинация клавиш &lt;Ctrl&gt;+&lt;+&gt;, а 
+            процедуре ПроцентнаяСтавка — &lt;Shift&gt;+&lt;Ctrl&gt;+&lt;-&gt;.&gt;:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Application. OnKey 
+            &quot;^{+}&quot;, &quot;Амортизация&quot; </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">Application. ОпКеу 
+            &quot;+^ {RIGHT}&quot;, &quot;ПроцентнаяСтавка&quot;</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Определяет процедуру, 
+            выполняемую при выборе команды Правка, Повторить (Edit, Repeat) и 
+            Правка, Отменить (Edit, Undo) соответственно.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="807"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="99" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="441" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="584">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="99" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="441" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="33"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="99" HEIGHT="33"> 
+        <DIV WIDTH="98" HEIGHT="33"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Методы</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="441" HEIGHT="33"> 
+        <DIV WIDTH="518" HEIGHT="33"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Выполняемые 
+            действия</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="33"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="552"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="99" HEIGHT="552"> 
+        <DIV WIDTH="98" HEIGHT="552"> 
+          <P>&nbsp; </P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P><font face="Times New Roman, Times, serif" size="3">OnTime </font></P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P>&nbsp;</P>
+          <P><font face="Times New Roman, Times, serif" size="3">Quit<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="441" HEIGHT="552"> 
+        <DIV WIDTH="518" HEIGHT="552"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">OnRepeat (Text, 
+            Procedure) </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">OnUndo (Text, Procedure)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="518" HEIGHT="552"> <font face="Times New Roman, Times, serif" size="3"> 
+              Text — строка, задающая текст команды Правка, Повторить (Edit, Repeat)<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="518" HEIGHT="552"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Procedure — 
+            имя подпрограммы, выполняемой при выборе команды Правка, Повторить 
+            (Edit, Repeat)<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Назначает выполнение 
+            процедуры на определенное время. Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">OnTime (EarliestTime, 
+            Procedure, LatestTime, Schedule)</font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="518" HEIGHT="552"><font face="Times New Roman, Times, serif" size="3"> 
+              EarliestTime — момент запуска процедуры </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="518" HEIGHT="552"><font face="Times New Roman, Times, serif" size="3">Procedure 
+              — имя процедуры<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="518" HEIGHT="552"><font face="Times New Roman, Times, serif" size="3"> 
+              batestTime — если на момент запуска процедуры, Excel не может ее 
+              запустить в силу того, что выполняется другое действие, то параметр 
+              LatestTime определяет последнее время ее запуска. Если этот аргумент 
+              опущен, то Excel будет ждать до тех пор, пока не сможет выполнить 
+              эту процедуру<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="518" HEIGHT="552"> <font face="Times New Roman, Times, serif" size="3">Schedule 
+              — допустимые значения: True (выполнение процедуры откладывается 
+              на сутки) и False (во всех остальных случаях)<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="518" HEIGHT="552"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">В следующем 
+            примере демонстрируется, как запустить процедуру Очистка на выполнение 
+            через 15 секунд от текущего времени:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Application. 
+            OnTime Now +_ TimeValue (&quot;00:00:15&quot;), &quot;Очистка&quot; 
+            Закрывает приложение. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Например: </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">Application. Quit</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="552"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="99" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="441" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+<p>&nbsp;</p></div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="5"></a>События 
+  объекта Application</font></font></P>
+<table width="550" border="1">
+  <tr> 
+    <td><font face="Times New Roman, Times, serif" size="3"><b>Событие</b></font></td>
+    <td><font face="Times New Roman, Times, serif" size="3"><b>Когда возникает 
+      событие</b></font></td>
+  </tr>
+  <tr> 
+    <td><font face="Times New Roman, Times, serif" size="3">NewWorkbook </font></td>
+    <td><font face="Times New Roman, Times, serif" size="3">При создании новой 
+      рабочей книги</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Times New Roman, Times, serif" size="3">WorkbookActivate </font></td>
+    <td><font face="Times New Roman, Times, serif" size="3">При активизации рабочей 
+      книги </font></td>
+  </tr>
+  <tr> 
+    <td><font face="Times New Roman, Times, serif" size="3">WorkbookBeforeClose 
+      </font></td>
+    <td><font face="Times New Roman, Times, serif" size="3">Перед закрытием рабочей 
+      книги</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Times New Roman, Times, serif" size="3">WorkbookBeforePrint 
+      </font></td>
+    <td><font face="Times New Roman, Times, serif" size="3">Перед печатью рабочей 
+      книги</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Times New Roman, Times, serif" size="3">WorkbookBeforeSave</font></td>
+    <td><font face="Times New Roman, Times, serif" size="3">Перед сохранением 
+      рабочей книги </font></td>
+  </tr>
+  <tr> 
+    <td height="34"><font face="Times New Roman, Times, serif" size="3">WorkbookNewSheet 
+      </font></td>
+    <td height="34"><font face="Times New Roman, Times, serif" size="3">При добавлении 
+      нового листа в рабочую книгу</font></td>
+  </tr>
+  <tr>
+    <td height="34"><font face="Times New Roman, Times, serif" size="3">WorkbookOpen</font></td>
+    <td height="34"><font face="Times New Roman, Times, serif" size="3">При открытии 
+      рабочей книги</font></td>
+  </tr>
+  <tr> 
+    <td height="34"><font face="Times New Roman, Times, serif" size="3">WorkbookDeactivate</font></td>
+    <td height="34"><font face="Times New Roman, Times, serif" size="3">Когда 
+      активная книга теряет фокус</font></td>
+  </tr>
+</table>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="6"></a>Объект 
+  Workbook и семейство Workbooks</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В иерархии 
+  Excel объект workbook (рабочая книга) идет сразу после объекта Application и 
+  представляет файл рабочей книги. Рабочая книга хранится либо в файлах формата 
+  XLS (стандартная рабочая книга) или XLA (полностью откомпилированное приложение). 
+  Свойства и методы рабочей книги позволяют работать с файлами.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="7"></a>Свойства 
+  объекта Workbook и семейства Workbooks</font><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="504">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="126" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="492" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="126" HEIGHT="25"> 
+        <DIV WIDTH="126" HEIGHT="25"> 
+          <P> <b><font face="Times New Roman, Times, serif" size="3">Свойства<BR>
+            </font></b></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="492" HEIGHT="25"> 
+        <DIV WIDTH="492" HEIGHT="25"> 
+          <P> <b><font face="Times New Roman, Times, serif" size="3">Выполняемые 
+            действия и допустимые значения<BR>
+            </font></b></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="72"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="126" HEIGHT="72"> 
+        <DIV WIDTH="126" HEIGHT="72"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ActiveSheet<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="492" HEIGHT="72"> 
+        <DIV WIDTH="492" HEIGHT="72"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает активный 
+            лист книги. Например:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">MsgBox &quot;Имя 
+            активного листа &quot; &amp; ActiveSheet . Name — выводит в диалоговом 
+            окне имя активного рабочего листа<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="72"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="22"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="126" HEIGHT="22"> 
+        <DIV WIDTH="126" HEIGHT="22"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ActiveDialog<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="492" HEIGHT="22"> 
+        <DIV WIDTH="492" HEIGHT="22"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает активное 
+            диалоговое окно<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="22"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="126" HEIGHT="25"> 
+        <DIV WIDTH="126" HEIGHT="27"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ActiveChart</font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="492" HEIGHT="25"> 
+        <DIV WIDTH="492" HEIGHT="27"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает активную 
+            диаграмму</font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="126" HEIGHT="23"> 
+        <DIV WIDTH="126" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Sheets<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="492" HEIGHT="23"> 
+        <DIV WIDTH="492" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает семейство 
+            всех листов книги<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="126" HEIGHT="23"> 
+        <DIV WIDTH="126" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Worksheets<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="492" HEIGHT="23"> 
+        <DIV WIDTH="492" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает семейство 
+            всех рабочих листов книги<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="42"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="126" HEIGHT="42"> 
+        <DIV WIDTH="126" HEIGHT="42"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Charts<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="492" HEIGHT="42"> 
+        <DIV WIDTH="492" HEIGHT="42"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает семейство 
+            всех диаграмм книги (которые не внедрены в рабочие листы)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="42"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="126" HEIGHT="24"> 
+        <DIV WIDTH="126" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Count<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="492" HEIGHT="24"> 
+        <DIV WIDTH="492" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает число 
+            объектов семейства workbooks<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="126" HEIGHT="45"> 
+        <DIV WIDTH="126" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">HasPassword<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="492" HEIGHT="45"> 
+        <DIV WIDTH="492" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (если у документа имеется пароль защиты), False (в противном 
+            случае)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP">
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"></TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="126" HEIGHT="62"><font face="Times New Roman, Times, serif" size="3">WriteRe 
+        served</font></TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="492" HEIGHT="62"><font face="Times New Roman, Times, serif" size="3">Допустимые 
+        значения: True (если документ закрыт для записи), False (в противном случае)</font></TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"></TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="126" HEIGHT="62"> 
+        <DIV WIDTH="126" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Saved<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="492" HEIGHT="62"> 
+        <DIV WIDTH="492" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (если не производились изменения в документе со времени его последнего 
+            сохранения), False (в противном случае)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="138"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="126" HEIGHT="138"> 
+        <DIV WIDTH="126" HEIGHT="138"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">MailSystem<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="492" HEIGHT="138"> 
+        <DIV WIDTH="492" HEIGHT="138"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает имя 
+            инсталлированных на компьютере средств работы с электронной почтой. 
+            Допустимые значения:<BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="492" HEIGHT="138"> <font face="Times New Roman, Times, serif" size="3"> 
+              xlNoMailSystem (не установлена система электронной почты) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="492" HEIGHT="138"><font face="Times New Roman, Times, serif" size="3"> 
+              xlMAPi (установлена система Microsoft Mail)<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="492" HEIGHT="138"> <font face="Times New Roman, Times, serif" size="3"> 
+              xlPowerTalk (установлена система Apple PowerTalk Mail, на компьютерах 
+              Macintosh).</font></DIV>
+          </li>
+        </ul>
+        <p><font face="Times New Roman, Times, serif" size="3">В следующем примере 
+          проверяется, инсталлирована ли электронная почта. Если электронная почта 
+          не установлена, то отображается соответствующее сообщение:<br>
+          </font></p>
+        <p> <font face="Courier New, Courier, mono" size="3">If Application. MailSystem 
+          &lt;&gt; xlMAPI Then </font></p>
+        <p><font face="Courier New, Courier, mono" size="3">MsgBox &quot;Microsoft 
+          Mail неинсталлирован&quot; </font></p>
+        <p><font face="Courier New, Courier, mono" size="3">End If</font><font face="Times New Roman, Times, serif" size="3"><br>
+          </font></p>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="138"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="126" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="492" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="8"></a>Методы 
+  объекта Workbook и семейства Workbooks</font><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="845">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="494" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="33"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="33"> 
+        <DIV WIDTH="138" HEIGHT="33"> 
+          <P> <b><font face="Times New Roman, Times, serif" size="3">Методы<BR>
+            </font></b></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="494" HEIGHT="33"> 
+        <DIV WIDTH="494" HEIGHT="33"> 
+          <P> <b><font face="Times New Roman, Times, serif" size="3">Выполняемые 
+            действия<BR>
+            </font></b></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="33"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="158"></TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="158"><font face="Times New Roman, Times, serif" size="3">Activate 
+        </font></TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="494" HEIGHT="158"> 
+        <p><font face="Times New Roman, Times, serif" size="3">Активизирует рабочую 
+          книгу так, что ее первый рабочий лист становится активным.<br>
+          </font></p>
+        <p> <font face="Times New Roman, Times, serif" size="3">Например:<br>
+          </font></p>
+        <p> <font face="Courier New, Courier, mono" size="3">Workbook. Activate</font><font face="Times New Roman, Times, serif" size="3"><br>
+          </font></p>
+        <p>&nbsp; </p>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="158"></TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="158"></TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="158"><font face="Times New Roman, Times, serif" size="3">Add</font></TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="494" HEIGHT="158"><font face="Times New Roman, Times, serif" size="3">Создает 
+        новый объект для семейства Workbooks.</font> 
+        <p><font face="Times New Roman, Times, serif" size="3">Синтаксис:<br>
+          </font></p>
+        <p> <font face="Courier New, Courier, mono" size="3">Add (Template)<br>
+          </font><font face="Times New Roman, Times, serif" size="3"> </font></p>
+        <ul>
+          <li> <font face="Times New Roman, Times, serif" size="3"> Template — 
+            задает шаблон, на основе которого создается новая рабочая книга. Допустимые 
+            значения: xlWBATChart, xlWBATExce14IntlMacroSheet, xlWBATExce14MacroSheet 
+            или xlWBATWorksheet.<br>
+            </font></li>
+        </ul>
+        <p> <font face="Times New Roman, Times, serif" size="3">Если аргумент 
+          Template опущен, то создается новая рабочая книга с количеством листов, 
+          заданных свойством<br>
+          </font></p>
+        <p> <font face="Times New Roman, Times, serif" size="3">SheetsInNewWorkbook</font></p>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="158"></TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="158"></TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="158"><font face="Times New Roman, Times, serif" size="3">Protect</font></TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="494" HEIGHT="158"> 
+        <p><font face="Times New Roman, Times, serif" size="3">Защищает рабочую 
+          книгу от внесения в нее изменений. Синтаксис:<br>
+          </font></p>
+        <p> <font face="Courier New, Courier, mono" size="3">Protect (Password, 
+          Structure, Windows)</font><font face="Times New Roman, Times, serif" size="3"><br>
+          </font></p>
+        <ul>
+          <li> <font face="Times New Roman, Times, serif" size="3"> Password — 
+            строка, используемая в качестве пароля для защиты книги </font></li>
+          <li><font face="Times New Roman, Times, serif" size="3"> Structure — 
+            допустимые значения True (защищена структура книги, т. е. взаимное 
+            расположение листов) и False (не защищена) </font></li>
+          <li><font face="Times New Roman, Times, serif" size="3"> windows — допустимые 
+            значения True (защищено окно книги) и False (не защищено)<br>
+            </font></li>
+        </ul>
+        <p> <font face="Times New Roman, Times, serif" size="3">В следующем примере 
+          устанавливается защита для активной рабочей книги:<br>
+          </font></p>
+        <p> <font face="Courier New, Courier, mono" size="3">ActiveWorkbook. Protect 
+          Password:= &quot;ВинниПух&quot;</font><font face="Times New Roman, Times, serif" size="3"><br>
+          </font></p>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="158"></TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="158"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="158"> 
+        <DIV WIDTH="138" HEIGHT="158"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Unprotect<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="494" HEIGHT="158"> 
+        <DIV WIDTH="494" HEIGHT="158"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Снятие защиты 
+            с рабочей книги.</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3"> Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Unprotect (Password)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="494" HEIGHT="158"> <font face="Times New Roman, Times, serif" size="3"> 
+              Password — строка, используемая в качестве пароля для защиты листа<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="494" HEIGHT="158"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">В следующем 
+            примере снимается защита с активной рабочей книги:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">ActiveWorkbook. 
+            Unprotect Password := &quot;ВинниПух &quot;</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="158"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="24"> 
+        <DIV WIDTH="138" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Close<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="494" HEIGHT="24"> 
+        <DIV WIDTH="494" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Закрытие рабочей 
+            книги<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="23"> 
+        <DIV WIDTH="138" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Open<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="494" HEIGHT="23"> 
+        <DIV WIDTH="494" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Открытие существующей 
+            рабочей книги<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="23"> 
+        <DIV WIDTH="138" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">OpenText<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="494" HEIGHT="23"> 
+        <DIV WIDTH="494" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Открытие текстового 
+            файла, содержащего таблицу данных<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="24"> 
+        <DIV WIDTH="138" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Save<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="494" HEIGHT="24"> 
+        <DIV WIDTH="494" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Сохранение рабочей 
+            книги<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="177"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="177"> 
+        <DIV WIDTH="138" HEIGHT="177"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">SaveAs<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="494" HEIGHT="177"> 
+        <DIV WIDTH="494" HEIGHT="177"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Сохранение рабочей 
+            книги в другом файле. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">SaveAs (Filename)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="494" HEIGHT="177"> <font face="Times New Roman, Times, serif" size="3"> 
+              Filename — строка, указывающая имя файла, в котором будет сохранена 
+              рабочая книга<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="494" HEIGHT="177"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">В следующем 
+            примере активная рабочая книга сохраняется в файле с именем НоваяВерсия:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">ActiveBook. SaveAs 
+            Filename := &quot;НоваяВерсия&quot;</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="177"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="198"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="198"> 
+        <DIV WIDTH="138" HEIGHT="198"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">SaveAsCopy<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="494" HEIGHT="198"> 
+        <DIV WIDTH="494" HEIGHT="198"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Сохранить рабочую 
+            книгу в другом файле, оставляя рабочую книгу в памяти с прежним именем.<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">SaveAs (Filename, 
+            FileFormat)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="494" HEIGHT="198"> <font face="Times New Roman, Times, serif" size="3"> 
+              Filename — строка, указывающая имя файла, в котором будет сохранена 
+              рабочая книга<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="494" HEIGHT="198"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">В следующем 
+            примере активная рабочая книга сохраняется в файле с именем ЗапаснаяВерсия:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">ActiveBook. SaveAsCopy 
+            Filename := &quot;ЗапаснаяВерсия&quot;</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="198"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="24"> 
+        <DIV WIDTH="138" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">PrintPreview<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="494" HEIGHT="24"> 
+        <DIV WIDTH="494" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Предварительный 
+            просмотр<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="24"> 
+        <DIV WIDTH="138" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Printout<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="494" HEIGHT="24"> 
+        <DIV WIDTH="494" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Печать содержимого 
+            рабочей книги<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="138"></TD>
+      <td width="138" height="138"> 
+        <div width="138" height="138"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">SendMail<br>
+            </font></p>
+        </div>
+      </td>
+      <td width="494" height="138"> 
+        <div width="494" height="138"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Отсылка почты 
+            используя встроенные средства Microsoft Mail (MAPI).<br>
+            </font></p>
+          <p> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<br>
+            </font></p>
+          <p> <font face="Courier New, Courier, mono" size="3">SendMail (Recipients, 
+            Subject, ReturnReceipt )</font><font face="Times New Roman, Times, serif" size="3"><br>
+            </font></p>
+        </div>
+        <ul>
+          <li> 
+            <div width="494" height="138"> <font face="Times New Roman, Times, serif" size="3"> 
+              Recipients — строка или массив строк, перечисляющих получателей</font></div>
+          </li>
+          <li><font face="Times New Roman, Times, serif" size="3"> Subject — строка, 
+            специфицирующая тему сообщения<br>
+            </font><font face="Times New Roman, Times, serif" size="3">Optional 
+            Variant.<br>
+            </font></li>
+          <li> <font face="Times New Roman, Times, serif" size="3"> ReturnReceipt 
+            — допустимые значения True (требуется уведомление о получении сообщения) 
+            и False (в противном случае)<br>
+            </font></li>
+        </ul>
+        <p> <font face="Times New Roman, Times, serif" size="3">В следующем примере 
+          рабочая книга отсылается по электронной почте получателю Порфирию Заковыркину:<br>
+          </font></p>
+        <p> <font face="Courier New, Courier, mono" size="3">ThisWorkbook . SendMail 
+          recipients : = &quot; Порфирий Заковыркин&quot;</font></p>
+        </td>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="138"></TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="2"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="2"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="494" HEIGHT="2"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="2"> </TD>
+    </TR>
+  </TABLE>
+  <p>&nbsp;</p>
+  <p><font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="9"></a>События 
+    объекта Workbook и семейства Workbooks</font></font></p>
+  <table width="550" border="1">
+    <tr> 
+      <td><b><font face="Times New Roman, Times, serif" size="3">Событие</font></b></td>
+      <td><b><font face="Times New Roman, Times, serif" size="3">Когда возникает 
+        событие</font></b></td>
+    </tr>
+    <tr> 
+      <td><font face="Times New Roman, Times, serif" size="3">BeforeClose</font></td>
+      <td><font face="Times New Roman, Times, serif" size="3">При закрытии рабочей 
+        книги</font></td>
+    </tr>
+    <tr> 
+      <td><font face="Times New Roman, Times, serif" size="3">BeforePrint </font></td>
+      <td><font face="Times New Roman, Times, serif" size="3">Перед печатью рабочей 
+        книги </font></td>
+    </tr>
+    <tr> 
+      <td><font face="Times New Roman, Times, serif" size="3">BeforeSave </font></td>
+      <td><font face="Times New Roman, Times, serif" size="3">Перед сохранением 
+        рабочей книги</font></td>
+    </tr>
+    <tr> 
+      <td><font face="Times New Roman, Times, serif" size="3">Deactivate</font></td>
+      <td><font face="Times New Roman, Times, serif" size="3">Когда рабочая книга 
+        теряет фокус </font></td>
+    </tr>
+    <tr> 
+      <td><font face="Times New Roman, Times, serif" size="3">NewSheet</font></td>
+      <td><font face="Times New Roman, Times, serif" size="3">При добавлении нового 
+        листа</font></td>
+    </tr>
+    <tr> 
+      <td><font face="Times New Roman, Times, serif" size="3">Open</font></td>
+      <td><font face="Times New Roman, Times, serif" size="3">При открытии рабочей 
+        книги </font></td>
+    </tr>
+    <tr> 
+      <td><font face="Times New Roman, Times, serif" size="3">SheetActivate</font></td>
+      <td><font face="Times New Roman, Times, serif" size="3">При активизации 
+        любого рабочего листа</font></td>
+    </tr>
+    <tr> 
+      <td><font face="Times New Roman, Times, serif" size="3">Sheet Deactivate</font></td>
+      <td><font face="Times New Roman, Times, serif" size="3">Когда рабочий лист 
+        теряет фокус</font></td>
+    </tr>
+  </table>
+  
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="10"></a>Объект 
+  Worksheet и семейство Worksheets</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В иерархии 
+  Excel объект worksheet идет сразу после объекта workbook и представляет рабочий 
+  лист.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  несколько наиболее часто используемых свойств и методов объекта Worksheet.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="11"></a></font></font><font size="4">Свойства 
+  объекта Worksheet и семейства Worksheets</font><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="840">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="487" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="33"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="33"> 
+        <DIV WIDTH="142" HEIGHT="33"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Методы</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="487" HEIGHT="33"> 
+        <DIV WIDTH="487" HEIGHT="33"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Выполняемые 
+            действия</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="33"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP">
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"></TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="45"><font face="Times New Roman, Times, serif" size="3">Name</font></TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="487" HEIGHT="45">
+        <p><font face="Times New Roman, Times, serif" size="3">Возвращает имя 
+          рабочего листа. В следующем примере первому листу активной рабочей книги 
+          присваивается имя Итоги<br>
+          </font></p>
+        <p> <font face="Times New Roman, Times, serif" size="3">за декабрь :<br>
+          </font></p>
+        <p> <font face="Courier New, Courier, mono" size="3">Worksheets (1) . 
+          Visible = &quot;Итоги за декабрь&quot;</font></p>
+        </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"></TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="375"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="375"> 
+        <DIV WIDTH="142" HEIGHT="375"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Add<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="487" HEIGHT="375"> 
+        <DIV WIDTH="487" HEIGHT="375"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Создает новый 
+            рабочий лист. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Add (Before, After, 
+            Count, Type)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="487" HEIGHT="375"> <font face="Times New Roman, Times, serif" size="3"> 
+              Before — указывает лист, перед которым будет размещен новый рабочий 
+              лист<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="487" HEIGHT="375"> <font face="Times New Roman, Times, serif" size="3"> 
+              After — указывает лист, после которого будет размещен новый рабочий. 
+              Если аргументы Before и After опущены, то новый лист размещается 
+              перед активным листом<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="487" HEIGHT="375"> <font face="Times New Roman, Times, serif" size="3"> 
+              Count — число добавляемых листов, по умолчанию имеет значение 1<BR>
+              </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="487" HEIGHT="375"> <font face="Times New Roman, Times, serif" size="3"> 
+              Туре — указывает тип добавляемого листа. Допустимые значения: xlWorksheet 
+              (по умолчанию),<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="487" HEIGHT="375">
+          <P> <font face="Courier New, Courier, mono" size="3">xlExce14MacroSheet 
+            и хlЕхсеl4 IntlMacroSheet.</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Например:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">ActiveWorkbook 
+            . Worksheets . Add</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">— вставляется 
+            новый лист перед активным листом активной рабочей книги<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="375"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="102"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="102"> 
+        <DIV WIDTH="142" HEIGHT="102"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Delete<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="487" HEIGHT="102"> 
+        <DIV WIDTH="487" HEIGHT="102"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Удаляет рабочий 
+            лист. Например:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Worksheets (1) 
+            . Delete - удаляется первый рабочий лист из активной рабочей книги<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="102"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="330"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="330"> 
+        <DIV WIDTH="142" HEIGHT="330"> 
+          <P> <font size="3" face="Times New Roman, Times, serif"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="487" HEIGHT="330"> 
+        <DIV WIDTH="487" HEIGHT="330"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Защищает рабочий 
+            лист от внесения в него изменений Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Protect (Password, 
+            DrawingObjects, Contents, Scenarios, User Inter faceOnly)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="487" HEIGHT="330"> <font face="Times New Roman, Times, serif" size="3"> 
+              Password — строка, используемая в качестве пароля для защиты листа<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="487" HEIGHT="330"> <font face="Times New Roman, Times, serif" size="3"> 
+              DrawingObjects —допустимые значения: True (графические объекты защищены) 
+              и False (графические объекты не защищены). По умолчанию используется 
+              значение False<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="487" HEIGHT="330"> <font face="Times New Roman, Times, serif" size="3"> 
+              Contents — допустимые значения: True (ячейки защищены) и False (ячейки 
+              не защищены). По умолчанию используется значение True<BR>
+              </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="487" HEIGHT="330"> <font face="Times New Roman, Times, serif" size="3"> 
+              scenarios —допустимые значения: True (сценарии защищены) и False 
+              (сценарии не защищены). По умолчанию используется значение True<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="330"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="487" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="844">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="121" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="419" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="200"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="121" HEIGHT="200"> 
+        <DIV WIDTH="153" HEIGHT="200"> 
+          <P> <font size="3" face="Times New Roman, Times, serif"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="419" HEIGHT="200"> 
+        <ul>
+          <li>
+            <DIV WIDTH="495" HEIGHT="200"> <font face="Times New Roman, Times, serif" size="3"> 
+              Userlnterf aceOnly — допустимые значения: True (лист защищен от 
+              изменений со стороны пользователя, но не подпрограммы VBA) и False 
+              (лист защищен от изменений со стороны как пользователя, так и подпрограммы 
+              VBA). По умолчанию используется значение False<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="495" HEIGHT="200">
+          <P> <font face="Times New Roman, Times, serif" size="3">В следующем 
+            примере установлена полная защита активного рабочего листа от любых 
+            изменений со стороны пользователя:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Active Sheet .Protect</font></P>
+          <P><font face="Courier New, Courier, mono" size="3"> Password: =&quot; 
+            Секрет&quot; ,</font></P>
+          <P><font face="Courier New, Courier, mono" size="3"> DrawingObjects 
+            :=True, </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">Contents :=True, 
+            Scenarios : =True<BR>
+            </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="200"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="171"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="121" HEIGHT="171"> 
+        <DIV WIDTH="153" HEIGHT="171"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Unprotect<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="419" HEIGHT="171"> 
+        <DIV WIDTH="495" HEIGHT="171"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Снятие защиты 
+            с рабочего листа.</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3"> Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Unprotect (Password)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li>
+            <DIV WIDTH="495" HEIGHT="171"> <font face="Times New Roman, Times, serif" size="3"> 
+              Password — строка, используемая в качестве пароля для защиты листа<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="495" HEIGHT="171">
+          <P> <font face="Times New Roman, Times, serif" size="3">В следующем 
+            примере снимается защита с активного рабочего листа:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">ActiveSheet . Protect 
+            Password: =&quot;Секрет&quot;</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="171"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="257"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="121" HEIGHT="257"> 
+        <DIV WIDTH="153" HEIGHT="257"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Copy<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="419" HEIGHT="257"> 
+        <DIV WIDTH="495" HEIGHT="257"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Копирование 
+            рабочего листа в другое место рабочей книги.</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3"> Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Copy (Before, . 
+            After)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="495" HEIGHT="257"> <font face="Times New Roman, Times, serif" size="3"> 
+              Before — рабочий лист книги, перед которым вставляется данный<BR>
+              </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="495" HEIGHT="257"> <font face="Times New Roman, Times, serif" size="3">After 
+              — рабочий лист, после которого вставляется данный<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="495" HEIGHT="257">
+          <P> <font face="Times New Roman, Times, serif" size="3">Одновременно 
+            допустимо использование только одного из аргументов.<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">В следующем 
+            примере Лист1 активной рабочей книги копируется после ЛистЗ той же 
+            рабочей книги:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Worksheets ( &quot;Лист1&quot;) 
+            .Сору after :=Worksheets (&quot;ЛистЗ&quot;')</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="257"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="355"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="121" HEIGHT="355"> 
+        <DIV WIDTH="153" HEIGHT="183"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Move<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="419" HEIGHT="355"> 
+        <DIV WIDTH="495" HEIGHT="183"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Перемещение 
+            рабочего листа в другое место рабочей книги.<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Move (Before, After)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="495" HEIGHT="183"> <font face="Times New Roman, Times, serif" size="3"> 
+              Before — лист рабочей книги, перед которым вставляется данный<BR>
+              </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="495" HEIGHT="183"> <font face="Times New Roman, Times, serif" size="3"> 
+              After — лист, после которого вставляется данный<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="495" HEIGHT="183"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Одновременно 
+            допустимо использование только одного из аргументов.</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">В примере Лист1 
+            активной рабочей книги перемещается перед ЛистЗ той же рабочей книги:<br>
+            </font></P>
+          <p> <font face="Courier New, Courier, mono" size="3">Worksheets ( &quot;Лист1&quot; 
+            ) .Move Before : =Worksheets (&quot;Лист3&quot;)</font></p>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="355"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="121" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="419" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <p><font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="12"></a></font></font></font><font size="4" face="Times New Roman, Times, serif">Методы 
+    объекта Worksheet и семейства Worksheet</font></p>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="845">
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="731"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="731"> 
+        <DIV WIDTH="150" HEIGHT="731"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Evaluate<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="418" HEIGHT="731"> 
+        <DIV WIDTH="489" HEIGHT="731"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Преобразует 
+            выражение в объект или значение. Используется при вводе формул и ячеек 
+            из диалоговых окон.<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">В следующем 
+            примере в поле ввода первого появившегося ) диалогового окна вводится 
+            ссылка на ячейку, например A1, процедура считывает значение из этой 
+            ячейки и отображает его в диалоговом окне. После этого в поле ввода 
+            следующего диалогового окна надо ввести какое-нибудь арифметическое 
+            выражение, например sin(l) ^2. Процедура вычислит значение этого выражения 
+            и отобразит в диалоговом окне:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Sub Два Примера 
+            ДляEvaluate ( ) '<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">' Ввод адреса ячейки 
+            '<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Ячейка = InputBox 
+            ( &quot;Введите имя ячейки&quot;) '<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">' Считывание значения 
+            из ячейки с указанным адресом '<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Значение = Evaluate 
+            (Ячейка) .Value '<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">' Вывод считанного 
+            значения в диалоговое окно<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">'<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">MsgBox CStr (Значение) 
+            '<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">' Ввод в диалоговое 
+            окно формулы, например, sin(1)^2 '<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Функция = InputBox 
+            ( &quot;Введите функцию&quot; ) '<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">' Вычисление значения 
+            по введенной формуле '<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Значение = Evaluate 
+            (Функция)<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">' Вывод найденного 
+            значения в диалоговом окне '<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">MsgBox CStr (Значение) 
+            End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="731"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="13"></a>События 
+  объекта Worksheet</font></font></P>
+<table width="550" border="1">
+  <tr> 
+    <td><b><font face="Times New Roman, Times, serif" size="3">Событие</font></b></td>
+    <td><b><font face="Times New Roman, Times, serif" size="3">Когда возникает 
+      событие</font></b></td>
+  </tr>
+  <tr> 
+    <td><font face="Times New Roman, Times, serif" size="3">BeforeClose</font></td>
+    <td><font face="Times New Roman, Times, serif" size="3">При закрытии рабочей 
+      книги</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Times New Roman, Times, serif" size="3">BeforePrint </font></td>
+    <td><font face="Times New Roman, Times, serif" size="3">Перед печатью рабочей 
+      книги </font></td>
+  </tr>
+  <tr> 
+    <td><font face="Times New Roman, Times, serif" size="3">BeforeSave </font></td>
+    <td><font face="Times New Roman, Times, serif" size="3">Перед сохранением 
+      рабочей книги</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Times New Roman, Times, serif" size="3">Deactivate</font></td>
+    <td><font face="Times New Roman, Times, serif" size="3">Когда рабочая книга 
+      теряет фокус </font></td>
+  </tr>
+  <tr> 
+    <td><font face="Times New Roman, Times, serif" size="3">NewSheet</font></td>
+    <td><font face="Times New Roman, Times, serif" size="3">При добавлении нового 
+      листа</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Times New Roman, Times, serif" size="3">Open</font></td>
+    <td><font face="Times New Roman, Times, serif" size="3">При открытии рабочей 
+      книги </font></td>
+  </tr>
+  <tr> 
+    <td><font face="Times New Roman, Times, serif" size="3">SheetActivate</font></td>
+    <td><font face="Times New Roman, Times, serif" size="3">При активизации любого 
+      рабочего листа</font></td>
+  </tr>
+  <tr> 
+    <td><font face="Times New Roman, Times, serif" size="3">Sheet Deactivate</font></td>
+    <td><font face="Times New Roman, Times, serif" size="3">Когда рабочий лист 
+      теряет фокус</font></td>
+  </tr>
+</table>
+<P align="left">&nbsp; </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="14"></a>Объекты 
+  Range и Selection</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В иерархии 
+  Excel объект Range (диапазон) идет сразу после объекта worksheet. Объект Range 
+  является одним из ключевых объектов VBA. Объект Selection (выбор) возникает 
+  в VBA двояко — либо как результат работы метода Select, либо при вызове свойства 
+  selection. Тип получаемого объекта зависит от типа выделенного объекта. Чаще 
+  всего объект Selection принадлежит классу Range и при работе с ним можно использовать 
+  свойства и методы объекта Range. Интересной особенностью объектов Range и selection 
+  является то, что они не являются элементами никакого семейства объектов.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="15"></a></font></font></font><font size="4">Адресация 
+  ячеек</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">При работе 
+  с объектом Range необходимо помнить, как в Excel ссылаются на ячейку рабочего 
+  листа. Имеются два способа ссылки на ячейки рабочего листа: относительная адресация 
+  (т. е. когда начало координат, задающее нумерацию строк и столбцов, связывается 
+  с объектом, вызвавшим Range) и абсолютная адресация.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Относительная 
+  адресация:<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="110">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="126" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="494" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="40"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="126" HEIGHT="40"> 
+        <DIV WIDTH="126" HEIGHT="40"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Формат А1</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="494" HEIGHT="40"> 
+        <DIV WIDTH="494" HEIGHT="40"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Имя ячейки 
+            состоит из имени столбца (их 256 — А, В, ..., Z, АВ, ..., HZ, IA, 
+            ..., IV) и номера (1, ...., 16384).</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="40"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="126" HEIGHT="26"> 
+        <DIV WIDTH="126" HEIGHT="26"> 
+          <P> <font size="3" face="Times New Roman, Times, serif"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="494" HEIGHT="26"> 
+        <DIV WIDTH="494" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Например, A1, 
+            C2<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="126" HEIGHT="44"> 
+        <DIV WIDTH="126" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Формат R1C1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="494" HEIGHT="44"> 
+        <DIV WIDTH="494" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Адресация задается 
+            индексом строки и индексом столбца. Например, R1C1, R2C3<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="126" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="494" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Абсолютная 
+  адресация:<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="229">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="479" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="123"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="123"> 
+        <DIV WIDTH="138" HEIGHT="123"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Формат А1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="479" HEIGHT="123"> 
+        <DIV WIDTH="479" HEIGHT="123"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Признаком абсолютной 
+            адресации является знак &quot;$&quot;, предшествующий имени строки 
+            (абсолютной адресации на строку) или столбца (абсолютной адресации 
+            на столбец). Например, $А10, А$10 и $А$10 задают абсолютную адресацию 
+            на столбец А, строку 10 и ячейку А10 соответственно<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="123"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="106"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="106"> 
+        <DIV WIDTH="138" HEIGHT="106"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Формат R1C1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="479" HEIGHT="106"> 
+        <DIV WIDTH="479" HEIGHT="106"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Указывается 
+            смещение по отношению к активной ячейке. Смещение приводится в квадратных 
+            скобках, причем знак указывает на направление смещения. Например, 
+            если активной ячейкой является касз, то R[i]C[-1] дает ссылку на ячейку 
+            кзс2<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="106"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="479" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Адресация 
+  ячейки рабочего листа является лишь частью полного адреса ячейки, который в 
+  общем случае включает имя рабочего листа и адрес книги. При задании полного 
+  адреса за именем листа следует знак &quot;!&quot;, а адрес книги заключается 
+  в скобки. Например,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">А1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Лист2!А1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">[МояКнига.хls]Лист2!А1</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В первой 
+  строке данного примера дана относительная ссылка на ячейку AI активного рабочего 
+  листа, во второй — на ячейку AI рабочего листа листа активной книги, а в третьей 
+  на ячейку AI рабочего листа лист2 книги моякнига-xls текущего рабочего каталога.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="16"></a></font></font></font><font size="4">Задание 
+  групп строк и столбцов с помощью объекта Range</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Если в диапазоне 
+  указываются только имена столбцов или строк, то объект Range задает диапазон, 
+  состоящий из указанных столбцов или строк. Например, Range (&quot;А: с&quot;) 
+  задает диапазон, состоящий из столбцов А, в и с, а Range {&quot;2: 2&quot;) 
+  - из второй строки. Другим способом работы со строками и столбцами являются 
+  методы ROWS (строки) и Columns (столбцы), возвращающие коллекции строк и столбцов. 
+  Например, столбцом А является columns (1), а второй строкой - ROWS (2).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="17"></a></font></font></font><font size="4">Связь 
+  объекта Range и свойства Cells</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Так как ячейка 
+  является частным случаем диапазона, состоящим только из единственной ячейки, 
+  объект Range также позволяет работать с ней. Объект cells (ячейки) — это альтернативный 
+  способ работы с ячейкой. Например, ячейка А2 как объект описывается Range (&quot;A2&quot;) 
+  или cells (1,2). В свою очередь объект ceils, вкладываясь в Range, также позволяет 
+  записывать диапа</font><font face="Times New Roman, Times, serif" size="3">зон 
+  в альтернативном виде, который иногда удобен для работы, а именно,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range (&quot;А2:C3&quot;) 
+  И Range(Cells(1,2), Cells(3,3)) </font></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3">Определяют 
+  один и тот же</font><font face="Times New Roman, Times, serif" size="3"> диапазон.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="18"></a></font></font></font><font size="4">Свойства 
+  и методы объекта Range</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Объект Range 
+  позволяет сочетать гибкость VBA и мощь рабочего листа Excel. Более 400 встроенных 
+  функций рабочего листа существенно упрощают и делают более наглядным программирование 
+  на VBA.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Далее приводятся 
+  наиболее часто используемые свойства и методы объекта<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range.</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Перечислим 
+  основные свойства объекта Range.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="598">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="151" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="467" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="126"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="151" HEIGHT="126"> 
+        <DIV WIDTH="151" HEIGHT="126"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Value<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="467" HEIGHT="126"> 
+        <DIV WIDTH="467" HEIGHT="126"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает значение 
+            из ячейки или в ячейки диапазона. В данном примере переменной х присваивается 
+            значение из ячейки C1 :<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">х = Range (&quot;C1&quot;) 
+            .Value В следующем примере в диапазон AI : В2 введена 1 :<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Range (&quot;A1:B2&quot;) 
+            .Value = 1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="126"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="151" HEIGHT="62"> 
+        <DIV WIDTH="151" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Name<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="467" HEIGHT="62"> 
+        <DIV WIDTH="467" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает имя 
+            диапазона. В данном примере диапазону А1:В2 присваивается имя итоги:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Range ( &quot;Al 
+            :B2&quot;) .Name = &quot;Итоги&quot;<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="84"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="151" HEIGHT="84"> 
+        <DIV WIDTH="151" HEIGHT="84"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Count<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="467" HEIGHT="84"> 
+        <DIV WIDTH="467" HEIGHT="84"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает число 
+            объектов в наборе. В данном примере переменной х присваивается значение, 
+            равное числу строк диапазона AI : В2 :<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">х = Range ( 
+            &quot;Al :B2&quot;) .Rows . Count<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="84"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="143"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="151" HEIGHT="143"> 
+        <DIV WIDTH="151" HEIGHT="143"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">CurrentRegion<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="467" HEIGHT="143"> 
+        <DIV WIDTH="467" HEIGHT="143"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает число 
+            строк текущего диапазона. Текущим является диапазон, ограниченный 
+            пустыми строками и столбцами и содержащий данный элемент. В следующем 
+            примере переменной у присваивается значение, равное числу строк в 
+            текущем диапазоне, содержащем ячейку AI :<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">у = Range ( 
+            &quot;Al&quot; ). CurrentRegion. Rows . Count<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="143"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="182"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="151" HEIGHT="182"> 
+        <DIV WIDTH="151" HEIGHT="182"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">WrapText<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="467" HEIGHT="182"> 
+        <DIV WIDTH="467" HEIGHT="182"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Позволяет переносить 
+            текст при вводе в диапазон. Допустимые значения True и False. В следующем 
+            примере в ячейку В2 вводится текст длинный текст и в этой ; ячейке 
+            устанавливается режим ввода текста с переносом: With Range (&quot;B2&quot;) 
+            .Value = &quot;Длинный текст&quot; .WrapText = True End With<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="182"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="151" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="467" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="860">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="108"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="108"> 
+        <DIV WIDTH="149" HEIGHT="108"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">EntireColumn, 
+            EntireRow<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="108"> 
+        <DIV WIDTH="466" HEIGHT="108"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает столбец 
+            и строку соответственно. В данном примере очищается содержимое строки 
+            и выделяется столбец с активной ячейкой:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">ActiveCell . 
+            EntireRow. Clear ActiveCell .EntireColumn. Select<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="108"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="44"> 
+        <DIV WIDTH="149" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ColumnWidth, 
+            RowHeight<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="44"> 
+        <DIV WIDTH="466" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает ширину 
+            столбцов и высоту строк диапазона соответственно<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="708"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="708"> 
+        <DIV WIDTH="149" HEIGHT="708"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Comment<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="708"> 
+        <DIV WIDTH="466" HEIGHT="708"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает объект 
+            comment (примечание), который связан с левым верхним углом диапазона 
+            при отображении на экране. Объект comment является элементом семейства 
+            comments. Метод AddComment, примененный к диапазону, создает новое 
+            примечание. Среди методов объекта comment отметим только метод Text, 
+            который задает текст, выводимый в примечании. Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Text (Text, Start, 
+            Overwrite)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li>
+            <DIV WIDTH="466" HEIGHT="708"> <font face="Times New Roman, Times, serif" size="3"> 
+              Text — строка, выводимая в качестве примечания П start — с какого 
+              символа вводится текст в уже существующее примечание. Если аргумент 
+              опущен, то из примечания удаляется весь ранее введенный текст П 
+              overwrite — допустимые значения: True (вводимый текст записывается 
+              поверх уже существующего) и False (вводимый текст вставляется в 
+              уже существующий) Среди свойств объекта Comment отметим только свойство 
+              visible, устанавливающее отображение примечания при активизации 
+              диапазона, имеющего определенное примечание. В качестве примера 
+              рассмотрим следующие инструкции, которые создают и отображают примечание 
+              ячейки вз, поясняющее запланированное событие (рис. 3.1):<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="466" HEIGHT="708">
+          <P> <font face="Courier New, Courier, mono" size="3">With Range (&quot;ВЗ&quot;) 
+            </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">.AddComment </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">.Text Text:= &quot;Чрезвычайно 
+            важно!&quot; &amp; Chr(10) &amp; &quot;Про это никак нельзя забыть 
+            ! &quot; </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">.Visible = True 
+            End With</font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="708"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><img src="2.1.gif" width="485" height="534"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  2.1. </I></B><I>Пример отображения примечания на рабочем листе</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="507">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="402" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="507"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="507"> 
+        <DIV WIDTH="196" HEIGHT="507"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Font<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="402" HEIGHT="507"> 
+        <DIV WIDTH="422" HEIGHT="507"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает объект 
+            Font (шрифт). Объект Font имеет следующие свойства: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="422" HEIGHT="507"><font face="Times New Roman, Times, serif" size="3"> 
+              Name — строка, указывающая имя шрифта, например &quot;Arial Cyr&quot; 
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="422" HEIGHT="507"><font face="Times New Roman, Times, serif" size="3"> 
+              FontStyle — СТИЛЬ, возможен Regular (обычный), Bold (ПОЛУЖИРНЫЙ), 
+              Italic(курсив), Bold italic (полужирный курсив) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="422" HEIGHT="507"><font face="Times New Roman, Times, serif" size="3"> 
+              size - размер </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="422" HEIGHT="507"><font face="Times New Roman, Times, serif" size="3"> 
+              strikethrough — допустимы два значения: True (буквы имеют линию 
+              по центру, как будто они перечеркнуты) и False (не имеют линии по 
+              центру) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="422" HEIGHT="507"><font face="Times New Roman, Times, serif" size="3"> 
+              Superscript — допустимы два значения: True (текст используется как 
+              верхний индекс) и False (не используется как верхний индекс) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="422" HEIGHT="507"><font face="Times New Roman, Times, serif" size="3"> 
+              Subscript — допустимы два значения: True (текст используется как 
+              нижний индекс) и False (не используется как нижний индекс)</font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="422" HEIGHT="507"><font face="Times New Roman, Times, serif" size="3">Underline-допустимыми 
+              являются значения: </font></DIV>
+            <ul>
+              <li>
+                <DIV WIDTH="422" HEIGHT="507"><font face="Times New Roman, Times, serif" size="3"> 
+                  xlNone (нет подчеркивания) </font></DIV>
+              </li>
+              <li>
+                <DIV WIDTH="422" HEIGHT="507"><font face="Times New Roman, Times, serif" size="3"> 
+                  xlSingie (одинарное, по значению)<BR>
+                  </font></DIV>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="507"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="402" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="868">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="402" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="235"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="235"> 
+        <DIV WIDTH="197" HEIGHT="235"> 
+          <P> <font size="3" face="Times New Roman, Times, serif"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="402" HEIGHT="235"> 
+        <ul>
+          <ul>
+            <li>
+              <DIV WIDTH="418" HEIGHT="235"><font face="Times New Roman, Times, serif" size="3"> 
+                xlDoubie (двойное, по значению) </font></DIV>
+            </li>
+            <li>
+              <DIV WIDTH="418" HEIGHT="235"><font face="Times New Roman, Times, serif" size="3"> 
+                xlsingleAccounting (одинарное, по ячейке) </font></DIV>
+            </li>
+            <li>
+              <DIV WIDTH="418" HEIGHT="235"><font face="Times New Roman, Times, serif" size="3"> 
+                Accounting (двойное, но ячейке)<BR>
+                </font></DIV>
+            </li>
+          </ul>
+        </ul>
+        <DIV WIDTH="418" HEIGHT="235"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Например, в 
+            следующем примере устанавливается для диапазона AI : в2 полужирный 
+            шрифт, красного цвета и с высотой символов 1 4 :<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">With Range (&quot;A1:B2&quot;).Font 
+            </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">.Size = 14 </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">.FontStyle = Bold 
+            </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">.Colorlndex = 3</font></P>
+          <P><font face="Courier New, Courier, mono" size="3"> End With<BR>
+            </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="235"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="88"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="88"> 
+        <DIV WIDTH="197" HEIGHT="88"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Formula<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="402" HEIGHT="88"> 
+        <DIV WIDTH="418" HEIGHT="88"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает формулу 
+            в формате Al. Например, следующая инструкция вводит в ячейку с2 формулу 
+            =$А$4+$А$ю:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Range (&quot;C2&quot;) 
+            . Formula = &quot;=$А$4+$А$10&quot;</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="88"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="194"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="194"> 
+        <DIV WIDTH="197" HEIGHT="194"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">FormulaArray 
+            1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="402" HEIGHT="194"> 
+        <DIV WIDTH="418" HEIGHT="194"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает формулу 
+            диапазона в формате А1. В отличие от обыкновенной формулы рабочего 
+            листа, формула диапазона вводится на рабочем листе не посредством 
+            нажатия на клавишу &lt;Enter&gt;, а с помощью комбинации клавиш &lt;Ctrl&gt;+&lt;Shift&gt;+&lt;Enter&gt;. 
+            Следующая инструкция вводит в диапазон Е!:ЕЗ </font><font face="Times New Roman, Times, serif" size="3">формулу 
+            {=Sum(Al:A3*Bl:B3) }: </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">Range ( &quot;El 
+            :E3&quot;) .FormulaArray = &quot;=Sum(Al:A3*Bl:B3) &quot;</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="194"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="130"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="130"> 
+        <DIV WIDTH="197" HEIGHT="130"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">FormulaHidden<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="402" HEIGHT="130"> 
+        <DIV WIDTH="418" HEIGHT="130"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (формула спрятана, если рабочий лист или книга защищены) и False 
+            (в противном случае). Например, следующая инструкция скрывает формулы 
+            в столбце А: Columns (&quot;A&quot;) . FormulaHidden = True<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="130"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="87"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="87"> 
+        <DIV WIDTH="197" HEIGHT="87"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">FormulaLocal<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="402" HEIGHT="87"> 
+        <DIV WIDTH="418" HEIGHT="87"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает неанглоязычные 
+            (местные) формулы в формате А1. Например, следующая инструкция вводит 
+            в ячейку В2 формулу =СУММ(С1:С4): </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">Range(&quot;B2&quot;). 
+            FormulaLocal = &quot;=СУММ (С1:С4) &quot;</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="87"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="44"> 
+        <DIV WIDTH="197" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">JormulaRlCl<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="402" HEIGHT="44"> 
+        <DIV WIDTH="418" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает формулу 
+            в формате R1C1. Например,<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Range (&quot;Bl&quot;) 
+            . FormulaRlCl = &quot;=SQRT (R3C2 ) &quot;</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="44"> 
+        <DIV WIDTH="197" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">FormulaRlCl 
+            Local<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="402" HEIGHT="44"> 
+        <DIV WIDTH="418" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает неанглоязычные 
+            формулы в формате R1C1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="46"> 
+        <DIV WIDTH="197" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Text<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="402" HEIGHT="46"> 
+        <DIV WIDTH="418" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает содержание 
+            диапазона в текстовом формате<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="402" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="691">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="402" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="246"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="246"> 
+        <DIV WIDTH="195" HEIGHT="246"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">HorizontalAlignment<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="402" HEIGHT="246"> 
+        <DIV WIDTH="419" HEIGHT="246"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Горизонтальное 
+            выравнивание. Допустимые значения: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="419" HEIGHT="246"><font face="Times New Roman, Times, serif" size="3">xlceneral 
+              (обычное выравнивание, зависящее от типа вводимых значений) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="419" HEIGHT="246"><font face="Times New Roman, Times, serif" size="3"> 
+              xlcenter (выравнивание по центру) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="419" HEIGHT="246"><font face="Times New Roman, Times, serif" size="3"> 
+              xlRight (выравнивание по правому краю) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="419" HEIGHT="246"><font face="Times New Roman, Times, serif" size="3">xlLeft 
+              (выравнивание по левому краю) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="419" HEIGHT="246"><font face="Times New Roman, Times, serif" size="3">xUustify 
+              (выравнивание по ширине) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="419" HEIGHT="246"><font face="Times New Roman, Times, serif" size="3"> 
+              xlCenterAcrossSelection (выравнивание по центру в выделенном диапазоне)</font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="419" HEIGHT="246"><font face="Times New Roman, Times, serif" size="3"> 
+              xlFill (выравнивание по ширине</font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="419" HEIGHT="246">
+<P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="246"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="138"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="138"> 
+        <DIV WIDTH="195" HEIGHT="138"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Vertical Alignment<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="402" HEIGHT="138"> 
+        <DIV WIDTH="419" HEIGHT="138"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Вертикальное 
+            выравнивание. Допустимые значения:<BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="419" HEIGHT="138"> <font face="Times New Roman, Times, serif" size="3"> 
+              xlBottom (выравнивание по нижнему краю), </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="419" HEIGHT="138"><font face="Times New Roman, Times, serif" size="3"> 
+              xlcenter (выравнивание по центру), </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="419" HEIGHT="138"><font face="Times New Roman, Times, serif" size="3"> 
+              xUustify (выравнивание по высоте), </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="419" HEIGHT="138"><font face="Times New Roman, Times, serif" size="3"> 
+              xlTop (выравнивание по верхнему краю)<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="138"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="239"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="239"> 
+        <DIV WIDTH="195" HEIGHT="239"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Orientation<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="402" HEIGHT="239"> 
+        <DIV WIDTH="419" HEIGHT="239"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Ориентация. 
+            Допускается либо угол поворота текста в градусах от —90&deg; до 90&deg;, 
+            либо одно из допустимых значений: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="419" HEIGHT="239"><font face="Times New Roman, Times, serif" size="3">xlDownward 
+              (выравнивание по левому краю сверху вниз, соответствует углу —90&deg;) 
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="419" HEIGHT="239"><font face="Times New Roman, Times, serif" size="3"> 
+              xlHorizontal(выравнивание по горизонтали, соответствует нулевому 
+              углу ) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="419" HEIGHT="239"><font face="Times New Roman, Times, serif" size="3">xlupward 
+              (выравнивание по правому краю снизу вверх, соответствует углу 90&deg;) 
+              </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="419" HEIGHT="239"><font face="Times New Roman, Times, serif" size="3"> 
+              xlvertical (выравнивание по вертикали, нет соответствия в градусах)<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="239"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="67"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="67"> 
+        <DIV WIDTH="195" HEIGHT="67"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ShrinkToFit<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="402" HEIGHT="67"> 
+        <DIV WIDTH="419" HEIGHT="67"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (автоматическое изменение шрифта так, чтобы текст помещался в 
+            ячейку) и False (в противном случае)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="67"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="402" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Ниже приведены 
+  наиболее часто используемые методы объекта Range.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="112">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="161" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="458" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="891"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="161" HEIGHT="891"> 
+        <DIV WIDTH="161" HEIGHT="112"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Address<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="458" HEIGHT="891"> 
+        <DIV WIDTH="458" HEIGHT="112"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает адрес 
+            ячейки. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Address (rowAbsolute, 
+            coluimAbsolute, referenceStyle, external, relativeTo)<BR>
+            </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Аргументы:</font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="458" HEIGHT="112"><font face="Times New Roman, Times, serif" size="3"> 
+              RowAbsoiute — допустимы два значения True и False, если используется 
+              значение True или аргумент опущен, то возвращается абсолютная ссылка 
+              на строку </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="458" HEIGHT="112"><font face="Times New Roman, Times, serif" size="3"> 
+              ColumnAbsoiute — допустимы два значения True и False, если используется 
+              значение True или аргумент опущен, то возвращается абсолютная ссылка 
+              на столбец<br>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="458" HEIGHT="112"> <font face="Times New Roman, Times, serif" size="3">ref 
+              erenceStyle — допустимы два значения xlAl и</font> 
+              <p><font face="Times New Roman, Times, serif" size="3">xiR1c1, если 
+                используется значение X1A1 или аргумент опущен, то возвращается 
+                ссылка в виде формата А1<sup> </sup>П external — допустимы два 
+                значения True и False, если используется значение False или аргумент 
+                опущен, то возвращается относительная ссылка</font></p>
+            </DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="458" HEIGHT="112"> 
+              <p><font face="Times New Roman, Times, serif" size="3"> relativeTo 
+                — В случае, если rowAbsoiute и СolumnAbsoiute равны False, a referenceStyle 
+                X1R1C1, то данный аргумент определяет начальную ячейку диапазона, 
+                относительно которой производится адресация Следующий пример показывает 
+                различные результаты адресации. </font></p>
+            </DIV>
+            <DIV WIDTH="458" HEIGHT="112"><font face="Courier New, Courier, mono" size="3">MsgBox 
+              Cells (1, 1). Address ()<br>
+              </font></DIV>
+          </li>
+        </ul>
+        <blockquote> 
+          <DIV WIDTH="458" HEIGHT="112"> <font face="Courier New, Courier, mono" size="3">'<br>
+            </font></DIV>
+          <DIV WIDTH="458" HEIGHT="112"> <font face="Courier New, Courier, mono" size="3">' 
+            В диалоговом окне отображается адрес $А$1 MsgBox Cells (1, 1) .Address 
+            (rowAbsoiute:=False)<br>
+            </font></DIV>
+          <DIV WIDTH="458" HEIGHT="112"> <font face="Courier New, Courier, mono" size="3">'<br>
+            </font></DIV>
+          <DIV WIDTH="458" HEIGHT="112"> 
+            <p><font face="Courier New, Courier, mono" size="3">' В диалоговом 
+              окне отображается адрес $А1 '</font><font face="Courier New, Courier, mono" size="3"><br>
+              </font></p>
+            </DIV>
+          <DIV WIDTH="458" HEIGHT="112"> <font face="Courier New, Courier, mono" size="3">MsgBox 
+            Cells (1, 1) .Address (ref erenceStyle :=x1R1C1) '<br>
+            </font></DIV>
+          <DIV WIDTH="458" HEIGHT="112"> <font face="Courier New, Courier, mono" size="3">' 
+            В диалоговом окне отображается адрес R1C1 '</font></DIV>
+        </blockquote>
+        <DIV WIDTH="458" HEIGHT="112">
+<p>&nbsp;</p>
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="891"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="161" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="458" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="873">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="135" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="404" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"></TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="135" HEIGHT="45"> 
+        <p><font face="Times New Roman, Times, serif" size="3">Clear, ClearComments 
+          , Clear Contents, ClearFormats<br>
+          </font></p>
+        <p> <font face="Times New Roman, Times, serif" size="3">И</font></p>
+        </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="404" HEIGHT="45"> 
+        <p><font face="Times New Roman, Times, serif" size="3">Метод clear очищает 
+          диапазон. В следующем примере очищается диапазон Al :G37 . Range (&quot;A1:G37&quot;) 
+          .Clear<br>
+          </font></p>
+        <p> <font face="Times New Roman, Times, serif" size="3">Методы ClearComments, 
+          ClearContents, ClearFormats и ClearNotes очищают В диапазоне</font></p>
+        </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="45"></TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"></TD>
+      <td width="135" height="44"> 
+        <div width="161" height="44"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">AutoFit<br>
+            </font></p>
+        </div>
+      </td>
+      <td width="404" height="44"> 
+        <div width="455" height="44"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Автоматически 
+            настраивает ширину столбца и высоту строки<br>
+            </font></p>
+        </div>
+      </td>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="45"></TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="135" HEIGHT="45"> 
+        <DIV WIDTH="161" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ClearNotes<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="404" HEIGHT="45"> 
+        <DIV WIDTH="455" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">комментарии, 
+            содержание, форматы и примечания соответственно.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="45"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="243"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="135" HEIGHT="243"> 
+        <DIV WIDTH="161" HEIGHT="243"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Copy<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="404" HEIGHT="243"> 
+        <DIV WIDTH="455" HEIGHT="243"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Копирует диапазон 
+            в другой диапазон или в буфер обмена.<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Copy (destination)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li>
+            <DIV WIDTH="455" HEIGHT="243"> <font face="Times New Roman, Times, serif" size="3"> 
+              Аргумент destination определяет диапазон, куда копируется данный 
+              диапазон. Если аргумент destination опушен, то копирование происходит 
+              в буфер обмена. В данном примере диапазон AI : D4 рабочего листа 
+              Лист! копируется в диапазон Е5:Н8 листа лист2:<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="455" HEIGHT="243">
+          <P> <font face="Courier New, Courier, mono" size="3">Worksheets (&quot;Лист1&quot; 
+            ) . Range ( &quot;А1 : D4 &quot; ) .Сору destination :=Worksheets 
+            (&quot;Лист2&quot;) .Range (&quot;E5&quot;)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="243"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="226"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="135" HEIGHT="226"> 
+        <DIV WIDTH="161" HEIGHT="226"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Cut<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="404" HEIGHT="226"> 
+        <DIV WIDTH="455" HEIGHT="226"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Копирует диапазон 
+            с удалением в указанный диапазон или в буфер обмена, </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Cut (destination)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li>
+            <DIV WIDTH="455" HEIGHT="226"> <font face="Times New Roman, Times, serif" size="3"> 
+              Аргумент destination определяет диапазон, в который копируется данный 
+              диапазон. Если аргумент destination опущен, то диапазол копируется 
+              в буфер обмена. В данном примере диапазон AI : D4 рабочего листа 
+              лист! копируется с удалением в буфер обмена:<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="455" HEIGHT="226">
+          <P> <font face="Courier New, Courier, mono" size="3">Worksheets ( &quot;Лист1 
+            &quot; ) . Range ( &quot;А1 : D4 &quot; ) . Cut</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="226"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="85"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="135" HEIGHT="85"> 
+        <DIV WIDTH="161" HEIGHT="85"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Delete<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="404" HEIGHT="85"> 
+        <DIV WIDTH="455" HEIGHT="85"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Удаляет диапазон. 
+            В данном примере удаляется третья строка активной рабочей страницы:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Rows (3) .Delete</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="85"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="143"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="135" HEIGHT="143"> 
+        <DIV WIDTH="161" HEIGHT="143"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Columns, Rows<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="404" HEIGHT="143"> 
+        <DIV WIDTH="455" HEIGHT="143"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращают соответственно 
+            семейства столбцов и строк, из которых состоит диапазон. В следующем 
+            примере переменным i и j присваиваются значения, равные количеству 
+            столбцов и строк в выделенном диапазоне соответственно:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">i = Selection. 
+            Columns . Count j = Selection. Rows . Count</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="143"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="85"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="135" HEIGHT="85"> 
+        <DIV WIDTH="161" HEIGHT="85"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Insert<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="404" HEIGHT="85"> 
+        <DIV WIDTH="455" HEIGHT="85"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Вставка ячейки 
+            или диапазона ячеек. В следующем примере вставляется новая строка 
+            перед четвертой строкой рабочего листа Лист1:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Worksheets ( &quot;Лист1&quot; 
+            ) . Rows (4 ) .Insert</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="85"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="135" HEIGHT="46"> 
+        <DIV WIDTH="161" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Offset<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="404" HEIGHT="46"> 
+        <DIV WIDTH="455" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает диапазон, 
+            смещенный относительно данного на величины, специфицированные в аргументах.</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<br>
+            </font></P>
+          <p> <font face="Courier New, Courier, mono" size="3">Of fset (rowOffset, 
+            columnOf f set )</font><font face="Times New Roman, Times, serif" size="3"><br>
+            </font></p>
+          <p> <font face="Times New Roman, Times, serif" size="3">Аргументы: </font></p>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="455" HEIGHT="46"><font face="Times New Roman, Times, serif" size="3"> 
+              rowOffset — целое число, указывающее сдвиг по строкам </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="455" HEIGHT="46"><font face="Times New Roman, Times, serif" size="3">columnOf 
+              f set — целое число, указывающее сдвиг по столбцам Например, в следующем 
+              примере активизируется ячейка, расположенная на три строки ниже 
+              и на два столбца левее относительно предыдущей активной ячейки:<br>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="455" HEIGHT="46">
+          <p> <font face="Courier New, Courier, mono" size="3">ActiveCell.Offset 
+            (rowOf fset :=3, columnOf fset : =-2) .Activate</font></p>
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="46"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="135" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="404" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="683">
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="135" HEIGHT="23"> 
+        <DIV WIDTH="160" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Select<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="405" HEIGHT="23"> 
+        <DIV WIDTH="456" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выделение диапазона<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="615"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="135" HEIGHT="615"> 
+        <DIV WIDTH="160" HEIGHT="572"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">PasteSpecial<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="405" HEIGHT="615"> 
+        <DIV WIDTH="456" HEIGHT="572"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Специальная 
+            вставка из буфера обмена. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">BasteSpecial (paste, 
+            operation, skipBlanks, transpose) </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Аргументы: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="456" HEIGHT="572"><font face="Times New Roman, Times, serif" size="3"> 
+              Paste — определяет ту часть содержимого буфера обмена, которая должна 
+              быть вставлена в диапазон. Допустимые значения: </font></DIV>
+            <ul>
+              <li> 
+                <DIV WIDTH="456" HEIGHT="572"><font face="Times New Roman, Times, serif" size="3"> 
+                  xlAll (все)<BR>
+                  </font></DIV>
+              </li>
+              <li> 
+                <DIV WIDTH="456" HEIGHT="572"><font face="Times New Roman, Times, serif" size="3"> 
+                  xl Formulas (формулы)<BR>
+                  </font></DIV>
+              </li>
+              <li> 
+                <DIV WIDTH="456" HEIGHT="572"><font face="Times New Roman, Times, serif" size="3"> 
+                  xlvaiues (значения) </font></DIV>
+              </li>
+              <li> 
+                <DIV WIDTH="456" HEIGHT="572"><font face="Times New Roman, Times, serif" size="3">xlFormats 
+                  (форматы) </font></DIV>
+              </li>
+              <li> 
+                <DIV WIDTH="456" HEIGHT="572"><font face="Times New Roman, Times, serif" size="3">xlNotes 
+                  (примечания) </font></DIV>
+              </li>
+              <li> 
+                <DIV WIDTH="456" HEIGHT="572"><font face="Times New Roman, Times, serif" size="3"> 
+                  xlAllExceptBorders (без рамки) </font></DIV>
+              </li>
+            </ul>
+          </li>
+          <li> 
+            <DIV WIDTH="456" HEIGHT="572"><font face="Times New Roman, Times, serif" size="3"> 
+              Operation — определяет операции.</font><font face="Times New Roman, Times, serif" size="3">Допустимые 
+              значения:<BR>
+              </font></DIV>
+            <ul>
+              <li> 
+                <DIV WIDTH="456" HEIGHT="572"><font face="Times New Roman, Times, serif" size="3">xlNone 
+                  (нет) </font></DIV>
+              </li>
+              <li> 
+                <DIV WIDTH="456" HEIGHT="572"><font face="Times New Roman, Times, serif" size="3"> 
+                  xlAdd (СЛОЖИТЬ)</font></DIV>
+              </li>
+              <li> 
+                <DIV WIDTH="456" HEIGHT="572"><font face="Times New Roman, Times, serif" size="3"> 
+                  xlSubtract (ВЫЧИСТЬ)</font></DIV>
+              </li>
+              <li> 
+                <DIV WIDTH="456" HEIGHT="572"><font face="Times New Roman, Times, serif" size="3"> 
+                  xlMultiply (УМНОЖИТЬ)<BR>
+                  </font></DIV>
+              </li>
+              <li> 
+                <DIV WIDTH="456" HEIGHT="572"><font face="Times New Roman, Times, serif" size="3"> 
+                  xlDivide (разделить) </font></DIV>
+              </li>
+            </ul>
+          </li>
+          <li> 
+            <DIV WIDTH="456" HEIGHT="572"><font face="Times New Roman, Times, serif" size="3"> 
+              SkipBlanks — допустимые значения: True (пустые ячейки при вставке 
+              не учитываются) и False (пустые ячейки учитываются) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="456" HEIGHT="572"><font face="Times New Roman, Times, serif" size="3"> 
+              Transpose — допустимые значения True (диапазон выводится транспонированным) 
+              и False (не транспонированным)</font></DIV>
+          </li>
+        </ul>
+        <p><font face="Times New Roman, Times, serif" size="3">В приведенном ниже 
+          примере данные из диапазона C1:C5 рабочего листа лист1 вставляются в 
+          диапазон D1 : D5 того же листа, причем они не заменяют уже существующие 
+          данные в диапазоне D1:D5, а прибавляются к ним данные из диапазона C1 
+          : С5 :<br>
+          </font></p>
+        <p> <font face="Courier New, Courier, mono" size="3">Worksheets ( &quot;Лист1 
+          &quot; ) . Range ( &quot;С1 : С5 &quot; ) . Сору Worksheets (&quot;Лист1&quot;) 
+          .Range (&quot;D1: D5&quot;) . PasteSpecial operation : =xlAdd</font></p>
+        <p><font face="Times New Roman, Times, serif" size="3"> Метод PasteSpecial 
+          программирует выполнение на рабочем листе команды Правка, Специальная 
+          вставка (Edit, Paste Special). Аргументы метода PasteSpecial соответствуют 
+          установкам диалогового окна Специальная вставка (Paste Special), отображаемого 
+          с помощью этой команды (рис. 3.2)<br>
+          </font></p>
+        </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="615"> </TD>
+    </TR>
+  </TABLE>
+  
+  <p><img src="2.2.gif" width="333" height="281"></p>
+  <p><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 2.2.</I></B><I> 
+    Диалоговое окно <B>Специальная вставка</B></I><BR>
+    </font></p>
+</div>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="178">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="150" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="178"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="150" HEIGHT="178"> 
+        <DIV WIDTH="150" HEIGHT="178"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">AddComment<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="178"> 
+        <DIV WIDTH="466" HEIGHT="178"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Добавляет примечание 
+            к диапазону.<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">AddComment (Text) 
+            </font></P>
+        </DIV>
+        <ul>
+          <li>
+            <DIV WIDTH="466" HEIGHT="178"><font face="Times New Roman, Times, serif" size="3"> 
+              Text — строковое выражение добавляемое в качестве примечания В следующем 
+              примере создается примечание внимание ! ячейки AI активного рабочего 
+              листа:<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="466" HEIGHT="178">
+          <P> <font face="Courier New, Courier, mono" size="3">Range ( &quot;А! 
+            &quot; ) . AddComment &quot;Внимание!&quot;<BR>
+            </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="178"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="150" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="466" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+</BODY>
+</HTML>
+

@@ -1,0 +1,1976 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+<ul>
+  <li><b><font face="Times New Roman" size=3><a href="#1">ГЛАВА 15. РАБОТА С ВНЕШНИМИ 
+    БАЗАМИ ДАННЫХ</a></font></b> </li>
+  <ul>
+    <li><font face="Times New Roman" size=3><a href="#2">СОЗДАНИЕ ЗАПРОСОВ С ПОМОЩЬЮ 
+      MICROSOFT QUERY</a></font> </li>
+    <li><font face="Times New Roman" size=3><a href="#3">ЧТО ТАКОЕ ODBC?</a></font> 
+    </li>
+    <li><font face="Times New Roman" size=3><a href="#4">MICROSOFT JET</a></font> 
+    </li>
+    <li><font face="Times New Roman" size=3><a href="#5">DАО — ОБЪЕКТНЫЙ ДОСТУП 
+      К ДАННЫМ</a></font> </li>
+    <li><font face="Times New Roman" size=3><a href="#6">ПОРЯДОК РАБОТЫ ПРИ ОБЪЕКТНОМ 
+      ДОСТУПЕ К ДАННЫМ</a></font> 
+      <ul>
+        <li><font face="Times New Roman" size=3><a href="#7">Создание рабочей 
+          области</a></font> </li>
+        <li><font face="Times New Roman" size=3><a href="#8">Открытие базы (источника) 
+          данных</a></font> </li>
+        <li><font face="Times New Roman" size=3><a href="#9">Объект Recordset</a></font> 
+        </li>
+      </ul>
+    </li>
+    <li><font face="Times New Roman" size=3><a href="#10">ПРИМЕР ПРИЛОЖЕНИЯ</a></font> 
+    </li>
+  </ul>
+</ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Глава 
+  15</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Работа 
+  с внешними базами данных</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="2"></a>Создание 
+  запросов</font></B> </font><font face="Times New Roman, Times, serif" size="4"><B>с 
+  помощью Microsoft Query</B></font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В Microsoft 
+  Office входит отдельная программа, которая называется Microsoft Query, предоставляющая 
+  доступ к базам данных, созданных с помощью таких программных средств, как dBASE, 
+  Access, Paradox, Microsoft SQL Server и т. п. Эта программа позволяет отбирать 
+  информацию из базы данных, сортировать, редактировать и копировать ее на рабочий 
+  лист. Используя Microsoft Query, можно получить данные на основе заданных пользователем 
+  критериев. Excel связывается с Microsoft Query посредством механизма DDE (Dynamic 
+  Data Exchange — динамический обмен данными). Microsoft Query работает с внешними 
+  источниками данных через драйверы ODBC (Open Database Connectivity), которые 
+  являются разработанным Microsoft стандартом для работы с базами данных. Для 
+  получения данных по запросу посредством драйвера ODBC используется язык запросов 
+  SQL (Structured Query Language).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Рассмотрим 
+  последовательность создания запроса при помощи Microsoft Query на основе простой 
+  базы данных о студентах, созданной в Access (рис. 15.1).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Выполните 
+  команду <B>Данные, Внешние данные, Создать запрос </B>(Data, Get External Data, 
+  New Database Query). Появится диалоговое окно <B>Выбор источника данных </B>(Choose 
+  Data Source) (рис. 15.2). В этом окне выберите источник данных, например базу 
+  данных, составленную в Access 97. Нажмите кнопку <B>Параметры </B>(Options), 
+  при помощи появившегося окна <B>Источник данных </B>(Data Source) можно установить 
+  папки, в которых следует искать источник данных. Итак, выберите базу данных, 
+  составленную в Access 97, в качестве источника и нажмите кнопку <B>ОК.</B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В появившемся 
+  диалоговом окне <B>Select Database </B>(рис. 15.3) в списке <B>Database Name 
+  </B>выберите имя файла базы данных (в данном случае студенты.mdb) и нажмите 
+  кнопку ОК, что приведет к запуску мастера запросов.<BR>
+  </font></P>
+<P align="left"><img src="15.1.gif" width="499" height="354"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  15.1. </I></B><I>База данных о студентах</I><BR>
+  </font></P>
+<P align="left"><img src="15.2.gif" width="338" height="326"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  15.2. </I></B><I>Диалоговое окно <B>Выбор источника данных</B></I><BR>
+  </font></P>
+<P align="left"><img src="15.3.gif" width="550" height="334"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  15.3. </I></B><I>Диалоговое окно <B>Select Database</B></I></font><font size="3" face="Times New Roman, Times, serif"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Откроется 
+  диалоговое окно <B>Создание запроса: выбор столбцов </B>(Query Wizard — Choose 
+  Columns) (рис. 15.4), которое позволяет добавлять столбцы или поля в список 
+  <B>Столбцы запроса </B>(Query Columns). При нажатии на кнопку &gt;, расположенную 
+  в средней части диалогового окна <B>Создание запроса: выбор столбцов </B>(Query 
+  Wizard Choose Columns), выбранный столбец добавляется в запрос, кнопка &lt; 
+  служит для удаления выбранного столбца из списка столбцов запроса, а кнопка 
+  &laquo; позволяет удалить все столбцы запроса. В рассматриваемом случае в список 
+  <B>Столбцы запроса </B>(Query Columns) добавим все поля базы данных, кроме поля 
+  номер. Нажмите кнопку Далее &gt; (Next &gt;), переходя к следующему шагу работы 
+  мастера запросов.<BR>
+  </font></P>
+<P align="left"><img src="15.4.gif" width="487" height="360"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  15.4. </I></B><I>Диалоговое окно <B>Создание запроса: выбор столбцов</B></I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Откроется 
+  диалоговое окно <B>Создание запроса: отбор данных </B>(Query Wizard -Filter 
+  Data) (рис. 15.5), которое позволяет отфильтровать данные в выбранных полях. 
+  Для фильтрации данных в списке <B>Столбцы для отбора, </B>выделите столбец, 
+  по которому будет производиться фильтрация. В первом раскрывающемся списке выбирается 
+  операция отбора, а во втором, содержащем все имеющиеся в выбранном поле значения, 
+  выберите нужное или введите свое. При необходимости ввести дополнительную операцию 
+  отбора выберите переключатель и (AND) или или (OR), и воспользуйтесь следующими 
+  раскрывающимися списками для ввода критериев фильтрации и т. д. Завершив создание 
+  критериев фильтрации, нажмите кнопку Далее &gt; (Next &gt;), переходя к следующему 
+  шагу работы мастера запросов. В рассматриваемом случае проведем фильтрацию по 
+  полю группа, установив критерий <B>равно </B>значению Экономика, и полю предмет 
+  с критерием <B>равно </B>значению информатика, т. е. отобразим только информацию 
+  о результатах сдачи информатики студентов-экономистов. Отметим, что визуально 
+  выбранные поля отличаются от невыбранных тем, что они выделяются полужирным 
+  шрифтом.<BR>
+  </font></P>
+<P align="left"><img src="15.5.gif" width="481" height="365"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  15.5. </I></B><I>Диалоговое окно <B>Создание запроса: отбор данных</B></I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Откроется 
+  диалоговое окно <B>Создание запроса: порядок сортировки </B>(Query Wizard - 
+  Sort Data) (рис. 15.6), которое позволяет отсортировать данные в выбранных полях 
+  в порядке возрастания или убывания. Отсортируем данные по фамилиям в порядке 
+  возрастания. Нажмите кнопку <B>Далее &gt; </B>(Next &gt;), переходя к следующему 
+  шагу работы мастера запросов.<BR>
+  </font></P>
+<P align="left"><img src="15.6.gif" width="487" height="360"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  15.6. </I></B><I>Диалоговое окно <B>Создание запроса: порядок сортировки</B></I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Откроется 
+  диалоговое окно <B>Создание запроса: заключительный шаг</B> </font><font face="Times New Roman, Times, serif" size="3">(рис. 
+  15.7). При желании еще раз воспользоваться тем же запросом его можно сохранить, 
+  используя кнопку <B>Сохранить запрос </B>(Save Query). Для завершения создания 
+  запроса выберите флажок <B>Вернуть данные в Microsoft Excel </B>(Return Data 
+  to Microsoft Excel) и нажмите кнопку <B>Готово </B>(Finish).<BR>
+  </font></P>
+<P align="left"><img src="15.7.gif" width="487" height="360"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  15.7. </I></B><I>Диалоговое окно <B>Создание запроса: заключительный шаг</B></I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">На экране 
+  отобразится диалоговое окно <B>Возврат данных в Microsoft Excel</B> </font><font face="Times New Roman, Times, serif" size="3">(Returning 
+  External Data to Microsoft Excel) (рис. 15.8). выберите переключатель <B>Имеющийся 
+  лист </B>и укажите адрес верхней левой ячейки, куда надо поместить данные, нажмите 
+  кнопку ОК. Полученный результат запроса данного примера показан на рис. 15.9.<BR>
+  </font></P>
+<P align="left"><img src="15.8.gif" width="536" height="254"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  15.8. </I></B><I>Диалоговое окно <B>Возврат данных в Microsoft Excel</B></I><BR>
+  </font></P>
+<P align="left"><img src="15.9.gif" width="412" height="308"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><i>Рис. 
+  15.9. </i></B><i>Результат запроса<BR>
+  </i> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Макрорекордер 
+  записывает перечисленные выше действия в виде следующего макроса:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Макрос1()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' <BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Макрос1 Макрос<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Макрос записан 
+  03.06.99 (Андрей)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' <BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With ActiveSheet.QueryTables</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Add(Connection:=Array(Array(<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;ODBC;DSN=MS 
+  Access 97<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Database;DBQ=C:\МУ_DОС\студенты.mdb;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">DefaultDir=C:\MY__DOC;Driverld=25;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">FIL=MS Aceess;MaxBufferSize=512;PageT-imeo&quot;</font><font face="Courier New, Courier, mono" size="3">)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">, Array(&quot;ut=5;&quot;)), 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Destination:=Range(&quot;Al&quot;))</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Sql = Array( 
+  &quot;SELECT ПервыйКурс.Фамилия,</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> ПервыйКурс.Группа, 
+  ПервыйКурс.Предмет,</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> ПервыйКурс.Оценка&quot; 
+  &amp; Ghr(13) &amp; &quot;&quot; <I>&amp; </I>Chr(10) &amp; &quot;FROM<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">`C:\МY_ООС\СТУДЕНТЫ` 
+  .ПервыйКурс</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> ПервыйКурс&quot; 
+  &amp; Chr(13) &amp; &quot;&quot; &amp; Ghr,(10) &amp; &quot;WHERE (ПервыйКурс.Группа='Экономика') 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">AND (ПервыйКурс.Предмет='Инф&quot; 
+  </font><font face="Courier New, Courier, mono" size="3">,&quot;орматика')&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> &amp; Chr(13) 
+  &amp; &quot;&quot; &amp; Chr(10) &amp; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">&quot;ORDER BY 
+  ПервыйКурс.Фамилия&quot;)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.FieldNames 
+  = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.RefreshStyle 
+  = xlInsertDeleteCells<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.RowNumbers 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.FillAdjacentFormulas 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.RefreshOnFileOpen 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.HasAutoFormat 
+  = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.BackgroundQuery 
+  = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.TablesOnlyFromHTML 
+  = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Refresh BackgroundQuery:=False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.SavePassword 
+  = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.SaveData = 
+  True</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End With</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Для удобства 
+  расположения этого макроса на листе, выделенные цветом две группы строк по три 
+  и по четыре строки соответственно, составляющие единые строки, не разбиты на 
+  подстроки знаками переноса. Во всяком случае, нельзя было бы ограничиться только 
+  добавлением знаков переноса, т. к. их лимит уже исчерпан. На самом деле, корректная 
+  запись макроса не представляет никаких усилий. Достаточно было бы ввести дополнительные 
+  строковые переменные, которым были бы присвоены выделенные строковые выражения. 
+  Но в этом случае макрос визуально сильно бы отличался от того, который был создан 
+  макрорекордером. Поэтому, во имя получения максимального приближения к &quot;реальной 
+  боевой ситуации&quot; (работы макрорекордера) и большей наглядности, приходится 
+  идти на небольшую жертву -оставить в макросе не скорректированными заранее оговоренные 
+  ошибки, которые не должны вызвать у читателя никаких затруднений.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Центральную 
+  роль в данном макросе играют: инструкция SELECT, указывающая выбираемые поля, 
+  инструкция WHERE, задающая критерий отбора записей и инструкция ORDER BY, устанавливающая 
+  порядок вывода записей.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В макросе 
+  используется семейство QueryTables. Семейство QueryTables является семейством 
+  всех объектов QueryTable, представляющих собой внедренные на рабочий лист результаты 
+  запроса по внешней базе данных посредством Microsoft Query. Основными методами 
+  семейства QueryTables являются Add и item. Несмотря на громоздкость макроса 
+  макрос1, метод Add имеет простую синтаксическую структуру:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Add(Connection, 
+  Destination, Sql)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Аргументы:<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="131">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="119" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="498" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="119" HEIGHT="45"> 
+        <DIV WIDTH="119" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Connection<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="498" HEIGHT="45"> 
+        <DIV WIDTH="498" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ODBC-строковое 
+            выражение, указывающее базу данных, к которой производится запрос<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="43"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="119" HEIGHT="43"> 
+        <DIV WIDTH="119" HEIGHT="43"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Destination<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="498" HEIGHT="43"> 
+        <DIV WIDTH="498" HEIGHT="43"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Устанавливает 
+            верхнюю левую ячейку диапазона рабочего листа, в который выводится 
+            результат запроса<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="43"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="43"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="119" HEIGHT="43"> 
+        <DIV WIDTH="119" HEIGHT="43"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Sql<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="498" HEIGHT="43"> 
+        <DIV WIDTH="498" HEIGHT="43"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ODBC-строковое 
+            выражение, указывающее критерии, по которым создается запрос<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="43"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="119" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="498" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+<p>&nbsp;</p></div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="3"></a>Что 
+  такое ODBC?</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Для унификации 
+  способа работа с базами данных, созданными разными средствами (например, Access, 
+  FoxPro, SQL Server и т. д.), Microsoft разработал интерфейс доступа к данным, 
+  называемый протоколом ODBC (Open Database Connectivity - открытая связь с базой 
+  данных). Ввод, получение и работа с данными происходит при помощи структурированного 
+  языка запросов (SQL, Structured Query Language). Протокол ODBC обеспечивает 
+  стандарт передачи данных из одного приложения в другое.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Кроме того, 
+  он позволяет создавать, удалять, редактировать, сортировать и фильтровать поля, 
+  записи и таблицы.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="4"></a>Microsoft 
+  Jet</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Microsoft 
+  Jet — это ядро базы данных, которое обеспечивает возможность доступа к данным 
+  из любого приложения, поддерживающего OLE Automation, в частности VBA и Excel, 
+  независимо от интерфейса конкретной системы управления базами данных. Ядро Jet 
+  хранит свою информацию по умолчанию в файлах с базами данных, имеющих расширение 
+  mdb. Такие файлы содержат таблицы, модули, формы, отчеты, запросы и индексы. 
+  Конечно, формат mdb — это не единственный формат баз данных, с которыми работает 
+  Microsoft Jet. Он поддерживает форматы баз данных, созданных с помощью FoxPro, 
+  dBASE и т. д.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="4"><B><a name="5"></a>DАО 
+  — объектный доступ к данным</B></font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Объектный 
+  доступ к данным (DAO, Data Access Objects) создавался как объектно-ориентированный 
+  интерфейс ядра базы данных Jet, т. е. для обеспечения взаимодействия между приложением, 
+  например VBA, и ядром базы данных Jet. В Office 97 включена новая версия DАО 
+  - DАО 3.5, которая позволяет манипулировать данными в обход ядра Jet. В DАО 
+  3.5 можно напрямую связываться с источниками данных через ODBCDirect, что делает 
+  приложения более быстродействующими.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Объекты доступа 
+  к данным являются логическим представлением реляционной базы данных: входящих 
+  в нее таблиц, записей, полей, индексов и т. д.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Всего имеется 
+  17 типов объектов доступа к данным. На рис. 15.10 представлены объекты доступа 
+  к данным первых четырех иерархических уровней. В верхней части иерархии объектов 
+  доступа находится объект DBEngine, непосредственно процессор ядра базы данных 
+  Jet. Объект Error, являющийся элементом семейства Errors, хранит информацию 
+  об ошибках, возникающих при объектном доступе к данным. Объект DBEngine также 
+  содержит в себе семейство workspaces объектов workspace, которые устанавливают 
+  именованные сеансы работы пользователя. Каждый объект workspace включает семейство 
+  Databases, которое состоит из одного или более объектов Database, являющихся 
+  открытыми базами данных. Объект TabieDef, элемент семейства TabieDefs, представляет 
+  сохраненное определение основной или присоединенной таблицы. Объект QueryDef, 
+  элемент семейства QueryDefs, представляет сохраненное определение запроса в 
+  базе данных Microsoft Jet или временное определение запроса в рабочей области 
+  ODBCDirect. Объект Recordset, элемент семейства Recordsets, представляет набор 
+  записей в основной таблице или набор записей, который получается в результате 
+  выполнения запроса. В объектах Container группируются однотипные объекты, а 
+  объект Relation представляет связь между полями таблиц или запросами.<BR>
+  </font></P>
+<P align="left"><img src="15.10.gif" width="470" height="195"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  15.10. </I></B><I>Иерархия объектов DАО</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Для возможности 
+  использования объектов доступа необходимо задать ссылку на библиотеку DАО 3.5. 
+  Для этого в редакторе VBA необходимо выбрать команду <B>Сервис, Ссылки </B>(Tools, 
+  References) и в появившемся диалоговом окне <B>Ссылки </B>(References) установить 
+  флажок напротив элемента <B>Microsoft DAO 3.5 Object Library</B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="6"></a>Порядок 
+  работы при объектном доступе к данным</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">При извлечении 
+  информации с помощью объектного доступа к данным надо:<BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Создать рабочую область 
+    (объект Workspace)<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Открыть базу (источника) 
+    данных (объект Database)<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Создать набор записей 
+    (объект Recordset)<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Выполнить непосредственную 
+    работу с конкретными записями и полями<BR>
+    </font></li>
+</ul>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="7"></a>Создание 
+  рабочей области</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Рабочую область 
+  можно создать методом CreateWorkspace объекта DBEngine. </font></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set РабочаяОбласть 
+  = CreateWorkspace(Name, UserName, Password, UseType)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Аргументы:<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="200">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="469" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"></TD>
+      <td width="150" height="49"> 
+        <div width="150" height="49"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">РабочаяОбласть<br>
+            </font></p>
+        </div>
+      </td>
+      <td width="470" height="49"> 
+        <div width="470" height="49"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Объектная переменная, 
+            представляющая создаваемый объект Workspace<br>
+            </font></p>
+        </div>
+      </td>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"></TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="45"> 
+        <DIV WIDTH="149" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Name<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="469" HEIGHT="45"> 
+        <DIV WIDTH="469" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выражение или 
+            переменная типа string, содержащая уникальное имя нового объекта workspace<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="45"> 
+        <DIV WIDTH="149" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">UserName<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="469" HEIGHT="45"> 
+        <DIV WIDTH="469" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выражение или 
+            переменная типа string, определяющая владельца нового объекта workspace<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="44"> 
+        <DIV WIDTH="149" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Password<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="469" HEIGHT="44"> 
+        <DIV WIDTH="469" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выражение или 
+            переменная типа string, содержащая пароль для доступа к новому объекту 
+            workspace<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="66"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="66"> 
+        <DIV WIDTH="149" HEIGHT="66"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">UseType<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="469" HEIGHT="66"> 
+        <DIV WIDTH="469" HEIGHT="66"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            dbUseJet (создание рабочей области ядра Microsoft Jet) и dbUseODBC 
+            (создание рабочей области ODBCDirect)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="66"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="469" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Например, 
+  для создания рабочей области Microsoft Jet можно использовать следующие две 
+  инструкции:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim РабочаяОбласть 
+  As CreateWorkspace<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set РабочаяОбласть 
+  = DBEngine.CreateWorkspace(Name:=&quot;МояОбласть&quot;, UserName:=&quot;admin&quot;, 
+  Password:=&quot;&quot;, UseType:=dbUseJet)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Рабочую область 
+  ODBCDirect можно создать следующим образом (ссылка на объект DBEngine применяется 
+  по умолчанию, поэтому во второй инструкции объект DBEngine опущен):<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim РабочаяОбласть 
+  As CreateWorkspace<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set РабочаяОбласть 
+  = CreateWorkspace(Name:=&quot;МояОбласть&quot;, UserName:=&quot;UID'V Password:=&quot;&quot;, 
+  UseType:=dbUseODBC)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="8"></a>Открытие 
+  базы (источника) данных</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Открыть базу 
+  данных можно методом OpenDatabase объекта Workspace.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Синтаксис:</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set БазаДанных 
+  = РабочаяОбласть.OpenDatabase (name, options, readonly, connect)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Аргументы:<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="192">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="476" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="44"> 
+        <DIV WIDTH="142" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>БазаДанных</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="476" HEIGHT="44"> 
+        <DIV WIDTH="476" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Объектная 
+            переменная, представляющая открываемый объект Database</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="84"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="84"> 
+        <DIV WIDTH="142" HEIGHT="84"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">РабочаяОбласть<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="476" HEIGHT="84"> 
+        <DIV WIDTH="476" HEIGHT="84"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Объектная переменная, 
+            представляющая существующий объект workspace, который будет содержать 
+            базу данных. Если аргумент РабочаяОбласть не задан, метод OpenDatabase 
+            использует стандартную рабочую область<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="84"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="64"> 
+        <DIV WIDTH="142" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Name<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="476" HEIGHT="64"> 
+        <DIV WIDTH="476" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выражение или 
+            переменная типа string, задающая имя существующего файла базы данных 
+            с ядром Microsoft Jet или имя источника данных ODBC<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="142" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="476" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="310">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="134" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="406" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="182"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="134" HEIGHT="182"> 
+        <DIV WIDTH="143" HEIGHT="182"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Options<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="406" HEIGHT="182"> 
+        <ul>
+          <li> 
+            <DIV WIDTH="475" HEIGHT="182"> <font face="Times New Roman, Times, serif" size="3"> 
+              Для рабочей области ядра Microsoft Jet допустимыми являются следующие 
+              значения аргумента: True (открытие базы данных для монопольного 
+              доступа) и False (по умолчанию, открытие базы данных для общего 
+              доступа) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="475" HEIGHT="182"><font face="Times New Roman, Times, serif" size="3">Для 
+              рабочей области ODBCDirect допустимыми являются следующие значения 
+              аргумента:<BR>
+              </font></DIV>
+            <DIV WIDTH="475" HEIGHT="182"> <font face="Courier New, Courier, mono" size="3">dbDriverNoPrompt, 
+              </font></DIV>
+            <DIV WIDTH="475" HEIGHT="182"><font face="Courier New, Courier, mono" size="3">dbDriver 
+              Prompt, </font></DIV>
+            <DIV WIDTH="475" HEIGHT="182"><font face="Courier New, Courier, mono" size="3">dbDrive 
+              r Complete, </font></DIV>
+            <DIV WIDTH="475" HEIGHT="182"><font face="Courier New, Courier, mono" size="3">dbDriverCompleteRequired</font><font face="Times New Roman, Times, serif" size="3"><BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="182"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="134" HEIGHT="82"> 
+        <DIV WIDTH="143" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Readonly<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="406" HEIGHT="82"> 
+        <DIV WIDTH="475" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (база данных открывается только для чтения) и значение False 
+            (по умолчанию, база данных открывается как для чтения, так и для записи)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="134" HEIGHT="46"> 
+        <DIV WIDTH="143" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Connect<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="406" HEIGHT="46"> 
+        <DIV WIDTH="475" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Дополнительный 
+            аргумент, содержащий сведения о подключении, в том числе и пароли<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="134" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="406" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Для закрытия 
+  базы данных следует применять метод close.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Например, 
+  для открытия базы данных с ядром Microsoft Jet можно использовать следующие 
+  две инструкции:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim БазаДанных 
+  <I>As </I>Database<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set БазаДанных 
+  = РабочаяОбласть </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.OpenDatabase 
+  (Name:=&quot;C: \Пример.mdb&quot;,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Options:=True)<BR>
+  </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="4"><a name="9"></a>Объект 
+  Recordset</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">После открытия 
+  базы данных можно создать объект Recordset. Объект Recordset представляет собой 
+  записи исходной таблицы базы данных или результирующий набор записей, возвращаемые 
+  в результате запроса. Он позволяет управлять данными в базе данных на уровне 
+  записи. На уровне полей управление данными осуществляется объектом Field.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Имеются следующие 
+  типы объекта Recordset;<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="203">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="111" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="506" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="33"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="111" HEIGHT="33"> 
+        <DIV WIDTH="111" HEIGHT="33"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Тип</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="506" HEIGHT="33"> 
+        <DIV WIDTH="506" HEIGHT="33"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Описание</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="33"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="170"></TD>
+      <td width="129" height="122"> 
+        <div width="129" height="122"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">forward-only 
+            dynamic<br>
+            </font></p>
+        </div>
+      </td>
+      <td width="488" height="122"> 
+        <div width="488" height="122"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Статический 
+            режим с последовательным доступом. Перемещаться от записи к записи 
+            можно только вперед. Этот режим самый скоростной<br>
+            </font></p>
+          <p> <font face="Times New Roman, Times, serif" size="3">Позволяет получать, 
+            анализировать, удалять и редактировать данные из нескольких динамически 
+            связанных таблиц. Этот тип соответствует динамическому указателю ODBC<br>
+            </font></p>
+        </div>
+      </td>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="170"></TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="170"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="111" HEIGHT="170"> 
+        <DIV WIDTH="111" HEIGHT="170"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">table<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">dynaset snapshot<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="506" HEIGHT="170"> 
+        <DIV WIDTH="506" HEIGHT="170"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Работает с одной 
+            таблицей текущей базы данных. В этом случае данные можно индексировать, 
+            что ускоряет поиск записей и их сортировку. При поиске записей допустимо 
+            использовать вместо метода Find метод Seek<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Позволяет получать, 
+            анализировать, удалять и редактировать данные из нескольких динамически 
+            связанных таблиц. Этот тип соответствует указателю ключевого набора 
+            записей ODBC<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">В этом режиме 
+            в общем случае нельзя редактировать базу данных, но скорость работы 
+            больше, чем в двух предыдущих<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="170"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="111" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="506" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Создание 
+  объекта Recordset</B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Объектная 
+  переменная типа Recordset создается при помощи метода openRecordSet. Как и для 
+  любой объектной переменной, ее надо сначала объявить, а только потом установить 
+  ссылку на объект, возвращаемый методом OpenRecordSet.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Синтаксис 
+  для объектов Connection и Database:<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Set НаборЗапйсей 
+  = объект.OpenRecordset (Источник, Тип, Параметры, Блокировки)<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Синтаксис 
+  для объектов QueryDef, Recordset и TableDef: Set НаборЗапйсей = Объект.OpenRecordset 
+  (Тип, Параметры, Блокировки) Аргументы:<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="371">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="131" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="487" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="131" HEIGHT="46"> 
+        <DIV WIDTH="131" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Набор Записей</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="487" HEIGHT="46"> 
+        <DIV WIDTH="487" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Объектная 
+            переменная, представляющая открываемый объект Recordset</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="61"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="131" HEIGHT="61"> 
+        <DIV WIDTH="131" HEIGHT="61"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Объект<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="487" HEIGHT="61"> 
+        <DIV WIDTH="487" HEIGHT="61"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Объектная переменная, 
+            представляющая существующий объект, используемый при создании нового 
+            объекта<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Recordset<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="61"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="143"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="131" HEIGHT="143"> 
+        <DIV WIDTH="131" HEIGHT="143"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Источник<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="487" HEIGHT="143"> 
+        <DIV WIDTH="487" HEIGHT="143"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выражение (или 
+            переменная типа string) , определяющее источник записей для нового 
+            объекта Recordset. В качестве источника записей можно указать имя 
+            таблицы или запроса, а также инструкцию SQL, которая возвращает записи. 
+            Для табличного объекта Recordset в базе данных Microsoft Jet в качестве 
+            источника допускается указание только имени таблицы<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="143"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="80"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="131" HEIGHT="80"> 
+        <DIV WIDTH="131" HEIGHT="80"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Тип<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="487" HEIGHT="80"> 
+        <DIV WIDTH="487" HEIGHT="80"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Константа, указывающая 
+            тип открываемого объекта<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Recordset. Допустимые 
+            Значения: dbOpenTable,<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">dbOpenDynaset, 
+            dbOpenSnapshot, DbOpenForwardOnly и DbOpenDynamic<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="80"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="42"></TD>
+      <td width="130" height="59"> 
+        <div width="130" height="59"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Блокировки<br>
+            </font></p>
+        </div>
+      </td>
+      <td width="487" height="59"> 
+        <div width="487" height="59"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Устанавливает 
+            тип блокировки данных. Допустимые значения: dbReadOnly, dbPessimistic, 
+            dbOptimistic и dbOptimisticValue<br>
+            </font></p>
+        </div>
+      </td>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="42"></TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="42"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="131" HEIGHT="42"> 
+        <DIV WIDTH="131" HEIGHT="42"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Параметры<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="487" HEIGHT="42"> 
+        <DIV WIDTH="487" HEIGHT="42"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Специфицирует 
+            работу пользователя с объектом Recordset. Приведем некоторые из допустимых 
+            значений:</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">dbAppendOnly 
+            (пользователь может добавлять записи, но не может редактировать уже 
+            существующие), dbReadOnly (запрещено вносить изменения в записи), 
+            dbDenyWrite (запрещено другим пользователям вносить изменения)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="42"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="131" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="487" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Методы 
+  и свойства объекта Recordset</B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  наиболее часто используемые методы и свойства объекта Recordset, позволяющие 
+  анализировать, редактировать записи базы данных. Способ их применения будет 
+  показан на примере простого приложения для работы с базой данных, разработанного 
+  в следующем разделе.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Методы объекта 
+  Recordset.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="536">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="476" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="106"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="106"> 
+        <DIV WIDTH="143" HEIGHT="106"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">AddNew<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="476" HEIGHT="106"> 
+        <DIV WIDTH="476" HEIGHT="106"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Создает и добавляет 
+            новую запись. После внесения изменений в новую запись следует вызвать 
+            метод update для сохранения изменений и добавления записи в объект 
+            Recordset. До вызова метода update изменения в базу данных не заносятся<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="106"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="67"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="67"> 
+        <DIV WIDTH="143" HEIGHT="67"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Clone<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="476" HEIGHT="67"> 
+        <DIV WIDTH="476" HEIGHT="67"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Создает копию 
+            объекта Recordset. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Set Копия = Оригинал 
+            . Clone</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="67"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="24"> 
+        <DIV WIDTH="143" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Close<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="476" HEIGHT="24"> 
+        <DIV WIDTH="476" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Закрывает открытый 
+            объект доступа к данным<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="41"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="41"> 
+        <DIV WIDTH="143" HEIGHT="41"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Delete<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="476" HEIGHT="41"> 
+        <DIV WIDTH="476" HEIGHT="41"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Удаляет текущую 
+            запись в обновляемом объекте<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Recordset<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="41"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="106"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="106"> 
+        <DIV WIDTH="143" HEIGHT="106"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Edit<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="476" HEIGHT="106"> 
+        <DIV WIDTH="476" HEIGHT="106"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Копирует текущую 
+            запись из обновляемого объекта Recordset в буфер копирования для последующего 
+            изменения. После внесения изменений в новую запись следует вызвать 
+            метод update для сохранения изменений и добавления записи в объект 
+            Recordset<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="106"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="103"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="103"> 
+        <DIV WIDTH="143" HEIGHT="103"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">MoveFirst,<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">MoveLast, MoveNext<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">и<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">MovePrevious<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="476" HEIGHT="103"> 
+        <DIV WIDTH="476" HEIGHT="103"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Делает текущей 
+            первую, последнюю, следующую или предыдущую запись объекта Recordset 
+            соответственно<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="103"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="90"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="90"> 
+        <DIV WIDTH="143" HEIGHT="90"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">FindFirst, FindLast,<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">FindNext и FindPrevious<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="476" HEIGHT="90"> 
+        <DIV WIDTH="476" HEIGHT="90"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Находит первую, 
+            последнюю, следующую или предыдущую запись соответственно, удовлетворяющую 
+            заданным условиям, и делает эту запись текущей записью Синтаксис:<br>
+            </font></P>
+          <p> <font face="Courier New, Courier, mono" size="3">(FindFirst |<i> 
+            </i>FindLast |<i> </i>FindNext |<i> </i>FindPrevious )Criteria criteria 
+            </font></p>
+          <p><font face="Times New Roman, Times, serif" size="3">— это выражение 
+            (или переменная типа string), используемая для поиска записи Приведем 
+            несколько примеров критериев:<br>
+            </font></p>
+          <p> <font face="Times New Roman, Times, serif" size="3">&quot;[<font face="Courier New, Courier, mono">Оценка] 
+            &gt; 3&quot; &quot;[Фамилия] = 'Петров'&quot; &quot;[Оценка] =5 AND 
+            [Предмет] = 'Информатика'&quot; &quot; [ДатаЭкзамена] = #17/06/991</font></font></p>
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="90"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="143" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="476" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <table width="550" border="1">
+    <tr align="LEFT" valign="TOP"> 
+      <td align="LEFT" valign="TOP" width="127" height="228"> 
+        <div width="146" height="228"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Seek<br>
+            </font></p>
+        </div>
+      </td>
+      <td align="LEFT" valign="TOP" width="407" height="228"> 
+        <div width="478" height="228"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Находит в индексированном 
+            объекте Recordset типа table запись, удовлетворяющую заданным условиям 
+            для текущего индекса, и делает эту записи текущей.<br>
+            </font></p>
+          <p> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<br>
+            </font></p>
+          <p> <font face="Courier New, Courier, mono" size="3">Seek comparison, 
+            keyl, key2 . . . key13</font><font face="Times New Roman, Times, serif" size="3"><br>
+            </font></p>
+          <p> <font face="Times New Roman, Times, serif" size="3">Аргументы: comparison 
+            — допустимые значения: &quot;&lt;&quot;, &quot;&lt;=&quot;, &quot;=&quot;, 
+            &quot;&gt;=&quot; или &quot;&gt;&quot;. keyl, key2, ..., key13 — одно 
+            или несколько значений ключевых полей в текущем индексе объекта Recordset<br>
+            </font></p>
+        </div>
+      </td>
+    </tr>
+    <tr align="LEFT" valign="TOP"> 
+      <td align="LEFT" valign="TOP" width="127" height="94"> 
+        <div width="146" height="94"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">GetRows<br>
+            </font></p>
+        </div>
+      </td>
+      <td align="LEFT" valign="TOP" width="407" height="94"> 
+        <div width="478" height="94"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Загружает строки 
+            объекта Recordset в массив. </font></p>
+          <p><font face="Times New Roman, Times, serif" size="3">Синтаксис:<br>
+            </font></p>
+          <p> <font face="Courier New, Courier, mono" size="3">Set ИмяМассива 
+            = НаборЗаписей . GetRows (NumRows) </font></p>
+        </div>
+        <ul>
+          <li> 
+            <div width="478" height="94"><font face="Times New Roman, Times, serif" size="3"> 
+              NumRows — число строк<br>
+              </font></div>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr align="LEFT" valign="TOP"> 
+      <td align="LEFT" valign="TOP" width="127" height="47"> 
+        <div width="146" height="47"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Update<br>
+            </font></p>
+        </div>
+      </td>
+      <td align="LEFT" valign="TOP" width="407" height="47"> 
+        <div width="478" height="47"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Сохраняет вставки 
+            и изменения, произведенные в объекте Recordset При помощи методов 
+            AddNew и Edit<br>
+            </font></p>
+        </div>
+      </td>
+    </tr>
+    <tr align="LEFT" valign="TOP"> 
+      <td align="LEFT" valign="TOP" width="127" height="109"> 
+        <div width="146" height="46"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">CancelUpdate</font></p>
+        </div>
+      </td>
+      <td align="LEFT" valign="TOP" width="407" height="109"> 
+        <div width="478" height="46"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Отменяет все 
+            изменения объекта Recordset, выполненные При помощи методов AddNew 
+            и Edit</font></p>
+        </div>
+      </td>
+    </tr>
+  </table>
+  
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Свойства 
+  объекта Recordset.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="869">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="491" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="107"></TD>
+      <td width="126" height="182"> 
+        <div width="126" height="182"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">BOF EOF<br>
+            </font></p>
+        </div>
+      </td>
+      <td width="489" height="182"> 
+        <div width="489" height="182"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Возвращает значение 
+            True, если указатель текущей записи расположен перед первой записью 
+            набора записей, и значение False, если указатель текущей записи расположен 
+            на первой записи набора или на любой записи после нее Возвращает значение 
+            True, если указатель текущей записи расположен после последней записи 
+            набора, и значение False, если указатель текущей записи расположен 
+            на последней записи набора или на любой записи перед ней<br>
+            </font></p>
+        </div>
+      </td>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="107"></TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="107"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="107"> 
+        <DIV WIDTH="122" HEIGHT="107"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Bookmark<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="491" HEIGHT="107"> 
+        <DIV WIDTH="491" HEIGHT="107"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Устанавливает 
+            или возвращает закладку, которая однозначно определяет текущую запись 
+            в объекте Recordset. Обычно используется для возврата в объект Recordset 
+            на определенное место, без указания конкретного адреса записи<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="107"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="46"> 
+        <DIV WIDTH="122" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">NoMatch<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="491" HEIGHT="46"> 
+        <DIV WIDTH="491" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращаемые 
+            значения: True, если нужная запись не найдена, и False в противном 
+            случае<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="187"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="187"> 
+        <DIV WIDTH="122" HEIGHT="187"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">RecordCount<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="491" HEIGHT="187"> 
+        <DIV WIDTH="491" HEIGHT="187"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает число 
+            записей, к которым был осуществлен доступ в объекте Recordset. Свойство 
+            RecordCount не показывает, сколько записей содержится в объекте Recordset 
+            до обращения ко всем записям. После обращения к последней записи набора 
+            значение свойства RecordCount становится равным полному числу не удаленных 
+            записей в объекте Recordset. Для принудительного обращения к последней 
+            записи следует вызвать для объекта Recordset метод MoveLast<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="187"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="329"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="329"> 
+        <DIV WIDTH="122" HEIGHT="329"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Filter <BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="491" HEIGHT="329"> 
+        <DIV WIDTH="491" HEIGHT="329"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Задает или возвращает 
+            значение, определяющее записи, которые будут включены в открываемый 
+            объект Recordset.<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">При указания 
+            критерия фильтрации названия полей заключаются в квадратные скобки. 
+            Приведем несколько примеров критериев:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">[Оценка] = 5 
+            [Оценка] &gt;= 3 [Оценка] =5 AND [Предмет] = &quot;Информатика&quot; 
+            [Оценка] = 4 AND [Предмет] = &quot;Информатика&quot; [Оценка] &gt;= 
+            4 AND [Предмет] IN (&quot;Информатика&quot;, &quot;Право&quot;) [Длина] 
+            * [Ширина] &gt; 100 </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">В критериях вместо 
+            знака равенства допустимо использование ключевого слова LIKE, например:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">[Оценка] LIKE 
+            5<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="329"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="200"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="200"> 
+        <DIV WIDTH="122" HEIGHT="200"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Sort<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="491" HEIGHT="200"> 
+        <DIV WIDTH="491" HEIGHT="200"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Задает или возвращает 
+            порядок сортировки записей в объекте Recordset (только в рабочей области 
+            Microsoft Jet). Для сортировки по возрастанию используется ключевое 
+            слово ASC, а по убыванию — DESC.</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Например,<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">[Оценка] ASC 
+            [Фамилия] DESC<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Для сортировки 
+            первоначально по полю оценка, а потом по полю Фамилия: [Оценка] ASC, 
+            [Фамилия] DESC<BR>
+            </font></P>
+          </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="200"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="491" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="10"></a>Пример 
+  приложения</font></B><font size="4"><BR>
+  </font> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Рассмотрим 
+  работу с базой данных на примере следующего простого приложения, в котором используются 
+  все основные операции с записями. База данных находится в файле студенты.mdb, 
+  созданным в Access, и состоит из одной таблицы ПервыйКурс. В таблице имеются 
+  четыре поля: Фамилия, Группа, предмет и Оценка. При запуске приложения на экране 
+  отображается диалоговое окно Студенты первого курса.<BR>
+  </font></P>
+<P align="left"><img src="15.11.gif" width="315" height="381"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  15.11. </I></B><I>Диалоговое окно Студенты первого курса</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приводимая 
+  ниже программа:<BR>
+  </font></P>
+<ol>
+  <li> <font face="Times New Roman, Times, serif" size="3">При активизации диалогового 
+    окна выводит в поля ввода информацию о первом студенте и в надписи всего записей 
+    указывает общее число записей в таблице.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">При нажатии кнопок 
+    &gt; и &lt; происходит перемещение на одну запись вперед и назад соответственно, 
+    а при нажатии кнопок &gt;&gt; и &lt;&lt; — перемещение в конец и начало таблицы 
+    соответственно.<BR>
+    </font></li>
+</ol>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">При нажатии 
+  кнопки найти происходит поиск первой записи из таблицы с указанной фамилией 
+  (если такой записи нет, то при помощи свойства Bookmark указатель возвращается 
+  в ту же позицию, откуда начался поиск). При нажатии кнопки найти далее ищется 
+  последующая запись с той же фамилией.<BR>
+  </font></P>
+<ol>
+  <li> <font face="Times New Roman, Times, serif" size="3">При нажатии кнопки 
+    Удалить удаляется запись.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> При нажатии кнопки 
+    новая запись создается новая запись по данным, введенным в поля ввода.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> При нажатии кнопки 
+    Редактировать вносятся изменения в запись из базы данных.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">При нажатии кнопки 
+    Закрыть закрываются база данных и диалоговое окно.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> При выборе переключателя 
+    хорошисты и отличники в диалоговом окне выводятся данные только о хорошистах 
+    и отличниках, а при выборе переключателя все — выводится информация обо всех 
+    студентах.<BR>
+    </font></li>
+</ol>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Переменные 
+  уровня модуля</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim РабочаяОбласть 
+  As Workspace<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim БазаДанных 
+  As Database<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Запись As 
+  Recordset<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim ЗаписьДубль 
+  As Recordset<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Фамилия 
+  As String<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Критерий 
+  As String<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Закладка 
+  As Variant </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton1_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Найти запись 
+  по фамилии</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Запоминается 
+  на закладке текущая запись<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Закладка = Запись.Bookmark 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Считывается 
+  фамилия из поля Фамилия, на ее основе </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' создается критерий 
+  поиска и ищется первая запись с<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' подобной фамилией 
+  '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Фамилия = Trim(TextBoxl.Text)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Критерий = &quot;[Фамилия]=&quot;' 
+  &amp; Фамилия &amp; &quot;'&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Запись.FindFirst 
+  Критерий<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Если запись 
+  с указанной фамилией найдена, то она отображается<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' в диалоговом 
+  окне.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Если запись 
+  не найдена, то отображается сообщение и<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' при помощи 
+  закладки происходит возврат к записи, с которой<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' <I>был </I>начат 
+  поиск </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Запись.NoMatch 
+  = False Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ПоказатьЗапись 
+  Else<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Запись 
+  не найдена&quot;, vblnformation, &quot;Студенты&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Запись.Bookmark 
+  = Закладка<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ПоказатьЗапись 
+  End If <BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButtonlO_Click() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Переход к 
+  последней записи<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Запись.MoveLast 
+  ПоказатьЗапись<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton2_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Найти следующую 
+  запись по фамилии </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Закладка = Запись.Bookmark<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Фамилия = Trim(TextBoxl.Text)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Критерий = &quot;[Фамилия]='&quot; 
+  &amp; Фамилия &amp; &quot;'&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Запись.FindNext 
+  Критерий<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Запись.NoMatch 
+  = False Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Показать Запись 
+  Else<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Больше 
+  таких записей нет&quot;, vblnformation, &quot;Студенты&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Запись.Bookmark 
+  = Закладка<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Показать Запись 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End</font><font face="Courier New, Courier, mono" size="3"> 
+  If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton3_Click()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Удаление записи 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With Запись<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Delete<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.MoveNext End 
+  With ПоказатьЗапись<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton4_Click() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Добавление 
+  записи</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With Запись 
+  .AddNew<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Fields(&quot;Фамилия&quot;).Value 
+  = TextBoxl.Text</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> .Fields(&quot;Группа&quot;).Value 
+  = TextBox2.Text</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> .Fields(&quot;Предмет&quot;).Value 
+  = TextBox3.Text</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> .Fields(&quot;Оценка&quot;).Value 
+  = TextBox4.Text .Update<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton5_Click()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Редактирование 
+  записи</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With Запись 
+  .Edit<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Fields(&quot;Фамилия&quot;).Value 
+  = TextBoxl.Text</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> .Fields(&quot;Группа&quot;).Value 
+  = TextBox2.Text</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> .Fields(&quot;Предмет&quot;).Value 
+  = TextBox3.Text</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> .Fields(&quot;Оценка&quot;).Value 
+  = TextBox4.Text<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Update End 
+  With End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton6_Click()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Закрытие записи, 
+  базы данных и окна </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Запись.Close 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">БазаДанных.Close 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">РабочаяОбласть.Close</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> UserForml.Hide<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton7_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Переход к 
+  первой записи </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'Запись.MoveFirst 
+  Показать Запись</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton8_Click()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Переход к 
+  предыдущей записи<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'</font><font face="Courier New, Courier, mono" size="3">Запись.MovePrevious 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Если достигнута 
+  первая запись, то отображается сообщение </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Запись.BOF 
+  = True Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Запись.MoveFirst<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Первая 
+  запись&quot;, vblnformation, &quot;Студенты&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'ПоказатьЗапись<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButton9_Click()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Переход к 
+  последующей записи</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Запись.MoveNext<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Если достигнута 
+  последняя запись, то отображается сообщение </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Запись.EOF 
+  = True Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Запись.MoveLast<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Последняя 
+  запись&quot;, vblnformation, &quot;Студенты&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ПоказатьЗапись<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  OptionButtonl_Click() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Отображение 
+  данных только о хорошистах и отличниках</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Создание копии 
+  записи </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set ЗаписьДубль 
+  = Запись.Clone</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Фильтрация 
+  записей по критерию </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Запись.Filter 
+  = &quot;[Оценка] &gt;= 4&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Создание отфильтрованной 
+  записи </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set Запись= 
+  Запись.OpenRecordset()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Запись.RecordCount 
+  &gt; 0 Then</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Если отфильтрованная 
+  запись существует, то она отображается </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' в диалоговом 
+  окне<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'</font><font face="Courier New, Courier, mono" size="3">ПоказатьЗапись<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Else </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Если отфильтрованной 
+  записи нет, то отображается соответствующее </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' сообщение, 
+  восстанавливается первоначальный объект Recordset </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' и выбирается 
+  переключатель Все<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Таких 
+  студентов нет&quot;, vblnformation, &quot;Студенты&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set- Запись 
+  = ЗаписьДубль.Clone<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set Запись = 
+  Запись.OpenRecordset()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">OptionButton2.Value 
+  = True</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If<I> </I></font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  OptionButton2_Click() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Отображение 
+  всех студентов</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set ЗаписьДубль 
+  = Запись.Clone<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set Запись = 
+  ЗаписьДубль.OpenRecordset()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ЗаписьДубль.Close<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ПоказатьЗапись<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  UserForm_Initialize()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Создание рабочей 
+  области </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set РабочаяОбласть 
+  = CreateWorkspace(Name:=&quot;&quot;, UserName:=&quot;admin&quot;,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Password:=&quot;&quot;, 
+  UseType:=dbUseJet) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Открытие базы 
+  данных студенты.mdb<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set БазаДанных 
+  = _<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">РабочаяОбласть.OpenDatabase</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">(Name:=&quot;C:\MY_DOC\студенты.mdb&quot;,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Options:=True)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Создание записей 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set Запись = 
+  БазаДанных.OpenRecordset(&quot;ПервыйКурс&quot;,</font><font face="Courier New, Courier, mono" size="3">dbOpenDynaset) 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Принудительное 
+  перемещение на последнюю запись для того, </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' чтобы определить 
+  число записей Запись.MoveLast</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Вывод числа 
+  записей в надписи Номер записи из</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Labels.Caption 
+  = &quot;Всего записей &quot; &amp; CStr(Запись.RecordCount)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Принудительное 
+  перемещение на первую запись</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '</font><font face="Courier New, Courier, mono" size="3">Запись.MoveFirst 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Вывод первой 
+  записи в поля диалогового окна<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ПоказатьЗапись 
+  With UserForm1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Caption = &quot;Студенты 
+  первого курса&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.OptionButton2.Value 
+  = True End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub ПоказатьЗапись()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' <BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3"><I>' </I>Процедура 
+  вывода записи в поля диалогового окна </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBoxl.Text 
+  = Запись.Fields(&quot;Фамилия&quot;).Value </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">TextBox2.Text 
+  = Запись.Fields(&quot;Группа&quot;).Value </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">TextBox3 .</font><font face="Courier New, Courier, mono" size="3">Text 
+  = Запись.Fields (&quot;Предмет.&quot;).Value </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">TextBox4.Text 
+  = Запись.Fields(&quot;Оценка&quot;).Value<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub</font></P>
+</BODY>
+</HTML>
+

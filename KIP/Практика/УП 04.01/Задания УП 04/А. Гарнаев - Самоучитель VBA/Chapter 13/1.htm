@@ -1,0 +1,1727 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+      <ul>
+<li><b><font face="Times New Roman" size=3><a href="#1">ГЛАВА 13. РАБОТА С ФАЙЛАМИ</a></font></b> </li>
+     <ul>
+     <li><font face="Times New Roman" size=3><a href="#2">Типы ФАЙЛОВ в VBA</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#3">ОТКРЫТИЕ И ЗАКРЫТИЕ ФАЙЛА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#4">ВВОД ДАННЫХ В ФАЙЛ ПОСЛЕДОВАТЕЛЬНОГО ДОСТУПА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#5">ВЫВОД ДАННЫХ ИЗ ФАЙЛА ПОСЛЕДОВАТЕЛЬНОГО ДОСТУПА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#6">РАБОТА с ФАЙЛОМ ПРОИЗВОЛЬНОГО ДОСТУПА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#7">НАИБОЛЕЕ УПОТРЕБЛЯЕМЫЕ ИНСТРУКЦИИ и ФУНКЦИИ
+
+
+ПРИ РАБОТЕ С ФАЙЛАМИ
+</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#8">ОБЪЕКТ FILESEARCH</a></font> </li>
+     
+
+     </ul></ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Глава 
+  13</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Работа 
+  с файлами</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="2"></a>Типы 
+  файлов в VBA</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В VBA допустима 
+  работа с тремя типами текстовых файлов. .<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="232">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="218" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="400" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="218" HEIGHT="82"> 
+        <DIV WIDTH="218" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Файл последовательного 
+            доступа<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="400" HEIGHT="82"> 
+        <DIV WIDTH="400" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Рассматривается 
+            как последовательность строк произвольной длины, разделенных специальными 
+            символами. Чтение и запись в файл производится построчно<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="85"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="218" HEIGHT="85"> 
+        <DIV WIDTH="218" HEIGHT="85"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Файл произвольного 
+            доступа<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="400" HEIGHT="85"> 
+        <DIV WIDTH="400" HEIGHT="85"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Состоит из записей 
+            фиксированной длины и размер записи указывается при его открытии. 
+            Это позволяет локализовать любую запись в файле по ее номеру<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="85"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="65"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="218" HEIGHT="65"> 
+        <DIV WIDTH="218" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Бинарный файл<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="400" HEIGHT="65"> 
+        <DIV WIDTH="400" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Является частным 
+            случаем файла произвольного доступа. Размер записи в бинарном файле 
+            считается равным 1 байту<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="65"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="218" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="400" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="3"></a>Открытие 
+  и закрытие файла</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Обсудим инструкции, 
+  связанные с открытием файла для операций ввода/вывода, а также с закрытием файла 
+  по завершению работы с ним.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="788">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="90" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="526" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="399"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="90" HEIGHT="399"> 
+        <DIV WIDTH="90" HEIGHT="399"> 
+          <P> <font size="3" face="Times New Roman, Times, serif">Open<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="526" HEIGHT="399"> 
+        <DIV WIDTH="526" HEIGHT="399"> 
+          <P><font face="Times New Roman, Times, serif" size="3">Разрешает выполнение 
+            операций ввода/вывода при работе с файлом. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<br>
+            </font></P>
+          <p> <font face="Courier New, Courier, mono" size="3">Open Путь For Режим 
+            [Access Доступ] [Блокировка] As [ # ] НомерФайла [Lеn=Длина]</font><font face="Times New Roman, Times, serif" size="3"><br>
+            </font></p>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="526" HEIGHT="399"> <font face="Times New Roman, Times, serif" size="3"> 
+              Путь — строковое выражение, указывающее имя файла </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="526" HEIGHT="399"><font face="Times New Roman, Times, serif" size="3"> 
+              Режим — устанавливает режим работы с файлом. Допустимые Значения: 
+              Append, Binary, Input, Output или Random<br>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="526" HEIGHT="399"> <font face="Times New Roman, Times, serif" size="3"> 
+              Доступ — устанавливает операции, разрешенные с открытым файлом. 
+              Допустимые значения: Read, Write или Read Write<br>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="526" HEIGHT="399"><font face="Times New Roman, Times, serif" size="3"> 
+              Блокировка — устанавливает операции, разрешенные с открытым файлом 
+              другим процессам. Допустимые значения:<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="526" HEIGHT="399"> <font face="Times New Roman, Times, serif" size="3">Shared, 
+              Lock Read, Lock Write и Lock Read Write и номерФайла — допустимый 
+              номер файла. Число в интервале от 1 до 255. Обратите внимание на 
+              то, что параметру Номер-Файла предшествует символ <I>#. </I>Значение 
+              номерФайла нельзя изменять, пока файл открыт. Но при следующем открытии 
+              файла номерФайла может быть другим числом</font>
+              <DIV WIDTH="526" HEIGHT="399"><font face="Times New Roman, Times, serif" size="3"> 
+                длина — число, меньшее либо равное 32 767 (байт). Для файлов, 
+                открытых в режиме Random, это значение является длиной записи. 
+                Для файлов с последовательным доступом это значение является числом 
+                буферизуемых символов Про инструкцию open важно также знать, что 
+                во время ее работы VBA также резервирует файловый буфер в памяти 
+                компьютера для ускорения процесса записи и считывания (прямое 
+                записывание информации на диск может существенно замедлить выполнение 
+                программы, что особенно заметно при работе с большими файлами). 
+                Максимальное число файловых буферов устанавливается в системном 
+                файле Config.sys<BR>
+                </font></DIV>
+            </DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="399"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="275"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="90" HEIGHT="275"> 
+        <DIV WIDTH="90" HEIGHT="275"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Close<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="526" HEIGHT="275"> 
+        <DIV WIDTH="526" HEIGHT="275"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Завершает операции 
+            ввода/вывода с файлом, открытым с помощью инструкции open. Эта инструкция 
+            'очищает буфер и указывает операционной системе обновить FAT (таблицу 
+            размещения файлов). Важно, чтобы каждый файл по завершении работы 
+            с ним был закрыт, иначе это может привести к частичной потере информации. 
+            </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Close [СписокНомеровФайлов] 
+            Аргумент СписокНомеровФайлов может представлять один или несколько 
+            номеров файлов. При этом используется следующий синтаксис, где номерФайла 
+            представляет любой допустимый номер файла: [[#] номерФайла] [, [#] 
+            номерФайла] ...<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="275"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="66"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="90" HEIGHT="66"> 
+        <DIV WIDTH="90" HEIGHT="66"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Reset<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="526" HEIGHT="66"> 
+        <DIV WIDTH="526" HEIGHT="66"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Закрывает все 
+            активные файлы, открытые с помощью инструкции open, и записывает содержимое 
+            всех буферов файлов<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">На диск, открытых 
+            с помощью инструкции Open<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="66"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="47"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="90" HEIGHT="47"> 
+        <DIV WIDTH="90" HEIGHT="47"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">FreeFile<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="526" HEIGHT="47"> 
+        <DIV WIDTH="526" HEIGHT="47"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Функция возвращает 
+            доступный номер, который может использоваться в инструкции Open<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="47"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="90" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="526" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  пример инструкции, открывающей для записи бинарный файл первый из рабочей папки, 
+  и затем инструкции, закрывающей этот бинарный файл.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Open &quot;Первый&quot; 
+  For Binary Access Write As #1 Close #1</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="4"></a>Ввод 
+  данных в файл последовательного доступа</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Обсудим инструкции, 
+  используемые при вводе информации в файл последовательного доступа.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="498">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="552" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="262"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="262"> 
+        <DIV WIDTH="68" HEIGHT="262"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Print<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="552" HEIGHT="262"> 
+        <DIV WIDTH="552" HEIGHT="262"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Записывает форматированные 
+            данные в файл последовательного доступа. Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Print #НомерФайла, 
+            [СписокВывода]</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="552" HEIGHT="262"> <font face="Times New Roman, Times, serif" size="3"> 
+              номерФайла — номер файла О слисокВывода — выражение (или список 
+              выражений), записываемое в файл. В аргументе СписокВывода разделителем 
+              списка выводимых выражений является &quot;;&quot; (данные выводятся 
+              подряд) или &quot;,&quot; (данные выводятся по зонам). Кроме того, 
+              в аргументе СписокВывода допускается использование функций Spc и 
+              таь: </font></DIV>
+            <ul>
+              <li>
+                <DIV WIDTH="552" HEIGHT="262"><font face="Times New Roman, Times, serif" size="3"> 
+                  spc(n) — используется для вставки п пробелов в файл </font></DIV>
+              </li>
+              <li>
+                <DIV WIDTH="552" HEIGHT="262"><font face="Times New Roman, Times, serif" size="3"> 
+                  Tab(n) — устанавливает курсор в столбец с номером n<BR>
+                  </font></DIV>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="262"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="235"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="235"> 
+        <DIV WIDTH="68" HEIGHT="235"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Write<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="552" HEIGHT="235"> 
+        <DIV WIDTH="552" HEIGHT="235"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Записывает неформатированные 
+            данные в файл последовательного доступа. В отличие от инструкции Print, 
+            инструкция write вставляет запятые между элементами и заключает строки 
+            в кавычки по мере записи их в файл. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис: </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">Write #НомерФайла, 
+            [СписокВывода] </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="552" HEIGHT="235"><font face="Times New Roman, Times, serif" size="3"> 
+              НомерФайла — номер файла </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="552" HEIGHT="235"><font face="Times New Roman, Times, serif" size="3"> 
+              СписокВывода — выражение или список выражений, записываемых в файл 
+              Данные, записанные с помощью инструкции write, обычно считываются 
+              из файла с помощью инструкции input<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="235"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="552" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  две процедуры, использующие инструкции Print и write для создания файлов последовательного 
+  доступа. Сначала рассмотрим процедуру с инструкцией </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Print. Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ПримерИспольэования 
+  Print </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Open &quot;С:\Новый&quot; 
+  For Output As II<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Печатает текст 
+  в файл '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Print #1, &quot;Тест&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Печатает пустую 
+  строку в файл<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Print #l,</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Печатает в 
+  двух зонах печати<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Print #1, &quot;Зона 
+  1&quot;; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Tab; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">&quot;Зона 2&quot; 
+  ;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Spc(3) ;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> &quot;3 пробела&quot; 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Close #1 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Результатом 
+  описанных выше инструкций будет файл со следующим содержимым:<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Тест<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Зона 1 Зона 
+  2 3 пробела</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Перейдем 
+  теперь к примеру процедуры, создающей файл последовательного<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Достпа при 
+  помощи инструкции<B> </B>Write. </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Sub ПримерИспользованияwriteе</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Open &quot;ЕщеПример&quot; 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">For Output As 
+  #1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Write #1, &quot;Пример&quot;; 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">&quot;использования&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Write #l, &quot;инструкции&quot;;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Write #1, &quot;Write&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">x = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Write #1, &quot;Число&quot;;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> х Close #1</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Результатом 
+  описанных выше инструкций будет файл со следующим содержимым:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;Пример&quot;,&quot;использования&quot; 
+  &quot;инструкции&quot;,&quot;Write&quot; &quot;Число&quot;,1</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Обратите 
+  внимание на автоматическое размещение в файле разделителей -запятых, и то, что 
+  строковая информация берется в кавычки. В процедуре<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">ПримерислользованияWrite 
+  вторая инструкция write специально заканчивается знаком &quot;;&quot; Это обеспечивает 
+  вывод данных третьей инструкцией write в ту же строку файла, в которую выводила 
+  вторая инструкция.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="5"></a>Вывод 
+  данных из файла последовательного доступа</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Обсудим инструкции 
+  и функции вывода информации из файла последовательного доступа, а также функцию 
+  идентификации конца файла.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="643">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="491" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="218"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="218"> 
+        <DIV WIDTH="125" HEIGHT="218"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Input #<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="491" HEIGHT="218"> 
+        <DIV WIDTH="491" HEIGHT="218"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Считывает .данные 
+            из открытого файла последовательного доступа и присваивает их переменным. 
+            Данные, считываемые с помощью инструкции input I, обычно записываются 
+            в файл с помощью инструкции Write #.<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Input #НомерФайла, 
+            СписокПеременных</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="491" HEIGHT="218"> <font face="Times New Roman, Times, serif" size="3">номерФайла 
+              — номер файла </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="491" HEIGHT="218"><font face="Times New Roman, Times, serif" size="3"> 
+              СписокПеременных — список переменных, которым следует присвоить 
+              значения, считанные из файла. Переменные в списке разделяются запятыми<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="218"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="256"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="256"> 
+        <DIV WIDTH="125" HEIGHT="256"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Line Input #<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="491" HEIGHT="256"> 
+        <DIV WIDTH="491" HEIGHT="256"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Считывает строку 
+            из открытого файла последовательного доступа и присваивает ее переменной 
+            типа string. Данные, считываемые с помощью инструкции Line input I, 
+            как правило, записываются в файл с помощью инструкции Print #. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Line Input #НомерФайла, 
+            ИмяПеременной</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Синтаксис инструкции 
+            Line Input1 содержит следующие элементы: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="491" HEIGHT="256"><font face="Times New Roman, Times, serif" size="3"> 
+              НомерФайла — номер файла<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="491" HEIGHT="256"> <font face="Times New Roman, Times, serif" size="3"> 
+              ИмяПеременной — имя переменной типа Variant или String<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="256"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="170"></TD>
+      <td width="126" height="191"> 
+        <div width="126" height="191"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Функция<br>
+            </font></p>
+          <p> <font face="Times New Roman, Times, serif" size="3">Input<br>
+            </font></p>
+        </div>
+      </td>
+      <td width="493" height="191"> 
+        <div width="493" height="191"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Возвращает значение 
+            типа string, содержащее символы из файла, открытого в режиме input 
+            или Binary. Функция input считывает данные, записываемые в файл с 
+            помощью инструкции Print # или Put. </font></p>
+          <p><font face="Times New Roman, Times, serif" size="3">Синтаксис:<br>
+            </font></p>
+          <p> <font face="Times New Roman, Times, serif" size="3">Input (Число, 
+            [#] НомерФайла) </font></p>
+        </div>
+        <ul>
+          <li>
+            <div width="493" height="191"><font face="Times New Roman, Times, serif" size="3"> 
+              Число задает число возвращаемых символов. Если аргумент Число равен 
+              1, то производится посимвольное считывание данных.<br>
+              </font></div>
+          </li>
+        </ul>
+      </td>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="170"></TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="170"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="170"> 
+        <DIV WIDTH="125" HEIGHT="170"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ФУНКЦИЯ EOF<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="491" HEIGHT="170"> 
+        <DIV WIDTH="491" HEIGHT="170"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Функция возвращает 
+            значение True при достижении конца файла.</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">EOF (НомерФайла} 
+            При последовательном считывании информации из файла часто используется 
+            следующий цикл:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Do While Not EOF(l) 
+            Loop</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">или, для тех 
+            пользователей, кто предпочитает инструкцию While - Wend инструкции 
+            Do While - Loop, следующий эквивалентный цикл:<br>
+            </font></P>
+          <p> <font face="Courier New, Courier, mono" size="3">While Not <i>EOF 
+            (I) </i>Wend</font></p>
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="170"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="125" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="491" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  пример использования инструкции input # для считывания данных из файла. В этом 
+  примере предполагается, что на диске существует файл группаЭкономистов, содержащий 
+  информацию о студентах. Файл был создан при помощи инструкции write # и состоит 
+  из двух столбцов, в первом из которых указывается фамилия, а во втором — оценка 
+  студента. Для удобства работы с информацией введен пользовательский тип Студенты. 
+  Процедура примериспользованияInput последовательно считывает фамилии и оценки 
+  из файла и выводит их в ячейки первого и второго столбца рабочего листа.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Туре Студенты<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Фамилия As 
+  String * 20<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Оценка As String 
+  * 3</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Type<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub ПримерИспользованияInput() 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim Студент As 
+  Студенты<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Open &quot;ГруппаЭкономистов&quot; 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">For Input As 
+  12 i = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Do While Not 
+  EOF(2) With Студент<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Input #2, .Фамилия, 
+  .Оценка</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Cells(i, 1).Value 
+  = .Фамилия </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Cells(i, 2).Value 
+  = .Оценка </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> i = i + 1 Loop<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Close #2</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub<BR>
+  </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  пример использования инструкции Line input # для считывания данных из файла 
+  группаЭкономистов, имеющего ту же структуру, что и в предыдущем примере, но 
+  созданного с помощью инструкции Print #. Инструкция Line input # считывает всю 
+  строку из файла в строковую переменную. Поэтому в этом случае уже нет необходимости 
+  использовать введенный пользовательский тип, а достаточно ограничиться только 
+  обычной строковой переменной. Вся считываемая информация строка за строкой вводится 
+  в список диалогового .окна.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  UserForm_Initialize()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Студент 
+  As String<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Open &quot;ГруппаЭкономистов&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> For Input As 
+  #1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">i = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With ListBoxl<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Clear Do While 
+  Not EOF(l)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Line Input 11, 
+  Студент<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Addltem Студент</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> i = i + 1 Loop<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Close #l </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub<BR>
+  </font><font face="Times New Roman, Times, serif" size="4"> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="4"><B><a name="6"></a>Работа 
+  с файлом произвольного доступа</B></font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  инструкции ввода/вывода информации при работе с файлом произвольного доступа, 
+  а также инструкции определения длины файла и текущей позиции указателя в файле.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="629">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="86" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="522" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="108"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="86" HEIGHT="108"> 
+        <DIV WIDTH="84" HEIGHT="108"> 
+          <P> <font size="3" face="Times New Roman, Times, serif">Put </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="522" HEIGHT="108"> 
+        <DIV WIDTH="534" HEIGHT="108"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Записывает содержимое 
+            переменной в файл произвольного доступа. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<br>
+            </font></P>
+          <p> <font face="Courier New, Courier, mono" size="3">Put [#] НомерФайла, 
+            [НомерЗаписи] , ИмяПеременной</font><font face="Times New Roman, Times, serif" size="3"><br>
+            </font></p>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="534" HEIGHT="108"> <font face="Times New Roman, Times, serif" size="3"> 
+              НомерФайла — номер файла </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="534" HEIGHT="108"><font face="Times New Roman, Times, serif" size="3"> 
+              НомерЗаписи — номер записи (режим Random) или номер байта (режим 
+              Binary), с которого следует начать запись. Если аргумент НомерЗаписи 
+              опущен, то записывается на то место, где был установлен указатель 
+              после выполнения последней инструкции Get или Put, либо куда он 
+              переведен с </font><font face="Times New Roman, Times, serif" size="3">помощью 
+              функции Seek</font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="534" HEIGHT="108"><font face="Times New Roman, Times, serif" size="3"> 
+              ИмяПеременной — имя переменной, содержащей данные, которые следует 
+              записать в файл<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="108"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="210"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="86" HEIGHT="210"> 
+        <DIV WIDTH="84" HEIGHT="210"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Get<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="522" HEIGHT="210"> 
+        <DIV WIDTH="534" HEIGHT="210"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Читает данные 
+            из открытого файла произвольного доступа в переменную. Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Get [#] НомерФайла, 
+            [НомерЗаписи] , ИмяПеременной</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="534" HEIGHT="210"> <font face="Times New Roman, Times, serif" size="3"> 
+              НомерФайла — номер файла </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="534" HEIGHT="210"><font face="Times New Roman, Times, serif" size="3"> 
+              НомерЗаписи — номер записи (для файлов в режиме Random) или номер 
+              байта (для файлов в режиме Binary), с которого следует начать чтение 
+              </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="534" HEIGHT="210"><font face="Times New Roman, Times, serif" size="3"> 
+              Имяпеременной — имя переменной, в которую следует поместить считанные 
+              данные<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="210"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="104"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="86" HEIGHT="104"> 
+        <DIV WIDTH="84" HEIGHT="104"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Seek<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="522" HEIGHT="104"> 
+        <DIV WIDTH="534" HEIGHT="104"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Функция возвращает 
+            значение типа Long, определяющее текущее положение указателя чтения/записи 
+            внутри файла, открытого с помощью инструкции Open.<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Seek (НомерФайла)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="104"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="125"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="86" HEIGHT="125"> 
+        <DIV WIDTH="84" HEIGHT="125"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">LOF<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="522" HEIGHT="125"> 
+        <DIV WIDTH="534" HEIGHT="125"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Функция возвращает 
+            значение типа Long, представляющее размер файла в байтах, открытого 
+            с помощью инструкции Оpen . Для определения размера закрытого файла 
+            следует использовать функции FileLen.<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">LOF (НомерФайла)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="125"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="86" HEIGHT="82"> 
+        <DIV WIDTH="84" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">FileLen<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="522" HEIGHT="82"> 
+        <DIV WIDTH="534" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает значение 
+            типа Long, содержащее размер файла в байтах. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">FileLen (Путь )</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="86" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="522" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Как видно 
+  из приведенного в предыдущем разделе примера для считывания информации при помощи 
+  инструкции input # из файла группаЭкономистов, файл последовательного доступа 
+  иногда удобно задавать как последовательность записей (в данном случае, записей 
+  о студентах), причем каждая из записей формируется из группы полей (в данном 
+  случае из полей Фамилия и оценка). Отметим, что такая группировка по записям 
+  не является чем-то присущим файлам последовательного доступа. Это просто подход, 
+  позволяющий упростить процесс последовательного считывания записей. В файле 
+  последовательного доступа существует только одна внутренняя структура, образованная 
+  разделителями (запятыми или специальными символами, обозначающими переход на 
+  новую строку).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В противоположность 
+  файлам последовательного доступа, в файлах произвольного доступа запись является 
+  встроенным элементом. Файл произвольного доступа — это файл, упорядоченный по 
+  записям, что позволяет быстро переместиться на любую запись, минуя предыдущие.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">При создании 
+  файла произвольного доступа указывается максимальная длина каждой записи. Само 
+  собой разумеется, что в любую запись можно вводить данные, занимающие не все 
+  место, выделенное для записи, но нельзя ввести данные, требующие больше места, 
+  чем допустимая длина записи. Лишняя информация будет просто усекаться.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">На практике 
+  бывает удобно создавать отдельный файл, в котором хранится информация о структуре 
+  файла произвольного доступа: структура записи, ее длина и заголовки полей.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Отметим, 
+  что при открытии файла произвольного доступа, в отличие от файла последовательного 
+  доступа, не надо специально указывать, открывается он для ввода или вывода информации. 
+  Ввод и вывод информации определяют команды Put и Get.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  один, пример работы с файлом произвольного доступа группа Экономистов, который 
+  имеет ту же структуру, что и в предыдущем примере. Файл создается с помощью 
+  процедуры записьвоайл, которая последовательно считывает данные из первого и 
+  второго столбца рабочего листа и затем вводит их в файл. В этой процедуре число 
+  вводимых записей фиксировано и равно 5. Процедура Считываниеизфайла производит 
+  обратное действие — считывает данные из файла и вводит их в ячейки третьего 
+  и четвертого столбца рабочего листа. Интересной особенностью файла произвольного 
+  доступа является то, что при работе с ним можно определить число записей не 
+  пересчитывая их. Число записей равно отношению размера файла к длине одной записи. 
+  Длина записи устанавливается при создании файла произвольного доступа и определяется 
+  типом переменной, при помощи которой файл был создан, размер открытого файла 
+  возвращается функцией LOF, а еще не открытого — функцией FileLen. В рассматриваемом 
+  случае число записей в файле равно LOF(l) / Len(Студент).<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Туре Студенты<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Фамилия As String 
+  * 20 Оценка As String * 3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Type </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub ЗаписьВФайл()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Студент 
+  As Студенты<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim i As Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Open &quot;ГруппаЭкономистов&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">For Random As 
+  #1 Len = Len(Студент)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  5<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With Студент<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Фамилия = Cells(i, 
+  1).Value .Оценка = Cells(i, 2).Value </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Put #1, i, Студент</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Next i</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Close #1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub СчитываниеИзФайла()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim Студент 
+  As Студенты<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim i As Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim n As Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Open &quot;ГруппаЭкономистов&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> For Random As 
+  #1 Len = Len(Студент)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">n = LOF(l) / 
+  Len(Студент)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  n<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Get #1, i, Студент<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With Студент<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Cells (i, 3) 
+  .Value = .Фамилия Cells(i, 4).Value = .Оценка<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next i </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Close #1</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub <BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="7"></a>Наиболее 
+  употребляемые инструкции и функции при работе с файлами</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  наиболее часто употребляемые инструкции и функции для работы с файлами.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="185">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="130" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="488" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="69"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="130" HEIGHT="69"> 
+        <DIV WIDTH="130" HEIGHT="69"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ChDir<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="488" HEIGHT="69"> 
+        <DIV WIDTH="488" HEIGHT="69"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Изменяет текущую 
+            папку. Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">ChDir путь<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="69"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="91"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="130" HEIGHT="91"> 
+        <DIV WIDTH="130" HEIGHT="91"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ChDrive<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="488" HEIGHT="91"> 
+        <DIV WIDTH="488" HEIGHT="91"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Изменяет текущий 
+            диск. Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">ChDrive диск 
+            Например, ChDrive &quot;D&quot;<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="91"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="130" HEIGHT="25"> 
+        <DIV WIDTH="130" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">CurDir<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="488" HEIGHT="25"> 
+        <DIV WIDTH="488" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Функция возвращает 
+            текущую папку<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="130" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="488" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="868">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="117" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="423" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="237"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="117" HEIGHT="237"> 
+        <DIV WIDTH="129" HEIGHT="237"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">FileAttr<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="423" HEIGHT="237"> 
+        <DIV WIDTH="486" HEIGHT="237"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает значение 
+            типа Long, представляющее режим файла, открытого с помощью инструкции 
+            open. Возвращаемые значения: 1 (для режима input), 2 (output), 4 (Random), 
+            8 (Append) и 32 (Binary).<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">FileAttr (НомерФайла, 
+            Тип)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="486" HEIGHT="237"> <font face="Times New Roman, Times, serif" size="3"> 
+              НомерФайла — допустимый номер файла </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="486" HEIGHT="237"><font face="Times New Roman, Times, serif" size="3"> 
+              Тип — число, указывающее характер возвращаемых данных. Если тип 
+              установлен равным 1 , то функция FileAttr возвращает значение, указывающее 
+              режим работы файла<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="237"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="126"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="117" HEIGHT="126"> 
+        <DIV WIDTH="129" HEIGHT="126"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">GetAttr<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="423" HEIGHT="126"> 
+        <DIV WIDTH="486" HEIGHT="126"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает значение 
+            типа integer, определяющее атрибуты файла, каталога или папки. Значение, 
+            возвращаемое функцией GetAttr, является суммой констант, приведенных 
+            в табл. 13.1.</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3"> Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">GetAttr (путь)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="126"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="111"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="117" HEIGHT="111"> 
+        <DIV WIDTH="129" HEIGHT="111"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">SetAttr<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="423" HEIGHT="111"> 
+        <DIV WIDTH="486" HEIGHT="111"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Устанавливает 
+            атрибуты файла. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">SetAttr pathname, 
+            attributes</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Атрибуты в аргументе 
+            attributes определяются как сумма констант из табл. 13.1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="111"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="197"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="117" HEIGHT="197"> 
+        <DIV WIDTH="129" HEIGHT="197"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">FileCopy<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="423" HEIGHT="197"> 
+        <DIV WIDTH="486" HEIGHT="197"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Копирует файл. 
+            </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">FileCopy source, 
+            destination</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Аргументы: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="486" HEIGHT="197"><font face="Times New Roman, Times, serif" size="3"> 
+              source — строковое выражение, указывающее имя копируемого файла 
+              </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="486" HEIGHT="197"><font face="Times New Roman, Times, serif" size="3"> 
+              destination — строковое выражение, указывающее имя результирующего 
+              файла. Аргумент destination может содержать имя каталога или папки 
+              и диска<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="197"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="86"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="117" HEIGHT="86"> 
+        <DIV WIDTH="129" HEIGHT="86"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">FileDateTime<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="423" HEIGHT="86"> 
+        <DIV WIDTH="486" HEIGHT="86"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Функция возвращает 
+            дату и время последнего изменения файла. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">FileDateTime (путь 
+            )</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="86"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="111"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="117" HEIGHT="111"> 
+        <DIV WIDTH="129" HEIGHT="111"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Kill<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="423" HEIGHT="111"> 
+        <DIV WIDTH="486" HEIGHT="111"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Удаляет существующий 
+            файл. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Kill путь</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">В аргументе 
+            путь допустимо использование символой (*) и (?) для удаления нескольких 
+            файлов по маске.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="111"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="117" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="423" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="132">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="131" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="486" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="67"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="131" HEIGHT="67"> 
+        <DIV WIDTH="131" HEIGHT="67"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">MkDir<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="486" HEIGHT="67"> 
+        <DIV WIDTH="486" HEIGHT="67"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Создает новую 
+            папку. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">MkDir путь</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="67"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="65"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="131" HEIGHT="65"> 
+        <DIV WIDTH="131" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">RmDir<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="486" HEIGHT="65"> 
+        <DIV WIDTH="486" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Удаляет существующую 
+            папку. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">RmDir путь<BR>
+            </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="65"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="131" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="486" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><img src="13.1.gif" width="306" height="186"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Табл. 
+  13.1.</I></B><I> Константы атрибутов файла</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="195">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="99" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="396" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="30"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="30"> 
+        <DIV WIDTH="122" HEIGHT="30"><b><font face="Times New Roman, Times, serif" size="3">Константа<BR>
+          </font></b></DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="99" HEIGHT="30"> 
+        <DIV WIDTH="99" HEIGHT="30"><b><font face="Times New Roman, Times, serif" size="3">Значение<BR>
+          </font></b></DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="396" HEIGHT="30"> 
+        <DIV WIDTH="396" HEIGHT="30"><b><font face="Times New Roman, Times, serif" size="3">Описание<BR>
+          </font></b></DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="30"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="27"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="27"> 
+        <DIV WIDTH="122" HEIGHT="27"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">vbNormal<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="99" HEIGHT="27"> 
+        <DIV WIDTH="99" HEIGHT="27"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">0<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="396" HEIGHT="27"> 
+        <DIV WIDTH="396" HEIGHT="27"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Обычный<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="27"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="26"> 
+        <DIV WIDTH="122" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">vbReadOnly<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="99" HEIGHT="26"> 
+        <DIV WIDTH="99" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">i<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="396" HEIGHT="26"> 
+        <DIV WIDTH="396" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Только чтение<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="29"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="29"> 
+        <DIV WIDTH="122" HEIGHT="29"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">vbHidden<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="99" HEIGHT="29"> 
+        <DIV WIDTH="99" HEIGHT="29"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">2<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="396" HEIGHT="29"> 
+        <DIV WIDTH="396" HEIGHT="29"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Скрытый<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="29"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="26"> 
+        <DIV WIDTH="122" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">vbSystem<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="99" HEIGHT="26"> 
+        <DIV WIDTH="99" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">4<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="396" HEIGHT="26"> 
+        <DIV WIDTH="396" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Системный<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="27"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="27"> 
+        <DIV WIDTH="122" HEIGHT="27"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">vbDi rector 
+            у<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="99" HEIGHT="27"> 
+        <DIV WIDTH="99" HEIGHT="27"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">16<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="396" HEIGHT="27"> 
+        <DIV WIDTH="396" HEIGHT="27"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Каталог или 
+            папка<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="27"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="30"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="30"> 
+        <DIV WIDTH="122" HEIGHT="30"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">vbArchive<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="99" HEIGHT="30"> 
+        <DIV WIDTH="99" HEIGHT="30"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">32<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="396" HEIGHT="30"> 
+        <DIV WIDTH="396" HEIGHT="30"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Файл был изменен 
+            после последнего резервирования<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="30"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="99" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="396" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="8"></a>Объект 
+  FileSearch</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Объект FileSearch 
+  обладает функциональными возможностями диалогового окна <B>Открытие документа 
+  </B>(Open), отображаемого на экране_посредством выбора команды <B>Файл, Открыть 
+  </B>(File, Open). Объект FileSearch входит в объект Application и иерархически 
+  включает в себя (рис. 13.1):<BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Семейство FoundFiles, 
+    которое является списком всех файлов, возвращаемых в результате поиска<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Семейство PropertyTests, 
+    которое является списком всех критериев поиска<BR>
+    </font></li>
+</ul>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  13.1. </I></B><I>Иерархическая структура объекта FileSearch</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Объект 
+  </B>FileSearch <B>возвращается свойством </B>FileSearch <B>объекта </B>Application.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Объект FileSearch 
+  имеет следующие два метода.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="323">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="103" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="518" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="278"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="103" HEIGHT="278"> 
+        <DIV WIDTH="103" HEIGHT="278"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Execute<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="518" HEIGHT="278"> 
+        <DIV WIDTH="518" HEIGHT="278"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Поиск специфицированных 
+            файлов.<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Execute (SortBy, 
+            SortOrder, AlwaysAccurate)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Аргументы: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="518" HEIGHT="278"><font face="Times New Roman, Times, serif" size="3"> 
+              SortBy — устанавливает способ сортировки файлов. Допустимые значения: 
+              msoSortbyFileName, msoSortbyFileType, msoSortbyLastModif led и msoSortbySize</font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="518" HEIGHT="278"><font face="Times New Roman, Times, serif" size="3">SortOrder 
+              — устанавливает порядок сортировки файлов.<BR>
+              </font></DIV>
+            <DIV WIDTH="518" HEIGHT="278"> <font face="Times New Roman, Times, serif" size="3">Допустимые 
+              значения: msoSortOrderAscending и msoSort Order Descending<BR>
+              </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="518" HEIGHT="278"> <font face="Times New Roman, Times, serif" size="3"> 
+              AiwaysAccurate — допустимые значения: True (поиск среди измененных 
+              файлов) и False (в противном случае)<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="278"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="103" HEIGHT="46"> 
+        <DIV WIDTH="103" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">NewSearch<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="518" HEIGHT="46"> 
+        <DIV WIDTH="518" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Устанавливает 
+            критерии, используемые при поиске по умолчанию<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="103" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="518" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  наиболее часто применяемые свойства объекта FileSearch.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="236">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="167" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="450" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="167" HEIGHT="44"> 
+        <DIV WIDTH="167" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">FileName<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="450" HEIGHT="44"> 
+        <DIV WIDTH="450" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Устанавливает 
+            имя файла для поиска. Допустимо использование символов (*) и (?)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="121"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="167" HEIGHT="121"> 
+        <DIV WIDTH="167" HEIGHT="121"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">FileType<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="450" HEIGHT="121"> 
+        <DIV WIDTH="450" HEIGHT="121"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Задает тип файла 
+            для поиска. Допустимые значения:<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">msoFileTypeAHFiles, 
+            msoFileTypeBinders, msoFile-TypeDatabases, msoFileTypeExcelWorkbooks, 
+            msoFi-leTypeOff ice Files, ms о FileType Power Point Presentations, 
+            msoFileTypeTemplates И msoFileTypeWordDocuments<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="121"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="167" HEIGHT="24"> 
+        <DIV WIDTH="167" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Lookln<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="450" HEIGHT="24"> 
+        <DIV WIDTH="450" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Задает папку 
+            для поиска файла<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="47"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="167" HEIGHT="47"> 
+        <DIV WIDTH="167" HEIGHT="47"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">SearchSubFolders<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="450" HEIGHT="47"> 
+        <DIV WIDTH="450" HEIGHT="47"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (поиск также проводить в поддиректориях) и False (в противном 
+            случае)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="47"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="167" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="450" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Следующий 
+  пример позволяет в поле со списком диалогового окна вывести список всех файлов 
+  текущей папки:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  UserForm_Initialize()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> ComboBoxl.Clear 
+  With Application.FileSearch</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> .FileName = 
+  &quot;*.xls&quot; .SearchSubFolders = False</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> If .Execute(SortBy:=msoSortByFileName,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">sortorder:=msoSortOrderAscending) 
+  &gt; 0 Then</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> For i = 1 To 
+  .FoundFiles.Count<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ComboBoxl.Addltem 
+  .FoundFiles(i) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next i</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub<BR>
+  </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Предыдущая 
+  программа отображает в поле со списком полные имена файлов, т. е. имя файла 
+  и путь. Для того чтобы в списке отображались только имена файлов (без пути), 
+  программу необходимо модифицировать следующим образом:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  UserForm_Initialize() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim ИмяПапки 
+  As String </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim ИмяФайла 
+  As String </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim ДлинаПути 
+  As Integer </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ComboBoxl.Clear 
+  ИмяПапки = CurDir ДлинаПути = Len(ИмяПапки)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> With Application.FileSearch 
+  .FileName = &quot;*.xls&quot; </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.SearchSubFolders 
+  = False</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> If .Execute 
+  (SortBy:=msoSortByFileName,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">sortorder:=msoSortOrderAscending) 
+  &gt; 0 Then </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  .FoundFiles.Count<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ИмяФайла = Right(.FoundFiles(i), 
+  Len(.FqundFiles(i))<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">- ДлинаПути 
+  - 1) ComboBoxl.Addltem ИмяФайла </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next i </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub</font><font face="Times New Roman, Times, serif" size="3"> 
+  </font></P>
+</BODY>
+</HTML>
+

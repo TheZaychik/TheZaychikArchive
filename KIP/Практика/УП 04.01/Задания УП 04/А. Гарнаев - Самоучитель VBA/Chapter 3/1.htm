@@ -1,0 +1,2972 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+      <ul>
+<li><b><font face="Times New Roman" size=3><a href="#1">ГЛАВА 3. МЕТОДЫ ОБЪЕКТА RANGE, ИСПОЛЬЗУЮЩИЕ КОМАНДЫ EXCEL</a></font></b> </li>
+     <ul>
+     <li><font face="Times New Roman" size=3><a href="#2">МЕТОД DATASERIES</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#3">МЕТОД AUTOFILL</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#4">МЕТОД AUTOFILTER</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#5">МЕТОД ADVANCEDFILTER</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#6">МЕТОД CONSOLIDATE</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#7">МЕТОД FIND</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#8">МЕТОД GOALSEEK</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#9">МЕТОД SORT</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#10">МЕТОД SUBTOTAL</a></font> </li>
+
+     </ul></ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Глава 
+  3</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Методы 
+  объекта Range, использующие команды Excel</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В данном 
+  разделе рассматриваются методы, использующие встроенные в Excel команды. Эти 
+  методы позволяют эффективно работать с диапазоном: заполнять его элементами 
+  по образцу, сортировать, фильтровать и консолидировать данные, строить итоговую 
+  таблицу и создавать сценарии, решать нелинейное уравнение с одной неизвестной.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="4"><B><a name="2"></a>Метод 
+  DataSeries</B></font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Метод DataSeries 
+  (прогрессия) создает профессии. Вручную метод DataSeries выполняется с помощью 
+  команды <B>Правка, Заполнить, Прогрессия </B>(Edit, Fill, Series).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Объект.DataSeries(rowcol, 
+  type, date, step, stop, trend)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Аргументы:<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="248">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="127" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="491" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="85"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="127" HEIGHT="85"> 
+        <DIV WIDTH="127" HEIGHT="85"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Объект<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="491" HEIGHT="85"> 
+        <DIV WIDTH="491" HEIGHT="85"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Диапазон с начальными 
+            данными прогрессии. Метод DataSeries позволяет одновременно строить 
+            несколько однотипных профессий с одинаковым шагом, но различными начальными 
+            элементами<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="85"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="91"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="127" HEIGHT="91"> 
+        <DIV WIDTH="127" HEIGHT="91"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">rowcol<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="491" HEIGHT="91"> 
+        <DIV WIDTH="491" HEIGHT="91"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Задает, вводятся 
+            профессии по строкам или столбцам. Допустимые значения: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="491" HEIGHT="91"><font face="Times New Roman, Times, serif" size="3">xlRows 
+              (по строкам) </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="491" HEIGHT="91"><font face="Times New Roman, Times, serif" size="3">xlCcoluims 
+              (по столбцам)<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="91"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="72"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="127" HEIGHT="72"> 
+        <DIV WIDTH="127" HEIGHT="72"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">type<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="491" HEIGHT="72"> 
+        <DIV WIDTH="491" HEIGHT="72"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Определяет тип 
+            прогрессии. Допустимые значения: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="491" HEIGHT="72"><font face="Times New Roman, Times, serif" size="3"> 
+              xlLinear (линейная) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="491" HEIGHT="72"><font face="Times New Roman, Times, serif" size="3"> 
+              xlCrowth (геометрическая)</font> </DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="491" HEIGHT="72"><font face="Times New Roman, Times, serif" size="3">xlChronological 
+              (даты)<br>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="491" HEIGHT="72"><font face="Times New Roman, Times, serif" size="3">xlAutoFill 
+              (автозаполнение)</font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="72"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="127" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="491" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="318">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="111" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="429" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="154"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="111" HEIGHT="154"> 
+        <DIV WIDTH="126" HEIGHT="154"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">date<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="429" HEIGHT="154"> 
+        <DIV WIDTH="491" HEIGHT="154"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Определяет тип 
+            последовательности дат, если параметр type принимает значение xlChronological. 
+            Допустимые значения:<BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="491" HEIGHT="154"> <font face="Times New Roman, Times, serif" size="3">xlDay 
+              (ДНИ)<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="491" HEIGHT="154"> <font face="Times New Roman, Times, serif" size="3"> 
+              xlweekday (дни недели) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="491" HEIGHT="154"><font face="Times New Roman, Times, serif" size="3">xlMonth 
+              (месяцы) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="491" HEIGHT="154"><font face="Times New Roman, Times, serif" size="3"> 
+              xlYear (годы)</font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="154"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="111" HEIGHT="24"> 
+        <DIV WIDTH="126" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">step<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="429" HEIGHT="24"> 
+        <DIV WIDTH="491" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг изменения 
+            прогрессии. По умолчанию 1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="43"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="111" HEIGHT="43"> 
+        <DIV WIDTH="126" HEIGHT="43"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">stop<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="429" HEIGHT="43"> 
+        <DIV WIDTH="491" HEIGHT="43"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Предельное значение 
+            прогрессии. По умолчанию строится прогрессия во всем выделенном диапазоне<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="43"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="111" HEIGHT="46"> 
+        <DIV WIDTH="126" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">trend<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="429" HEIGHT="46"> 
+        <DIV WIDTH="491" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (создается арифметическая или геометрическая прогрессия) или 
+            False (создается список)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="111" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="429" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  соответствие между аргументами метода DataSeries и построением последовательности 
+  на рабочем листе командой <B>Правка, Заполнить, Прогрессия </B>(Edit, Fill, 
+  Series) на примере построения геометрической профессии.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="148">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="80" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="534" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="148"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="80" HEIGHT="148"> 
+        <DIV WIDTH="80" HEIGHT="148"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="534" HEIGHT="148"> 
+        <DIV WIDTH="534" HEIGHT="148"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">О В ячейку AI 
+            вводим первый член прогрессии, например 1. В методе DataSeries за 
+            начальное значение прогрессии отвечает объект, к которому применяется 
+            метод. В данном случае метод DataSeries надо применить к диапазону 
+            Range (&quot;A1&quot;) . <I>О </I>Выберите команду Правка, Заполнить, 
+            Прогрессия (Edit, Fill, Series), которая приведет к появлению диалогового 
+            окна Прогрессия (Series) (рис. 3.1).<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="148"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="80" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="534" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><img src="3.1.gif" width="395" height="193"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  3.1.</I></B><I> Диалоговое окно <B>Прогрессия</B></I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="116">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="78" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="534" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="116"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="78" HEIGHT="116"> 
+        <DIV WIDTH="78" HEIGHT="116"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 2<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="534" HEIGHT="116"> 
+        <DIV WIDTH="534" HEIGHT="116"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">В диалоговом 
+            окне Прогрессия (Series) в группе Расположение (Series in) выберите, 
+            например, переключатель по строкам (Rows), т. к. будем строить геометрическую 
+            профессию в первой строке. В группе Тип (Туре) выберите переключатель 
+            геометрическая (Growth) В поле Шаг введите например, 1.2, а в поле 
+            Предельное значение (Stop value) - 3, т. е. геометрическая прогрессия 
+            будет строиться с шагом 1.2 до тех пор, пока ее члены не достигнут 
+            значения 3. Нажатие кнопки ОК приводит к построению требуемой профессии 
+            (рис. 3.2). В методе DataSeries за расположение профессии отвечает 
+            аргумент rowcoi. В данном случае ему надо присвоить значение xiRows. 
+            За тип прогрессии отвечает аргумент type, которому присвоим значение 
+            xiGrowth. За шаг и предельное значение отвечают аргументы step и stop, 
+            которым присвоим 1.2 и з соответственно. Таким образом, имеем:<br>
+            </font></P>
+          <p> <font face="Courier New, Courier, mono" size="3">Range ( &quot;А1&quot; 
+            ). DataSeries Rowcol : =xlRows , Type : =xlGrowth, Step:=1.2, Stop:=3</font></p>
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="116"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="78" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="534" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><img src="3.2.gif" width="521" height="204"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  З.2. </I></B><I>Результат построения геометрической прогрессии</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="3"></a>Метод 
+  AutoFill</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Метод AutoFill 
+  (автозаполнение) автоматически заполняет ячейки диапазона элементами последовательности. 
+  Метод AutoFill отличается от метода DataSeries тем, что явно указывается диапазон, 
+  в котором будет располагаться прогрессия. Вручную этот метод эквивалентен расположению 
+  указателя мыши на маркере заполнения выделенного диапазона (в который введены 
+  значения, порождающие создаваемую последовательность) и протаскивании маркера 
+  заполнения вдоль диапазона, в котором будет располагаться создаваемая последовательность.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Объект.AutoFill(destination, 
+  type)<BR>
+  </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Аргументы:<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="151">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="173" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="444" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="173" HEIGHT="24"> 
+        <DIV WIDTH="173" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Объект</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="444" HEIGHT="24"> 
+        <DIV WIDTH="444" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Диапазон, 
+            с которого начинается заполнение</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="173" HEIGHT="24"> 
+        <DIV WIDTH="173" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">destination<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="444" HEIGHT="24"> 
+        <DIV WIDTH="444" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Диапазон, который 
+            заполняется<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="103"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="173" HEIGHT="103"> 
+        <DIV WIDTH="173" HEIGHT="103"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">type<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="444" HEIGHT="103"> 
+        <DIV WIDTH="444" HEIGHT="103"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            xiFiilDefauit, xlFillSeries, xlFillCopy, xlFillFormats, xlFillValues, 
+            xlFillDays, xlFillWeekdays, xlFillMonths, xlFillYears, xlLinearTrend, 
+            xlGrowthTrend. По умолчанию xlFillDefault<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="103"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="173" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="444" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  соответствие между аргументами метода AutoFill и построением последовательности 
+  на рабочем листе вручную на примере построения арифметической прогрессии по 
+  двум ее первым членам.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="129">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="129"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="129"> 
+        <DIV WIDTH="68" HEIGHT="129"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="129"> 
+        <DIV WIDTH="550" HEIGHT="129"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">В ячейку AI 
+            введите первый член профессии, например 5. В ячейку А2 введите второй 
+            член профессии, например 7. Выделите диапазон А1:А2, содержащий два 
+            первых члена арифметической профессии. Расположите указатель мыши 
+            над маркером заполнения выделенного диапазона так, чтобы он превратился 
+            в черный крест (рис. 3.3).<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="129"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><img src="3.3.gif" width="227" height="119"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  3.3. </I></B><I>Выделение двух первых членов прогрессии</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="258">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="67" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="549" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="258"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="67" HEIGHT="258"> 
+        <DIV WIDTH="67" HEIGHT="258"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 2<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="549" HEIGHT="258"> 
+        <DIV WIDTH="549" HEIGHT="258"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">При нажатой 
+            левой кнопке мыши, протащите маркер заполнения вниз по столбцу так, 
+            чтобы создать требуемую последовательность. В данном случае протащим 
+            маркер заполнения так, чтобы создать последовательность в диапазоне 
+            А1:А5 (рис. 3.4). Тот же результат получается, если аргументу Destination 
+            метода AutoFill присваивается Range (&quot;Ai:A5&quot;), аргументу 
+            туре присваивается xiFiiiDefauit, а метод применяется к диапазону 
+            Range (&quot;A1:A2&quot;) . Таким образом, имеем:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Range ( &quot;Al 
+            :A2&quot;) .AutoFill </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">Destination: =Range 
+            ( &quot;Al : A5&quot; ),_ </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">Type : =xlFillDef 
+            ault</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="258"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="67" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="549" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <p><img src="3.4.gif" width="202" height="153"></p>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  З.4. </I></B><I>Построенная прогрессия</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="4"></a>Метод 
+  AutoFilter</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Метод AutoFilter 
+  (автофильтр) представляет собой простой способ запроса и фильтрации данных на 
+  рабочем листе. Если AutoFilter активизирован, то каждый заголовок поля выделенного 
+  диапазона данных превращается в поле с раскрывающимся списком. Выбирая запрос 
+  на вывод данных в поле с раскрывающимся списком, вы осуществляете вывод только 
+  тех записей, которые удовлетворяют указанным условиям. Поле с раскрывающимся 
+  списком содержит следующие типы условий: <B>Все </B>(АИ), <B>Первые десять </B>(Тор 
+  10), <B>Условие </B>(Custom), конкретный элемент данных, <B>Пустые </B>(Blanks) 
+  и <B>Непустые </B>(NohBlanks). Вручную метод запускается посредством выбора 
+  команды <B>Данные, Фильтр, Автофильтр </B>(Data, Filter, AutoFilter).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">При применении 
+  метода AutoFilter допустимы два синтаксиса. </font></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3">Синтаксис 
+  1:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Объект.AutoFilter</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В этом случае 
+  метод AutoFilter выбирает или отменяет команду Данные, Фильтр, Автофильтр (Data, 
+  Filter, AutoFilter), примененную к диапазону, заданному в аргументе объект.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Синтаксис 
+  2:</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Объект.AutoFilter(field, 
+  criterial, operator, criteria2)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В этом случае 
+  метод AutoFilter выполняет команду <B>Данные, Фильтр, Автофильтр </B>(Data, 
+  Filter, AutoFilter) по критериям, указанным в аргументе.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Аргументы:<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="275">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="150" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="467" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="150" HEIGHT="26"> 
+        <DIV WIDTH="150" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Объект</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="467" HEIGHT="26"> 
+        <DIV WIDTH="467" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Диапазон</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="42"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="150" HEIGHT="42"> 
+        <DIV WIDTH="150" HEIGHT="42"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">field<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="467" HEIGHT="42"> 
+        <DIV WIDTH="467" HEIGHT="42"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Целое, указывающее 
+            поле, в котором производится фильтрация данных<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="42"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="150" HEIGHT="62"> 
+        <DIV WIDTH="150" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">criterial И 
+            criteria2<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="467" HEIGHT="62"> 
+        <DIV WIDTH="467" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Задают два возможных 
+            условия фильтрации поля. Допускается использование строковой постоянной, 
+            например 101, и знаков отношений &gt;, &lt; ,&gt;=, &lt;=, =, &lt;&gt;<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="146"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="150" HEIGHT="146"> 
+        <DIV WIDTH="150" HEIGHT="146"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">operator<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="467" HEIGHT="146"> 
+        <DIV WIDTH="467" HEIGHT="146"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            П xiAnd (логическое объединение первого и второго критериев) П xior 
+            (логическое сложение первого и второго критериев) П xiTopioitems (для 
+            показа первых десяти элементов поля)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="146"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="150" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="467" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>При работе 
+  с фильтрами полезны метод </B>ShowAllData и<B> свойства </B>FilterMode </font><font face="Times New Roman, Times, serif" size="3">и 
+  AutoFilterMode.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="174">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="202" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="414" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="202" HEIGHT="46"> 
+        <DIV WIDTH="202" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Метод ShowAllData<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="414" HEIGHT="46"> 
+        <DIV WIDTH="414" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Показывает все 
+            отфильтрованные и неотфильтрованные строки рабочего листа<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="65"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="202" HEIGHT="65"> 
+        <DIV WIDTH="202" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Свойства FilterMode<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="414" HEIGHT="65"> 
+        <DIV WIDTH="414" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (если на рабочем листе имеются отфильтрованные данные со скрытыми 
+            строками), False (в противном случае)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="65"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="202" HEIGHT="64"> 
+        <DIV WIDTH="202" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Свойство<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">AutoFilterMode<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="414" HEIGHT="64"> 
+        <DIV WIDTH="414" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (если на рабочем листе выведены раскрывающиеся списки метода 
+            AutoFilter), False (в противном случае)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="202" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="414" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  соответствие между аргументами метода AutoFilter и выполнением команды <B>Данные, 
+  Фильтр, Автофильтр </B>(Data, Filter, AutoFilter) при фильтрации базы данных 
+  регистрации туристов.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="163">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="90" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="524" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="163"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="90" HEIGHT="163"> 
+        <DIV WIDTH="90" HEIGHT="163"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="524" HEIGHT="163"> 
+        <DIV WIDTH="524" HEIGHT="163"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выделяем диапазон 
+            A1 = E1, содержащий заголовки полей базы данных. Выберем команду Данные, 
+            Фильтр, Автофильтр (Data, Filter, AutoFilter). В результате в заголовках 
+            полей появятся раскрывающиеся списки (рис. 3.5). В этих раскрывающихся 
+            списках предлагаются варианты допустимой фильтрации. В методе AutoFilter 
+            за диапазон с названиями полей отвечает объект, к которому применяется 
+            метод. В данном случае метод<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">AutoFilter надо 
+            Применить к диапазону Range (&quot;A1: E1&quot;) .<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="163"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="90" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="524" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><img src="3.5.gif" width="462" height="321"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  3.5. </I></B><I>Раскрывающиеся списки метода AutoFilter</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="166">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="91" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="526" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="166"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="91" HEIGHT="166"> 
+        <DIV WIDTH="91" HEIGHT="166"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 2(а)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="526" HEIGHT="166"> 
+        <DIV WIDTH="526" HEIGHT="166"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Отфильтруем 
+            в базе данных, например, только данные о клиентах, направляющихся 
+            в афины (рис. 3.6). С этой целью в раскрывающемся списке поля Направление 
+            тура выберем Афины. В результате на рабочем листе будут выведены только 
+            записи, соответствующие турам в Афины. В методе AutoFilter за выбор 
+            поля, в котором производится фильтрация, отвечает аргумент<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Field. В данном 
+            Случае для выбора поля Направление тура<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">аргументу Field 
+            надо присвоить значение 4. За критерии, покоторым производится фильтрация, 
+            отвечают аргументы criteria1 и criteria2. В данном случае фильтрация 
+            производилась по одному критерию — АФИНЫ, поэтому только аргументу 
+            criterial надо присвоить значение АФИНЫ. Таким образом, имеем:<br>
+            </font></P>
+          <p> <font face="Courier New, Courier, mono" size="3">Range ( &quot;Al 
+            : El &quot; ) . Select Selection. AutoFilte r Selection. AutoFilter 
+            Field:=4, Criteria1 : =&quot;Афины&quot;</font></p>
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="166"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="91" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="526" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><img src="3.6.gif" width="472" height="290"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  3.6. </I></B><I>Фильтрация списка по критерию Афины</I><BR>
+  </font></P>
+<P align="left"><img src="3.7.gif" width="420" height="233"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  3.7. </I></B><I>Диалоговое окно <B>Пользовательский автофильтр</B></I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="188">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="92" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="526" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="188"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="92" HEIGHT="188"> 
+        <DIV WIDTH="92" HEIGHT="188"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 2(b)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="526" HEIGHT="188"> 
+        <DIV WIDTH="526" HEIGHT="188"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">При фильтрации 
+            по условию появляется диалоговое окно Пользовательский автофильтр 
+            (Custom AutoFilter), позволяющее отфильтровать записи по двум критериям 
+            в одном поле (рис. 3.7). Например, отфильтруем все туры в Афины и 
+            Берлин. В методе AutoFilter это соответствует присвоению аргументам 
+            Сriterial и criteria2 значений Афины и Берлин соответственно, а аргументу 
+            operator — значения хlor, т. к. будут отображаться либо туры в Афины, 
+            либо в Берлин .</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Таким образом, 
+            имеем:<br>
+            </font></P>
+          <p> <font face="Courier New, Courier, mono" size="3">Range (&quot;A1:E1&quot;) 
+            .Select Select ion. AutoFilter Selection. AutoFilter Field:=4, </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">Criterial : =&quot;=Афины&quot; 
+            , Operator : =xlOr , </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">Criteria2 :=&quot;=Берлин&quot;</font></p>
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="188"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="92" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="526" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="5"></a>Метод 
+  AdvancedFilter</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Метод AdvancedFilter 
+  (расширенный фильтр) является более мощным и универсальным средством фильтрации, 
+  чем метод AutoFilter. Он позволяет использовать фильтрацию по большему числу 
+  критериев, причем допустимо применение критериев, включающих формулы. Кроме 
+  того, метод AdvancedFilter позволяет фильтровать список с выводом результата 
+  фильтрации как непосредственно на том месте, где он расположен, так и в новое 
+  специфицированное место. Вручную метод запускается посредством выбора команды 
+  <B>Данные, Фильтр, Расширенный фильтр </B>(Data, Filter, Advanced Filter).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Объект.AdvancedFilter(Action, 
+  CriteriaRange, CopyToRange, Unique) </font></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3">Аргументы:<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="220">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="470" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="66"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="66"> 
+        <DIV WIDTH="149" HEIGHT="66"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Action<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="470" HEIGHT="66"> 
+        <DIV WIDTH="470" HEIGHT="66"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения:: 
+            xiFilterinPiace (фильтровать список на месте) и xiFiiterCopy (скопировать 
+            результат на новое место)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="66"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="24"> 
+        <DIV WIDTH="149" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">CriteriaRange<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="470" HEIGHT="24"> 
+        <DIV WIDTH="470" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Ссылка на диапазон 
+            с критериями<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="65"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="65"> 
+        <DIV WIDTH="149" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">CopyToRange<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="470" HEIGHT="65"> 
+        <DIV WIDTH="470" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Если параметр 
+            Action принимает значение xiFiiter-сору, то он указывает диапазон, 
+            куда будет копироваться результат фильтрации<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="65"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="65"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="65"> 
+        <DIV WIDTH="149" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Unique<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="470" HEIGHT="65"> 
+        <DIV WIDTH="470" HEIGHT="65"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения 
+            True (отбирается только один вариант записи из многократно встречающихся 
+            в списке) и False (отбираются все встречающиеся записи)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="65"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="149" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="470" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  соответствие между аргументами метода Advanced Filter и выполнением команды 
+  <B>Данные, Фильтр, Расширенный фильтр </B>(Data, Filter, Advanced Filter) при 
+  фильтрации базы данных регистрации туристов.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="63">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="63"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="63"> 
+        <DIV WIDTH="68" HEIGHT="63"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="63"> 
+        <DIV WIDTH="551" HEIGHT="63"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выделяем диапазон 
+            AI : G13, содержащий фильтруемую базу данных. (рис. 3.8). Прежде чем 
+            выбирать команду Данные, Фильтр, Расширенный фильтр (Data, Filter, 
+            Advanced Filter), необходимовыполнить предварительные построения по 
+            созданию диапазона критериев. Верхняя строка диапазона критериев должна 
+            содержать заголовки полей фильтруемых данных. При этом нет необходимости 
+            включать все заголовки и сохранять их порядок. В диапазон критериев 
+            также должны входить строки с условиями фильтрации. Все условия в 
+            диапазоне критериев, записанные под заголовком поля, относятся к этому 
+            полю. При применении расширенного фильтра допустима запись нескольких 
+            условий в строке диапазона критериев. Условия, расположенные в одной 
+            строке, рассматриваются как условия, объединенные логической операцией 
+            и (And) , а расположенные в нескольких — логической операцией или 
+            (Or) В данном случае под диапазон критериев отведем диапазон A16:G17. 
+            В базе данных выберем записи обо всех мужчинах, которые едут в Лондон. 
+            С этой целью в ячейку С17 диапазона критериев введем значение муж, 
+            а в ячейку D17— Лондон.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="63"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><img src="3.8.gif" width="521" height="275"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  3.8. </I></B><I>Фильтруемый список</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="167">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="167"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="167"> 
+        <DIV WIDTH="70" HEIGHT="167"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 2<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="167"> 
+        <DIV WIDTH="550" HEIGHT="167"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выберем команду 
+            Данные, Фильтр, Расширенный фильтр (Data, Filter, Advanced Filter). 
+            Появится диалоговое окно Расширенный фильтр (Advanced Filter) (рис. 
+            3.9). </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="167"><font face="Times New Roman, Times, serif" size="3"> 
+              Переключатели группы Обработка (Action) определяют, где будут располагаться 
+              отфильтрованные данные. В рассматриваемом случае не будем фильтровать 
+              список на месте, а скопируем результат фильтрации в другое место. 
+              Поэтому выберем переключатель скопировать результат в другое место 
+              (Copy to Another Location). У метода AdvancedFilter за выбор местоположения 
+              результата фильтрации отвечает аргумент Action. При данном выборе 
+              переключателя аргументу Action присваивается значение</font><font face="Courier New, Courier, mono" size="3"> 
+              xlFilterCopy.</font><font face="Times New Roman, Times, serif" size="3"></font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="550" HEIGHT="167"> 
+          <p><font face="Times New Roman, Times, serif" size="3"><br>
+            </font></p>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="167"> <font face="Times New Roman, Times, serif" size="3"> 
+              В поле Исходный диапазон (List Range) вводится ссылка на диапазон 
+              с фильтруемыми данными — AI : G13. П В поле Диапазон условий (Criteria 
+              Range) вводится ссылка на диапазон с критериями — A16:G17. У метода 
+              AdvancedFilter определение диапазона с критериями осуществляется 
+              с помощью аргумента criteriaRange. Поэтому ему присваивается диапазон 
+              </font><font face="Courier New, Courier, mono" size="3">Range (&quot;A16:G17&quot;) 
+              .</font><font face="Times New Roman, Times, serif" size="3"></font><font face="Times New Roman, Times, serif" size="3"> 
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="550" HEIGHT="167"> 
+          <p>&nbsp;</p>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="167"> 
+              <DIV WIDTH="550" HEIGHT="167"><font face="Times New Roman, Times, serif" size="3"> 
+                В поле Поместить результат в диапазон (Copy to) дается ссылка 
+                на диапазон назначения. В данном случае A19:G19. Переменной в 
+                методе AdvancedFiiter, отвечающей за диапазон назначения, является 
+                CopyToRange. Поэтому ей надо присвоить диапазон </font><font face="Courier New, Courier, mono" size="3">Range 
+                (&quot;A19:G19&quot;).</font><font face="Times New Roman, Times, serif" size="3"></font><font face="Times New Roman, Times, serif" size="3"><br>
+                </font></DIV>
+            </DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="550" HEIGHT="167"> 
+          <p> <font face="Times New Roman, Times, serif" size="3"><br>
+            </font></p>
+        </DIV>
+        <ul>
+          <li>
+            <DIV WIDTH="550" HEIGHT="167"> <font face="Times New Roman, Times, serif" size="3">Флажок 
+              Только уникальные записи (Unique Records Only) определяет, будут 
+              ли отображаться все отфильтрованные записи или только по одной из 
+              всех одинаковых записей, удовлетворяющих критерию. В данном случае 
+              снимем флажок Только уникальные записи (Unique Records Only). Поэтому 
+              переменной unique присваиваем значение False. Подытожим все присвоения 
+              значений аргументов:<br>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="550" HEIGHT="167">
+          <p> <font face="Courier New, Courier, mono" size="3">Range ( &quot;A1 
+            : G13&quot; ) .AdvancedFiiter </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">Action :=xlFilterCopy, 
+            </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">CriteriaRange : 
+            =Range (&quot;A16:G17&quot; ) ,</font></p>
+          <p><font face="Courier New, Courier, mono" size="3"> CopyToRange : =Range 
+            ( &quot; Al 9 : Gl 9 &quot; ) , Unique : =False</font></p>
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="167"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><img src="3.9.gif" width="336" height="238"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  З.9. </I></B><I>Диалоговое окно <B>Расширенный фильтр</B></I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="46">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="46"> 
+        <DIV WIDTH="70" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ШагЗ<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="46"> 
+        <DIV WIDTH="551" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            OK приводит к фильтрации данных по указанному критерию.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="6"></a>Метод 
+  Consolidate</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Метод consolidate 
+  (консолидация) применяется для объединения данных из нескольких диапазонов в 
+  одну итоговую таблицу, которые могут находиться на различных рабочих листах. 
+  Этот метод позволяет подвести итоги и обобщить однородные данные, размещенные 
+  в нескольких диапазонах. Вручную метод consolidate выполняется с помощью команды 
+  Данные, Консолидация (Data, Consolidate).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Объект.Consolidate(Sources, 
+  Function, TopRow, LeftColumn, CreateLinks) </font></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3">Аргументы:<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="528">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="141" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="480" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="141" HEIGHT="26"> 
+        <DIV WIDTH="141" HEIGHT="26"> 
+          <P> <b><font face="Times New Roman, Times, serif" size="3">Объект<BR>
+            </font></b></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="480" HEIGHT="26"> 
+        <DIV WIDTH="480" HEIGHT="26"> 
+          <P> <b><font face="Times New Roman, Times, serif" size="3">Диацазон, 
+            где будет построена итоговая таблица<BR>
+            </font></b></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="141" HEIGHT="82"> 
+        <DIV WIDTH="141" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Sources<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="480" HEIGHT="82"> 
+        <DIV WIDTH="480" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Массив ссылок 
+            в R1C1 -формате на диапазоны, по которым строится итоговая таблица. 
+            Ссылки должны содержать полные имена диапазонов с указанием имен рабочих 
+            листов, на которых они расположены<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="295"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="141" HEIGHT="295"> 
+        <DIV WIDTH="141" HEIGHT="295"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Function<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="480" HEIGHT="295"> 
+        <DIV WIDTH="480" HEIGHT="295"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Функция, на 
+            основе которой строится итоговая таблица. Допустимые значения:<BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="480" HEIGHT="295"> <font face="Times New Roman, Times, serif" size="3">xlAverage 
+              (среднее)<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="480" HEIGHT="295"> <font face="Times New Roman, Times, serif" size="3"> 
+              xlcount (количество значений) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="480" HEIGHT="295"><font face="Times New Roman, Times, serif" size="3"> 
+              xlCountNums (количество чисел) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="480" HEIGHT="295"><font face="Times New Roman, Times, serif" size="3"> 
+              xlMax (максимум)<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="480" HEIGHT="295"> <font face="Times New Roman, Times, serif" size="3">xlMin 
+              (минимум)<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="480" HEIGHT="295"> <font face="Times New Roman, Times, serif" size="3"> 
+              xlProduct (произведение) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="480" HEIGHT="295"><font face="Times New Roman, Times, serif" size="3"> 
+              xlstDev (несмещенная дисперсия) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="480" HEIGHT="295"><font face="Times New Roman, Times, serif" size="3"> 
+              xlstDevP (смещенная дисперсия) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="480" HEIGHT="295"><font face="Times New Roman, Times, serif" size="3">xlSum 
+              (сумма) О xlvar (несмещенное отклонение) </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="480" HEIGHT="295"><font face="Times New Roman, Times, serif" size="3">xlVarp 
+              (смещенное отклонение)<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="295"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="141" HEIGHT="62"> 
+        <DIV WIDTH="141" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">TopRow<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="480" HEIGHT="62"> 
+        <DIV WIDTH="480" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (консолидация основывается на заголовках столбцов, консолидируемых 
+            диапазонов) и False (в противном случае)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="141" HEIGHT="64"> 
+        <DIV WIDTH="141" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">LeftColumn<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="480" HEIGHT="64"> 
+        <DIV WIDTH="480" HEIGHT="64"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (консолидация основывается на заголовках строк, консолидируемых 
+            диапазонов) и False (в противном случае)</font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="480" HEIGHT="64"><font face="Times New Roman, Times, serif" size="3"> 
+              Если консолидация происходит по расположению, то можно снять флажки 
+              подписи верхней строки (Top Row) и значения левого столбца (Left 
+              Column). Эти флажки должны быть установлены, если консолидация происходит 
+              согласно заголовкам строк и столбцов. В данном случае установим 
+              эти два флажка. </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="480" HEIGHT="64"><font face="Times New Roman, Times, serif" size="3"> 
+              Флажок Создавать связи с исходными данными (Create Links to Source 
+              Data) позволяет установить связь между исходными данными и итоговым 
+              диапазоном так, что результаты будут обновляться при изменении данных. 
+              В данном случае сбросим этот флажок.<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="64"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="141" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="480" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left">&nbsp;</P>
+<div align="left"></div>
+<p align="left"><img src="3.10.gif" width="371" height="560"> </p>
+<p align="left"><font face="Times New Roman, Times, serif" size="3"><b><i>Рис. 
+  3.10. </i></b><i>Диалоговое окно диапазонов</i></font></p>
+<P align="left"><img src="3.11.gif" width="405" height="298"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  3.11. </I></B><I>Диалоговое окно <B>Консолидация</B></I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="299">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="66" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="549" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="299"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="66" HEIGHT="299"> 
+        <DIV WIDTH="66" HEIGHT="299"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ШагЗ<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="549" HEIGHT="299"> 
+        <DIV WIDTH="549" HEIGHT="299"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            ОК приводит к построению итоговой таблицы (рис. 3.12). В методе Consolidate 
+            за исходные диапазоны отвечает аргумент Sources, за способ консолидации 
+            данных — аргумент Function, за установку флажков подписи верхней строки 
+            (Top Row), значения левого столбца (Left Column) и Создавать связи 
+            с исходными данными (Create Links to Source Data) — аргументы TopRow,<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">LeftColumn и 
+            CreateLinks. Подытожим все присвоения значений аргументов для рассмотренного 
+            примера:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Range ( &quot;Al 
+            : D4 &quot; ) . Consolidate_</font></P>
+          <P><font face="Courier New, Courier, mono" size="3">Sources :=Ar r ay 
+            (&quot; ' [Книга1] 1998 ' ! R1C1 : R4C4&quot;, &quot; ' [Книга2] 1999' 
+            !R1C1:R4C4&quot;) ,</font></P>
+          <P><font face="Courier New, Courier, mono" size="3"> Function :=xlSum, 
+            TopRow: =True, Left Column :=True, CreateLinks :=False</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="299"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="66" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="549" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><img src="3.12.gif" width="329" height="157"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  3.12. </I></B><I>Результат консолидации</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="7"></a>Метод 
+  Find</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Метод Find 
+  (найти) используется для поиска ячейки, содержащей специфицированную информацию. 
+  Если метод Find не находит подходящей ячейки, он возвращает значение Nothing. 
+  Вручную метод Find вызывается командой <B>Правка, Найти </B>(Edit, Find).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Объект.Find(what, 
+  after, lookln, lookAt, searchOrder, searchDirection, matchCase, matchByte) </font></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3">Аргументы:<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="338">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="174" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="445" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="174" HEIGHT="24"> 
+        <DIV WIDTH="174" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Объект</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="445" HEIGHT="24"> 
+        <DIV WIDTH="445" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"><B>Диапазон, 
+            где производится поиск</B><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="174" HEIGHT="23"> 
+        <DIV WIDTH="174" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">what<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="445" HEIGHT="23"> 
+        <DIV WIDTH="445" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Элемент, который 
+            ищется<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="174" HEIGHT="62"> 
+        <DIV WIDTH="174" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">after<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="445" HEIGHT="62"> 
+        <DIV WIDTH="445" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Первая ячейка, 
+            после которой производится поиск. Если аргумент опущен, то поиск производится 
+            во всем диапазоне<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="91"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="174" HEIGHT="91"> 
+        <DIV WIDTH="174" HEIGHT="91"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">lookln<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="445" HEIGHT="91"> 
+        <DIV WIDTH="445" HEIGHT="91"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Область поиска. 
+            Допустимые значения:<BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="445" HEIGHT="91"> <font face="Times New Roman, Times, serif" size="3"> 
+              xlFormulas (формулы) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="445" HEIGHT="91"><font face="Times New Roman, Times, serif" size="3">xlValues 
+              (значения) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="445" HEIGHT="91"><font face="Times New Roman, Times, serif" size="3"> 
+              xlNotes (примечания)</font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="91"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="69"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="174" HEIGHT="69"> 
+        <DIV WIDTH="174" HEIGHT="69"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">LookAt<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="445" HEIGHT="69"> 
+        <DIV WIDTH="445" HEIGHT="69"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="445" HEIGHT="69"><font face="Times New Roman, Times, serif" size="3">xlwhoie 
+              (ячейки целиком) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="445" HEIGHT="69"><font face="Times New Roman, Times, serif" size="3"> 
+              xlPart (ячейки частично)<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="69"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="70"></TD>
+      <td width="173" height="72"> 
+        <div width="173" height="72"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">searchDirection<br>
+            </font></p>
+        </div>
+      </td>
+      <td width="366" height="72"> 
+        <div width="366" height="72"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Направление 
+            поиска. Допустимые значения:</font></p>
+        </div>
+        <ul>
+          <li> 
+            <div width="366" height="72"><font face="Times New Roman, Times, serif" size="3">xlNext 
+              (к концу диапазона)<br>
+              </font></div>
+          </li>
+          <li>
+            <div width="366" height="72"> <font face="Times New Roman, Times, serif" size="3"> 
+              xl Previous (к началу)<br>
+              </font></div>
+          </li>
+        </ul>
+      </td>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="70"></TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="70"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="174" HEIGHT="70"> 
+        <DIV WIDTH="174" HEIGHT="70"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">searchOrder<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="445" HEIGHT="70"> 
+        <DIV WIDTH="445" HEIGHT="70"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="445" HEIGHT="70"><font face="Times New Roman, Times, serif" size="3">xlByRows 
+              (искать по строчкам) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="445" HEIGHT="70"><font face="Times New Roman, Times, serif" size="3"> 
+              xlByCoiumns (искать по столбцам)<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="70"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="174" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="445" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Как отмечалось 
+  выше, вручную метод Find вызывается командой <B>Правка, Найти </B>(Edit, Find), 
+  а значения его аргументов соответствуют заполнению диалогового окна <B>Найти 
+  </B>(Find), отображаемого на экране посредством выбора команды <B>Правка, Найти 
+  </B>(Edit, Find) (рис. 3.13).<BR>
+  </font></P>
+<P align="left"><img src="3.13.gif" width="533" height="175"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  3.13. </I></B><I>Диалоговое окно <B>Найти</B></I> <i>Методы FindNext и FindPrevious 
+  используются для повторения поиска.</i><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="8"></a>Метод 
+  GoalSeek</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Метод GoalSeek 
+  (подбор параметра) подбирает значение параметра (неизвестной величины), являющееся 
+  решением уравнения с одной переменной. Предполагается, что уравнение приведено 
+  к виду: правая часть является постоянной, не зависящей от параметра, который 
+  входит только в левую часть уравнения. Вручную метод GoalSeek выполняется с 
+  помощью команды <B>Сервис, Подбор параметра </B>(Tools, Goal Seek). Метод GoalSeek 
+  вычисляет корень, используя метод последовательных приближений, результат выполнения 
+  которого, вообще говоря, зависит от начального приближения. Поэтому для корректности 
+  нахождения корня надо позаботиться о корректном указании этого начального приближения.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Объект.GoalSeek(Goal, 
+  ChangingCell)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Аргументы:<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="86">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="150" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="467" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="86"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="150" HEIGHT="86"> 
+        <DIV WIDTH="150" HEIGHT="86"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Объект<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="467" HEIGHT="86"> 
+        <DIV WIDTH="467" HEIGHT="86"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Ячейка, в которую 
+            введена формула, являющаяся правой частью решаемого уравнения. В этой 
+            формуле роль параметра (неизвестной величины) играет ссылка на ячейку, 
+            указанную в аргументе ChangingCell<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="86"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="150" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="467" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="130">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="132" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="408" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="43"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="132" HEIGHT="43"> 
+        <DIV WIDTH="149" HEIGHT="43"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Goal<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="408" HEIGHT="43"> 
+        <DIV WIDTH="466" HEIGHT="43"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Значение левой 
+            части решаемого уравнения, не содержащей параметра<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="43"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="86"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="132" HEIGHT="86"> 
+        <DIV WIDTH="149" HEIGHT="86"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ChangingCell<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="408" HEIGHT="86"> 
+        <DIV WIDTH="466" HEIGHT="86"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Ссылка на ячейку, 
+            отведенную под параметр (неизвестную величину). Значение, введенное 
+            в данную ячейку до активизации метода Goaiseek, рассматривается как 
+            начальное приближение к искомому корню<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="86"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="132" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="408" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Точность, 
+  с которой находится корень и предельно допустимое число итераций, используемых 
+  для нахождения корня, устанавливается свойствами </font><font face="Times New Roman, Times, serif" size="3">MaxChange 
+  и Maxlterations объекта Application. Например, определение корня с точностью 
+  до 0,0001 максимум за 1000 итераций устанавливается инструкцией:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With Application<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Maxlterations 
+  = 1000<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.MaxChange = 
+  0.0001 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Вручную эти 
+  величины устанавливаются на вкладке <B>Вычисления </B>(Calculation) диалогового 
+  окна <B>Параметры </B>(Options), вызываемого командой <B>Сервис, Параметры </B>(Tools, 
+  Options).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  соответствие между аргументами метода Goaiseek и нахождения корня уравнения 
+  <I>х<SUP>2</SUP> = </I>3 на рабочем листе вручную при помощи команды <B>Сервис, 
+  Подбор параметра </B>(Tools, Goal Seek).<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="355">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="355"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="355"> 
+        <DIV WIDTH="69" HEIGHT="355"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="355"> 
+        <ul>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="355"> <font face="Times New Roman, Times, serif" size="3">Ячейку 
+              AI отведем под неизвестную. Команда Подбор параметра (Goal Seek) 
+              находит корень уравнения методом последовательных приближений, результат 
+              которого зависит от начального приближения к корню. Команда Подбор 
+              параметра (Goal Seek) воспринимает значение, первоначально введенное 
+              в ячейку AI, за начальное приближение. Будем считать, что начальное 
+              приближение к корню равно 0. Введем 0 в ячейку A1. В методе Goaiseek 
+              аргумент ChangingCell отвечает за ссылку на ячейку, отведенную под 
+              неизвестную. В данномслучае аргументу ChangingCell Присваиваем Range 
+              (&quot;A1&quot;) .<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="355"><font face="Times New Roman, Times, serif" size="3"> 
+              Ячейку А2 отведем под левую часть уравнения. При решении уравнения 
+              с помощью команды Подбор параметра (Goal Seek) уравнение надо преобразовать 
+              к такому виду, чтобы в правой его части содержалась только постоянная, 
+              не зависящая от неизвестной, которая должна входить только в его 
+              правую часть. В данном случае в ячейку А2 введем формулу =А1<SUP>Л</SUP>2 
+              (рис. 3.14). В методе Goaiseek диапазон, к которому применяется 
+              метод, отвечает за ссылку на ячейку, отведенную под левую часть 
+              уравнения, содержащую неизвестную. В данном случае метод GoalSeek 
+              применяется к диапазону Range (&quot;A2&quot;) .</font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="355"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><img src="3.14.gif" width="411" height="271"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  3.14. </I></B><I>Ввод данных на рабочем листе при решении нелинейного уравнения</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="296">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="296"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="296"> 
+        <DIV WIDTH="69" HEIGHT="296"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 2<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="296"> 
+        <DIV WIDTH="550" HEIGHT="296"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выберите команду 
+            Сервис, Подбор параметра (Tools, Goal Seek). В появившемся диалоговом 
+            окне Подбор параметра (Goal Seek) (рис. 3.15) </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="296"><font face="Times New Roman, Times, serif" size="3">В 
+              поле Установить в ячейке (Set cell) введите ссылку на ячейку А2<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="296"><font face="Times New Roman, Times, serif" size="3">В 
+              поле Изменяя значение ячейки (By changing cell) — ссылку на ячейку 
+              A1<BR>
+              </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="550" HEIGHT="296"> <font face="Times New Roman, Times, serif" size="3"> 
+              В поле значение введите 3. В поле Значение (То value) вводится величина 
+              правой части уравнения. В методе Goaiseek аргумент Goal отвечает 
+              за правую часть уравнения. В данном случае присвоим аргументу Goal 
+              значение 3. Таким образом, имеем&quot;:<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="550" HEIGHT="296">
+          <P> <font face="Courier New, Courier, mono" size="3">Range (&quot;A2&quot;) 
+            .GoalSeek Goal:=3, </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">ChangingCell := 
+            Range (&quot;A1&quot;)<BR>
+            </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="296"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><img src="3.15.gif" width="261" height="139"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  3.15. </I></B><I>Диалоговое окно <B>Подбор параметра</B></I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="167">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="548" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="167"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="167"> 
+        <DIV WIDTH="69" HEIGHT="167"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг3<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="548" HEIGHT="167"> 
+        <DIV WIDTH="548" HEIGHT="167"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            OK вызовет выполнение команды Подбор параметра (GoalSeek), результат 
+            расчета которой будет помещен в ячейки A1 (значение корня, в данном 
+            случае 1.731856) и А2 (значение левой части уравнения при найденном 
+            значении корня, в данном случае оно равно 2 .999325) (рис. 3.16). 
+            В силу того, что решение находится приближенно с указанной точностью, 
+            в ячейке А2 получилось 2.999325, а не ровно 3. Увеличивая точность, 
+            можно найти лучшее приближение к корню.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="167"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="548" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <p><img src="3.16.gif" width="247" height="139"></p>
+  <p><font face="Times New Roman, Times, serif" size="3"><i><b>Рис. 3.16. </b>Результат 
+    вычислений команды Подбор параметра<br>
+    </i></font></p>
+  <p><font face="Times New Roman, Times, serif" size="4"><a name="9"></a><b>Метод 
+    Sort</b></font><font face="Times New Roman, Times, serif" size="3"><br>
+    </font></p>
+  <p><font face="Times New Roman, Times, serif" size="3">Сортировка позволяет 
+    выстраивать данные в лексикографическом порядке по возрастанию или убыванию. 
+    Метод Sort осуществляет сортировку строк списков и баз данных, а также столбцов 
+    рабочих листов с учетом до трех критериев, по которым производится сортировка. 
+    Сортировка данных вручную совершается с использованием команды Данные, Сортировка 
+    (Data, Sort). .</font></p>
+  <p><font face="Times New Roman, Times, serif" size="3"><br>
+    Синтаксис:</font></p>
+  <p><font face="Times New Roman, Times, serif" size="3"><br>
+    <font face="Courier New, Courier, mono">Объект.Sort(keyl, orderl, key2, order2, 
+    key3, order3, header, orderCus-tom,<br>
+    matchCase, orientation)</font><br>
+    <br>
+    Аргументы:</font></p>
+  <font face="Times New Roman, Times, serif" size="3">
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="451">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="480" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="24"> 
+        <DIV WIDTH="138" HEIGHT="24" align="left"> 
+          <P align="left"> <b><font face="Times New Roman, Times, serif" size="3">Объект<BR>
+            </font></b></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="480" HEIGHT="24"> 
+        <DIV WIDTH="480" HEIGHT="24" align="left"> 
+          <P align="left"> <b><font face="Times New Roman, Times, serif" size="3">Диапазон, 
+            который будет сортироваться<BR>
+            </font></b></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="25"> 
+        <DIV WIDTH="138" HEIGHT="25" align="left"> 
+          <P align="left"> <font face="Times New Roman, Times, serif" size="3">keyl<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="480" HEIGHT="25"> 
+        <DIV WIDTH="480" HEIGHT="25" align="left"> 
+          <P align="left"> <font face="Times New Roman, Times, serif" size="3">Ссылка 
+            на первое упорядочиваемое поле<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="71"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="71"> 
+        <DIV WIDTH="138" HEIGHT="71" align="left"> 
+          <P align="left"> <font face="Times New Roman, Times, serif" size="3">orderl<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="480" HEIGHT="71"> 
+        <DIV WIDTH="480" HEIGHT="71" align="left"> 
+          <P align="left"> <font face="Times New Roman, Times, serif" size="3">Задает 
+            порядок упорядочивания. Допустимые значения: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="480" HEIGHT="71" align="left"><font face="Times New Roman, Times, serif" size="3">xlAscending 
+              (возрастающий порядок)<BR>
+              </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="480" HEIGHT="71" align="left"> <font face="Times New Roman, Times, serif" size="3"> 
+              xlDescending (убывающий порядок)<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="71"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="25"> 
+        <DIV WIDTH="138" HEIGHT="25" align="left"> 
+          <P align="left"> <font face="Times New Roman, Times, serif" size="3">key2<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="480" HEIGHT="25"> 
+        <DIV WIDTH="480" HEIGHT="25" align="left"> 
+          <P align="left"> <font face="Times New Roman, Times, serif" size="3">Ссылка 
+            на второе упорядочиваемое поле<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="72"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="72"> 
+        <DIV WIDTH="138" HEIGHT="72" align="left"> 
+          <P align="left"> <font face="Times New Roman, Times, serif" size="3">order2<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="480" HEIGHT="72"> 
+        <DIV WIDTH="480" HEIGHT="72" align="left"> 
+          <P align="left"> <font face="Times New Roman, Times, serif" size="3">Задает 
+            порядок упорядочивания. Допустимые значения: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="480" HEIGHT="72" align="left"><font face="Times New Roman, Times, serif" size="3">xlAscending 
+              (возрастающий порядок) </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="480" HEIGHT="72" align="left"><font face="Times New Roman, Times, serif" size="3"> 
+              xlDescending (убывающий порядок)<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="72"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="24"> 
+        <DIV WIDTH="138" HEIGHT="24" align="left"> 
+          <P align="left"> <font face="Times New Roman, Times, serif" size="3">key3<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="480" HEIGHT="24"> 
+        <DIV WIDTH="480" HEIGHT="24" align="left"> 
+          <P align="left"> <font face="Times New Roman, Times, serif" size="3">Ссылка 
+            на второе упорядочиваемое поле<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="72"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="72"> 
+        <DIV WIDTH="138" HEIGHT="72" align="left"> 
+          <P align="left"> <font face="Times New Roman, Times, serif" size="3">order3<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="480" HEIGHT="72"> 
+        <DIV WIDTH="480" HEIGHT="72" align="left"> 
+          <P align="left"> <font face="Times New Roman, Times, serif" size="3">Задает 
+            порядок упорядочивания. Допустимые значения: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="480" HEIGHT="72" align="left"><font face="Times New Roman, Times, serif" size="3">xlAscending 
+              (возрастающий порядок),<BR>
+              </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="480" HEIGHT="72" align="left"> <font face="Times New Roman, Times, serif" size="3"> 
+              xlDescending (убывающий Порядок)<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="72"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="138"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="138"> 
+        <DIV WIDTH="138" HEIGHT="138" align="left"> 
+          <P align="left"> <font face="Times New Roman, Times, serif" size="3">header<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="480" HEIGHT="138"> 
+        <DIV WIDTH="480" HEIGHT="138" align="left"> 
+          <P align="left"> <font face="Times New Roman, Times, serif" size="3">Допустимые 
+            значения:</font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="480" HEIGHT="138" align="left"><font face="Times New Roman, Times, serif" size="3"> 
+              xlYes (первая строка диапазона содержит заголовок, который не сортируется) 
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="480" HEIGHT="138" align="left"><font face="Times New Roman, Times, serif" size="3">xiNo 
+              (первая строка диапазона не содержит заголовок, по умолчанию считается 
+              данное значение) </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="480" HEIGHT="138" align="left"><font face="Times New Roman, Times, serif" size="3"> 
+              xlGuess (Excel решает, имеется ли заголовок)<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="138"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="138" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="480" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+
+  </font> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="182">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="418" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="46"> 
+        <DIV WIDTH="138" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">orderCustom<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="418" HEIGHT="46"> 
+        <DIV WIDTH="480" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Пользовательский 
+            порядок сортировки. По умолчанию<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">используется 
+            Normal<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="44"> 
+        <DIV WIDTH="138" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">matchCase<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="418" HEIGHT="44"> 
+        <DIV WIDTH="480" HEIGHT="44"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (учитываются регистры) и False (регистры не учитываются)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="44"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="92"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="92"> 
+        <DIV WIDTH="138" HEIGHT="92"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">orientation<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="418" HEIGHT="92"> 
+        <DIV WIDTH="480" HEIGHT="92"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            О xlTopToBottom (сортировка осуществляется сверху вниз, т. е. по строкам), 
+            П xlLeftToRight (слева направо, т. е. по столбцам)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="92"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="122" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="418" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Например, 
+  диапазон А1:С20 рабочего листа лист! сортируется следующей командой в порядке 
+  возрастания так, что первоначальная сортировка происходит по первому столбцу 
+  этого диапазона, а второстепенная — по второму.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Worksheets(&quot;Лист&quot;).Range(&quot;Al:C20&quot;).Sort 
+  keyl:=Worksheets(&quot;Sheetl&quot;).Range(&quot;Al&quot;), key2:=Worksheets(&quot;Sheetl&quot;).Range(&quot;Bl&quot;)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  соответствие между аргументами метода Sort и сортировкой данных на рабочем листе 
+  вручную при помощи команды <B>Данные, Сортировка </B>(Data, Sort).<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="108">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="108"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="108"> 
+        <DIV WIDTH="68" HEIGHT="108"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="108"> 
+        <DIV WIDTH="551" HEIGHT="108"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выделяем диапазон 
+            A1:G13, содержащий записи базы данных о туристах, которые должны быть 
+            отсортированы (рис. 3.17). В методе Sort за диапазон с записями, подлежащими 
+            сортировке, отвечает объект, к которому применяется метод. В данном 
+            случае метод sort надо применить к диапазону Range (&quot;A1 :G13&quot;) 
+            .<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="108"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="551" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <p><img src="3.17.gif" width="440" height="214"></p>
+</div>
+<P align="left"> <i><font face="Times New Roman, Times, serif" size="3"><B>Рис. 
+  3.17. </B>Сортируемые списки</font></i><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="873">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="39"> </TD>
+      <td align="LEFT" valign="TOP" width="70" height="50"> 
+        <div width="70" height="50"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Шаг 2<br>
+            </font></p>
+        </div>
+      </td>
+      <td align="LEFT" valign="TOP" width="551" height="50"> 
+        <div width="551" height="50"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Выберем команду 
+            Данные, Сортировка (Data, Sort). В результате появится диалоговое 
+            окно Сортировка диапазона (Sort) (рис. 3.18).<br>
+            </font></p>
+        </div>
+      </td>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="39"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="824"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="824"> 
+        <DIV WIDTH="68" HEIGHT="824"> 
+          <P> <font size="3" face="Times New Roman, Times, serif"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="546" HEIGHT="824"> 
+        <DIV WIDTH="546" HEIGHT="824"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Используя это 
+            окно, можно установить до трех критериев, по которым производится 
+            сортировка.<BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="546" HEIGHT="824"> <font face="Times New Roman, Times, serif" size="3">Выбор 
+              в списках Сортировать по (Sort by), Затем по (Then by) и впоследнюю 
+              очередь по (Then by) определяют поля, используемые для фильтрации 
+              списка. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="546" HEIGHT="824"><font face="Times New Roman, Times, serif" size="3">Переключатели 
+              по возрастанию (Ascending) и по убыванию (Descending), расположенные 
+              рядом с каждым раскрывающимся списком, определяют порядок сортировки. 
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="546" HEIGHT="824"><font face="Times New Roman, Times, serif" size="3">Записи 
+              для идентификации полей, выводимые в раскрывающихся списках, определяются 
+              группой Идентифицировать поля по (My list has). Если в этой группе 
+              выбран переключатель подписям (первая строка диапазона) (Header 
+              row), то в раскрывающихся списках выводятся тексты из первых строк 
+              диапазонов. Если выбран переключатель обозначениям столбцов листа 
+              (No header row), то выводятся названия столбцов. Например, отсортируем 
+              базу данных о туристах в порядке возрастания полей, выбранных в 
+              качестве критериев сортировки, установив первоначальным критерием 
+              поле направление тура, вторичным — оплачено. Сортировку по третьему 
+              критерию производить не будем. Так как был выбран диапазон A1 : 
+              G13, содержащий названия полей, то для идентификации полей выберем 
+              в группе Идентифицировать поля по (My list has) переключатель подписям 
+              (первая строка диапазона) (Header row). В методе Sort за выбор поля, 
+              по которому производится первоначальная сортировка, отвечает аргумент 
+              key1. В данном случае для выбора поля направление тура аргументу 
+              key1 надо присвоить значение Range (&quot;D2&quot;) . Порядок сортировки 
+              по первому критерию устанавливается аргументом Orderi. В данном 
+              случае сортируем по возрастанию, поэтому аргументу Order1присваиваем 
+              xlAscending. Вторичная сортировка происходит по полю Оплачено по 
+              возрастанию, поэтому аргументам key2 и Order2 присваиваем Range 
+              (&quot;E2&quot;) </font><font face="Times New Roman, Times, serif" size="3">и 
+              xiAscending соответственно. Переменной, отвечающей за идентификацию 
+              полей, является Header. В данном случае в группе Идентифицировать 
+              поля по (My list has) выбран переключатель подписям (первая строка 
+              диапазона) (Header row), поэтому переменной Header присвоим значение 
+              xiYes. Таким образом, имеем:</font> </DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="546" HEIGHT="824"> <font face="Courier New, Courier, mono" size="3">Range 
+          ( &quot;Al : G13 &quot; ) . Sort Key1i : =Range (&quot;02&quot;) <i>, 
+          </i>Order1 : =xlAscending, Key2:=Range(&quot;E2&quot;) , Order2:=xlAscending, 
+          Header:= xlYes</font></DIV>
+        <DIV WIDTH="546" HEIGHT="824"> 
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="824"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="49"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="49"> 
+        <DIV WIDTH="68" HEIGHT="49"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ШагЗ<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="546" HEIGHT="49"> 
+        <DIV WIDTH="546" HEIGHT="49"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            OK приведет к сортировке записей по указанным критериям (рис. 3.19).<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="49"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="68" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="546" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <p><img src="3.18.gif" width="273" height="302"></p>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  3.18. </I></B><I>Диалоговое окно <B>Сортировка диапазона</B></I><BR>
+  </font></P>
+<P align="left"><img src="3.19.gif" width="445" height="280"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  3.19. </I></B><I>Результат сортировки</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="10"></a>Метод 
+  Subtotal</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Метод Subtotal 
+  добавляет промежуточные итоги в список данных, основываясь на изменениях в определенных 
+  полях данных. Промежуточные итоги позволяют обобщить данные. Метод Subtotal 
+  автоматически вставляет строки с промежуточными итогами, в которые введены формулы 
+  для подсчета итогов. Необходимо, чтобы до активизации этого метода данные были 
+  правильно отсортированы. В противном случае этот метод может привести к неверному 
+  выводу промежуточных итогов. Вручную метод subtotal вызывается командой <B>Данные, 
+  Промежуточные итоги </B>(Data, Subtotal).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Объект.Subtotal(GroupBy, 
+  Function, TotalList, Replace, PageBreaks, SummaryBelowData)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Аргументы:<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="673">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="449" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="41"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="41"> 
+        <DIV WIDTH="162" HEIGHT="41"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Объект<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="449" HEIGHT="41"> 
+        <DIV WIDTH="449" HEIGHT="41"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Диапазон, для 
+            которого подводятся промежуточные итоги<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="41"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="42"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="42"> 
+        <DIV WIDTH="162" HEIGHT="42"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">GroupBy<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="449" HEIGHT="42"> 
+        <DIV WIDTH="449" HEIGHT="42"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Номер поля, 
+            по которому вычисляются промежуточные итоги<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="42"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="293"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="293"> 
+        <DIV WIDTH="162" HEIGHT="293"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Function<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="449" HEIGHT="293"> 
+        <DIV WIDTH="449" HEIGHT="293"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Определяет функцию, 
+            по которой производится подсчет промежуточных итогов. Допустимые значения:<BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="449" HEIGHT="293"> <font face="Times New Roman, Times, serif" size="3">xlAverage 
+              (среднее)<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="449" HEIGHT="293"> <font face="Times New Roman, Times, serif" size="3"> 
+              xlcount (количество значений) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="449" HEIGHT="293"><font face="Times New Roman, Times, serif" size="3"> 
+              xlCountNums (количество чисел) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="449" HEIGHT="293"><font face="Times New Roman, Times, serif" size="3"> 
+              xlMax (максимум) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="449" HEIGHT="293"><font face="Times New Roman, Times, serif" size="3"> 
+              xlWin (минимум) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="449" HEIGHT="293"><font face="Times New Roman, Times, serif" size="3"> 
+              xlProduct (произведение) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="449" HEIGHT="293"><font face="Times New Roman, Times, serif" size="3"> 
+              xlStoev (несмещенное отклонение) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="449" HEIGHT="293"><font face="Times New Roman, Times, serif" size="3"> 
+              xlStoevp (смещенное отклонение) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="449" HEIGHT="293"><font face="Times New Roman, Times, serif" size="3"> 
+              xlSum (сумма) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="449" HEIGHT="293"><font face="Times New Roman, Times, serif" size="3"> 
+              xlVar (несмещенная дисперсия)</font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="449" HEIGHT="293"><font face="Times New Roman, Times, serif" size="3"> 
+              xlVarP (смещенная дисперсия)<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="293"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="42"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="42"> 
+        <DIV WIDTH="162" HEIGHT="42"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">TotalList<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="449" HEIGHT="42"> 
+        <DIV WIDTH="449" HEIGHT="42"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Массив целых 
+            чисел с номерами полей, по которым вычисляются промежуточные итоги,<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="42"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="62"> 
+        <DIV WIDTH="162" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Replace<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="449" HEIGHT="62"> 
+        <DIV WIDTH="449" HEIGHT="62"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (существующие промежуточные итоги будут замещены) и False (в 
+            противном случае)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="62"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="63"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="63"> 
+        <DIV WIDTH="162" HEIGHT="63"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">PageBreaks<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="449" HEIGHT="63"> 
+        <DIV WIDTH="449" HEIGHT="63"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (после каждой группы будет вставлено по символу разрыва страницы) 
+            и False (в противном случае)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="63"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="129"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="129"> 
+        <DIV WIDTH="162" HEIGHT="129"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">SummaryBelowData<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="449" HEIGHT="129"> 
+        <DIV WIDTH="449" HEIGHT="129"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Определяет местоположение 
+            для вывода промежуточных итогов. Допустимые значения: П xlSummaryAbove 
+            (промежуточные итоги будут выведены над данными) П и xlSummaryBeiow 
+            (промежуточные итоги будут выведены под данными)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="129"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="449" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Основным 
+  методом, связанным с </B>Subtotal, ывляется<B> метод </B>RemoveSubtotal, </font><font face="Times New Roman, Times, serif" size="3">удаляющий 
+  промежуточные итоги с рабочего листа. Метод RemoveSubtotal применяется к объекту 
+  Range.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  соответствие между аргументами метода subtotal и подведением промежуточных итогов 
+  на рабочем листе вручную при помощи команды <B>Данные, Промежуточные итоги </B>(Data, 
+  Subtotal) на примере подсчета продаж компьютеров по месяцам и нахождения средних 
+  объемов продаж (рис. 3.20).<BR>
+  </font></P>
+<P align="left"><img src="3.20.gif" width="332" height="375"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  3.20. </I></B><I>Отчет о продажах компьютеров</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="86">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="549" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="86"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="86"> 
+        <DIV WIDTH="70" HEIGHT="86"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="549" HEIGHT="86"> 
+        <DIV WIDTH="549" HEIGHT="86"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выделим ячейки 
+            списка, в данном случае диапазон A1:C16. Выберем команду Данные, Промежуточные 
+            итоги (Data, Subtotal). На экране отобразится диалоговое окно Промежуточные 
+            итоги (Subtotal) (рис. 3.21).<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="86"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="70" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="549" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <p><img src="3.21.gif" width="270" height="295"></p>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Рис.</I></B><I> 
+  <B>3.21.</B> Диалоговое окно <B>Промежуточные итоги</B></I><BR>
+  </font></P>
+<P align="left"><img src="3.22.gif" width="412" height="541"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  3.22. </I></B><I>Результат выполнения команды <B>Промежуточные итоги</B></I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="429">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="66" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="548" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="429"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="66" HEIGHT="429"> 
+        <DIV WIDTH="66" HEIGHT="429"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 2<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="548" HEIGHT="429"> 
+        <DIV WIDTH="548" HEIGHT="429"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">В диалоговом 
+            окне Промежуточные итоги (Subtotal): </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="548" HEIGHT="429"><font face="Times New Roman, Times, serif" size="3"> 
+              Раскрывающийся список При каждом изменении в (Ateach change) устанавливает, 
+              по какому столбцу группируются данные. В данном случае выберем компьютер. 
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="548" HEIGHT="429"><font face="Times New Roman, Times, serif" size="3">Раскрывающийся 
+              список Операция (Use function) устанавливает операцию, выполняемую 
+              над данными. Выберем Сумма (Sum). </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="548" HEIGHT="429"><font face="Times New Roman, Times, serif" size="3"> 
+              Список Добавить итоги по (Add subtotal to) устанавливает данные, 
+              которые участвуют в расчетах. В данном случае выберем Количество. 
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="548" HEIGHT="429"><font face="Times New Roman, Times, serif" size="3">Флажок 
+              Заменить текущие итоги (Replace current subtotals) определяет, надо 
+              ли заменить старые промежуточные итоги на вновь созданные. Сбросим 
+              этот флажок. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="548" HEIGHT="429"><font face="Times New Roman, Times, serif" size="3"> 
+              Флажок Конец страницы между группами (Page break between groups) 
+              определяет, надо ли вставлять символ конца страницы после каждой 
+              группы, для которой подводятся промежуточные итоги. Сбросим этот 
+              флажок. </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="548" HEIGHT="429"><font face="Times New Roman, Times, serif" size="3">Флажок 
+              Итоги под данными (Summary below data) определяет расположение промежуточных 
+              итогов под или над данными, по которым подводятся итоги. Расположим 
+              их под данными и поэтому установим флажок Итоги под данными (Summary 
+              below data).</font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="429"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="66" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="548" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="875">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="59" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="481" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="185"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="59" HEIGHT="185"> 
+        <DIV WIDTH="70" HEIGHT="185"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ШагЗ<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="481" HEIGHT="185"> 
+        <DIV WIDTH="542" HEIGHT="185"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажмем кнопку 
+            ОК в диалоговом окне Промежуточные итоги (Subtotal), что приведет 
+            к созданию промежуточных итогов на рабочем листе по выделенному диапазону 
+            данных (рис. 3.22).<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">На VBA тот же 
+            результат достигается применением следующих инструкций:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Range(&quot;Al:C16&quot;)</font></P>
+          <P><font face="Courier New, Courier, mono" size="3"> .Select Selection. 
+            Subtotal GroupBy:=l, Function : =xlSum, TotalList:=Array (3) , Replace 
+            :=False, PageBreaks:=False, SuramaryBelowData : =True</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="185"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="383"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="59" HEIGHT="383"> 
+        <DIV WIDTH="70" HEIGHT="383"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 4<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="481" HEIGHT="383"> 
+        <DIV WIDTH="542" HEIGHT="383"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Добавим показатель 
+            средней реализации компьютеров по месяцам к уже найденным объемам 
+            их реализации. С этой целью выделим ячейки списка с данными и уже 
+            подведенными ранее итогами, в данном случае диапазон AI :С20. Выберем 
+            команду Данные, Промежуточные итоги (Data, Subtotal). На экране отобразится 
+            диалоговое окно Промежуточные итоги (Subtotal). В этом диалоговом 
+            окне: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="542" HEIGHT="383"><font face="Times New Roman, Times, serif" size="3">В 
+              раскрывающемся списке При каждом изменении в (At each change) выберем 
+              компьютер.<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="542" HEIGHT="383"><font face="Times New Roman, Times, serif" size="3"> 
+              В раскрывающемся списке Операция (Use function) выберем Среднее 
+              (Average). </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="542" HEIGHT="383"><font face="Times New Roman, Times, serif" size="3"> 
+              В списке Добавить итоги по (Add subtotal) установим флажок Количество. 
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="542" HEIGHT="383"><font face="Times New Roman, Times, serif" size="3">Сбросим 
+              флажок Заменить текущие итоги (Replace current subtotals). </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="542" HEIGHT="383"><font face="Times New Roman, Times, serif" size="3"> 
+              Сбросим флажок Конец страницы между группами (Page break between 
+              groups). </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="542" HEIGHT="383"><font face="Times New Roman, Times, serif" size="3"> 
+              Установим флажок Итоги под данными (Summary below data).<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="383"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="203"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="59" HEIGHT="203"> 
+        <DIV WIDTH="70" HEIGHT="203"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 5<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="481" HEIGHT="203"> 
+        <DIV WIDTH="542" HEIGHT="203"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажмем кнопку 
+            OK в диалоговом окне Промежуточные итоги (Subtotal), что приведет 
+            к добавлению показателя средней реализации компьютеров по месяцам 
+            к уже существующим промежуточным итогам на рабочем листе (рис. 3.23). 
+            На VBA тот же результат достигается применением следующих инструкций: 
+            </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">Range (&quot;A1:C20&quot;) 
+            .Select Selection. Subtotal GroupBy:=l, Function: =xlAverage, TotalList:=Array 
+            (3) , Replace : =False, PageBreaks : =False, SummaryBelowData : =True<BR>
+            </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+          </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="203"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="104"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="59" HEIGHT="104"> 
+        <DIV WIDTH="70" HEIGHT="104"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 6<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="481" HEIGHT="104"> 
+        <DIV WIDTH="542" HEIGHT="104"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Вместе с промежуточными 
+            итогами метод Subtotal создает структуру, которая позволяет управлять 
+            отображением детализации таблицы. Управляющими элементами структуры 
+            являются кнопки, отображаемые на левой стороне рабочего листа с номерами 
+            уровней иерархии, и кнопки, помеченные знаками &lt;+&gt; и &lt;— &gt;. 
+            Нажатие на кнопку &lt;+&gt; или &lt;— &gt; позволяет отобразить или 
+            скрыть детализацию данного элемента структуры, а на кнопки с номером 
+            уровня — детализацию целого уровня. Отобразим, например, только промежуточные 
+            итоги без их детализации. Для этого надо нажать сначала кнопку 2, 
+            а затем 3 (рис. 3.24). На VBA тот же результат достигается применением 
+            следующих инструкций: </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">ActiveSheet . Outline 
+            . ShowLevels RowLevels : =2 ActiveSheet . Outline . ShowLevels RowLevels 
+            : =3<br>
+            </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+          <p> <font face="Times New Roman, Times, serif" size="3">Здесь свойство 
+            Outline рабочего листа возвращает объект Outline (структура), а свойство 
+            ShowLevels объекта outline устанавливает отображаемый уровень детализации.</font></p>
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="104"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="59" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="481" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><img src="3.23.gif" width="316" height="439"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  3.23. </I></B><I>Результат добавлению показателя средней реализации компьютеров 
+  по месяцам к уже существующим промежуточным итогам на рабочем листе</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="110">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="71" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="546" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="110"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="71" HEIGHT="110"> 
+        <DIV WIDTH="71" HEIGHT="110"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг7<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="546" HEIGHT="110"> 
+        <DIV WIDTH="546" HEIGHT="110"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Для удаления 
+            промежуточных итогов следует выделить данные с этими итогами, выполнив 
+            команду Данные, Промежуточные итоги (Data, Subtotal) и нажать кнопку 
+            Убрать все (Remove All) в появившемся диалоговом окне Промежуточные 
+            итоги (Subtotal). На VBA тот же результат в данном примере достигается 
+            применением следующих инструкций<br>
+            </font></P>
+          <p> <font face="Courier New, Courier, mono" size="3">Range (&quot;A1:C24&quot;) 
+            .Select Selection . RemoveSubtotal</font></p>
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="110"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="71" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="546" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+  <p><img src="3.24.gif" width="339" height="220"></p>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  3.24. </I></B><I>Вывод промежуточных итогов без детализации</I><BR>
+  </font></P>
+</BODY>
+</HTML>
+

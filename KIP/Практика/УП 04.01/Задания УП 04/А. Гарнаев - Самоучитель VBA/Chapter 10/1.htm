@@ -1,0 +1,851 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+      <ul>
+<li><b><font face="Times New Roman" size=3><a href="#1">ГЛАВА 10. РАБОТА С ГРАФИЧЕСКИМИ ОБЪЕКТАМИ</a></font></b> </li>
+     <ul>
+     <li><font face="Times New Roman" size=3><a href="#2">СЕМЕЙСТВА SHAPES и SHAPERANGE</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#3">МЕТОДЫ, СОЗДАЮЩИЕ ОБЪЕКТЫ SHAPE</a></font> </li>
+
+     </ul></ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Глава 
+  10</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Работа</font> 
+  <font size="5">с графическими </font></font><font face="Times New Roman, Times, serif" size="5">объектами</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="2"></a>Семейства 
+  Shapes и ShapeRange</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Объект shape 
+  — это любой графический объект, размешенный на рабочем листе или диаграмме. 
+  Семейство shapes представляет собой семейство всех графических объектов рабочего 
+  листа. Семейство ShapeRange содержится в семействе shapes и является конкретным 
+  набором графических объектов рабочего листа. В крайних случаях семейство ShapeRange 
+  может состоять только из одного объекта или совпадать с семейством shapes, которое 
+  его содержит.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Семейство 
+  shapes обычно применяется для создания нового объекта shape. Когда надо работать 
+  (т. е. задавать или изменять свойства) с отдельным элементом семейства shapes 
+  обычно используют объект shape, а когда следует оперировать с набором элементов 
+  этого семейства — семейство ShapeRange.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Большинство 
+  свойств объекта shape или семейства ShapeRange определяются в два этапа. Сначала 
+  задается свойство, которое возвращает объект, содержащий устанавливаемые свойства, 
+  а уж потом для этого объекта определяется требуемое свойство. Например, если 
+  надо изменить тип линии, то у выбранного объекта семейства ShapeRange используется 
+  свойство Line, которое возвращает объект LineFormat, содержащий свойства для 
+  установки цвета, толщины и типа граничных линий объекта shape. Получив таким 
+  образом объект LineFormat, при помощи его свойств устанавливается конкретный 
+  тип линии.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.Shapes.AddLine(104.25, 
+  135.75, 230.25, 146.25).Select </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Selection.ShapeRange.Line.Weight 
+  = 3# </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Selection.ShapeRange.Line.Visible 
+  = msoTrue </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Selection.ShapeRange.Line.Style 
+  = msoLineSingle</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Перечислим 
+  основные свойства объекта shape, возвращающие объект shape конкретного типа.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="182">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="177" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="439" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="59"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="177" HEIGHT="59"> 
+        <DIV WIDTH="177" HEIGHT="59"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Fill<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="439" HEIGHT="59"> 
+        <DIV WIDTH="439" HEIGHT="59"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает объект 
+            FillFormat, который содержит<BR>
+            </font><font face="Times New Roman, Times, serif" size="3">свойства 
+            для задания цвета, типа штриховки и текстуры объекта Shape<BR>
+            </font></P>
+          </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="59"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="60"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="177" HEIGHT="60"> 
+        <DIV WIDTH="177" HEIGHT="60"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Line<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="439" HEIGHT="60"> 
+        <DIV WIDTH="439" HEIGHT="60"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает объект 
+            LineFormat, содержащий свойства для установки цвета, толщины и типа 
+            граничных линий Объекта Shape<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="60"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="39"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="177" HEIGHT="39"> 
+        <DIV WIDTH="177" HEIGHT="39"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Shadow<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="439" HEIGHT="39"> 
+        <DIV WIDTH="439" HEIGHT="39"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает объект 
+            shadowFormat, содержащий свойства для настройки тени объекта shape<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="39"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="177" HEIGHT="23"> 
+        <DIV WIDTH="177" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">TextFrame<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="439" HEIGHT="23"> 
+        <DIV WIDTH="439" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает объект 
+            TextFrame — текстовое поле<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="177" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="439" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  несколько наиболее часто употребляемых общих свойств объектов Shape.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="106">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="177" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="438" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="177" HEIGHT="23"> 
+        <DIV WIDTH="177" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Visible<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="438" HEIGHT="23"> 
+        <DIV WIDTH="438" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Устанавливает 
+            видимость объекта<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="40"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="177" HEIGHT="40"> 
+        <DIV WIDTH="177" HEIGHT="40"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Left, Top, Width, 
+            Height<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="438" HEIGHT="40"> 
+        <DIV WIDTH="438" HEIGHT="40"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Задают координаты 
+            левого верхнего угла объекта, его ширину и высоту<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="40"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="42"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="177" HEIGHT="42"> 
+        <DIV WIDTH="177" HEIGHT="42"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">OnAction<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="438" HEIGHT="42"> 
+        <DIV WIDTH="438" HEIGHT="42"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Устанавливает 
+            имя процедуры, которая будет запущена при выборе объекта<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="42"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="177" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="438" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  несколько наиболее часто употребляемых общих методов объектов<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Shape.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="289">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="178" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="438" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="178" HEIGHT="24"> 
+        <DIV WIDTH="178" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Сору<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="438" HEIGHT="24"> 
+        <DIV WIDTH="438" HEIGHT="24"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Копирует объект 
+            Shape в буфер обмена<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="24"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="22"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="178" HEIGHT="22"> 
+        <DIV WIDTH="178" HEIGHT="22"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Cut<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="438" HEIGHT="22"> 
+        <DIV WIDTH="438" HEIGHT="22"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Копирует объект 
+            shape в буфер обмена с удалением<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="22"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="22"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="178" HEIGHT="22"> 
+        <DIV WIDTH="178" HEIGHT="22"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Delete<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="438" HEIGHT="22"> 
+        <DIV WIDTH="438" HEIGHT="22"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Удаляет объект 
+            shape<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="22"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="22"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="178" HEIGHT="22"> 
+        <DIV WIDTH="178" HEIGHT="22"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Paste<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="438" HEIGHT="22"> 
+        <DIV WIDTH="438" HEIGHT="22"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Вставляет объект 
+            shape из буфера ббмена<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="22"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="117"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="178" HEIGHT="117"> 
+        <DIV WIDTH="178" HEIGHT="117"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">IncrementLeft, 
+            IncrementTop<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="438" HEIGHT="117"> 
+        <DIV WIDTH="438" HEIGHT="117"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Сдвигает объект 
+            shape по горизонтали и вертикали соответственно на заданное в аргументе 
+            количество пунктов. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">IncrementLeft (Increment) 
+            </font></P>
+          <P><font face="Courier New, Courier, mono" size="3"> IncrementTop (Increment 
+            )</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="117"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="178" HEIGHT="82"> 
+        <DIV WIDTH="178" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">IncrementRotation<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="438" HEIGHT="82"> 
+        <DIV WIDTH="438" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Поворачивает 
+            объект shape на заданный в аргументе угол. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">IncrementRotation 
+            (Increment)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="178" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="438" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+<p>&nbsp;</p></div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="3"></a>Методы, 
+  создающие объекты Shape</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Рассмотрим 
+  методы, создающие новые элементы семейства shapes. Вручную объекты Shape создаются 
+  при помощи панели инструментов <B>Рисование </B>(Drawing).</font></P>
+<table width="550" border="1">
+  <tr>
+    <td><font face="Times New Roman, Times, serif" size="3">AddShape</font></td>
+    <td> 
+      <p><font face="Times New Roman, Times, serif" size="3">Возвращает объект 
+        Shape. </font></p>
+      <p><font face="Times New Roman, Times, serif" size="3">Синтаксис:<br>
+        </font></p>
+      <p> <font face="Courier New, Courier, mono" size="3">AddShape (Type, Left, 
+        Top, Width, Height)</font><font face="Times New Roman, Times, serif" size="3"><br>
+        </font></p>
+      <p> <font face="Times New Roman, Times, serif" size="3"> Аргументы: </font></p>
+      <ul>
+        <li><font face="Times New Roman, Times, serif" size="3"> Tуре — специфицирует 
+          тип объекта. Допустимо 139 значений. Приведем несколько из них:<br>
+          </font> 
+          <p> <font face="Courier New, Courier, mono" size="3">msoShapeCube (куб), 
+            msoShapeRectangle (ПРЯМОУГОЛЬНИК), msoShapeOval (овал), msoShapeSmileyFace 
+            (улыбающееся лицо) ; </font></p>
+        </li>
+        <li><font face="Courier New, Courier, mono" size="3"> <font face="Times New Roman, Times, serif">Left, 
+          Top — координаты левого верхнего угла объекта ; </font></font></li>
+        <li><font face="Times New Roman, Times, serif" size="3">Width, Height 
+          — ширина и высота объекта</font></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Следующая 
+  последовательность инструкций создает три графических объекта: прямоугольник, 
+  овал и улыбающееся лицо (рис. 10.1). Вручную эти объекты можно было создать 
+  на рабочем листе, используя кнопки <B>Прямоугольник </B>(Rectangle) <B>Овал 
+  </B>(Oval) панели инструментов <B>Рисование</B> </font><font face="Times New Roman, Times, serif" size="3">(Drawing) 
+  и кнопку <B>Улыбающееся лицо </B>(Smaley Face) из раскрывающегося списка <B>Автофигуры 
+  </B>(AutoShapes) панели инструментов <B>Рисование </B>(Drawing).<BR>
+  </font></P>
+<P align="left"><img src="10.1.gif" width="486" height="552"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  10.1. </I></B><I>Графические объекты: прямоугольник, овал и улыбающееся лицо</I><BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.Shapes.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">AddShape(msoShapeRectangle, 
+  117#, 27.75, 76.5, 40.5).Select </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">With Selection.ShapeRange<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Line.Weight 
+  = 3#<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Line.Visible 
+  = msoTrue<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Line.Style 
+  = msoLineDash<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Fill.ForeColor.SchemeColor 
+  = 13<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Fill.Visible 
+  = msoTrue<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Fill.Solid 
+  End With ActiveSheet.Shapes.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">AddShape(msoShapeOval, 
+  114.75, 109.5, 91.5, 49.5).Select </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">With Selection.ShapeRange<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Fill.ForeColor.SchemeColor 
+  = 45<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Fill.Visible 
+  = msoTrue<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Fill.Solid<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Line.Weight 
+  =2.25<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Line.Visible 
+  = msoTrue<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Line.Style 
+  = msoLineSingle<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Line.ForeColor.SchemeColor 
+  = 12<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Line.Visible 
+  = msoTrue End With ActiveSheet.Shapes. _ <BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">AddShape(msoShapeSmileyFace, 
+  254.25, 99#, 70?5, 66#).Select </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">With Selection.ShapeRange<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Line.ForeColor.SchemeColor 
+  = 0<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Line.Visible 
+  = msoTrue<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Fill.Solid 
+  End With<BR>
+  </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="181">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="456" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="158"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="158"> 
+        <DIV WIDTH="162" HEIGHT="158"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">AddLine<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="456" HEIGHT="158"> 
+        <DIV WIDTH="456" HEIGHT="158"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает объект 
+            shape, являющийся линией (отрезком). </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">AddLine (BeginX, 
+            BeginY, EndX, EndY)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Аргументы:<BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="456" HEIGHT="158"> <font face="Times New Roman, Times, serif" size="3"> 
+              BeginX, BeginY, EndX, EndY — координаты концов отрезка</font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="456" HEIGHT="158">
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="158"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="23"> 
+        <DIV WIDTH="162" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">AddTextbox<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="456" HEIGHT="23"> 
+        <DIV WIDTH="456" HEIGHT="23"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает объект 
+            shape, являющийся надписью.</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<br>
+            </font></P>
+          <p> <font face="Courier New, Courier, mono" size="3">AddTextbox (Orientation, 
+            Left, Top, Width, Height)</font><font face="Times New Roman, Times, serif" size="3"><br>
+            </font></p>
+          <p> <font face="Times New Roman, Times, serif" size="3">Аргументы: </font></p>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="456" HEIGHT="23"><font face="Times New Roman, Times, serif" size="3"> 
+              Orientation — устанавливает ориентацию текста в надписи. Допустимые 
+              значения:<br>
+              </font></DIV>
+            <ul>
+              <li>
+                <DIV WIDTH="456" HEIGHT="23"><font face="Times New Roman, Times, serif" size="3"> 
+                  msoTextOrientationDownward </font></DIV>
+              </li>
+              <li>
+                <DIV WIDTH="456" HEIGHT="23"><font face="Times New Roman, Times, serif" size="3"> 
+                  msoTextOrientationHorizontal </font></DIV>
+              </li>
+              <li>
+                <DIV WIDTH="456" HEIGHT="23"><font face="Times New Roman, Times, serif" size="3"> 
+                  msoTextOrientationMixed </font></DIV>
+              </li>
+              <li>
+                <DIV WIDTH="456" HEIGHT="23"><font face="Times New Roman, Times, serif" size="3"> 
+                  msoTextOrientationUpward </font></DIV>
+              </li>
+              <li>
+                <DIV WIDTH="456" HEIGHT="23"><font face="Times New Roman, Times, serif" size="3"> 
+                  msoTextOrientationVertical<br>
+                  </font></DIV>
+              </li>
+            </ul>
+          </li>
+          <li> 
+            <DIV WIDTH="456" HEIGHT="23"> <font face="Times New Roman, Times, serif" size="3">Left, 
+              т.ор — координаты левого верхнего угла объекта </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="456" HEIGHT="23"><font face="Times New Roman, Times, serif" size="3">width, 
+              Height — ширина и высота объекта</font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="456" HEIGHT="23"> 
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="456" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Следующая 
+  последовательность инструкций создает три графических объекта: две линии, первая 
+  из которых со стрелкой, вторая без стрелки и текстовое поле (рис. 10.2). Вручную 
+  эти объекты можно было создать на рабочем листе, используя кнопки <B>Стрелка 
+  </B>(Arrow) <B>Линия </B>(Line) и <B>Надпись</B> </font><font face="Times New Roman, Times, serif" size="3">(Text 
+  Box) панели инструментов <B>Рисование </B>(Drawing).<BR>
+  </font></P>
+<P align="left"><img src="10.2.gif" width="486" height="552"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><i>Рис. 
+  10.2. </i></B><i>Графические объекты: линии и текстовое поле</i><BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Линия со стрелкой 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.Shapes.AddLine(571, 
+  30#, 174#, 59.25).Select </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">With Selection.ShapeRange.Line<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Weight = 6#<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Visible = msoTrue 
+  <BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Style = msoLineSingle<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.BeginArrowheadStyle 
+  = msoArrowheadNone<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.EndArrowheadStyle 
+  = msoArrowheadTriangle<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.EndArrowheadWidth 
+  = msoArrowheadWidthMedium<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.EndArrowheadLength 
+  = msoArrowheadLengthMedium<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Visible = msoTrue 
+  End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Простая линия</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.Shapes.AddLine(219.75, 
+  23.25, 334.5, 67.5).Select </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">With Selection.ShapeRange.Line<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Visible = msoTrue<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Style = msoLineThinThick<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Weight =4.5<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Текстовое 
+  поле<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.Shapes.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">AddTextbox(msoTextOrientationHorizontal,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">69.75, 87.75, 
+  116.25, 76.5).Select </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Selection.Characters.Text 
+  = &quot;Пример двух линий&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> With Selection.Characters(Start:=1, 
+  Length:=17).Font<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Name = &quot;Arial 
+  Cyr&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.FontStyle = 
+  &quot;полужирный&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Size = 12<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Strikethrough 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Superscript 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Subscript = 
+  False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.OutlineFont 
+  = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Shadow = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Underline = 
+  xlUnderlineStyleNone<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">. Colorlndex 
+  = 5</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">With Selection.ShapeRange.Fill<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.ForeColor.SchemeColor 
+  = 42<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Visible = msoTrue<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Solid End With</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="649">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="163" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="457" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="418"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="163" HEIGHT="418"> 
+        <DIV WIDTH="163" HEIGHT="418"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">AddTextEffect<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="457" HEIGHT="418"> 
+        <DIV WIDTH="457" HEIGHT="418"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает. 
+            объект shape, являющийся WordArt-объектом. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">AddTextEffect (PresetTextEffeet, 
+            Text, FontName, FontSize, FontBold, Fontltalic, Left, Top)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Аргументы:<BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="457" HEIGHT="418"> <font face="Times New Roman, Times, serif" size="3"> 
+              PresetTextEf feet — устанавливает текстовой эффект. Допустимые значения 
+              от msoTextEffect1 до msoTextEf fect30</font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="457" HEIGHT="418"><font face="Times New Roman, Times, serif" size="3"> 
+              Text — текст, отображаемый в объекте WordArt </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="457" HEIGHT="418"><font face="Times New Roman, Times, serif" size="3"> 
+              FontName — название шрифта </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="457" HEIGHT="418"><font face="Times New Roman, Times, serif" size="3">Fontsize 
+              — размер шрифта </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="457" HEIGHT="418"><font face="Times New Roman, Times, serif" size="3"> 
+              FontBold — допустимые значения: True (полужирный шрифт), False (в 
+              противном случае) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="457" HEIGHT="418"><font face="Times New Roman, Times, serif" size="3"> 
+              Fontltalic — допустимые значения: True (курсивный шрифт), False 
+              (в противном случае) </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="457" HEIGHT="418"><font face="Times New Roman, Times, serif" size="3"> 
+              Left, тор — координаты левого верхнего угла объекта<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="418"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="231"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="163" HEIGHT="231"> 
+        <DIV WIDTH="163" HEIGHT="231"> 
+          <P> <font face="Times New Roman, Times, serif" size="3"> AddPicture<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="457" HEIGHT="231"> 
+        <ul>
+          <li> 
+            <DIV WIDTH="457" HEIGHT="231"> <font face="Times New Roman, Times, serif" size="3"> 
+              Возвращает объект shape, являющийся рисунком, созданным на основе 
+              существующего файла. Синтаксис:<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="457" HEIGHT="231"> <font face="Times New Roman, Times, serif" size="3"> 
+              AddPicture (FileName, LinkToFile, SaveWithDocument , Left, Top, 
+              Width, Height) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="457" HEIGHT="231"><font face="Times New Roman, Times, serif" size="3"> 
+              FileName — строка, задающая имя файла, на основе которого создается 
+              рисунок<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="457" HEIGHT="231"><font face="Times New Roman, Times, serif" size="3">LinkToFile 
+              — допустимые значения: True<BR>
+              </font><font face="Times New Roman, Times, serif" size="3">(рисунок 
+              связан с файлом, на основе которого создан) и False (в противном 
+              случае)</font> </DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="457" HEIGHT="231"><font face="Times New Roman, Times, serif" size="3"> 
+              SaveWithDocument — допустимые значения: True(сохраняется рисунок 
+              с рабочей книгой) и False (в рабочей книге сохраняется связь с рисунком, 
+              а не сам рисунок) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="457" HEIGHT="231"><font face="Times New Roman, Times, serif" size="3">Left, 
+              тор — координаты левого верхнего угла объекта </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="457" HEIGHT="231"><font face="Times New Roman, Times, serif" size="3">Width, 
+              Height — ширина и высота объекта</font></DIV>
+          </li>
+        </ul>
+        <blockquote>
+          <DIV WIDTH="457" HEIGHT="231"></DIV>
+          <DIV WIDTH="457" HEIGHT="231"><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></DIV>
+        </blockquote>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="231"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="163" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="457" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Следующая 
+  последовательность инструкций создает WordArt-объект (рис. 10.3) и скрывает 
+  от пользователя панель инструментов <B>WordArt. </B>Вручную этот объект можно 
+  было создать на рабочем листе, используя кнопку </font><font face="Times New Roman, Times, serif" size="3"><B>Добавить 
+  объект WordArt </B>(Insert WordArt) панели инструментов <B>Рисование </B>(Drawing).<BR>
+  </font></P>
+<P align="left"><img src="10.3.gif" width="486" height="536"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  10.3. </I></B><I>WordArt-объект</I><BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.Shapes.AddTextEffeet(msoTextEffect27,_<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">&quot;VBA &quot; 
+  &amp; Chr(13) &amp; &quot;&quot; &amp; Chr(10) &amp; &quot;Лучшее решение&quot;, 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">&quot;Impact&quot;, 
+  36#, msoFalse, msoFalse, 87tt, 45#).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Application.CommandBars(&quot;WordArt&quot;).Visible 
+  = False</font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+</BODY>
+</HTML>
+

@@ -1,0 +1,1705 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+      <ul>
+<li><b><font face="Times New Roman" size=3><a href="#1">ГЛАВА 5. ДИАГРАММЫ</a></font></b> </li>
+     <ul>
+     <li><font face="Times New Roman" size=3><a href="#2">ОБЪЕКТЫ CHART и CHARTOBJECT</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#3">СВОЙСТВА ОБЪЕКТА CHART</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#4">МЕТОДЫ ОБЪЕКТА CHART</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#5">ЛИНИЯ ТРЕНДА</a></font> </li>
+
+     </ul></ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Глава 
+  5</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Диаграммы</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="2"></a>Объекты 
+  Chart и ChartObject</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Excel позволяет 
+  создавать высококачественные диаграммы. Существенную помощь при их построении 
+  оказывают встроенные форматы диаграмм, предоставляющие большой спектр графического 
+  представления наборов данных. Как вся диаграмма, так и ее отдельные элементы 
+  легко удаляются, изменяются и добавляются. Добавляя в диаграмму пояснительный 
+  текст, стрелки, заголовки, легенду, изменяя заливку, узоры, типы линий и обрамление, 
+  можно добиться того, чтобы диаграмма представляла данные в наиболее наглядном 
+  виде.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В Excel различаются 
+  два вида диаграмм: внедренная на рабочий лист и созданная на специальном листе 
+  для диаграмм. Итак, семейство sheets (листы) включает в себя семейства: worksheets 
+  (рабочие листы) и charts (листы диаграмм). Объектами семейства charts являются 
+  листы диаграмм, но это семейство не включает в себя диаграммы, непосредственно 
+  встроенные в рабочие листы. Такие диаграммы принадлежат семейству chartobjects. 
+  Таким образом, объект ChartObject встроен В Объект Worksheet, a Chart — В workbook. 
+  Иерархия этих объектов показана на рис. 5.1. Свойства и методы этих объектов 
+  в основном аналогичны.<BR>
+  </font></P>
+<P align="left"><img src="5.1.gif" width="306" height="310"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  5.1. </I></B><I>Иерархия объектов Chart и ChartObject</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="3"></a>Свойства 
+  объекта Chart</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Перечислим 
+  основные свойства объекта chart и семейства charts.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="777">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="225" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="391" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="162"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="225" HEIGHT="162"> 
+        <DIV WIDTH="225" HEIGHT="162"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ChartArea<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="391" HEIGHT="162"> 
+        <DIV WIDTH="391" HEIGHT="162"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает объект 
+            ChartArea — область на листе, отведенная под диаграмму. В следующем 
+            примере устанавливается цвет элементов объекта ChartArea.</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3"> <font face="Courier New, Courier, mono">With 
+            Charts { &quot;Диаграмма&quot;) </font></font></P>
+          <P><font face="Courier New, Courier, mono" size="3">.ChartArea . Interior 
+            . Colorlndex = 3 . Border</font></P>
+          <P><font face="Courier New, Courier, mono" size="3"> . Colorlndex = 
+            5</font></P>
+          <P><font face="Courier New, Courier, mono" size="3"> End With</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="162"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="122"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="225" HEIGHT="122"> 
+        <DIV WIDTH="225" HEIGHT="122"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">PlotArea<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="391" HEIGHT="122"> 
+        <DIV WIDTH="391" HEIGHT="122"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает объект 
+            PlotArea — часть области ChartArea, отведенная непосредственно под 
+            диаграмму. В следующем примере устанавливается Цвет объекта PlotArea: 
+            </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">Charts (1) . PlotArea 
+            . Interior . Colorlndex = 8</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="122"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="145"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="225" HEIGHT="145"> 
+        <DIV WIDTH="225" HEIGHT="145"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ChartTitle<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="391" HEIGHT="145"> 
+        <DIV WIDTH="391" HEIGHT="145"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает объект 
+            ChartTitle, являющийся заголовком диаграммы. В следующем примере задается 
+            заголовок диаграммы отчет :<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">With Charts ( &quot;Отчет&quot;) 
+            </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">.HasTitle = True 
+            </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">. ChartTitle </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">. Text = &quot;Продажи 
+            за май&quot; </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">End With</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="145"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="134"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="225" HEIGHT="134"> 
+        <DIV WIDTH="225" HEIGHT="90"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ChartType</font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="391" HEIGHT="134"> 
+        <DIV WIDTH="391" HEIGHT="90"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает тип 
+            диаграммы: </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">xlArea, xlBar,xlColumn, 
+            xlLine, xlPie, xlRadar, xlXYScatter, xlCombination, xl3DArea, xlSDBar, 
+            xl3DColumn, xl3DLine, xl3DPie, xlSDSurface, xlDoughnut</font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="134"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="81"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="225" HEIGHT="81"> 
+        <DIV WIDTH="225" HEIGHT="81"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Legend<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="391" HEIGHT="81"> 
+        <DIV WIDTH="391" HEIGHT="81"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает объект 
+            Legend. Используется для изменения легенды. Например:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">ChartObjects (1).Chart. 
+            Legend. Font .Bold = True</font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="81"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="88"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="225" HEIGHT="88"> 
+        <DIV WIDTH="225" HEIGHT="88"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Rotation<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="391" HEIGHT="88"> 
+        <DIV WIDTH="391" HEIGHT="88"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает угол 
+            поворота 3-мерной диаграммы вокруг z-оси. Допустимыми являются значения 
+            от 0&deg; до 360&deg;. По умолчанию принимается угол, равный 20&deg;<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="88"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="89"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="225" HEIGHT="89"> 
+        <DIV WIDTH="225" HEIGHT="89"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Elevation<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="391" HEIGHT="89"> 
+        <DIV WIDTH="391" HEIGHT="89"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает угол 
+            возвышения для обзора трехмерной диаграммы. Допустимыми являются значения 
+            от —90&deg; до 90&deg;. По умолчанию принимается угол, равный 15&deg;<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="89"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="225" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="391" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="865">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="195" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="344" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="110"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="195" HEIGHT="110"> 
+        <DIV WIDTH="225" HEIGHT="110"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">PlotBy<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="344" HEIGHT="110"> 
+        <DIV WIDTH="390" HEIGHT="110"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            xlCoiumns (столбцы используются как ряды данных при построении диаграммы), 
+            xlRows (строки используются как ряды данных при построении диаграммы)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="110"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="67"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="195" HEIGHT="67"> 
+        <DIV WIDTH="225" HEIGHT="67"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">PlotVisibleOnly<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="344" HEIGHT="67"> 
+        <DIV WIDTH="390" HEIGHT="67"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (диаграмма строится только по видимым ячейкам), False (в противном 
+            случае)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="67"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="310"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="195" HEIGHT="310"> 
+        <DIV WIDTH="225" HEIGHT="310"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Floor, Corners, 
+            Walls <BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="344" HEIGHT="310"> 
+        <DIV WIDTH="390" HEIGHT="310"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращают соответственно 
+            объекты Floor, Corners, walls, используемые при построении трехмерных 
+            диаграмм. При отображении таких диаграмм для создания иллюзии трехмерности 
+            диаграмма отображается на фоне открытого куба, основание которого 
+            задается объектом Floor, углы — Corners, а две боковые стенки — wails. 
+            В следующем примере устанавливаются цвета объектов Floor и walls и 
+            выбирается объект corners:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">With Charts (1) 
+            .. Floor . Interior . Colorlndex = 5 .Walls. Border. Colorlndex = 
+            3 /Corners . Select End With<BR>
+            </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="310"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="86"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="195" HEIGHT="86"> 
+        <DIV WIDTH="225" HEIGHT="86"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">AutoScaling<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="344" HEIGHT="86"> 
+        <DIV WIDTH="390" HEIGHT="86"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (трехмерная диаграмма автоматически масштабируется так, чтобы 
+            по размеру совпадать с двумерной), False (диаграмма не масштабируется)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="86"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="66"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="195" HEIGHT="66"> 
+        <DIV WIDTH="225" HEIGHT="66"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">DepthPercent, 
+            Height Per cent<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="344" HEIGHT="66"> 
+        <DIV WIDTH="390" HEIGHT="66"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Применяется 
+            только к трехмерным диаграммам. Возвращает глубину и высоту диаграммы 
+            в процентах к ее ширине<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="66"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="157"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="195" HEIGHT="157"> 
+        <DIV WIDTH="225" HEIGHT="157"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">DisplayBlasnksAs<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="344" HEIGHT="157"> 
+        <DIV WIDTH="390" HEIGHT="157"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения:<BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="390" HEIGHT="157"> <font face="Times New Roman, Times, serif" size="3">xlNotPiotted 
+              (при построении диаграммы пустые ячейки игнорируются) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="390" HEIGHT="157"><font face="Times New Roman, Times, serif" size="3"> 
+              xlInterpoiated (значения в пустых ячейках интерполируются)<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="390" HEIGHT="157"> <font face="Times New Roman, Times, serif" size="3"> 
+              xlZero (значения в пустых ячейках считаются равными нулю)<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="157"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="69"></TD>
+      <td width="195" height="137"> 
+        <div width="226" height="137"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Protect Contents, 
+            ProtectData, ProtectDrawingObjects, Protect Formatting, ProtectGoalSeek, 
+            Protect ionMode, ProtectionSelection,<br>
+            </font></p>
+        </div>
+      </td>
+      <td width="344" height="137"> 
+        <div width="392" height="137"> 
+          <p> <font face="Times New Roman, Times, serif" size="3">Возвращает True, 
+            если указанный элемент диаграммы имеет защиту, и False — в противном 
+            случае<br>
+            </font></p>
+        </div>
+      </td>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="69"></TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="69"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="195" HEIGHT="69"> 
+        <DIV WIDTH="225" HEIGHT="69"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">HasAxis, HasDAtaTable, 
+            HasLegend, HasTitle<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="344" HEIGHT="69"> 
+        <DIV WIDTH="390" HEIGHT="69"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает True, 
+            если указанный элемент имеется на диаграмме, и False — в противном 
+            случае<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="69"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="195" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="344" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="1" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="4"></a>Методы 
+  объекта Chart</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В данном 
+  разделе перечислены основные методы объекта chart.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Метод chartwizard 
+  применяется для построения и изменения существующей диаграммы. С помощью метода 
+  chartwizard, в отличие от команды <B>Мастер диаграмм </B>(ChartWizard), используемой 
+  для построения диаграммы вручную, нельзя задать все возможные свойства диаграммы. 
+  Он позволяет выполнить основную работу, а детали строятся с привлечением других 
+  свойств и методов объекта chart.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Chartwizard(Source, 
+  Gallery, Format, PlotBy,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">CategoryLabels, 
+  SeriesLabels, HasLegend, Title, </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">CategoryTitle, 
+  ValueTitle, ExtraTitle)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Аргументы:<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="361">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="197" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="421" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="197" HEIGHT="23"> 
+        <DIV WIDTH="197" HEIGHT="23"> 
+          <P> <b><font face="Times New Roman, Times, serif" size="3">Source<BR>
+            </font></b></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="421" HEIGHT="23"> 
+        <DIV WIDTH="421" HEIGHT="23"> 
+          <P> <b><font face="Times New Roman, Times, serif" size="3">Диапазон, 
+            по которому строится диаграмма<BR>
+            </font></b></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="23"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="110"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="197" HEIGHT="110"> 
+        <DIV WIDTH="197" HEIGHT="110"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Gallery<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="421" HEIGHT="110"> 
+        <DIV WIDTH="421" HEIGHT="110"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Тип диаграммы. 
+            </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">xiArea,<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">xlBar, xlColumn, 
+            xlLine, xlPie, xlRadar, xlXYScatter, xlCombination, xl3DArea, xl3DBar, 
+            xl3DColumn, xl3DLine, xl3DPie,<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">xl3DSurface, xlDoughnut 
+            или xl Default Auto Format</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="110"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="197" HEIGHT="46"> 
+        <DIV WIDTH="197" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Format<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="421" HEIGHT="46"> 
+        <DIV WIDTH="421" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Формат для данного 
+            типа диаграммы. Каждый тип имеет до десяти форматов<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="197" HEIGHT="46"> 
+        <DIV WIDTH="197" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">PlotBy<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="421" HEIGHT="46"> 
+        <DIV WIDTH="421" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            XIROWS (строки) и </font><font face="Times New Roman, Times, serif" size="3">xlColumns 
+            (столбцы)<BR>
+            </font></P>
+          </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="197" HEIGHT="45"> 
+        <DIV WIDTH="197" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">CategoryLabels<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="421" HEIGHT="45"> 
+        <DIV WIDTH="421" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Указывает число 
+            строк (столбцов) с метками категорий (т. е. данных, отводимых под 
+            ось абсцисс)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="197" HEIGHT="45"> 
+        <DIV WIDTH="197" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">SeriesLabels<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="421" HEIGHT="45"> 
+        <DIV WIDTH="421" HEIGHT="45"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Указывает число 
+            строк (столбцов) с метками рядов (т. е. данных, отводимых под заголовки)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="45"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="197" HEIGHT="46"> 
+        <DIV WIDTH="197" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">HasLegend<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="421" HEIGHT="46"> 
+        <DIV WIDTH="421" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Допустимые значения: 
+            True (отображать легенду) и False (не отображать легенду)<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="197" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="421" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="103">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="195" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="421" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="195" HEIGHT="26"> 
+        <DIV WIDTH="195" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Title<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="421" HEIGHT="26"> 
+        <DIV WIDTH="421" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Название диаграммы<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="195" HEIGHT="26"> 
+        <DIV WIDTH="195" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">CategoryTitle<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="421" HEIGHT="26"> 
+        <DIV WIDTH="421" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Название оси 
+            абцисс<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="195" HEIGHT="25"> 
+        <DIV WIDTH="195" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ValueTitle<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="421" HEIGHT="25"> 
+        <DIV WIDTH="421" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Название оси 
+            ординат<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="195" HEIGHT="26"> 
+        <DIV WIDTH="195" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ExtraTitle<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="421" HEIGHT="26"> 
+        <DIV WIDTH="421" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Название z-оси 
+            для трехмерных диаграмм<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="195" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="421" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  несколько наиболее часто используемых методов объекта chart, позволяющих изменять 
+  детали диаграммы.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="679">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="446" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="315"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="315"> 
+        <DIV WIDTH="162" HEIGHT="315"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Axes<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="446" HEIGHT="315"> 
+        <DIV WIDTH="446" HEIGHT="315"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает семейство 
+            Axes, предназначенное для установки различных свойств осей. Для возвращения 
+            уникальной оси необходимо использовать следующий синтаксис метода: 
+            <BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Axes (Type, 
+            Group)<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Аргументы: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="446" HEIGHT="315"><font face="Times New Roman, Times, serif" size="3"> 
+              Tуре — определяет тип оси. Допустимые значения:<BR>
+              </font></DIV>
+            <DIV WIDTH="446" HEIGHT="315"> <font face="Courier New, Courier, mono" size="3">xlCategory, 
+              xlSeries И xlValue</font><font face="Times New Roman, Times, serif" size="3"><BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="446" HEIGHT="315"> <font face="Times New Roman, Times, serif" size="3"> 
+              Group — допустимые значения: xi Primary и<BR>
+              </font></DIV>
+            <DIV WIDTH="446" HEIGHT="315"> <font face="Courier New, Courier, mono" size="3">xlSecondary</font><font face="Times New Roman, Times, serif" size="3"><BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="446" HEIGHT="315">
+          <P> <font face="Times New Roman, Times, serif" size="3">Пример:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">With Charts (1) 
+            .Axes (xlCategory) .HasTitle = True . AxisTitle. Caption = &quot;Доход&quot; 
+            End With<BR>
+            </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="315"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="194"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="194"> 
+        <DIV WIDTH="162" HEIGHT="194"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">SeriesCol lection<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="446" HEIGHT="194"> 
+        <DIV WIDTH="446" HEIGHT="194"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Возвращает семейство 
+            объектов series или объект этого семейства. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис (для 
+            одного объекта из семейства):<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">SeriesCollection 
+            ( Index)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">Синтаксис (для 
+            семейства объектов):<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">SeriesCollection 
+            </font></P>
+        </DIV>
+        <ul>
+          <li>
+            <DIV WIDTH="446" HEIGHT="194"><font face="Times New Roman, Times, serif" size="3"> 
+              Index — имя или номер элемента<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="446" HEIGHT="194">
+          <P> <font face="Times New Roman, Times, serif" size="3">Пример:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Charts (1) . SeriesCollection 
+            (1) .HasDataLabels = True</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="194"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="170"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="170"> 
+        <DIV WIDTH="162" HEIGHT="170"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">SetSourceData<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="446" HEIGHT="170"> 
+        <DIV WIDTH="446" HEIGHT="170"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Устанавливает 
+            источник данных диаграммы.</font></P>
+          <P><font face="Times New Roman, Times, serif" size="3"> Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">SetSourceData (Source, 
+            PlotBy)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="446" HEIGHT="170"> <font face="Times New Roman, Times, serif" size="3"> 
+              source — диапазон, на основе которого строится диаграмма </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="446" HEIGHT="170"><font face="Times New Roman, Times, serif" size="3">PlotBy 
+              — допустимые значения: xlColumns (данные расположены по столбцам) 
+              и XIROWS (данные расположены по строкам)</font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="446" HEIGHT="170">
+          <p><font face="Times New Roman, Times, serif" size="3">Пример:<br>
+            </font></p>
+          <p> <font face="Courier New, Courier, mono" size="3">ActiveChart . SetSourceData 
+            Source :=Sheets (1) .Range (&quot;A1 : F1&quot;) , PlotBy:=xlRows</font></p>
+          <font face="Times New Roman, Times, serif" size="3"><BR>
+          </font></DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="170"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="162" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="446" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="625">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="2"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="147" HEIGHT="2"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="393" HEIGHT="2"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="2"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="272"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="147" HEIGHT="272"> 
+        <DIV WIDTH="165" HEIGHT="272"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Export<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="393" HEIGHT="272"> 
+        <DIV WIDTH="450" HEIGHT="272"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Экспортирует 
+            диаграмму в графический формат. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Export (FileName, 
+            FilterName, Interactive)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="450" HEIGHT="272"> <font face="Times New Roman, Times, serif" size="3">FileName 
+              — имя файла, в который будет записана диаграмма в графическом формате 
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="450" HEIGHT="272"><font face="Times New Roman, Times, serif" size="3"> 
+              FilterName — имя графического фильтра в том виде, как он записан 
+              в графическом формате </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="450" HEIGHT="272"><font face="Times New Roman, Times, serif" size="3">Iinteractive 
+              — допустимые значения: True (для того чтобы показать диалоговое 
+              окно в процессе фильтрации) и False (в противном случае) Пример 
+              экспорта диаграммы в GIF-файл:<BR>
+              </font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="450" HEIGHT="272">
+          <P> <font face="Courier New, Courier, mono" size="3">ActiveChart . Export 
+            FileName : =&quot;График . gif &quot; , FilterName := &quot;GIF&quot;</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="272"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="271"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="147" HEIGHT="271"> 
+        <DIV WIDTH="165" HEIGHT="271"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Location<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="393" HEIGHT="271"> 
+        <DIV WIDTH="450" HEIGHT="271"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Передвигает 
+            диаграмму на новое место. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Location (Where, 
+            Name)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="450" HEIGHT="271"> <font face="Times New Roman, Times, serif" size="3"> 
+              where — указывает, будет ли диаграмма располагаться на новом листе 
+              диаграмм (xlLocationAsNewSheet), внедряться как объект на рабочий 
+              лист (xiLocationAsobject) или ее местоположение будет определяться 
+              автоматически<BR>
+              (xlLocationAutomatic) </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="450" HEIGHT="271"><font face="Times New Roman, Times, serif" size="3">Name 
+              — имя листа диаграммы, если аргумент where принимает значение xlLocationAsNewSheet, 
+              либо имя рабочего листа, если аргумент where принимает значение 
+              xlLocationAsobject<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="271"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="147" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="393" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  несколько наиболее часто используемых методов семейства ChartObjects.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="162">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="141" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="399" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="136"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="141" HEIGHT="136"> 
+        <DIV WIDTH="150" HEIGHT="136"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Add<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="399" HEIGHT="136"> 
+        <DIV WIDTH="470" HEIGHT="136"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Создает новую 
+            диаграмму. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Add (Left, Top, 
+            Width, Height)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="470" HEIGHT="136"> <font face="Times New Roman, Times, serif" size="3">Left, 
+              Top — координаты левого верхнего угла диаграммы </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="470" HEIGHT="136"><font face="Times New Roman, Times, serif" size="3"> 
+              width, Height — ширина и высота диаграммы<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="136"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="141" HEIGHT="26"> 
+        <DIV WIDTH="150" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Delete<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="399" HEIGHT="26"> 
+        <DIV WIDTH="470" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Удаляет элемент 
+            семейства<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="141" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="399" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="320">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="141" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="399" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="244"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="141" HEIGHT="244"> 
+        <DIV WIDTH="150" HEIGHT="244"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">CopyPicture<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="399" HEIGHT="244"> 
+        <DIV WIDTH="467" HEIGHT="244"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Копирует диаграмму 
+            в буфер обмена как рисунок. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">CopyPicture (Appearance, 
+            Format, Size)</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="467" HEIGHT="244"> <font face="Times New Roman, Times, serif" size="3"> 
+              Appearance — устанавливает, каким образом диаграмма копируется. 
+              Допустимые значения: xlScreen (диаграмма копируется в том виде, 
+              в котором она отображается на экране) и xlPrinter (диаграмма копируется 
+              так, как она выглядит после вывода на печать) </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="467" HEIGHT="244"><font face="Times New Roman, Times, serif" size="3"> 
+              Format — формат рисунка. Допустимые значения: xlPicture И xlBitmap<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="244"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="141" HEIGHT="25"> 
+        <DIV WIDTH="150" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">BringToFront<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="399" HEIGHT="25"> 
+        <DIV WIDTH="467" HEIGHT="25"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Отображает диаграмму 
+            на переднем плане<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="25"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="141" HEIGHT="26"> 
+        <DIV WIDTH="150" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">SendToBack<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="399" HEIGHT="26"> 
+        <DIV WIDTH="467" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Отображает диаграмму 
+            на заднем плане<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="141" HEIGHT="26"> 
+        <DIV WIDTH="150" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Select<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="399" HEIGHT="26"> 
+        <DIV WIDTH="467" HEIGHT="26"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Выбирает диаграмму<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="26"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="141" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="399" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  соответствие между построением графика вручную и аргументами метода ChartWizard 
+  на примере построения диаграммы из рис. 5.2.<BR>
+  </font></P>
+<P align="left"><img src="5.2.gif" width="550" height="413"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  5.2. </I></B><I>Пример диаграммы</I></font></P>
+<table frame="BOX" rules="ALL" border="1" cellspacing="0" cellpadding="0" width="550" height="56">
+  <tr> 
+    <td align="LEFT" valign="TOP" width="0" height="0"> </td>
+    <td align="LEFT" valign="TOP" width="86" height="0"> </td>
+    <td align="LEFT" valign="TOP" width="534" height="0"> </td>
+    <td align="LEFT" valign="TOP" width="0" height="0"> </td>
+  </tr>
+  <tr align="LEFT" valign="TOP"> 
+    <td align="LEFT" valign="TOP" width="0" height="56"> </td>
+    <td align="LEFT" valign="TOP" width="86" height="56"> 
+      <div width="86" height="56"> 
+        <p> <font face="Times New Roman, Times, serif" size="3">Шаг 0<br>
+          </font></p>
+      </div>
+    </td>
+    <td align="LEFT" valign="TOP" width="534" height="56"> 
+      <div width="534" height="56"> 
+        <p> <font face="Times New Roman, Times, serif" size="3">Выделите диапазон, 
+          на основе которого будет строиться диаграмма (рис. 5.3). Этот диапазон 
+          вводится в аргумент source. В данном примере аргументу source присваивается 
+          значение<br>
+          </font></p>
+        <p> <font face="Courier New, Courier, mono" size="3">Range (&quot;A1:B11&quot;) 
+          .</font></p>
+        <p><font face="Times New Roman, Times, serif" size="3"><br>
+          </font></p>
+      </div>
+    </td>
+    <td align="LEFT" valign="TOP" width="0" height="56"> </td>
+  </tr>
+  <tr> 
+    <td align="LEFT" valign="TOP" width="0" height="0"> </td>
+    <td align="LEFT" valign="TOP" width="86" height="0"> </td>
+    <td align="LEFT" valign="TOP" width="534" height="0"> </td>
+    <td align="LEFT" valign="TOP" width="0" height="0"> </td>
+  </tr>
+</table>
+<P align="left"><img src="5.4.gif" width="414" height="406"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  5.4. </I></B><I>Диалоговое окно первого шага работы мастера диаграмм</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="56">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="86" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="534" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="56"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="86" HEIGHT="56"> 
+        <DIV WIDTH="86" HEIGHT="56"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="534" HEIGHT="56"> 
+        <DIV WIDTH="534" HEIGHT="56"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажмите кнопку 
+            Мастер диаграмм (Chart Wizard) чтобы отобразить на экране диалоговое 
+            окно первого шага мастера диаграмм (рис. 5.4). Выберите тип и вид 
+            диаграммы на первом шаге работы мастера диаграмм. Выбранный тип диаграммы 
+            вводится в аргумент Gallery, а тип — в аргумент Format. В данном случае 
+            аргументу Gallery присваивается значение<br>
+            </font></P>
+          <p> <font face="Courier New, Courier, mono" size="3">xlLine, а аргументу 
+            Format — 1.</font><font face="Times New Roman, Times, serif" size="3"><br>
+            </font></p>
+          <p> <font face="Times New Roman, Times, serif" size="3">Нажмем кнопку 
+            Далее &gt; (Next &gt;) для перехода к следующему шагу построения диаграммы.</font></p>
+          <P><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="56"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="86" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="534" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  <table width="550" border="1">
+    <tr>
+      <td width="74"><font face="Times New Roman, Times, serif" size="3">Шаг 2</font></td>
+      <td width="460"> 
+        <ul>
+          <li> 
+            <div width="533" height="691"> <font face="Times New Roman, Times, serif" size="3"> 
+              На вкладке Диапазон данных (Data Range) (рис. 5.5) второго шага 
+              работы мастера диаграмм при помощи переключателей Ряды в (Data Series 
+              In) укажите, как расположены ряды данных (в столбцах или строках), 
+              на основе которых строится диаграмма. 'Выбранное расположение вводится 
+              в аргумент piotBy. В данном случае аргументу PiotBy присваивается 
+              значение xicoiumns (в столбцах). В поле Диапазон (Data Range) вводится 
+              диапазон, на основе которого строится диаграмма. В данном случае 
+              =лист1 ! $A$1 : $B$11 .<br>
+              </font></div>
+          </li>
+          <li> 
+            <div width="533" height="691"> <font face="Times New Roman, Times, serif" size="3">На, 
+              вкладке Ряд (Series) (рис. 5.6) второго шага работы мастера диаграмм 
+              исключите РЯД! из списка Ряд (Series), нажав кнопку Удалить (Delete), 
+              т. к. первый ряд из диапазона данных будет отведен под метки оси 
+              абсцисс. Переменной categoryLabeis присваивается число столбцов 
+              (строк) диапазона данных, отводимых под значения, которые будут 
+              отображены на оси абсцисс. В данном случае аргументу CategoryLabeis 
+              присваивается значение 1, т. к. только первый столбец (A1:A11) отводится 
+              под значения, отображаемые на оси абсцисс. Кроме того, тот же диапазон 
+              данных =Лист1 ! $А$1 : $А$11 вводится в поле Подписи оси X (Category 
+              (X) Axis Labels). П В поле Значения (Values) приводится ссылка на 
+              диапазон, содержащий значения ряда данных. В данном случае =Лист1!$В$1:$В$11. 
+              В Переменную SeriesLabels водится число строк (столбцов) данных, 
+              отводимых под название различных ветвей диаграмм. Обычно эта переменная 
+              используется совместно с легендой для того, чтобы различать ветви 
+              диаграмм, построенные в одной и той же системе координат не только 
+              по цвету или внешнему виду, но и по этим названиям. В данном случае 
+              аргументу SeriesLabels присваивается значение 0, т. к. строится 
+              только одна диаграмма. </font></div>
+          </li>
+        </ul>
+        <div width="533" height="691"><font face="Times New Roman, Times, serif" size="3">Нажмите 
+          кнопку Далее &gt; (Next &gt;) для перехода к следующему шагу построения 
+          диаграммы.</font></div>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p><img src="5.5.gif" width="414" height="461"></p>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  5.5. </I></B><I>Вкладка <B>Диапазон данных </B>диалогового окна второго шага 
+  работы мастера диаграмм</I><BR>
+  </font></P>
+<P align="left"><img src="5.6.gif" width="414" height="461"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис.</I></B><I> 
+  <B>5.6.</B> Вкладка Ряд диалогового окна второго шага работы мастера диаграмм</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="366">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="81" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="538" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="366"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="81" HEIGHT="366"> 
+        <DIV WIDTH="81" HEIGHT="366"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ШагЗ<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="538" HEIGHT="366"> 
+        <ul>
+          <li> 
+            <DIV WIDTH="538" HEIGHT="366"> <font face="Times New Roman, Times, serif" size="3"> 
+              На вкладке Заголовки (Titles) (рис. 5.7) третьего шага работы мастера 
+              диаграмм заполняются поля Название диаграммы (Chart Title), Ось 
+              X (категорий) (Category (X) Axis) и Ось Y(значений) (Value (Y) Axis) 
+              для отображения названий диаграммы и осей. Эти названия вводятся 
+              в аргументы Title, CategoryTitie и vaiueTitie соответственно. В 
+              данном случае этим аргументам присвоены значения график, Аргумент 
+              и Функция.</font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="538" HEIGHT="366"><font face="Times New Roman, Times, serif" size="3">На 
+              вкладке Легенда (Legend) третьего шага работы мастера диаграмм с 
+              помощью флажка Добавить легенду (Add Legend) устанавливается, надо 
+              ли отображать легенду. Результат установки вводится в аргумент Has 
+              Legend. В данном случае сбросим флажок Добавить легенду (Add Legend), 
+              после чего аргументу HasLegend присваивается значение False, т. 
+              к. легенда не отображается. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="538" HEIGHT="366"><font face="Times New Roman, Times, serif" size="3"> 
+              Нажмите кнопку Далее &gt;(Next &gt;) для перехода к следующему шагу 
+              построения диаграммы.</font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="366"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="81" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="538" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left">&nbsp;</P>
+<P align="left"><img src="5.7.gif" width="480" height="334"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  5.7.</I></B><I>Вкладка <B>Заголовки </B>диалогового окна третьего шага работы 
+  мастера диаграмм</I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="106">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="82" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="541" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="106"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="82" HEIGHT="106"> 
+        <DIV WIDTH="82" HEIGHT="106"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ШагЗ<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="541" HEIGHT="106"> 
+        <DIV WIDTH="541" HEIGHT="106"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">На четвертом 
+            шаге работы мастера диаграмм выбирается, строится ли диаграмма как 
+            внедренный объект в рабочий лист, или на отдельном листе диаграмм. 
+            Для создания диаграммы на отдельном листе выберите переключатель отдельном 
+            (As New Sheet), а для создания внедренной диаграммы — переключатель 
+            имеющемся (As Object In) (рис. 5.8). Выберем переключатель имеющемся 
+            (As Object In). Результат выбора не отображается в </font><font face="Times New Roman, Times, serif" size="3">методе 
+            ChartWizard.<br>
+            </font></P>
+          <p> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            Готово (Finish) завершает процесс создания диаграммы. Подытожим произведенные 
+            присвоения аргументам метода ChartWizard.</font></p>
+          <p><font face="Times New Roman, Times, serif" size="3"> <font face="Courier New, Courier, mono">' 
+            Добавляется диаграмма в семейство диаграмм на активном<br>
+            </font></font></p>
+          <p> <font face="Courier New, Courier, mono" size="3">' рабочем листе 
+            </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">'<br>
+            </font></p>
+          <p> <font face="Courier New, Courier, mono" size="3">ActiveSheet.ChartObjects.Add(195, 
+            30, 200, 190). Select </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">'<br>
+            </font></p>
+          <p> <font face="Courier New, Courier, mono" size="3"><i>' </i>Производится 
+            построение диаграммы методом ChartWizard<br>
+            </font></p>
+          <p> <font face="Courier New, Courier, mono" size="3">ActiveChart. ChartWizard 
+            Source : =Range (&quot;A1:B11&quot;) ,</font></p>
+          <p><font face="Courier New, Courier, mono" size="3"> Gallery:= xlLine, 
+            Format :=1, PlotBy:= xlColumns, </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">CategoryLabels : 
+            =1, </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">SeriesLabels :=0,</font></p>
+          <p><font face="Courier New, Courier, mono" size="3"> HasLegend: =False, 
+            Title := &quot;График&quot;, CategoryTitle : = &quot;Аргумент&quot;,</font></p>
+          <p><font face="Courier New, Courier, mono" size="3"> ValueTitle : =&quot;Функция&quot;<br>
+            </font></p>
+          <p> <font face="Times New Roman, Times, serif" size="3">Ту же самую 
+            диаграмму, не используя метод ChartWizard, можно построить с помощью 
+            следующей последовательности инструкций:</font><font face="Courier New, Courier, mono" size="3"><br>
+            </font></p>
+          <p> <font face="Courier New, Courier, mono" size="3">Charts . Add</font></p>
+          <p><font face="Courier New, Courier, mono" size="3"> ActiveChart. ChartType 
+            = xlLine </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">ActiveChart . SetSourceData 
+            </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">Source :=Sheets('ЛИCT3&quot;).</font></p>
+          <p><font face="Courier New, Courier, mono" size="3"> Range ( &quot;Bl 
+            : Bll&quot; ), </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">PlotBy : =xlColumns 
+            ActiveChart. SeriesCollection (1) .XValues = &quot;=Лист3 !R1C1:R11C1&quot; 
+            </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">ActiveChart .Location 
+            Where:=xlLocationAsObject,</font></p>
+          <p><font face="Courier New, Courier, mono" size="3"> Nаmе:=&quot;ЛистЗ&quot; 
+            With ActiveChart </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">.HasTitle = True 
+            </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">. ChartTitle. Characters. 
+            Text = &quot;График&quot; </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">.Axes (xlCategory, 
+            xlPrimary) </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">.HasTitle = True 
+            .Axes (xlCategory, xlPrimary) </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">.AxisTitle. Characters. 
+            Text = &quot;Аргумент&quot; </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">.Axes (xlValue, 
+            xlPrimary) </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">.HasTitle = True 
+            .Axes (xlValue, xlPrimary) </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">.AxisTitle. Characters. 
+            Text = &quot;Функция&quot; </font></p>
+          <p><font face="Courier New, Courier, mono" size="3">.HasLegend = False</font></p>
+          <p><font face="Courier New, Courier, mono" size="3"> End With</font></p>
+          <P><font face="Times New Roman, Times, serif" size="3"> <BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="106"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="82" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="541" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left">&nbsp; </P>
+<P align="left"><img src="5.8.gif" width="446" height="191"></P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  5.8. </I></B><I>Диалоговое окно четвертого шага работы мастера диаграмм</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="5"></a>Линия 
+  тренда</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">С помощью 
+  диаграммы легко можно анализировать тренды и делать прогнозы. Вручную линия 
+  тренда на диаграмме добавляется с помощью команды <B>Диаграмма, Добавить линию 
+  тренда </B>(Chart, Add Trendline).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Все линии 
+  тренда, соответствующие данному ряду данных, образуют семейство Trendlines, 
+  элементами которого являются объекты Trendline (линия тренда).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Основными 
+  методами семейства Trendiines являются метод Add, добавляющий новый элемент 
+  в семейство, и метод item, возвращающий конкретный элемент семейства.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  описание метода Add семейства Trendiines.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="300">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="300"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="300"> 
+        <DIV WIDTH="69" HEIGHT="300"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Add<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="300"> 
+        <DIV WIDTH="550" HEIGHT="300"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Добавляет новый 
+            элемент в семейство Trendlines. </font></P>
+          <P><font face="Times New Roman, Times, serif" size="3">Синтаксис:<BR>
+            </font></P>
+          <P> <font face="Courier New, Courier, mono" size="3">Add (Type, Order, 
+            Period, Forward, Backward, Intercept, DisplayEquation, DisplayRSquared, 
+            Name)<BR>
+            </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="300"> <font face="Times New Roman, Times, serif" size="3">Tуре 
+              — устанавливает тип линии тренда. Допустимые значения: xlLinear 
+              (линейная), xlLogarithmic (логарифмическая), xiExponential (экспоненциальная), 
+              xlPolynomial (полиномиальная) , xlMovingAvg (скользящее среднее) 
+              и xlPower (степенная) </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="300"><font face="Times New Roman, Times, serif" size="3">Oorder 
+              — устанавливает порядок линии тренда. Допустимые значения: целые 
+              числа в интервале от 2 до 6. Используется, если аргумент туре принимает 
+              значение xlPolynomial </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="300"><font face="Times New Roman, Times, serif" size="3">Period 
+              — период тренда. Допустимые значения: целое не меньше 1, но меньше 
+              числа точек, по которым строится тренд.</font></DIV>
+          </li>
+        </ul>
+        <DIV WIDTH="550" HEIGHT="300"> 
+          <P><font face="Times New Roman, Times, serif" size="3">Используется, 
+            если аргумент туре принимает значение xlMovingAvg.</font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="300"><font face="Times New Roman, Times, serif" size="3"> 
+              Forward — прогнозируемое число точек на будущее (вперед), для предсказания 
+              значений в соответствии с трендом </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="300"><font face="Times New Roman, Times, serif" size="3">Backward 
+              — прогнозируемое число точек в прошлом (назад), для предсказания 
+              значений в соответствии с трендом </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="300"><font face="Times New Roman, Times, serif" size="3">intercept 
+              — пересечение с осью ординат </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="300"><font face="Times New Roman, Times, serif" size="3">DisplayEquation 
+              — допустимые значения: True (уравнение тренда отображается на диаграмме) 
+              и False (в противном случае)</font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="550" HEIGHT="300"><font face="Times New Roman, Times, serif" size="3">DisplayRSquared 
+              допустимые значения: True (отображается квадрат коэффициента корреляции) 
+              и False (в противном случае) </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="550" HEIGHT="300"><font face="Times New Roman, Times, serif" size="3"> 
+              Name — строка, задающая имя линии тренда<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="300"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="69" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Из свойств 
+  семейства Trendlines отметим только свойство count, возвращающее число элементов 
+  этого семейства.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Приведем 
+  соответствие между построением линии тренда вручную и аргументами метода Add 
+  семейства Trendiines.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="415">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="72" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="546" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="68"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="72" HEIGHT="68"> 
+        <DIV WIDTH="72" HEIGHT="68"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 1<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="546" HEIGHT="68"> 
+        <ul>
+          <li>
+            <DIV WIDTH="546" HEIGHT="68"> <font face="Times New Roman, Times, serif" size="3">Активизируйте 
+              диаграмму, где надо построить линию тренда.</font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="546" HEIGHT="68"><font face="Times New Roman, Times, serif" size="3"> 
+              Выберите команду Диаграмма, Добавить линию тренда (Chart, Add Trendline) 
+              (рис. 5.9).<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="68"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="174"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="72" HEIGHT="174"> 
+        <DIV WIDTH="72" HEIGHT="174"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 2<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="546" HEIGHT="174"> 
+        <DIV WIDTH="546" HEIGHT="174"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">На вкладке Тип 
+            (Туре) появившегося диалогового окна Линия тренда (Trendline) (рис. 
+            5.10): </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="546" HEIGHT="174"><font face="Times New Roman, Times, serif" size="3"> 
+              В списке Построен на ряде (Based on Series) выбирается ряд данных, 
+              по которому строится линия тренда. В данном случае ряд данных только 
+              один. </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="546" HEIGHT="174"><font face="Times New Roman, Times, serif" size="3">В 
+              группе Построение линии тренда (аппроксимация и сглаживание) (Trend/Regression 
+              Type) выбирается один из шести видов линии тренда. Выберите Линейная 
+              (Linear).<BR>
+              </font></DIV>
+          </li>
+        </ul>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="174"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="173"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="72" HEIGHT="173"> 
+        <DIV WIDTH="72" HEIGHT="173"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ШагЗ<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="546" HEIGHT="173"> 
+        <DIV WIDTH="546" HEIGHT="173"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">На вкладке Параметры 
+            (Options) диалогового окна Линия тренда (Trendline) (рис. 5.11) устанавливаются 
+            параметры линии тренда: </font></P>
+        </DIV>
+        <ul>
+          <li> 
+            <DIV WIDTH="546" HEIGHT="173"><font face="Times New Roman, Times, serif" size="3"> 
+              В группе Лазвание аппроксимирующей (сглаженной) кривой</font> 
+              <DIV WIDTH="546" HEIGHT="173"> 
+                <div width="546" height="173"><font face="Times New Roman, Times, serif" size="3">(Trendline 
+                  Name) переключатель автоматическое (Automatic) устанавливает 
+                  имя линии тренда такое же, как и у ряда данных, а переключатель 
+                  другое (Custom) устанавливает имя, введенное в соответствующем 
+                  поле. В данном случае выберем переключатель автоматическое (Automatic).</font></div>
+              </DIV>
+            </DIV>
+          </li>
+          <li><font face="Times New Roman, Times, serif" size="3">В группе Прогноз 
+            (Forecast) счетчики вперед на (Forward) и назад на (Backward) определяют, 
+            на сколько периодов вперед или назад надо прогнозировать данные при 
+            помощи линии тренда. В данном случае не будем заниматься прогнозом, 
+            и поэтому оба эти счетчика установим равными 0. </font></li>
+          <li><font face="Times New Roman, Times, serif" size="3"> Флажок пересечение 
+            кривой с осью Y в точке (Set Intercept) позволяет установить конкретную 
+            точку, в которой тренд должен пересекать ось Y. В данном случае такого 
+            значения устанавливать не будем и поэтому сбросим этот флажок. </font></li>
+          <li><font face="Times New Roman, Times, serif" size="3">Флажок показывать 
+            уравнение на диаграмме (Display Equation on Chart) определяет, надо 
+            ли отображать уравнение линии тренда на диаграмме. В данном случае 
+            будем выводить уравнение, и, следовательно, установим этот флажок. 
+            </font></li>
+          <li><font face="Times New Roman, Times, serif" size="3"> Флажок поместить 
+            на диаграмму величину достоверности аппроксимации (R^2) (Display R-squared) 
+            определяет, надо ли отображать квадрат коэффициента корреляции на 
+            диаграмме. Установим этот флажок, тем самым обеспечив вывод квадрата 
+            коэффициента корреляции на диаграмму.<br>
+            </font></li>
+        </ul>
+        <blockquote> 
+          <DIV WIDTH="546" HEIGHT="173"><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></DIV>
+        </blockquote>
+        <DIV WIDTH="546" HEIGHT="173"></DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="173"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="72" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="546" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+  <p><img src="5.9.gif" width="486" height="552"></p>
+</div>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  5.9. </I></B><I>Построение линии тренда для объема продаж по неделям</I><BR>
+  </font></P>
+<P align="left"><img src="5.10.gif" width="417" height="391"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  5.10. </I></B><I>Вкладка Тип диалогового окна <B>Линия тренда</B></I><BR>
+  </font></P>
+<P align="left"><img src="5.11.gif" width="417" height="391"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  5.11. </I></B><I>Вкладка <B>Параметры </B>диалогового окна <B>Линия тренда</B></I><BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="66">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="66" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="66"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="66" HEIGHT="66"> 
+        <DIV WIDTH="66" HEIGHT="66"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Шаг 4<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="66"> 
+        <DIV WIDTH="550" HEIGHT="66"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажмите кнопку 
+            ОК. Линия тренда построена на диаграмме (рис. 5.12). Программно линия 
+            тренда строится с помощью следующих инструкций:</font></P>
+          <P><font face="Courier New, Courier, mono" size="3">ActiveSheet . ChartObjects 
+            ( &quot;Диагр.1&quot;)</font><font face="Courier New, Courier, mono" size="3">.Activate 
+            </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">ActiveChart . ChartArea 
+            . Select </font></P>
+          <P><font face="Courier New, Courier, mono" size="3">ActiveChart . SeriesCollection 
+            ( 1 ) . Trendlines . Add (Type : =xlLinear , Forward :=0, Backward 
+            :=0, DisplayEquation:=True, DisplayRSquared:=True) .Select</font><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="66"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="66" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="550" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+</div>
+<P align="left">&nbsp;</P>
+<P align="left"><img src="5.12.gif" width="486" height="552"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  5.12. </I></B><I>Линия тренда объема продаж</I></font></P>
+</BODY>
+</HTML>
+

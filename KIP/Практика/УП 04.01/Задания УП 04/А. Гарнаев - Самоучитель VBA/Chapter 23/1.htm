@@ -1,0 +1,1155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+      <ul>
+<li><b><font face="Times New Roman" size=3><a href="#1">УРОК 8. ТЕМА: ПОСТРОЕНИЕ ПОВЕРХНОСТИ</a></font></b> </li>
+     <ul>
+     <li><font face="Times New Roman" size=3><a href="#2">ЦЕЛЬ УРОКА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#3">ПРАКТИКА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#4">САМОСТОЯТЕЛЬНОЕ ЗАДАНИЕ</a></font> </li>
+
+     </ul></ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Урок 8</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Тема:</font></font> 
+  <font face="Times New Roman, Times, serif" size="5">Построение</font> <font face="Times New Roman, Times, serif" size="5">поверхности</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="2"></a>Цель 
+  урока</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В данном 
+  уроке разрабатывается приложение, которое позволяет по введенному уравнению, 
+  начальным и конечным значениям аргументов, а также по шагам их изменения построить 
+  поверхность. Кроме того, используя полосы прокрутки можно изменить ориентацию 
+  пространственного местоположения поверхности. В процессе создания данного приложения 
+  вы узнаете, как:<BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Табулируются функции, 
+    зависящие от двух аргументов<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Осуществляется программная 
+    проверка правильности ввода формулы в ячейку рабочего листа<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Производится преобразование 
+    формулы с аргументами <I>х </I>и <I>у </I>в формулу рабочего листа<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Выполняется программное 
+    построение поверхности<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Записывается диаграмма 
+    в графический файл<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Считывается графический 
+    файл в элемент управления image<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Управлять углом зрения 
+    на поверхность<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Управлять углом поворота 
+    поверхности вокруг оси <I>z</I><BR>
+    </font></li>
+</ul>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="3"></a>Практика</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В данном 
+  приложении строится поверхность по введенным в диалоговое окно построение поверхности 
+  (рис. У8.1) начальным, конечным значениям аргументов и их шагах изменения. Уравнение 
+  поверхности также вводится в программу из диалогового окна. Уравнение должно 
+  быть составлено в соответствии с правилами, по которым строятся функции рабочего 
+  листа, но в качестве аргументов в нем следует использовать <I>х и у </I>вместо 
+  ссылок на ячейки. Программа сама переведет эти аргументы в ссылки на ячейки. 
+  После табуляции введенной функции программой и построения поверхности на рабочем 
+  листе (рис. У8.2), эта поверхность также отображается в объекте </font><font face="Times New Roman, Times, serif" size="3">управления 
+  image, расположенном в диалоговом окне построение поверхности (рис. У8.3). Управляя 
+  полосами прокрутки можно изменить ориентацию поверхности на рабочем листе.<BR>
+  </font></P>
+<P align="left"><img src="8.1.gif" width="479" height="360"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У8.1. </I></B><I>Диалоговое</I> <B><I>окно </I></B><I>Построение поверхности</I><BR>
+  </font></P>
+<P align="left"><img src="8.2.gif"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У8.2. </I></B><I>Результат построения поверхности на рабочем листе</I><BR>
+  </font></P>
+<P align="left"><img src="8.3.gif"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У8.3. </I></B><I>Диалоговое окно Построение поверхности с рисунком построенной 
+  поверхности</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Обсудим, 
+  как приведенная ниже программа решает описанную задачу и что происходит в ней.<BR>
+  </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="818">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="197" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="417" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="242"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="197" HEIGHT="242"> 
+        <DIV WIDTH="197" HEIGHT="242"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">UserForm_Initialize<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="417" HEIGHT="242"> 
+        <ol>
+          <li> 
+            <DIV WIDTH="417" HEIGHT="242"> <font face="Times New Roman, Times, serif" size="3"> 
+              Активизирует диалоговое окно. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="417" HEIGHT="242"><font face="Times New Roman, Times, serif" size="3"> 
+              Назначает клавише &lt;Esc&gt; функцию кнопки </font><font face="Times New Roman, Times, serif" size="3">Отмена, 
+              а клавише &lt;Enter&gt; — Построение.<BR>
+              </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="417" HEIGHT="242"> <font face="Times New Roman, Times, serif" size="3"> 
+              Устанавливает максимальные и минимальные допустимые значения для 
+              полос прокрутки, а также их первоначальные значения. </font></DIV>
+          </li>
+          <li>
+            <DIV WIDTH="417" HEIGHT="242"><font face="Times New Roman, Times, serif" size="3">Устанавливает, 
+              чтобы отображаемая картинка поверхности в диалоговом окне помещалась 
+              целиком и пропорционально в пределах элемента управления Image, 
+              а также чтобы левый верхний угол рисунка совпадал с левым верхним 
+              углом элемента управления Image.<BR>
+              </font></DIV>
+          </li>
+        </ol>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="242"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="576"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="197" HEIGHT="576"> 
+        <DIV WIDTH="197" HEIGHT="576"> 
+          <P> <font size="3" face="Times New Roman, Times, serif"><BR>
+            Нажатие кнопки<br>
+            </font></P>
+          <p> <font face="Times New Roman, Times, serif" size="3">Построение запускает 
+            на выполнение<br>
+            </font></p>
+          <p> <font face="Times New Roman, Times, serif" size="3">процедуру<br>
+            </font></p>
+          <p> <font face="Times New Roman, Times, serif" size="3">CornmandButton1_Click</font></p>
+          <P><font size="3" face="Times New Roman, Times, serif"> </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="417" HEIGHT="576"> 
+        <ol>
+          <li> 
+            <DIV WIDTH="417" HEIGHT="576"> <font face="Times New Roman, Times, serif" size="3">Проверяет, 
+              являются ли вводимые данные числами. В случае ошибки отображается 
+              соответствующее сообщение. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="417" HEIGHT="576"><font face="Times New Roman, Times, serif" size="3">Проверяет 
+              согласованность вводимых данных. В случае ошибки отображается соответствующее 
+              сообщение (рис. У8.4). </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="417" HEIGHT="576"><font face="Times New Roman, Times, serif" size="3">Преобразует 
+              формулу, введенную в поле Уравнение поверхности, в формулу рабочего 
+              листа. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="417" HEIGHT="576"><font face="Times New Roman, Times, serif" size="3"> 
+              Проверяет корректность введенной формулы. В случае ошибки отображается 
+              соответствующее сообщение (рис. У8.5). </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="417" HEIGHT="576"><font face="Times New Roman, Times, serif" size="3"> 
+              Используя метод DataSeriea, начиная с ячейки А2 строит вниз по столбцу 
+              арифметическую прогрессию, являющуюся результатом табуляции аргумента 
+              х уравнения поверхности с указанными шагами. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="417" HEIGHT="576"><font face="Times New Roman, Times, serif" size="3">Используя 
+              метод Dataseries, начиная с ячейки в 1 строит вправо по строке арифметическую 
+              прогрессию, являющуюся результатом табуляции аргумента у уравнения 
+              поверхности с указанными шагами. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="417" HEIGHT="576"><font face="Times New Roman, Times, serif" size="3"> 
+              Заносит в ячейку В2 уравнение поверхности, введенное пользователем 
+              в диалоговом окне. Для корректности последующего табулирования значений 
+              функций важно в уравнении указать абсолютные ссылки на столбец А 
+              и строку в. Это обеспечивается вводом в уравнении поверхности вместо 
+              аргумента х ссылки $А2, а вместо аргумента у — ссылки в$1.</font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="417" HEIGHT="576"><font face="Times New Roman, Times, serif" size="3"> 
+              Для табуляции функции протаскивается маркер заполнения ячейки В2, 
+              используя метод AutoFill и формулу поверхности, позволяющих распространить 
+              табуляцию на весь диапазон, где табулируется функция. </font></DIV>
+          </li>
+          <li> 
+            <DIV WIDTH="417" HEIGHT="576"><font face="Times New Roman, Times, serif" size="3"> 
+              Строит поверхности при помощи методаChartWizard.<br>
+              </font> </DIV>
+          </li>
+          <li>
+            <DIV WIDTH="417" HEIGHT="576"><font face="Times New Roman, Times, serif" size="3">Изменяет 
+              ориентацию надписи оси z. и Сохраняет построенную поверхность в 
+              файле График-gif. 12. Отображает рисунок из файла График.gif в элементе 
+              управления image1.</font></DIV>
+          </li>
+        </ol>
+        <blockquote> 
+          <DIV WIDTH="417" HEIGHT="576"><font face="Times New Roman, Times, serif" size="3"><BR>
+            </font></DIV>
+        </blockquote>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="576"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="197" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="417" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+  
+  <p><img src="8.4.gif" width="260" height="139"></p>
+  <p><font face="Times New Roman, Times, serif" size="3"><B><i>Рис. У8.4. </i></B><i>Пример 
+    сообщения о несогласованности данных<BR>
+    </i></font></p>
+</div>
+<P align="left"><img src="8.5.gif" width="260" height="139"> </P>
+<P align="left"><i><font face="Times New Roman, Times, serif" size="3"><B>Рис. 
+  У8.5. </B>Сообщение о некорректном вводе формулы<BR>
+  </font></i><font face="Times New Roman, Times, serif" size="3"> </font></P>
+<div align="left"> 
+  <TABLE FRAME="BOX" RULES="ALL" BORDER="1" CELLSPACING="0" CELLPADDING="0" WIDTH="550" HEIGHT="293">
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="231" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="386" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="231" HEIGHT="82"> 
+        <DIV WIDTH="231" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Нажатие кнопки 
+            отмена запускает на выполнение процедуру<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">CommandButton2 
+            Click<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="386" HEIGHT="82"> 
+        <DIV WIDTH="386" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Закрывает диалоговое 
+            окно.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="231" HEIGHT="82"> 
+        <DIV WIDTH="231" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ScrollBarl Change<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="386" HEIGHT="82"> 
+        <DIV WIDTH="386" HEIGHT="82"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Перемещение 
+            ползунка горизонтальной полоски прокрутки вызывает вращение вокруг 
+            оси <I>Z </I>диаграммы за счет изменения величины свойства Rotation.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="82"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="83"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="231" HEIGHT="83"> 
+        <DIV WIDTH="231" HEIGHT="83"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ScrollBar2 Change<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="386" HEIGHT="83"> 
+        <DIV WIDTH="386" HEIGHT="83"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Перемещение 
+            ползунка вертикальной полоски прокрутки вызывает изменение угла, под 
+            которым смотрят на диаграмму, за счет изменения величины свойства 
+            Elevation.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="83"> </TD>
+    </TR>
+    <TR ALIGN="LEFT" VALIGN="TOP"> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="231" HEIGHT="46"> 
+        <DIV WIDTH="231" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">ВращениеГрафика<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="386" HEIGHT="46"> 
+        <DIV WIDTH="386" HEIGHT="46"> 
+          <P> <font face="Times New Roman, Times, serif" size="3">Программирует 
+            вращение поверхности за счет<BR>
+            </font></P>
+          <P> <font face="Times New Roman, Times, serif" size="3">изменения свойств 
+            Rotation и Elevation.<BR>
+            </font></P>
+        </DIV>
+      </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="46"> </TD>
+    </TR>
+    <TR> 
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="231" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="386" HEIGHT="0"> </TD>
+      <TD ALIGN="LEFT" VALIGN="TOP" WIDTH="0" HEIGHT="0"> </TD>
+    </TR>
+  </TABLE>
+</div>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Описание переменных 
+  уровня модуля </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim УголЗрения 
+  as Integer </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Dim ВокругОси2 
+  as Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim УголЗренияСоСчетчика 
+  as Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' УголЗренияСоСчетчика 
+  - величина, снимаемая с полосы прокрутки<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' и определяющая 
+  угол зрения под которым смотрят на поверхность<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' УголЗрения 
+  - угол зрения, под которым смотрят на поверхность,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' он равен УголЗренияСоСчетчика 
+  - 90 и лежит в<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'диапазоне от 
+  -90 до 90<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' ВокругОсиЕ 
+  - угол поворота вокруг оси z, лежит в<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' диапазоне 
+  от 0 до 360 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CommandButtonl_Click() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  табуляции функции </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' и построения 
+  поверхности<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim х_нз As 
+  Double<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim х_пз As 
+  Double<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim х_шаг As 
+  Double<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim у_нз As 
+  Double <BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim у_пз As 
+  Double<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim у_шаг As 
+  Double<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim УрПоверхности 
+  As String </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Переменная 
+  х:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' х_нз - начальное 
+  значение<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' х_пз - предельное 
+  значение<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' х_шаг - шаг 
+  изменения<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Переменная 
+  у:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' у_нз - начальное 
+  значение<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' у_пз - предельное 
+  значение<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' у_шаг - шаг 
+  изменения<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' УрПоверхности 
+  - уравнение поверхности </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim nx As Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim ny As Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' nx - число 
+  протабулированных значений аргумента х<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' ny - число 
+  протабулированных значений аргумента у </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim n As Integer<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim i As Integer 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' n ,i - вспомогательные 
+  целые переменные</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Dim ПоляВвода(1 
+  То 6) As Object<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Массив полей 
+  ввода </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set ПоляВвода(1) 
+  = TextBoxl </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Set ПоляВвода(2) 
+  = TextBox2 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Set ПоляВвода(3) 
+  = TextBox3 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Set ПоляВвода(4) 
+  = TextBox4 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Set ПоляВвода(5) 
+  = TextBox5<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set ПоляВвода(6) 
+  = TextBox6<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Проверка корректности 
+  ввода данных </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">For i = 1 To 
+  6<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If IsNumeric(ПоляВвода(i).Text) 
+  = False Then Select Case i</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Case 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Ошибка 
+  в начальном значении х&quot;, vblnformation, &quot;Поверхность&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox1.SetFocus<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Case 2<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Ошибка 
+  в начальном значении у&quot;, vblnformation, &quot;Поверхность&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox2.SetFocus<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Case 3<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Ошибка 
+  в шаге х&quot;, vblnformation, &quot;Поверхность&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox3.SetFocus<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Case 4<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Ошибка 
+  в шаге у&quot;, vblnformation, &quot;Поверхность&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox4.SetFocus<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Case 5<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Ошибка 
+  в конечном значении х&quot;, vblnformation, &quot;Поверхность&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox5.SetFocus<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Case 6<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Ошибка 
+  в конечном значении у&quot;, vblnformation, &quot;Поверхность&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox6.SetFocus<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Select</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Next i<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Считывание 
+  с диалогового окна<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' значений переменных 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">х_нз = CDbl(TextBoxl.Text) 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">у_нз = CDbl(TextBox2.Text) 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">х__шаг = CDbl 
+  (TextBox3.Text)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> у_шаг = CDbl(TextBox4.Text) 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">х_пз = CDbl(TextBox5.Text)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> у_пз = CDbl(TextBox6.Text)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">УрПоверхности 
+  = Trim(TextBoxV.Text) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Проверка согласованности 
+  введенных данных </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If х_нз &gt;= 
+  х_пз Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Начальное 
+  значение х слишком большое&quot;, vblnformation, &quot;Поверхность&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBoxl.SetFocus<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If х_нз + х_шаг 
+  &gt;= х_пз Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Шаг 
+  х великоват&quot;, vblnformation, &quot;Поверхность&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox3.SetFocus<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If у_нз &gt;= 
+  у_пз Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Начальное 
+  значение у слишком большое&quot;, vblnformation, &quot;Поверхность&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox2.SetFocus<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If у_нз + у_шаг 
+  &gt;= у_пз Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Шаг 
+  у великоват&quot;, vblnformation, &quot;Поверхность&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox4.SetFocus<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Переход на 
+  отладчик ошибок в случае их возникновения On Error GoTo Сообщение<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Замена в введенной 
+  формуле аргумента х на ссылку $А2,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' а аргумента 
+  у на ссылку В$1</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">i=1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Do </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Замена в введенной 
+  формуле аргумента х на ссылку $А2</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Mid(УрПоверхности, 
+  i, 1) = &quot;х&quot; Or Mid(УрПоверхности, i, 1) = &quot;X&quot; Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">n = Len(УрПоверхности)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If (1 &lt; i) 
+  And (i &lt; n) Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">УрПоверхности 
+  = Left(УрПоверхности, i - 1) &amp; &quot;$A2&quot; &amp; Right(УрПоверхности, 
+  n - i)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If i = 1 Then 
+  УрПоверхности = &quot;$A2&quot; &amp; Right(УрПоверхности, n - 1)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If i = n Then 
+  УрПоверхности = Left(УрПоверхности, n - 1) &amp; &quot;$A2&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Замена в введенной 
+  формуле аргумента у на ссылку В$1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Mid(УрПоверхности, 
+  i,<I> </I>1) = &quot;y&quot; Or Mid(УрПоверхности, i, 1) = &quot;Y&quot; Then 
+  n = Len(УрПоверхности)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> If (1 &lt; i) 
+  And (i &lt; n) Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">УрПоверхности 
+  = Left(УрПоверхности, i - 1) &amp; &quot;B$l&quot; &amp; Right(УрПоверхности, 
+  n - i)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If i = 1 Then 
+  УрПоверхности = &quot;B$l&quot; &amp; Right(УрПоверхности, n - 1)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If i = n Then 
+  УрПоверхности = Left(УрПоверхности, n - 1) &amp; &quot;B$l&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">i = i + 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Loop While i 
+  &lt;= Len(УрПоверхности)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Очистка на 
+  активном листе ранее введенных данных </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.Cells.Select 
+  Selection.Clear<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Заполнение 
+  диапазонов значениями аргументов </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With ActiveSheet</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Ввод в ячейку 
+  А2 начального значения </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Range(&quot;A2&quot;).Value 
+  = х_нз</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Создание арифметической 
+  прогрессии по столбцу<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' с указанными 
+  шагом и начальным значением </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Range(&quot;A2&quot;).DataSeries 
+  Rowcol:=xlColuims,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Type:=xlLinear, 
+  Step:=x__iuar, Stop:=x_ns, Trend:=False</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Ввод в ячейку 
+  В1 начального значения </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Range(&quot;Bl&quot;).Value 
+  = у_нз<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Создание арифметической 
+  прогрессии вдоль строки<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' с указанными 
+  шагом и начальным значением </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Range(&quot;Bl&quot;).DataSeries 
+  Rowcol:=xlRows,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Type:=xlLinear, 
+  Step:=y_iuar, Stop:=y_ns, Trend:=Faise</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Заполнение 
+  диапазона значениями функции</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With ActiveSheet 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Определение 
+  числа строк в диапазоне заполнения </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">nx = .Range(&quot;A1&quot;).CurrentRegion.Rows.Count</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Определение 
+  числа столбцов в диапазоне заполнения<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ny = .Range(&quot;Al&quot;).CurrentRegion.Columns.Count</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Ввод уравнения 
+  поверхности в ячейку В2 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Range(&quot;В2&quot;).Formula 
+  = УрПоверхности </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">If IsError(Evaluate(УрПоверхности)) 
+  = True Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Ошибка 
+  в формуле&quot;, vbExclamation, &quot;Поверхность&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Заполнение 
+  диапазона Range(Cells(2, 2), Cells(2, ny))<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' начиная с 
+  ячейки В2, что эквивалентно протаскиванию маркера<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' заполнения 
+  ячейки В2 на диапазон</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Range(Cells(2, 
+  2), Cells(2, ny))</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Range(&quot;B2&quot;).AutoFill<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Destination:=Range(Cells(2, 
+  2), Cells(2, ny)),</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Type:=xlFillDefault<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Заполнение 
+  диапазона</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Range(Cells(2, 
+  2), Cells(nx, ny)),<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' начиная с 
+  диапазона </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Range(Cells(2, 
+  2), Cells(2, ny)),<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' что эквивалентно 
+  протаскиванию маркера<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' заполнения 
+  диапазона </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Range(Cells(2, 
+  2), Cells(2, ny))<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' на диапазон 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Range(Cells(2, 
+  2), Cells(nx, ny)) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Range(Cella(2, 
+  2), Cells(2, ny)).AutoFill<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Destination:=Range(Cells(2, 
+  2),</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Cells(nx, ny)),</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Type:=xlFillDefault<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Удаление с 
+  рабочего листа всех ранее построенных диаграмм<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.ChartObjects.Delete 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Выбор диапазона, 
+  по которому строится поверхность<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.Range(Cells(2, 
+  2), Cells(nx, ny)).Select </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Задание и 
+  выбор области на рабочем листе, где<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' будет построена 
+  поверхность </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveSheet.ChartObjects.Add(29.25, 
+  19.5, 270.75, 187'.5).Select Application.CutCopyMode = False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Построение 
+  поверхности<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveChart.ChartWizard</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Source:=Range(Cells 
+  (1, 1), Cells(nx, ny) ),</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Gallery:=x13DSurface, 
+  Format:=1,</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> PlotBy:=xlColumns,</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> CategoryLabels:=1, 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">SeriesLabels:=l, 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">HasLegend:=False, 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">Title:=&quot;Поверхность&quot;, 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">CategoryTitle:=&quot;x&quot;,</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> ValueTitle:=&quot;z&quot;, 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ExtraTitle:=&quot;y&quot; 
+  ActiveSheet.ChartObjects(1).Activate<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveChart.Axes(xlValue) 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.AxisTitle.Select 
+  With Selection<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.HorizontalAlignment 
+  = xlCenter<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.VerticalAlignment 
+  = xlCenter<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Orientation 
+  = xlVertical<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ВращениеГрафика 
+  20, 15 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Запись диаграммы 
+  в файл и </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' загрузка картинки 
+  в Imagel<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveChart.Export 
+  FilterNаmе:=&quot;График.gif&quot;, </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">FilterName:=&quot;GIF&quot; 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">UserForml.Image1.Picture 
+  = LoadPicture(&quot;График.gif&quot;) ActiveSheet.Range(&quot;Al&quot;).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub Сообщение:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Ошибка: 
+  &quot; &amp; Err.Description, vbExclamation, &quot;Поверхность&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">TextBox7.SetFocus<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub End 
+  Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  CoramandButton2_Click()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  закрытия диалогового окна<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">UserForml. Hide</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Label7_Click()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  ScrollBarl_Change()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  вращения вокруг оси z </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Считывание 
+  данных с полос прокрутки</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ВокругОсиZ = 
+  ScrollBarl.Value УголЗренияСоСчетчика = ScrollBar2.Value<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">УголЗрения = 
+  УголЗренияСоСчетчика - 90<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Вращение поверхности</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ВращениеГрафика 
+  ВокругОсиг, УголЗрения<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  ScrollBar2_Change()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  изменения угла, под которым</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> ' смотрят на 
+  диаграмму<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Считывание 
+  данных с полос прокрутки </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ВокругОсиZ = 
+  CInt(ScrollBarl.Value)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">УголЗренияСоСчетчика 
+  = CInt(ScrollBar2.Value)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">УголЗрения = 
+  УголЗренияСоСчетчика - 90</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Вращение поверхности 
+  ВращениеГрафика ВокругОсиг, УголЗрения<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub ВращениеГрафика(ByVal 
+  ВокругОсиг, ByVal УголЗрения As Integer)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  вращения поверхности<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If ActiveSheet.ChartObjects.Count 
+  &gt;= 1 Then </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">ActiveSheet.ChartObjects(I).Activate<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With ActiveChart 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Угол, под 
+  которым смотрят на диаграмму, </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' допустимые 
+  значения от -90 до 90,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' по умолчанию 
+  15 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Elevation = 
+  УголЗрения </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Вращение вокруг 
+  оси z, допустимые значения от 0 до 360,</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> ' по умолчанию 
+  20<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Rotation = 
+  ВокругОсиг End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private <I>Sub 
+  </I>UserForm_Initialize() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Процедура 
+  инициализации диалогового окна </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">CommandButtonl.Default 
+  = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">CoiranandButton2.Cancel 
+  = True<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ScrollBarl.ControlTipText 
+  = &quot;Поворот вокруг оси Z&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ScrollBar2.ControlTipText 
+  = &quot;Изменение угла зрения&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Рисунок масштабируется 
+  с учетом относительных размеров так,<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' чтобы он помещался 
+  в объекте Imagel </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With Imagel<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.PictureAlignment 
+  = fmPictureAlignmentTopLeft</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> .PictureSizeMode 
+  = fmPictureSizeModeStretch<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Установка 
+  максимальных и минимальных допустимых значений </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' для полос прокрутки, 
+  а<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' также их первоначальных 
+  значений</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With ScrollBar2<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Min = 0<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Max = 180<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Value = 105 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> With ScrollBarl<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Min = 0<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Max = 360<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Value =20 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">UserForml.Show</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="4"></a>Самостоятельное 
+  задание</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Разработать 
+  приложение с диалоговым окном объемный график (рис. У8.6), которое должно решать 
+  следующие задачи:<BR>
+  </font></P>
+<ol>
+  <li> <font face="Times New Roman, Times, serif" size="3">В поле диапазон данных 
+    обеспечить ввод диапазона, по которым будет строится объемный график. Диапазон 
+    должен состоять не менее, чем из двух строк.</font></li>
+</ol>
+<p><img src="8.6.gif"></p>
+<p><font face="Times New Roman, Times, serif" size="3"><i><b>Рис. У8.6.</b> Диалоговое 
+  окно Объемный график</i><BR>
+  </font></p>
+<P align="left"><img src="8.7.gif" width="514" height="556"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  У8.7. </I></B><I>Диапазон с данными и результат построения объемного графика 
+  на рабочем листе</I><BR>
+  </font></P>
+<ol start=2>
+  <li> <font face="Times New Roman, Times, serif" size="3">Программа должна определить 
+    число строк диапазона, а также минимальное (1) и максимальное (число строк 
+    диапазона) значение счетчика.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">При помощи счетчика 
+    установить, какая из строк диапазона будет играть роль абсцисс.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> При нажатии кнопки 
+    ок должен строиться объемный график с выбранной осью абсцисс (рис. У8.7) на 
+    рабочем листе и, кроме того, отображаться в объекте image диалогового окна.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">С помощью полос прокрутки 
+    обеспечить управление ориентацией графика в пространстве.<BR>
+    </font></li>
+</ol>
+</BODY>
+</HTML>
+

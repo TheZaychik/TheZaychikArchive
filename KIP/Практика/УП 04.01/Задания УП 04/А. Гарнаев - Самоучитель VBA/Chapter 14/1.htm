@@ -1,0 +1,422 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+
+<body background=../FON.JPG>
+      <ul>
+<li><b><font face="Times New Roman" size=3><a href="#1">ГЛАВА 14. ПОЛЬЗОВАТЕЛЬСКИЕ ОБЪЕКТЫ</a></font></b> </li>
+     <ul>
+     <li><font face="Times New Roman" size=3><a href="#2">СОЗДАНИЕ МОДУЛЕЙ КЛАССА</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#3">ПРОЦЕДУРЫ PROPERTY LET, PROPERTY SET и PROPERTY GET</a></font> </li>
+     <li><font face="Times New Roman" size=3><a href="#4">ПРИМЕР СОЗДАНИЯ КЛАССА</a></font> </li>
+
+     </ul></ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B>Глава 
+  14</B>.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Пользовательские 
+  объекты</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="2"></a>Создание 
+  модулей класса</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В VBA наряду 
+  с огромным числом встроенных объектов предусмотрена возможность создания пользовательских 
+  объектов. Использование таких объектов позволяет сократить текст программы и 
+  сделать его более понятным. Пользовательские объекты являются элементами пользовательских 
+  классов (или образно говоря, классы являются формами, из которых &quot;пекутся&quot; 
+  конкретные объекты). Пользовательские классы конструируются в модулях классов, 
+  которые создаются в редакторе Visual Basic выбором команды <B>Вставка, Модуль 
+  класса </B>(Insert, Class Module). При создании классов надо предусмотреть его 
+  инициализацию, описание свойств и методов, которыми будет наделен объект.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Опишем процесс 
+  создания класса в виде следующей последовательности шагов:<BR>
+  </font></P>
+<ol>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Выберите команду <B>Вставка, 
+    Модуль класса </B>(Insert, Class Module). Откроется окно нового модуля класса.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Нажмите клавишу &lt;F4&gt; 
+    и присвойте в появившемся окне свойству Name имя класса. Имя модуля класса 
+    является именем класса объектов.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">В разделе описания 
+    модуля объявите переменные уровня модуля, которые используются как &quot;значения 
+    свойств&quot;.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Инициализируйте класс 
+    при помощи процедуры Private Sub Class_Initialize. В этой процедуре надо указать 
+    значения, принимаемые по умолчанию переменными уровня модуля, описывающими 
+    &quot;значения свойств&quot;.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> При помощи процедур 
+    Property Let объявите имена свойств, значениями которых являются числовые 
+    данные, а при помощи процедур Property set объявите имена свойств, значениями 
+    которых являются объекты. Если какое-то свойство — только для чтения, то для 
+    него не надо составить процедуру<B> </B>Property Let.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> При помощи процедур 
+    Property Get установите возможность считывания значения свойств.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Создайте методы класса. 
+    Методы создаются при помощи обычных процедур и функций. Если метод возвращает 
+    число, то для его конструирования используется функция, а в остальных случаях 
+    — процедура.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Допустимо также создание 
+    процедуры<B> </B>Private Sub Class_Terminate для </font><font face="Times New Roman, Times, serif" size="3">удаления 
+    объекта из памяти по завершению работы с ним.<BR>
+    </font></li>
+</ol>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="3"></a>Процедуры 
+  Property Let, Property Set и Property Get</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Процедура 
+  Property Let служит для объявления имен свойств, значениями которых являются 
+  числовые данные.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Процедура 
+  Property set служит для объявления имен свойств, значениями которых являются 
+  объекты.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Процедура 
+  Property Get обеспечивает возможность считывания значения свойств.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Как видно 
+  из приведенного ниже синтаксиса, процедуры Property Let, Property Set и Property 
+  Get имеют такую же структуру, что и обычные процедуры. Просто, они предназначены 
+  для специфических задач, описанных выше.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">[Public | Private] 
+  [Static] Property Let имя [(списокАргументов)]<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">[инструкции]<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">[Exit Property]<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">[инструкции] 
+  End Property<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Public | Private] 
+  [Static] Property Set имя.[(списокАргументов)]<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">[инструкции]<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">[Exit Property]<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">[инструкции] 
+  End Property<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">[Public | Private] 
+  [Static] Property Get имя [(списокАргументов)] [As тип]<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">[инструкции] 
+  [имя = выражение] [Exit Property]<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">[инструкции] 
+  [имя = выражение] End Property</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="4"></a>Пример 
+  создания класса</font></B><font size="4"><BR>
+  </font> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Рассмотрим 
+  пример создания класса Вектор, моделирующего двумерный вектор. У объектов класса 
+  вектор будут определены три свойства: координата абсциссы, координата ординаты 
+  и длина вектора (это свойство является свойством только для чтения). Кроме того, 
+  для объектов класса вектор будут определены два метода, первый из которых возвращает 
+  вектор, являющийся результатом покомпонентного произведения вектора на число, 
+  а второй — результат скалярного произведения двух векторов.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Итак, в модуле 
+  класса, у которого установлено свойство Name, равное Вектор, наберите следующий 
+  код:<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' X - координата 
+  абсциссы </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' У - координата 
+  ординаты<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim X, Y As 
+  Double<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' <BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Public Property 
+  Get Абсцисса() As Double </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Возвращает 
+  значение свойства Абсцисса<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Абсцисса = X 
+  End Property<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Public Property 
+  Get Ордината () As Double</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Возвращает 
+  значение свойства Ордината </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Ордината = Y<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Property 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Public Property 
+  Let Абцисса(ByVal НоваяАбсцисса As Double) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Устанавливает 
+  значение свойства Абсцисса </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Not IsNumeric(НоваяАбсцисса) 
+  Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Абсцисса 
+  не является числом&quot;, vblnformation, &quot;VBA&quot;</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Exit Property 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">X = НоваяАбсцисса 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Property 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Public Property 
+  Let Ордината(ByVal НоваяОрдината As Double)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Устанавливает 
+  значение свойства Ордината<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Not IsNumeric(НоваяОрдината) 
+  Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Ордината 
+  не является числом&quot;, vblnformation, &quot;VBA&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Property</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Y = НоваяОрдината 
+  End Property<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Public Property 
+  Get Длина() As Double<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Возвращает 
+  длину вектора. Это свойство только для чтения </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Длина = Sqr(X 
+  ^ 2 + Y ^ 2)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Property 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Public Sub ПрибавитьВектор(ByVal 
+  ДругойВектор As Вектор)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Покоординатное 
+  сложение двух векторов<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">X = X + ДругойВектор.Абсцисса 
+  Y = Y + ДругойВектор.Ордината </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Public Sub УмножитьНаЧисло(ByVal 
+  Число As Double) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Покоординатное 
+  умножение вектора на число<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Not IsNumeric(Число) 
+  Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox &quot;Число, 
+  на которое умножается вектор,&quot; &amp; Chr(13) &amp; &quot;на самом деле 
+  не число&quot;, vblnformation, &quot;VBA&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Exit Sub</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">X = Число * 
+  X Y = Число * У<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End Sub<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Public Function 
+  СкалярноеПроизведение(ByVal ДругойВектор As Вектор) </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Скалярное 
+  произведение векторов<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">СкалярноеПроизведение 
+  = X * ДругойВектор.Абсцисса<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">+ Y * ДругойВектор.Ордината 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Function<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Private Sub 
+  Class_Initialize() </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Инициализация 
+  класса </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">' Вектор (1, 
+  0)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">X = 1<I> </I>Y 
+  = 0 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Проверить 
+  работу созданного класса можно, например при помощи следующей процедуры, код 
+  которой набирается на стандартном листе модуля.<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub ДемонстрацияОбъектов()</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> Dim a, s As 
+  Double<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Объявление 
+  двух векторов </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Dim МойВектор, 
+  ЕщеВектор As Вектор<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Создание вектора 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set МойВектор 
+  = New Вектор<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Установка 
+  координат вектора </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With МойВектор<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Абсцисса = 
+  1 .Ордината = 1<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">End With</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Определение 
+  длины вектора </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">а<I> = </I>МойВектор.Длина<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox CStr(a) 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Умножение 
+  вектора на 2<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">МойВектор.УмножитьНаЧисло 
+  Число:=2</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3"><I>' </I>Определение 
+  координат преобразованного вектора </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox CStr(МойВектор.Абсцисса)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox CStr(МойВектор.Ордината) 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Создание еще 
+  одного вектора </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Set ЕщеВектор 
+  = New Вектор </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">With ЕщеВектор<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Абсцисса = 
+  2<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Ордината = 
+  3 End With<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Сложение векторов 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">МойВектор.ПрибавитьВектор 
+  ДругойВектор:=ЕщеВектор</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Определение 
+  координат преобразованного вектора<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox CStr(МойВектор.Абсцисса)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">MsgBox CStr(МойВектор.Ордината) 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Определение 
+  скалярного произведения </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">s = МойВектор.СкалярноеПроизведение(ДругойВектор:=ЕщеВектор)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> MsgBox CStr(s) 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub</font></P>
+</BODY>
+</HTML>
+

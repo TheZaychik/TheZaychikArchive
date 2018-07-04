@@ -1,0 +1,646 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=WINDOWS-1251">
+<META NAME="GENERATOR" CONTENT="ABBYY FineReader 6.0">
+
+</HEAD>
+<body background=../FON.JPG>
+<ul>
+  <li><b><font face="Times New Roman" size=3><a href="#1">ПРЕДИСЛОВИЕ</a></font></b> 
+  </li>
+  <ul>
+    <li><font face="Times New Roman" size=3><a href="#2">КРАТКИЙ ОБЗОР МАТЕРИАЛА 
+      КНИГИ</a></font> </li>
+  </ul>
+  <li><font face="Times New Roman" size=3><a href="#3">ВВЕДЕНИЕ</a></font> </li>
+  <ul>
+    <li><font face="Times New Roman" size=3><a href="#4">ЗАЧЕМ НУЖЕН VBA</a></font> 
+    </li>
+    <li><font face="Times New Roman" size=3><a href="#5">СОЗДАНИЕ ФУНКЦИЙ ПОЛЬЗОВАТЕЛЯ</a></font> 
+    </li>
+  </ul>
+</ul>
+
+
+<A NAME="1"></A>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5">Предисловие</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Настоящая 
+  книга является с одной стороны, подробным справочником по Visual Basic for Applications 
+  (VBA), а с другой стороны, самоучителем по составлению и разработке приложений, 
+  написанных на этом языке. Это уникальное сочетание, которое, следуя рекламному 
+  подходу, можно назвать &quot;два в одном&quot;, обеспечивает большую гибкость 
+  при решении читателем своих собственных задач. Самоучитель на большом количестве 
+  примеров умело и доступно обучает, как можно быстро и эффективно решать разнообразные 
+  задачи. В справочнике приводится подробное описание возможностей VBA, имея такие 
+  сведения под рукой у читателя исчезнет необходимость бегать по магазинам в поиске 
+  дополнительной литературы при написании самостоятельных приложений, что несомненно 
+  сбережет время и кошелек.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Самоучитель 
+  состоит из уроков. В каждом из уроков разрабатывается пример пользовательского 
+  приложения и дается подробный анализ. Тексты всех программ снабжены доскональными 
+  комментариями. Можно сказать, что все рассматриваемые программы разложены буквально 
+  по маленьким разжеванным кусочкам, которые читателю только и остается проглотить. 
+  По завершению урока предлагается самостоятельное задание, выполнение которого 
+  поможет лучше закрепить разобранный материал.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">С помощью 
+  VBA можно легко и быстро создавать пользовательские приложения, используя единую 
+  для всех офисных программ среду и язык. Научившись разрабатывать приложения 
+  для одной офисной программы, например Excel (которой, как наиболее популярной 
+  офисной программе, в основном и посвящена данная книга), можно создавать приложения 
+  и для других офисных программ, например Access. Внимательно читая эту книгу, 
+  можно стать искусным разработчиком и научиться пользоваться мощными средствами 
+  разработки приложений Excel для того, чтобы конструировать эффективные и применимые 
+  к реальной жизни приложения. Кроме того, по своей структуре, интерфейсу и синтаксису 
+  VBA образует ядро Visual Basic. Поэтому тот, кто изучит программирование на 
+  VBA очень быстро может освоить и Visual Basic.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В данной 
+  книге уделяется огромное внимание программированию на языке VBA, но это совсем 
+  не требует от читателя быть профессиональным программистом. VBA обладает мощными 
+  встроенными интеллектуальными средствами, которые позволяют даже начинающему 
+  пользователю быстро самостоятельно разрабатывать профессиональные приложения. 
+  Например, при написании кода программы редактор VBA сам предлагает пользователю 
+  возможные продолжения составляемых им инструкций. Другим примером встроенных 
+  интеллектуальных средств VBA является макрорекордер, кото</font><font face="Times New Roman, Times, serif" size="3">рый 
+  переводит все выполняемые вручную пользователем действия в основном приложении 
+  на язык VBA. Таким образом, макрорекордер позволяет пользователю поручать VBA 
+  самому создавать большие куски кода разрабатываемого приложения.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="2"></a>Краткий 
+  обзор материала книги</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Книга состоит 
+  из двух частей, первая из которых имеет 15 глав со следующим кратким содержанием:<BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Во введении на простейших 
+    примерах объясняется, зачем нужен VBA.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Глава 1 отвечает на 
+    вопрос: &quot;Что такое VBA?&quot;. В ней также дано описание основных структурных 
+    элементов VBA.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В главе 2 рассматриваются 
+    основные элементы объектной иерархической структуры VBA.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В главах 3 и 4 дан 
+    обзор методов VBA, программирующих команды для работы с рабочим листом, которые 
+    позволяют строить прогрессии, создавать фильтры и консолидировать данные, 
+    организовывать сценарии и структуры, решать уравнения, подводить промежуточные 
+    итоги и сортировать данные.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Глава 5 описывает, 
+    как строятся диаграммы в VBA.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В главе 6 обсуждается, 
+    как программировать одно из наиболее мощных средств по анализу данных — сводные 
+    таблицы.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В глава 7 приведен 
+    обзор элементов управления VBA и описание того, как в VBA создаются и программируются 
+    диалоговые окна.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Глава 8 продолжает 
+    начатый в предыдущей главе разговор по созданию пользовательского интерфейса. 
+    В ней объясняется, как создать пользовательское меню и панели инструментов.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Глава 9 посвящена 
+    вопросу создания очень полезного и наглядного средства Microsoft Office — 
+    помощника.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В главе 10 дано обзорное 
+    описание процесса создания графических объектов.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В главе И приводится 
+    краткая информация по основным понятиям языка VBA: какими типами данных оперирует 
+    VBA, что такое переменная, константа, массив и динамический массив, как создается 
+    пользовательский тип переменной. В ней перечислены операции, встроенные функции, 
+    операторы и процедуры VBA, а также типы процедур.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В главе 12 обсуждаются 
+    принципы создания процедур обработки ошибок, а также встроенные в редактор 
+    VBA мощные средства по отладке программ.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В главе 13 описаны 
+    типы файлов и способы работы с ними в VBA.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Глава 14 объясняет, 
+    как в VBA можно создавать пользовательские объекты.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В главе 15 дан обзор 
+    методов по работе с внешними базами данных, использовании Microsoft Query, 
+    открытой связи с базой данных (ODBC) и объектов доступа к данным (DAO).<BR>
+    </font></li>
+</ul>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Во второй 
+  части приведено 14 уроков самоучителя по созданию пользовательских приложений:<BR>
+  </font></P>
+<ul>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В уроке 1 на примере 
+    создания приложение по игре в орел и решку показывается: как в редакторе VBA 
+    создается программа и как она запускается на выполнение; создание пользовательского 
+    диалогового окна; программный контроль за вводом в поле чисел, а не строковой 
+    информации; программное управление запретом ввода данных в поле; работа с 
+    функцией генератора случайных чисел; вывод числовой информации в поле.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В уроке 2 на примере 
+    разработки приложения по расчету маргинальной процентной ставки объясняется: 
+    как программно решаются уравнения; программный ввод формулы в ячейку рабочего 
+    листа; финансовые функции; проверка корректности ввода данных из диалогового 
+    окна; назначение клавишам &lt;Enter&gt; и &lt;Esc&gt; функций кнопок диалогового 
+    окна; создание всплывающих подсказок у элементов управления; использование 
+    MacroRecorder для упрощения и убыстрения написания кода; программное форматирование 
+    ячеек рабочего листа.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">В уроке 3 на рассмотренном 
+    примере работы со списком показывается: как заполняется список; управление 
+    выбором нескольких элементов из списка; как выполнить специфицированную операцию 
+    над выбранными элементами из списка с помощью переключателей.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В уроке 4 на примере 
+    разработки приложения по расчету амортизации объясняются: финансовые функции 
+    расчета амортизации; управление видимостью отдельных элементов управления 
+    в окне диалога; программный вывод объектов WordArt на рабочий лист.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">В уроке 5 на рассмотренном 
+    примере показывается: ввод формул при помощи элемента управления RefEdit; 
+    нахождение корня уравнения зависящего от параметра; установка параметров метода 
+    GoalSeek; создание прогрессий на рабочем листе; программирование протаскивания 
+    маркера заполнения выделенного диапазона на рабочем листе; построение диаграмм.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В уроке 6 на обсужденных 
+    примерах показывается: программное управление размерами диалогового окна и 
+    элементов управления; задание последовательности элементов управления в виде 
+    массива объектов; определение текущего объема вклада; задание параметров счетчика; 
+    как можно программно или при помощи drag-and-drop операции перемещать элементы 
+    управления по поверхности диалогового окна.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В уроке 7 на примере 
+    конструируемого приложения демонстрируется: как при помощи диалогового окна 
+    можно заполнить базу данных на рабочем листе; программирование примечаний 
+    и текстовых полей на рабочем листе; использование переключателя и флажков; 
+    создание пользовательского заголовка окна приложения и программное закрепление 
+    области.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В уроке 8 на примере 
+    разработки приложения по построению поверхности объясняется: как табулируются 
+    функции, зависящие от двух аргументов; преобразование формулы с аргументами 
+    <I>х </I>и <I>у </I>в формулу рабочего листа; программное построение поверхности; 
+    запись диаграммы в графический файл; считывание графического файла в элемент 
+    управления image; программное управление углом зрения, под которым смотрят 
+    на поверхность, и углом поворота поверхности вокруг оси Z.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В уроке 9 на примере 
+    конструируемого приложения по расчету периодических выплат показывается: как 
+    используется финансовая функция пплдт (РМТ); вывод результатов табулирования 
+    функции в элемент управления ListBox (список); построение диаграммы, тип которой 
+    выбирается в группе переключателей; программная проверка наличия файла на 
+    диске.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В уроке 10 на примере 
+    разработки приложения по работе с базой данных демонстрируется: конструирование 
+    пользовательского интерфейса; создание приложения, работающего с несколькими 
+    диалоговыми окнами; поиск информации в базе данных; редактирование записей 
+    в базе данных; удаление ненужных записей из базы данных; архивация данных; 
+    программирование фильтрации и сортировки данных; создание сводных таблиц; 
+    добавление пользователем новых элементов в список с полем во время выполнения 
+    программы.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В уроке И на примере 
+    игры в крестики и нолики объясняется: удаление рисунка из элемента управления; 
+    учет количества щелчков по элементу управления; управление видимостью границы 
+    элемента управления; создание игрового поля.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">В уроке 12 на примере 
+    приложения по построению линии тренда показывается: конструирование многостраничных 
+    диалоговых окон и линии тренда; применение метода offset для вывода данных 
+    на рабочем листе; считывание данных из каждой отдельной ячейки диапазона.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В уроке 13 на примере 
+    приложения по составлению расписания обсуждается: передача информации между 
+    элементами управления при обработке события click; управление видимостью рисунков 
+    и цветом элементов управления.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> В уроке 14 на примере 
+    показана работа с текстовыми файлами: считывание и запись в файл последовательного 
+    доступа; считывание и запись записей в файла прямого доступа; создание и работа 
+    с пользовательскими типами данных; создание простейшего текстового редактора 
+    и заставки приложения.<BR>
+    </font></li>
+</ul>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><font size="5"><a name="3"></a>Введение</font><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="4"></a>Зачем 
+  нужен VBA</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В качестве 
+  первоначального знакомства с VBA попытаемся решить следующую задачу. Допустим, 
+  вы решили вести учет своих расходов, и с этой целью в конце каждого месяца намерены 
+  составлять таблицу (рис. В.1) и строить диаграмму для более наглядного отображения 
+  доли каждой статьи расходов вашего бюджета. Составлять ежемесячно одну и ту 
+  же таблицу с одновременным построением диаграммы довольно непроизводительная 
+  трата времени. Более разумно один раз научить компьютер создавать таблицу, а 
+  потом по мере необходимости лишь отдавать команду подготовки таблицы, чтобы 
+  осталось только внести в нее данные.<BR>
+  </font></P>
+<P align="left"><img src="1.gif" width="550" height="413"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  В.1. </I></B><I>Таблица ежемесячных расходов</I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Для обучения 
+  компьютера отлично подходит MacroRecorder - транслятор, создающий программу 
+  (макрос) на языке VBA, которая является результатом перевода на язык VBA действий 
+  пользователя с момента запуска MacroRecorder до окончания записи макроса.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Итак, для 
+  активизации MacroRecorder выберите команду <B>Сервис, Макрос, Начать запись 
+  </B>(Tools, Macro, Record New Macro). Появится диалоговое окно <B>Запись макроса 
+  </B>(Record Macro) (рис. В.2). Это диалоговое окно позволяет задать параметры 
+  макроса.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Поля <B>Имя 
+  макроса </B>(Macro Name) и <B>Описание </B>(Description) предназначены для задания 
+  имени макроса и его описания. Последнее важно для многократно используемых макросов. 
+  Наша память не долговечна и, не имея под</font><font face="Times New Roman, Times, serif" size="3">сказки 
+  в виде описания, через некоторое время бывает трудно вспомнить, для чего тот 
+  или иной макрос создавался. По умолчанию макросам присваиваются имена макрос1, 
+  Макрос2 и т. д. Чтобы было легче разпознать макрос, лучше не оставлять стандартное, 
+  а присвоить ему какое-нибудь уникальное имя, поясняющее его назначение. В данном 
+  случае присвоим макросу, например, имя Расходы. <B>Поле Сочетание клавиш </B>(Shortcut 
+  Key) позволяет назначить макросу комбинацию клавиш, т. е. указать клавишу, которая 
+  в сочетании с клавишей &lt;Ctrl&gt; будет служить для запуска его на выполнение. 
+  Назначать комбинацию клавиш макросу совсем не обязательно. Это стоит делать 
+  только для постоянно используемых макросов, для быстрого доступа к ним. Макрос 
+  всегда можно вызвать командой <B>Сервис, Макрос </B>(Tools, Macro). Раскрывающийся 
+  список <B>Сохранить в книге </B>(Store Macro in) предназначен для выбора книги, 
+  в которой будет сохранен макрос. Если выбрать <B>Личная книга макросов </B>(Personal 
+  Macro Workbook), то макрос будет сохранен в специальной скрытой книге. Эта книга 
+  хотя и скрыта, но является открытой, и записанные в ней макросы доступны для 
+  других рабочих книг. Команда <B>Окно, Отобразить </B>(Window, Unhide) позволяет 
+  отобразить личную книгу макросов. Если в раскрывающемся списке выбрать <B>Эта 
+  книга </B>(This Workbook) (этот выбор по умолчанию предлагает компьютер), то 
+  макрос сохранится на новом листе модуля в активной рабочей книге, а если выбрать 
+  <B>Новая книга </B>(New Workbook) — в новой рабочей книге.<BR>
+  </font></P>
+<P align="left"><img src="2.gif" width="297" height="212"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  В.2.</I></B><I> Диалоговое окно <B>Запись макроса</B></I><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Итак, в диалоговом 
+  окне <B>Запись макроса </B>(Record Macro) в поле Имя макроса (Macro Name) введем 
+  Расходы, а в поле <B>Описание </B>(Description) — Расчет месячных расходов и 
+  нажмем кнопку ОК. Появится плавающая панель инструментов с кнопкой <B>Остановить 
+  запись </B>(Stop Recording). Теперь все производимые действия будут записываться 
+  до тех пор, пока не будет нажата эта кнопка. Построим шаблон таблицы расходов 
+  по следующему алгоритму:<BR>
+  </font></P>
+<ol>
+  <li> <font face="Times New Roman, Times, serif" size="3">Активизируем ячейку 
+    B1 и введем в нее Расходы.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Активизируем ячейку 
+    А2 и введем в нее транспорт.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Активизируем ячейку 
+    A3 и введем в нее коммунальные.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Активизируем ячейку 
+    А 4 и введем в нее Еда.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Активизируем ячейку 
+    А5 и введем в нее Развлечения.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Активизируем ячейку 
+    Aб и введем в нее Одежда.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3">Активизируем ячейку 
+    A7 и введем в нее компьютер.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Активизируем ячейку 
+    А8 и введем в нее машина.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Активизируем ячейку 
+    A9 и введем в нее прочие.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Активизируем ячейку 
+    A10 и введем в нее итого.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Активизируем ячейку 
+    вю и введем в нее формулу =СУМM(В2:В9), вычисляющую суммарные расходы.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Выберем диапазон В2:В9 
+    и при помощи раскрывающегося списка <B>Границы </B>(Borders) панели инструментов 
+    <B>Форматирование </B>(Formatting) создадим рамку, окаймляющую этот диапазон.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Выберем диапазон дю:вю 
+    и при помощи раскрывающегося списка <B>Цвет заливки </B>(Fill Color) панели 
+    инструментов <B>Форматирование </B>(Formatting) окрасим этот диапазон в желтый 
+    цвет.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Выберем ячейку Bi 
+    и при помощи раскрывающегося списка <B>Цвет заливки </B>(Fill Color) панели 
+    инструментов <B>Форматирование </B>(Formatting) окрасим эту ячейку в желтый 
+    цвет.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Выберем диапазон А2:Д9 
+    и при помощи раскрывающегося списка <B>Цвет заливки </B>(Fill Color) панели 
+    инструментов <B>Форматирование </B>(Formatting) окрасим этот диапазон в светло-бирюзовый 
+    цвет.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Выберем столбец д, 
+    изменим его ширину так, чтобы введенный в диапазон А2: Д9 текст помещался 
+    в этом столбце.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Выберем диапазон А2:В9 
+    и при помощи мастера диаграмм, вызываемого кнопкой <B>Мастер диаграмм </B>(Chart 
+    Wizard) панели инструментов <B>Стандартная </B>(Standard), создадим диаграмму.<BR>
+    </font></li>
+</ol>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Рабочий лист 
+  теперь будет выглядеть так, как показано на рис. В.1. Остановим запись макроса, 
+  нажав кнопку <B>Остановить запись </B>(Stop Recording).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Заполним 
+  ячейки таблицы исходными данными, расчет суммарных расходов и построение диаграммы 
+  теперь будет происходить автоматически.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Для просмотра 
+  записанной процедуры необходимо выбрать команду <B>Сервис, Макрос, Макросы </B>(Tools, 
+  Macro, Macros), которая вызовет диалоговое окно <B>Макрос </B>(Macro) (рис. 
+  В.З).<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">В этом диалоговом 
+  окне в списке выделим макрос и нажмем кнопку <B>Изменить </B>(Edit). Это вызовет 
+  появление главного окна редактора VBA (рис. В.4). Ниже приведен полный текст 
+  записанного макроса.<BR>
+  </font></P>
+<P align="left"><img src="3.gif" width="402" height="313"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  В.З. </I></B><I>Диалоговое окно <B>Макрос</B></I><BR>
+  </font></P>
+<P align="left"><img src="4.gif" width="482" height="463"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  В.4.</I></B><I> Главное окно редактора VBA</I><BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Sub Расходы()<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Расходы Макрос<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Расчет месячных 
+  расходов '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;Bl&quot;).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveCell.FormulaRlCl 
+  = &quot;Расходы&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;A2&quot;).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveCell.FormulaRlCl 
+  = &quot;Транспорт&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;A3&quot;).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveCell.FormulaRlCl 
+  = &quot;Коммунальные&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;A4&quot;).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveCell.FormulaRlCl 
+  = &quot;Еда&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;A5&quot;).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveCell.FormulaRlCl 
+  = &quot;Развлечения&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;A6&quot;).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveCell.FormulaRlCl 
+  = &quot;Одежда&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;A7&quot;).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveCell.FormulaRlCl 
+  = &quot;Компьютер&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;A8&quot;).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveCell.FormulaRlCl 
+  = &quot;Машина&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;A9&quot;).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveCell.FormulaRlCl 
+  = &quot;Прочие&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;A10&quot;).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveCell.FormulaRlCl 
+  = &quot;Итого&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;BIO&quot;).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveCell.FormulaRlCl 
+  = &quot;=SUM(R[-8]C:R[-1]C)&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;A10:BIO&quot;).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Selection.Interior.Colorlndex 
+  = 36<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;B1&quot;).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Selection.Interior.Colorlndex 
+  = 36<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;A2:A9&quot;).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Selection.Interior.Colorlndex 
+  = 34<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Columns(&quot;A:A&quot;).ColumnWidth 
+  = 13.86<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Range(&quot;A2:B9&quot;).Select<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Charts.Add<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveChart.ChartType 
+  = xlColumnClustered<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveChart.SetSourceData<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Source:=Sheets(&quot;Лист1&quot;).Range(&quot;A2:B9&quot;), 
+  PlotBy:=xlColumns<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">ActiveChart.Location 
+  Where:=xlLocationAsObject, Nаmе:=&quot;Лист1&quot;<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">With ActiveChart<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.HasTitle = 
+  False<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">.Axes(xlCategory, 
+  xlPrimary)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.HasTitle = False 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.Axes(xlValue, 
+  xlPrimary)</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">.HasTitle = False 
+  </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End With </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Sub</font><font face="Times New Roman, Times, serif" size="3"><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">На первый 
+  взгляд полученный макрос выглядит довольно устрашающе, но прочитав данную книгу 
+  вы поймете, что его очень легко создавать и читать. Еще более замечательным 
+  является то, что в настоящий момент эта программа сама по себе совершенно не 
+  нужна и с ней можно работать даже не понимая записанные в ней коды. Пока о программе 
+  надо знать только ее имя -Расходы и то, что рабочий лист, на котором при помощи 
+  этого макроса будет строиться шаблон таблицы с диаграммой, должен иметь имя 
+  лист1. Ограничение на выбор имени рабочего листа не столь обременительно. Изучив 
+  эту книгу, вы легко сможете создавать универсальные приложения без каких-либо 
+  ограничений на среду. Для того чтобы воспользоваться макросом, надо перед его 
+  выполнением переименовать рабочий лист, присвоив ему имя лист1. После построения 
+  таблицы можно изменить имя рабочего листа на новое, например, на имя месяца, 
+  для которого строится текущий отчет по расходам.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Итак, активизируем 
+  новый рабочей лист, временно присвоим ему имя лист1. Выберем команду <B>Сервис, 
+  Макрос, Макросы </B>(Tools, Macro, Macros), которая вызовет диалоговое окно 
+  <B>Макрос </B>(Macro). В этом окне в списке выделим исходный макрос и нажмем 
+  кнопку <B>Выполнить </B>(Run). Диалоговое окно закроется и выполнится процедура, 
+  создающая на активном рабочем листе шаблон таблицы. Теперь в нее остается ввести 
+  новые данные, а расчет суммарных расходов и построение диаграммы будет происходить 
+  автоматически.<BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3"><B><font size="4"><a name="5"></a>Создание 
+  функций пользователя</font></B><BR>
+  </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">VBA предоставляет 
+  также возможность пользователю создавать собственные функции, работать с которыми 
+  на рабочем листе можно при помощи мастера функций точно так же, как и с любой 
+  встроенной функцией. Рассмотрим один пример построения функции пользователя. 
+  На минуту представьте себе, что вы менеджер издательства по оптовой продаже 
+  книг. Для привлечения покупателей в вашем издательстве введена прогрессивная 
+  шкала цен. Если продается от 100 до 200 экземпляров книги, то скидка от ее отпускной 
+  цены составляет 7%, если продается от 201 до 300 экземпляров, то скидка составляет 
+  10%, а если свыше 300 экземпляров — 15%. Кроме того, для постоянных клиентов 
+  предусмотрена дополнительная скидка в размере 5%. Создадим функцию пользователя 
+  с именем стоимость для расчета стоимости Партиикниг. Аргументы этой функции 
+  назовем<B> </B>ЦенаОднойКниги, Количество </font><font face="Times New Roman, Times, serif" size="3">и 
+  Скидка. Для аргумента Скидка предусмотрим только два допустимых зна</font><font face="Times New Roman, Times, serif" size="3">чения: 
+  1 для постоянных клиентов и 0 в противном случае. Построим пользовательскую 
+  функцию стоимость следующим образом:<BR>
+  </font></P>
+<ol>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Выполните команду 
+    <B>Сервис, Макрос, Редактор Visual Basic </B>(Tools, Macro, Visual Basic Editor), 
+    чтобы открыть окно редактора Visual Basic.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Выполните команду 
+    <B>Вставка, Модуль </B>(Insert, Module) для создания листа модуля.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Выберите значок модуля 
+    в окне <B>Проект </B>(Project), чтобы активизировать окно редактора кода на 
+    листе модуля.<BR>
+    </font></li>
+  <li> <font face="Times New Roman, Times, serif" size="3"> Наберите на листе 
+    модуля приведенную ниже процедуру.<BR>
+    </font></li>
+</ol>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Function Стоимость(ЦенаОднойКниги, 
+  Количество, Скидка)<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Вычисление 
+  стоимости без учета скидки для постоянных клиентов '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Количество 
+  &lt; 100 Then </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Продажа до 
+  99 экземпляров </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">СтоимостьБезСкидки 
+  = ЦенаОднойКниги * Количество Else<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Количество 
+  &lt;= 200 Then </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Продажа от 
+  100 до 200 экземпляров </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">СтоимостьБезСкидки 
+  = ЦенаОднойКниги * Количество * 0.93<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Else '<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Продажа от 
+  201 до 300 экземпляров </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Количество 
+  &lt;= 300 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">СтоимостьБезСкидки 
+  = ЦенаОднойКниги * Количество * 0.9 Else<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Продажа свыше 
+  300 экземпляров </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">СтоимостьБезСкидки 
+  = ЦенаОднойКниги * Количество * 0.85 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If</font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3"> End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">'<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">' Корректировка 
+  стоимости с учетом скидки для постоянных клиентов<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">If Скидка = 
+  0 Then<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Стоимость = 
+  СтоимостьБезСкидки Else<BR>
+  </font></P>
+<P align="left"> <font face="Courier New, Courier, mono" size="3">Стоимость = 
+  СтоимостьБезСкидки * 0.95 </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End If </font></P>
+<P align="left"><font face="Courier New, Courier, mono" size="3">End Function<BR>
+  </font><font face="Times New Roman, Times, serif" size="3"> </font></P>
+<P align="left"> <font face="Times New Roman, Times, serif" size="3">Итак, функция 
+  пользователя стоимость создана. Она включена в категорию функций, определенных 
+  пользователем, мастера функций. Благодаря тому что в VBA допустимо применение 
+  русскоязычных имен, текст написанной программы ясен и прозрачен для понимания. 
+  Кроме того, это обеспечивает и простоту использования диалогового окна мастера 
+  функций для данной функции (рис. В.5). Названия всех параметров функции стоимость 
+  в окне мастера функций выводятся также на русском языке. Доступная для понимания 
+  структура диалогового окна позволяет использовать функцию стоимость любому пользователю, 
+  даже не владеющему VBA. Для ее применения достаточно знать только имя этой функции.<BR>
+  </font></P>
+<P align="left"><img src="5.gif" width="550" height="413"> </P>
+<P align="left"><font face="Times New Roman, Times, serif" size="3"><B><I>Рис. 
+  В.5.</I></B><I> Диалоговое окно для заполнения параметров функции Стоимость</I></font></P>
+</BODY>
+</HTML>
+
