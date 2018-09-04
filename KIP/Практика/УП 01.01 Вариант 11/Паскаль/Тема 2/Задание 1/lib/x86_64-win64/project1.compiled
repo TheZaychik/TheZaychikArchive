@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CONFIG>
-  <Compiler Value="C:\lazarus\fpc\3.0.4\bin\x86_64-win64\fpc.exe" Date="1266910071"/>
-  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -WG -l -vewnhibq &quot;-Fi\\Mac\Home\Git\TheZaychikArchive\KIP\Практика\УП 01.01 Вариант 11\Паскаль\Тема 2\Задание 1\lib\x86_64-win64&quot; -FuC:\lazarus\lcl\units\x86_64-win64\win32 -FuC:\lazarus\lcl\units\x86_64-win64 -FuC:\lazarus\components\lazutils\lib\x86_64-win64 -FuC:\lazarus\packager\units\x86_64-win64 &quot;-Fu\\Mac\Home\Git\TheZaychikArchive\KIP\Практика\УП 01.01 Вариант 11\Паскаль\Тема 2\Задание 1\&quot; &quot;-FU\\Mac\Home\Git\TheZaychikArchive\KIP\Практика\УП 01.01 Вариант 11\Паскаль\Тема 2\Задание 1\lib\x86_64-win64\&quot; -dLCL -dLCLwin32 project1.lpr"/>
-</CONFIG>

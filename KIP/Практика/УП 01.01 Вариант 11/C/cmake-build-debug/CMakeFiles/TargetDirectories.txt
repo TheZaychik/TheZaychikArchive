@@ -1,3 +1,0 @@
-/Users/nikitazaytsev/git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/nikitazaytsev/git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/nikitazaytsev/git/TheZaychikArchive/KIP/Практика/УП 01.01 Вариант 11/C/cmake-build-debug/CMakeFiles/C.dir
