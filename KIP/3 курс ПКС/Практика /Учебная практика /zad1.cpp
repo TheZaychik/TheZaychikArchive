@@ -2,7 +2,7 @@
 #include "cmath"
 using namespace std;
 
-class Ryad{
+static class Ryad{
 private:
     double x,q,s = 0;
 public:
@@ -42,6 +42,7 @@ int main() {
     Ryad obj;
     obj.init();
     obj.start();
+
 
     return 0;
 }
