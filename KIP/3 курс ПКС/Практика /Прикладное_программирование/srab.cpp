@@ -7,7 +7,7 @@ private:
     static int way;
 };
 
-int main(){
+int main() {
 
     return 0;
 }
