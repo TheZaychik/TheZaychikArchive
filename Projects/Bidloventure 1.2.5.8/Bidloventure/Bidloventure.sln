@@ -1,11 +1,11 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bidloventure", "Assembly-CSharp.csproj", "{118C1EAD-AA9B-E101-3C6F-53F394EA9B94}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{118C1EAD-AA9B-E101-3C6F-53F394EA9B94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bidloventure", "Assembly-CSharp-firstpass.csproj", "{515B62C0-809E-75DF-BB26-FAD260C1ED99}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{515B62C0-809E-75DF-BB26-FAD260C1ED99}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bidloventure", "Assembly-CSharp-Editor-firstpass.csproj", "{ADA59BB0-155A-D8A5-F628-B09656AD6792}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor-firstpass", "Assembly-CSharp-Editor-firstpass.csproj", "{ADA59BB0-155A-D8A5-F628-B09656AD6792}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,7 +1,7 @@
 False
 True
 True
-87.10107
+86.92688
 -143.2507
 False
 0
