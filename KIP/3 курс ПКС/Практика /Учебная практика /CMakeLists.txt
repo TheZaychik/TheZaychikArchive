@@ -3,4 +3,4 @@ project(__)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(__ denis.cpp)
+add_executable(__ denis2.cpp)

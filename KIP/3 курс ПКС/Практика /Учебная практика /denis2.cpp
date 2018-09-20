@@ -1,51 +1,51 @@
 #include <iostream>
 #include <string>
 using namespace std;
-// 10 вар 3 уп
+// 6 вар 3 уп
 class Note{
 
 private:
-    string name, family;
-    long telephone;
+    string punkt, nomer;
+    long time;
     int dob[3];
 public:
     void show(){
-        cout << "ФИО:" << endl;
-        cout << this->name << " " << this->family << endl;
-        cout << "Телефон: " << this->telephone << endl;
+        cout << "Поезд:" << endl;
+        cout << this->punkt << " " << this->nomer << endl;
+        cout << "Телефон: " << this->time << endl;
         cout << "Дата рождения: " << this->dob[0] << "." << this->dob[1] << "." << this->dob[2] << endl;
     }
     void input(){
-        cout << "Введите имя и фамилию через enter:" << endl;
-        cin >> this->name;
-        cin >> this->family;
-        cout << "Введите номер телефона в след. формате: 0000000000:" << endl;
-        cin >> this->telephone;
-        cout << "Введите дату рождения через enter:" << endl;
+        cout << "Введите место назначения и номер через enter:" << endl;
+        cin >> this->punkt;
+        cin >> this->nomer;
+        cout << "Введите время в след. формате: 0000:" << endl;
+        cin >> this->time;
+        cout << "Введите дату отправления через enter:" << endl;
         cin >> this->dob[0];
         cin >> this->dob[1];
         cin >> this->dob[2];
-        cout << "Человек добавлен в базу!" << endl;
+        cout << "Поезд добавлен в базу!" << endl;
     }
     long show_tel(){
-        return this->telephone;
+        return this->time;
     }
     string show_fam(){
-        return this->family;
+        return this->nomer;
     }
 
     void init1(){
-        this->name = "Денис";
-        this->family = "Гивчак";
-        this->telephone = 89031160132;
+        this->punkt = "London";
+        this->nomer = "2015";
+        this->time = 1840;
         this->dob[0] = 18;
         this->dob[1] = 06;
         this->dob[2] = 2000;
     }
     void init2(){
-        this->name = "Анатолий";
-        this->family = "Алкоголий";
-        this->telephone = 89165376820;
+        this->punkt = "Moscow";
+        this->nomer = "2018";
+        this->time = 1930;
         this->dob[0] = 24;
         this->dob[1] = 05;
         this->dob[2] = 2000;
@@ -106,8 +106,8 @@ int main(){
     cout << "Выберите действия: " << endl;
     cout << "1) Ввести в массив данные" << endl;
     cout << "2) Показать все данные" << endl;
-    cout << "3) Поиск по фамилии" << endl;
-    cout << "4) Сортировка по номеру" << endl;
+    cout << "3) Поиск по номеру" << endl;
+    cout << "4) Сортировка по времени отправления" << endl;
     cout << "5) Выход" << endl;
     cin >> n;
     switch(n){
@@ -126,7 +126,7 @@ int main(){
         case 3:{
             cout << "----------------" << endl;
             string family;
-            cout << "Введите фамилию:" << endl;
+            cout << "Введите номер:" << endl;
             cin >> family;
             searchShow(family);
             main();
@@ -135,7 +135,7 @@ int main(){
         case 4:{
             cout << "----------------" << endl;
             sort_mas();
-            cout << "Массив был отсортирован по номеру телефона!" << endl;
+            cout << "Массив был отсортирован по времени отправления!" << endl;
             main();
 
         };

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+// 10 вар 3 уп
 using namespace std;
 
 struct Note{
