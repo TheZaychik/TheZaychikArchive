@@ -1,8 +1,8 @@
 #include <iostream>
 #include <math.h>
 using namespace std;
-// Вывод системы уравнений
-void sysout(double **a, double *y, int n)
+
+void out_ur(double **a, double *y, int n)
 {
     for (int i = 0; i < n; i++)
     {
@@ -16,7 +16,7 @@ void sysout(double **a, double *y, int n)
     }
     return;
 }
-double * gauss(double **a, double *y, int n)
+double * method_of_gauss(double **a, double *y, int n)
 {
     double *x, max;
     int k, index;
@@ -39,7 +39,6 @@ double * gauss(double **a, double *y, int n)
         // Перестановка строк
         if (max < eps)
         {
-            // нет ненулевых диагональных элементов
             cout << "Решение получить невозможно из-за нулевого столбца ";
             cout << index << " матрицы A" << endl;
             return 0;
@@ -90,19 +89,19 @@ int main()
         a[i] = new double[n];
         for (int j = 0; j < n; j++)
         {
-            cout << "a[" << i << "][" << j << "]= ";
+            cout << "a" << i << j << " = ";
             cin >> a[i][j];
         }
     }
     for (int i = 0; i < n; i++)
     {
-        cout << "y[" << i << "]= ";
+        cout << "y" << i << " = ";
         cin >> y[i];
     }
-    sysout(a, y, n);
-    x = gauss(a, y, n);
+    out_ur(a, y, n);
+    x = method_of_gauss(a, y, n);
     for (int i = 0; i < n; i++)
-        cout << "x[" << i << "]=" << x[i] << endl;
+        cout << "x" << i << " = " << x[i] << endl;
     cin.get(); cin.get();
     return 0;
 }
