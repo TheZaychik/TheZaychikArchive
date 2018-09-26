@@ -20,11 +20,9 @@ public:
 int Data::count = 0;
 
 int main(){
-    Data d1,d2,d3;
+    Data d1,d2;
     d1.init(05,02,2000);
     d2.init();
-    d3.init(05,05);
     d1.show();
     d2.show();
-    d3.show();
 }
