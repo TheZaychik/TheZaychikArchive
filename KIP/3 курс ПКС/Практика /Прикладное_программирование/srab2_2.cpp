@@ -6,7 +6,7 @@ private:
     int day, month, year;
 public:
     static int count;
-    void init(int _day, int _month, int _year){
+    void init(int _day, int _month, int _year = 2000){
         count++;
         this->day = _day;
         this->month = _month;
@@ -25,9 +25,9 @@ int main(){
     ud1 = &d1;
     ud2 = &d2;
     ud3 = &d3;
-    ud1->init(5,5,2000);
-    (*ud2).init(8,7,1989);
-    ud3->init(22,12,1922);
+    ud1->init(5,5);
+    (*ud2).init(8,7);
+    ud3->init(22,12);
     (*ud1).show();
     ud2->show();
     ud3->show();
