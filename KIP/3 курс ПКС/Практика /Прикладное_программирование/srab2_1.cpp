@@ -13,9 +13,11 @@ public:
         year = _year;
     }
     void show(){
+        cout << "Кол-во объектов: " << count << endl;
         cout << day << "." << month << "." << year << endl;
     }
 };
+int Data::count = 0;
 
 int main(){
     Data d1,d2,d3;
@@ -25,5 +27,4 @@ int main(){
     d1.show();
     d2.show();
     d3.show();
-
 }
