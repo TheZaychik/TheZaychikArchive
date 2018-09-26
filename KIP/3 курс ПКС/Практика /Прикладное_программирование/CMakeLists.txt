@@ -3,4 +3,4 @@ project(_)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(_ para8.cpp)
+add_executable(_ srab2_1.cpp)
