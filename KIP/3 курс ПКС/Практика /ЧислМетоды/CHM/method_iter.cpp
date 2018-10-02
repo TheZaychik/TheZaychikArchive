@@ -31,7 +31,7 @@ class Iteration {
             cout << "\n";
             for (j = 0;j<m;j++)
                 cout << setw(5) << a[i][j];
-            cout << setw(5) << b[i];
+            cout << "|" << setw(5) << b[i];
         }
         cout << "\n";
     }
