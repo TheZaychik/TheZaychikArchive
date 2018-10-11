@@ -40,7 +40,6 @@ int main(){
     cheremuha i1(25,15.8);
     r1.show();
     i1.show();
-
     return 0;
 }
 

@@ -3,4 +3,4 @@ project(__)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(__ upd_denis_6_1.cpp )
+add_executable(__ up6_2.cpp )

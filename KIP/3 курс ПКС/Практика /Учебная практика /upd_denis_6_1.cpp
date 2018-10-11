@@ -25,7 +25,9 @@ public:
         cout << "Количество сирени " << this->kolvo << " кг." << endl;
         cout << "Цена за кг: " << this->price << " руб." << endl;
     }
-    ~siren(){cout<<"Работа деструктора класса Сирень"<<endl;}
+    ~siren(){
+        cout<<"Работа деструктора класса Сирень"<<endl;
+    }
 };
 
 class cheremuha : public kustarnik{
