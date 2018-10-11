@@ -35,7 +35,7 @@ public:
     }
 
     void isBelongs(circle &obj){
-        if(pow(x,2)+pow(y,2) <= pow(obj.r,2)){
+        if((x*x + y*y) <= obj.r * obj.r){
             cout << "Точка " << &obj << " принадлежит кругу " << this << endl;
         } else{
             cout << "Точка " << &obj << " НЕ принадлежит кругу " << this << endl;
