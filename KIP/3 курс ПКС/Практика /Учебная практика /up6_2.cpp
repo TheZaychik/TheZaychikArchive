@@ -43,8 +43,6 @@ public:
     }
 };
 
-
-
 int main(){
     dot d[3] = {dot(5,5),dot(2,3), dot(7,2)};
     circle c[3] = {4,10,45};
