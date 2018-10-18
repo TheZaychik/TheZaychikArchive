@@ -3,4 +3,4 @@ project(CHM)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(CHM method_iter.cpp)
+add_executable(CHM method_zeidel.cpp)
