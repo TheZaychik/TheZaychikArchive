@@ -121,6 +121,7 @@ int main() {
             cout << "Enter the search value:" << endl;
             cin >> sw;
             search(sw);
+            sw = 0;
             wait();
             main();
         }
