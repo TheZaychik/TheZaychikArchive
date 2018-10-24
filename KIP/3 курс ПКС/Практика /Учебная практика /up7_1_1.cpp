@@ -15,6 +15,7 @@ struct Item {
 
 Item *first = nullptr, *p;
 int m;
+int sw;
 
 
 void add() {
@@ -87,7 +88,7 @@ int search(int s) {
 }
 
 int main() {
-    int sw = 0;
+    sw = 0;
     cout << "List of elements menu: " << endl;
     cout << "1) Add (create) list" << endl;
     cout << "2) Show list" << endl;
@@ -127,6 +128,9 @@ int main() {
         }
         case 6: {
             exit(0);
+        }
+        default:{
+            main();
         }
     }
     return 0;
