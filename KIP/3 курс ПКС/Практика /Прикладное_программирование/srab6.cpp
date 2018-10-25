@@ -3,9 +3,9 @@
 
 using namespace std;
 
-// вар 10 ПП9
+// вар 10 ПП6
 class Human {
-public:
+protected:
     string name, family, patron;
 public:
     Human(string _name, string _family, string _patron) {
@@ -17,7 +17,7 @@ public:
     void show();
 };
 
-class Buhgalter : Human{
+class Buhgalter : public Human{
 private:
     int oklad;
 public:
@@ -31,7 +31,7 @@ public:
     }
 };
 
-class Svarshik : Human{
+class Svarshik : public Human{
 private:
     int razryad;
 public:
