@@ -3,4 +3,4 @@ project(UchPrakt)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(UchPrakt up8_1.cpp )
+add_executable(UchPrakt up5_1.cpp )
