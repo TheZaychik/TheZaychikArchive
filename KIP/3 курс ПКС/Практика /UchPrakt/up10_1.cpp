@@ -10,7 +10,9 @@ void wait() {
     char a;
     cout << "Type 'c' to continue" << endl;
     cin >> a;
+    cin >>
 }
+
 
 class Note {
 private:
