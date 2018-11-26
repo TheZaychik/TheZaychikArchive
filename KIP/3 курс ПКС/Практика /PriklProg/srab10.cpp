@@ -27,7 +27,6 @@ coord operator+(coord a) {
     return a;
 }
 
-
 int main() {
     coord cd1(-5, -7), cd2(4, 2);
     coord cd3 = cd1 + cd2;
