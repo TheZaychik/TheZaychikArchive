@@ -7,6 +7,5 @@ int main(){
     b = &a;
     c = *b;
     cout << a << endl << *b << endl << c << endl;
-
     return 0;
 }
