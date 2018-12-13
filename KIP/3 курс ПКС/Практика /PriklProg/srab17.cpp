@@ -16,29 +16,61 @@ void zad1() {
     for (int i = 0; i < 25; i++) {
         vector1.push_back(1 + rand() % 99);
     }
+    cout << "Исходный массив: ";
     for (int i = 0; i < 25; i++) {
+        cout << vector1[i] << " ";
+    }
+    cout << endl;
+    cout.width(10);
+    cout << "/1";
+    cout.width(10);
+    cout << "/0";
+    cout.width(10);
+    cout << "/3" << endl;
+    for (int i = 0; i < 24; i +=3){
+        cout.width(10);
+        cout << vector1[i];
+        cout.width(10);
+        cout << vector1[i + 1];
+        cout.width(10);
+        cout << vector1[i + 2];
+        cout << endl;
+    }
+    cout << "-------------------------------------------" << endl;
+    for (int i = 0; i < 24; i +=3){
         try {
             vector2.push_back(divide(vector1[i], 1));
-            vector2.push_back(divide(vector1[i], 0));
-            vector2.push_back(divide(vector1[i], 3));
-
+            vector2.push_back(divide(vector1[i + 2], 3));
+            cout.width(10);
+            cout << divide(vector1[i], 1);
+            cout.width(10);
+            cout << divide(vector1[i + 1], 0);
+            cout.width(10);
+            cout << divide(vector1[i + 2], 3);
+            cout << endl;
         }
-        catch (...) {
+        catch (...){
             vector2.push_back(0);
-            vector2.push_back(divide(vector1[i], 3));
+            cout << "zero";
+            cout.width(10);
+            cout << divide(vector1[i + 2], 3);
+            cout << endl;
         }
     }
-    cout << "mas1 | mas2" << endl;
-    for (int i = 0; i < 25; i++) {
-        cout << vector1[i] << " | " << vector2[i] << endl;
+    FILE *f = fopen("textfiles/srab17.txt", "r+");
+    for(int i = 0; i < 25; i++){
+        fprintf(f, "%d\n", vector2[i]);
     }
+    fclose(f);
 }
 
 int zad2() {
-    int sum = 0, kol = 0;
+    int sum = 0, kol = 0, buff;
+    FILE *f = fopen("textfiles/srab17.txt", "r+");
     for (int i = 0; i < 25; i++) {
-        sum += vector2[i];
-        if (vector2[i] != 0) {
+        fscanf(f, "%d\n", &buff);
+        sum += buff;
+        if (buff != 0) {
             kol++;
         }
     }
@@ -47,7 +79,6 @@ int zad2() {
 
 int main() {
     zad1();
-    cout << "Ср. арифм " << zad2() << endl;
-
+    cout << "Ср. арифм: " << zad2() << endl;
     return 0;
 }
