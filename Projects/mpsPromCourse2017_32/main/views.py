@@ -1,4 +1,4 @@
-from django.shortcuts import render
+ from django.shortcuts import render
 from news.models import News
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import JsonResponse, HttpRequest, HttpResponse

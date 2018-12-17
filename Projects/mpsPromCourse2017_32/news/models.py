@@ -7,5 +7,5 @@ class News(models.Model):
     img = models.ImageField(upload_to='news', null=True, default="images/no.jpg")
     text = models.TextField()
     date = models.DateTimeField(auto_now=True)
-
+    images = models.ManyToManyField(to=Photo, verbose_name='Фото')
     
