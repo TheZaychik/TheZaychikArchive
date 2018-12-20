@@ -3,4 +3,4 @@ project(ChslMetodProj)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(ChslMetodProj method_gauss.cpp)
+add_executable(ChslMetodProj smm.cpp)
