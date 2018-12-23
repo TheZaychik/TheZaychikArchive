@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cmath>
-
 using namespace std;
 
 int s;  // a это mas[0][0], т.е x0
@@ -68,7 +67,6 @@ void RungeKutt() {
 }
 
 void SecondMod() {
-    mas[0][0] = 0;
     for (int i = 1; i <= n; i++) {
         mas[0][i] = mas[0][0] + i * (h / 2);
         mas[1][i] = mas[1][i - 1] + (h / 2) * (Formula(mas[0][i - 1], mas[1][i - 1])
@@ -78,7 +76,7 @@ void SecondMod() {
 }
 
 int main() {
-    for (int i = 0; i < 50; i++)
+    for (int i = 0; i < 100; i++)
         mas[i] = new double[i + 1];
     for (;;) {
         cout << "0 - Выход" << endl;
