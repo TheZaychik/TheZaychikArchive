@@ -3,4 +3,4 @@ project(PriklProg)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(PriklProg pp24.cpp)
+add_executable(PriklProg pp26.cpp)
