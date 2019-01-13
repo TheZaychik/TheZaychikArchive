@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 using namespace std;
 // 6 вар 3 уп
 class Note{
@@ -9,11 +10,18 @@ private:
     long time;
     int dob[3];
 public:
+    void print(ofstream &f){
+        f << "Поезд:" << endl;
+        f << this->punkt << " " << this->nomer << endl;
+        f << "Телефон: " << this->time << endl;
+        f << "Дата : " << this->dob[0] << "." << this->dob[1] << "." << this->dob[2] << endl;
+        f << "-----------" << endl;
+    }
     void show(){
         cout << "Поезд:" << endl;
         cout << this->punkt << " " << this->nomer << endl;
         cout << "Телефон: " << this->time << endl;
-        cout << "Дата рождения: " << this->dob[0] << "." << this->dob[1] << "." << this->dob[2] << endl;
+        cout << "Дата : " << this->dob[0] << "." << this->dob[1] << "." << this->dob[2] << endl;
     }
     void input(){
         cout << "Введите место назначения и номер через enter:" << endl;
@@ -84,6 +92,14 @@ void sort_mas(){
     }
 }
 
+void write_all(){
+    ofstream f("textfiles/denis2.txt", ofstream::out);
+    for(int i = 0; i < 2; i++){
+        mas[i].print(f);
+    }
+    f.close();
+}
+
 void show_all(){
     for(int i = 0; i < 2; i++){
         mas[i].show();
@@ -108,7 +124,8 @@ int main(){
     cout << "2) Показать все данные" << endl;
     cout << "3) Поиск по номеру" << endl;
     cout << "4) Сортировка по времени отправления" << endl;
-    cout << "5) Выход" << endl;
+    cout << "5) Запись в файл" << endl;
+    cout << "6) Выход" << endl;
     cin >> n;
     switch(n){
         case 1:{
@@ -140,9 +157,15 @@ int main(){
 
         };
         case 5:{
+            cout << "----------------" << endl;
+            write_all();
+            cout << "Массив был записан в файл!" << endl;
+            main();
+        }
+        case 6:{
             exit(0);
         };
-        case 6:{
+        case 7:{
             init();
             main();
         };

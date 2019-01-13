@@ -21,7 +21,6 @@ public:
         cout << this << "has been deleted" << endl;
     }
 
-
     void show(){
         cout << a << " " << b << endl;
     }

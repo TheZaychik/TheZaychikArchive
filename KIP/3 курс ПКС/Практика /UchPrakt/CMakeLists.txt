@@ -3,4 +3,4 @@ project(UchPrakt)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(UchPrakt up15.cpp)
+add_executable(UchPrakt denis2.cpp)
